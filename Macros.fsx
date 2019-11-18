@@ -1,7 +1,7 @@
 ﻿let doType elm name className =
     """
     static member inline {NAME} props = ElementBuilders.{ELM}.props "{CLASS}" props
-    static member inline {NAME} elms = ElementBuilders.{ELM}.children "{CLASS}" elms
+    static member inline {NAME} (elms:#seq<ReactElement>) = ElementBuilders.{ELM}.children "{CLASS}" elms
     static member inline {NAME} elm = ElementBuilders.{ELM}.valueElm "{CLASS}" elm
     static member inline {NAME} s = ElementBuilders.{ELM}.valueStr "{CLASS}" s
     static member inline {NAME} i = ElementBuilders.{ELM}.valueInt "{CLASS}" i
@@ -21,13 +21,28 @@ let doModule modul elm =
 
 let doIs max =
     let item v =
-        "let is{NUM} = PropertyBuilders.mkClass \"is-{NUM}\""
+        "let isOffset{NUM} = PropertyBuilders.mkClass \"is-offset-{NUM}\""
         |> fun x -> x.Replace("{NUM}", string v)
         |> System.Console.WriteLine
     [1..max] |> List.iter item
+
+let doProps ports v  =
+    let vals = [
+        for (po,pu) in ports do
+            for (p,c) in v do
+                yield ("let {PROP}{PO} = PropertyBuilders.mkClass \"{CLASS}-{PU}\"")
+                    .Replace("{PROP}", p)
+                    .Replace("{CLASS}",c)
+                    .Replace("{PO}",po)
+                    .Replace("{PU}",pu)
+    ]
     
+    vals
+    //|> List.map (fun (p,c) -> "let {PROP} = PropertyBuilders.mkClass \"{CLASS}\"" |> fun x -> x.Replace("{PROP}", p).Replace("{CLASS}",c))
+    |> String.concat "\n"
+    |> System.Console.WriteLine
 
 doModule "Footer" "footer"
 doType "Div" "heroFoot" "hero-foot"
-doType "Div" "tile" "tile"
+doType "Div" "column" "column"
 doIs 12

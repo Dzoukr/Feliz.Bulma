@@ -8,6 +8,7 @@
         <Compile Include="PropertyBuilders.fs" />
         <Compile Include="ElementBuilders.fs" />
         <Compile Include="Layout.fs" />
+        <Compile Include="Columns.fs" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
