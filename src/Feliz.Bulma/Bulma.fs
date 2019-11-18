@@ -2,7 +2,7 @@
 
 open Feliz
 
-type Layout =
+type Bulma =
     static member inline container props = ElementBuilders.Div.props "container" props
     static member inline container (elms:#seq<ReactElement>) = ElementBuilders.Div.children "container" elms
     static member inline container elm = ElementBuilders.Div.valueElm "container" elm
@@ -10,6 +10,7 @@ type Layout =
     static member inline container i = ElementBuilders.Div.valueInt "container" i
     
     static member inline level props = ElementBuilders.Nav.props "level" props
+    static member inline level (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "level" elms
     static member inline level elm = ElementBuilders.Nav.children "level" elm
     
     static member inline levelLeft props = ElementBuilders.Div.props "level-left" props
@@ -32,6 +33,7 @@ type Layout =
 
     static member inline media props = ElementBuilders.Article.props "media" props
     static member inline media (elms:#seq<ReactElement>) = ElementBuilders.Article.children "media" elms
+    static member inline media elm = ElementBuilders.Article.valueElm "media" elm
     
     static member inline mediaLeft props = ElementBuilders.Div.props "media-left" props
     static member inline mediaLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children "media-left" elms
@@ -80,6 +82,7 @@ type Layout =
     
     static member inline footer props = ElementBuilders.Footer.props "footer" props
     static member inline footer (elms:#seq<ReactElement>) = ElementBuilders.Footer.children "footer" elms
+    static member inline footer elm = ElementBuilders.Footer.valueElm "footer" elm
     
     static member inline tile props = ElementBuilders.Div.props "tile" props
     static member inline tile (elms:#seq<ReactElement>) = ElementBuilders.Div.children "tile" elms
@@ -87,45 +90,42 @@ type Layout =
     static member inline tile s = ElementBuilders.Div.valueStr "tile" s
     static member inline tile i = ElementBuilders.Div.valueInt "tile" i
     
-module Layout =
-    [<RequireQualifiedAccess>]        
-    module Container =
-        let isFluid = PropertyBuilders.mkClass "is-fluid"
-        let isWidescreen = PropertyBuilders.mkClass "is-widescreen"
-        let isFullHd = PropertyBuilders.mkClass "is-fullhd"
-
-    [<RequireQualifiedAccess>]        
-    module Level =
-        let isMobile = PropertyBuilders.mkClass "is-mobile"
+    static member inline columns props = ElementBuilders.Div.props "columns" props
+    static member inline columns (elms:#seq<ReactElement>) = ElementBuilders.Div.children "columns" elms
+    static member inline columns elm = ElementBuilders.Div.valueElm "columns" elm
+    static member inline columns s = ElementBuilders.Div.valueStr "columns" s
+    static member inline columns i = ElementBuilders.Div.valueInt "columns" i
     
-    [<RequireQualifiedAccess>]
-    module Section =
-        let isMedium = PropertyBuilders.mkClass "is-medium"
-        let isLarge = PropertyBuilders.mkClass "is-large"
+    static member inline column props = ElementBuilders.Div.props "column" props
+    static member inline column (elms:#seq<ReactElement>) = ElementBuilders.Div.children "column" elms
+    static member inline column elm = ElementBuilders.Div.valueElm "column" elm
+    static member inline column s = ElementBuilders.Div.valueStr "column" s
+    static member inline column i = ElementBuilders.Div.valueInt "column" i
     
-    [<RequireQualifiedAccess>]        
-    module Hero =
-        let isBold = PropertyBuilders.mkClass "is-bold"
-        let isMedium = PropertyBuilders.mkClass "is-medium"
-        let isLarge = PropertyBuilders.mkClass "is-large"
-        let isFullHeight = PropertyBuilders.mkClass "is-fullheight"
-        let isFullHeightWithNavbar = PropertyBuilders.mkClass "is-fullheight-with-navbar"
+    static member inline field props = ElementBuilders.Div.props "field" props
+    static member inline field (elms:#seq<ReactElement>) = ElementBuilders.Div.children "field" elms
+    static member inline field elm = ElementBuilders.Div.valueElm "field" elm
+    static member inline field s = ElementBuilders.Div.valueStr "field" s
+    static member inline field i = ElementBuilders.Div.valueInt "field" i
     
-    [<RequireQualifiedAccess>]        
-    module Tile =
-        let isAncestor = PropertyBuilders.mkClass "is-ancestor"
-        let isParent = PropertyBuilders.mkClass "is-parent"
-        let isChild = PropertyBuilders.mkClass "is-child"
-        let isVertical = PropertyBuilders.mkClass "is-vertical"
-        let is1 = PropertyBuilders.mkClass "is-1"
-        let is2 = PropertyBuilders.mkClass "is-2"
-        let is3 = PropertyBuilders.mkClass "is-3"
-        let is4 = PropertyBuilders.mkClass "is-4"
-        let is5 = PropertyBuilders.mkClass "is-5"
-        let is6 = PropertyBuilders.mkClass "is-6"
-        let is7 = PropertyBuilders.mkClass "is-7"
-        let is8 = PropertyBuilders.mkClass "is-8"
-        let is9 = PropertyBuilders.mkClass "is-9"
-        let is10 = PropertyBuilders.mkClass "is-10"
-        let is11 = PropertyBuilders.mkClass "is-11"
-        let is12 = PropertyBuilders.mkClass "is-12"
+    static member inline label props = ElementBuilders.Label.props "label" props
+    static member inline label (elms:#seq<ReactElement>) = ElementBuilders.Label.children "label" elms
+    static member inline label elm = ElementBuilders.Label.valueElm "label" elm
+    
+    static member inline control props = ElementBuilders.Div.props "control" props
+    static member inline control (elms:#seq<ReactElement>) = ElementBuilders.Div.children "control" elms
+    static member inline control elm = ElementBuilders.Div.valueElm "control" elm
+    
+    static member inline input props = ElementBuilders.Input.props "input" props
+    static member inline input (elms:#seq<ReactElement>) = ElementBuilders.Input.children "input" elms
+    static member inline input elm = ElementBuilders.Input.valueElm "input" elm
+    
+    static member inline select props = Html.div [ prop.className "select"; prop.children [ Html.select props ] ]
+    static member inline select (elms:#seq<ReactElement>) = Html.div [ prop.className "select"; prop.children [ Html.select elms ] ]
+    static member inline select (elm:ReactElement) = Html.div [ prop.className "select"; prop.children [ Html.select [ elm ] ] ]
+    
+    static member inline button props = ElementBuilders.Button.props "button" props
+    static member inline button (elms:#seq<ReactElement>) = ElementBuilders.Button.children "button" elms
+    static member inline button elm = ElementBuilders.Button.valueElm "button" elm
+    static member inline button s = ElementBuilders.Button.valueStr "button" s
+    static member inline button i = ElementBuilders.Button.valueInt "button" i   

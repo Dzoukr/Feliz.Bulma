@@ -7,8 +7,8 @@
     <ItemGroup>
         <Compile Include="PropertyBuilders.fs" />
         <Compile Include="ElementBuilders.fs" />
-        <Compile Include="Layout.fs" />
-        <Compile Include="Columns.fs" />
+        <Compile Include="Modifiers.fs" />
+        <Compile Include="Bulma.fs" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

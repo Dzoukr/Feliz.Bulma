@@ -1,20 +1,47 @@
 ﻿namespace Feliz.Bulma
 
-open Feliz
+[<RequireQualifiedAccess>]        
+module Container =
+    let isFluid = PropertyBuilders.mkClass "is-fluid"
+    let isWidescreen = PropertyBuilders.mkClass "is-widescreen"
+    let isFullHd = PropertyBuilders.mkClass "is-fullhd"
 
-type Columns =
-    static member inline columns props = ElementBuilders.Div.props "columns" props
-    static member inline columns (elms:#seq<ReactElement>) = ElementBuilders.Div.children "columns" elms
-    static member inline columns elm = ElementBuilders.Div.valueElm "columns" elm
-    static member inline columns s = ElementBuilders.Div.valueStr "columns" s
-    static member inline columns i = ElementBuilders.Div.valueInt "columns" i
-    
-    static member inline column props = ElementBuilders.Div.props "column" props
-    static member inline column (elms:#seq<ReactElement>) = ElementBuilders.Div.children "column" elms
-    static member inline column elm = ElementBuilders.Div.valueElm "column" elm
-    static member inline column s = ElementBuilders.Div.valueStr "column" s
-    static member inline column i = ElementBuilders.Div.valueInt "column" i
-    
+[<RequireQualifiedAccess>]        
+module Level =
+    let isMobile = PropertyBuilders.mkClass "is-mobile"
+
+[<RequireQualifiedAccess>]
+module Section =
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+
+[<RequireQualifiedAccess>]        
+module Hero =
+    let isBold = PropertyBuilders.mkClass "is-bold"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+    let isFullHeight = PropertyBuilders.mkClass "is-fullheight"
+    let isFullHeightWithNavbar = PropertyBuilders.mkClass "is-fullheight-with-navbar"
+
+[<RequireQualifiedAccess>]        
+module Tile =
+    let isAncestor = PropertyBuilders.mkClass "is-ancestor"
+    let isParent = PropertyBuilders.mkClass "is-parent"
+    let isChild = PropertyBuilders.mkClass "is-child"
+    let isVertical = PropertyBuilders.mkClass "is-vertical"
+    let is1 = PropertyBuilders.mkClass "is-1"
+    let is2 = PropertyBuilders.mkClass "is-2"
+    let is3 = PropertyBuilders.mkClass "is-3"
+    let is4 = PropertyBuilders.mkClass "is-4"
+    let is5 = PropertyBuilders.mkClass "is-5"
+    let is6 = PropertyBuilders.mkClass "is-6"
+    let is7 = PropertyBuilders.mkClass "is-7"
+    let is8 = PropertyBuilders.mkClass "is-8"
+    let is9 = PropertyBuilders.mkClass "is-9"
+    let is10 = PropertyBuilders.mkClass "is-10"
+    let is11 = PropertyBuilders.mkClass "is-11"
+    let is12 = PropertyBuilders.mkClass "is-12"
+
 [<RequireQualifiedAccess>]        
 module Column =
     let isMobile = PropertyBuilders.mkClass "is-mobile"
@@ -128,4 +155,4 @@ module Column =
     let isMultiline = PropertyBuilders.mkClass "is-multiline"
     let isVariable = PropertyBuilders.mkClass "is-variable"
     let isCentered = PropertyBuilders.mkClass "is-centered"
-    let isVcentered = PropertyBuilders.mkClass "is-vcentered"
+    let isVcentered = PropertyBuilders.mkClass "is-vcentered"    

@@ -11,7 +11,7 @@
 let doModule modul elm =
     """
     module {MODULE} =
-        let inline props (cn:string) (xs:seq<IReactProperty>) = Html.{ELM} [ yield! xs; yield Helpers.propClasses cn xs ]
+        let inline props (cn:string) (xs:IReactProperty list) = Html.{ELM} [ yield! xs; yield Helpers.propClasses cn xs ]
         let inline children (cn:string) (children:seq<ReactElement>) = Html.{ELM} [ prop.className cn; prop.children children ]
         let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
         let inline valueStr (cn:string) (value:string) = Html.{ELM} [ prop.className cn; prop.text value ]
@@ -42,7 +42,7 @@ let doProps ports v  =
     |> String.concat "\n"
     |> System.Console.WriteLine
 
-doModule "Footer" "footer"
-doType "Div" "heroFoot" "hero-foot"
-doType "Div" "column" "column"
+doModule "Button" "button"
+doType "Div" "control" "control"
+doType "Button" "button" "button"
 doIs 12
