@@ -1,0 +1,17 @@
+version 5.216.0
+
+source https://api.nuget.org/v3/index.json
+storage: none
+
+nuget FSharp.Core
+nuget Feliz
+
+group Build
+    source https://api.nuget.org/v3/index.json
+    storage: none
+    nuget FSharp.Core
+    nuget Fake.DotNet.Cli
+    nuget Fake.Core.Target
+    nuget Fake.IO.FileSystem
+    nuget Fake.DotNet.Testing.NUnit
+    nuget Fake.Core.ReleaseNotes
