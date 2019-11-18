@@ -102,7 +102,6 @@ module Layout =
     module Section =
         let isMedium = PropertyBuilders.mkClass "is-medium"
         let isLarge = PropertyBuilders.mkClass "is-large"
-        
     
     [<RequireQualifiedAccess>]        
     module Hero =
@@ -111,6 +110,7 @@ module Layout =
         let isLarge = PropertyBuilders.mkClass "is-large"
         let isFullHeight = PropertyBuilders.mkClass "is-fullheight"
         let isFullHeightWithNavbar = PropertyBuilders.mkClass "is-fullheight-with-navbar"
+    
     [<RequireQualifiedAccess>]        
     module Tile =
         let isAncestor = PropertyBuilders.mkClass "is-ancestor"
