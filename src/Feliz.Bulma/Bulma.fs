@@ -514,4 +514,30 @@ type Bulma =
     static member inline paginationEllipsis (elms:#seq<ReactElement>) = ElementBuilders.Span.children "pagination-ellipsis" elms
     static member inline paginationEllipsis elm = ElementBuilders.Span.valueElm "pagination-ellipsis" elm
     static member inline paginationEllipsis s = ElementBuilders.Span.valueStr "pagination-ellipsis" s
-    static member inline paginationEllipsis i = ElementBuilders.Span.valueInt "pagination-ellipsis" i    
+    static member inline paginationEllipsis i = ElementBuilders.Span.valueInt "pagination-ellipsis" i
+    
+    static member inline panel props = ElementBuilders.Nav.props "panel" props
+    static member inline panel (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "panel" elms
+    static member inline panel elm = ElementBuilders.Nav.valueElm "panel" elm
+    
+    static member inline panelHeading props = ElementBuilders.P.props "panel-heading" props
+    static member inline panelHeading (elms:#seq<ReactElement>) = ElementBuilders.P.children "panel-heading" elms
+    static member inline panelHeading elm = ElementBuilders.P.valueElm "panel-heading" elm    
+    
+    static member inline panelTabs props = ElementBuilders.P.props "panel-tabs" props
+    static member inline panelTabs (elms:#seq<ReactElement>) = ElementBuilders.P.children "panel-tabs" elms
+    static member inline panelTabs elm = ElementBuilders.P.valueElm "panel-tabs" elm    
+    
+    static member inline panelBlock props = ElementBuilders.Div.props "panel-block" props
+    static member inline panelBlock (elms:#seq<ReactElement>) = ElementBuilders.Div.children "panel-block" elms
+    static member inline panelBlock elm = ElementBuilders.Div.valueElm "panel-block" elm
+    static member inline panelBlock s = ElementBuilders.Div.valueStr "panel-block" s
+    static member inline panelBlock i = ElementBuilders.Div.valueInt "panel-block" i    
+    
+    static member inline panelIcon props = ElementBuilders.Span.props "panel-icon" props
+    static member inline panelIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "panel-icon" elms
+    static member inline panelIcon elm = ElementBuilders.Span.valueElm "panel-icon" elm    
+    
+    static member inline tabs props = ElementBuilders.Div.props "tabs" props
+    static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children "tabs" elms
+    static member inline tabs elm = ElementBuilders.Div.valueElm "tabs" elm    
