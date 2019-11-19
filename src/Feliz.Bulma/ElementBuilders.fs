@@ -79,4 +79,51 @@ module Progress =
     let inline children (cn:string) (children:seq<ReactElement>) = Html.progress [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
     let inline valueStr (cn:string) (value:string) = Html.progress [ prop.className cn; prop.text value ]
-    let inline valueInt (cn:string) (value:int) = Html.progress [ prop.className cn; prop.text value ]    
+    let inline valueInt (cn:string) (value:int) = Html.progress [ prop.className cn; prop.text value ]
+    
+module Table =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.table [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.table [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    
+module H1 =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.h1 [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.h1 [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.h1 [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.h1 [ prop.className cn; prop.text value ]
+    
+module H2 =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.h2 [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.h2 [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.h2 [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.h2 [ prop.className cn; prop.text value ]
+
+module H3 =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.h3 [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.h3 [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.h3 [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.h3 [ prop.className cn; prop.text value ]
+    
+module H4 =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.h4 [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.h4 [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.h4 [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.h4 [ prop.className cn; prop.text value ]
+    
+module H5 =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.h5 [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.h5 [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.h5 [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.h5 [ prop.className cn; prop.text value ]
+    
+module H6 =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.h6 [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.h6 [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.h6 [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.h6 [ prop.className cn; prop.text value ]                        

@@ -68,6 +68,37 @@ module progress =
     let max v = PropertyBuilders.mkMax v
 
 [<RequireQualifiedAccess>]        
+module table =    
+    let isBordered = PropertyBuilders.mkClass "is-bordered"    
+    let isStriped = PropertyBuilders.mkClass "is-striped"    
+    let isNarrow = PropertyBuilders.mkClass "is-narrow"    
+    let isHoverable = PropertyBuilders.mkClass "is-hoverable"    
+    let isFullwidth = PropertyBuilders.mkClass "is-fullwidth"    
+
+[<RequireQualifiedAccess>]        
+module tr =    
+    let isSelected = PropertyBuilders.mkClass "is-selected"    
+
+[<RequireQualifiedAccess>]        
+module tag =    
+    let isNormal = PropertyBuilders.mkClass "is-normal"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+    let isRounded = PropertyBuilders.mkClass "is-rounded"
+    let isDelete = PropertyBuilders.mkClass "is-delete"
+
+[<RequireQualifiedAccess>]        
+module tags =
+    let areSmall = PropertyBuilders.mkClass "are-small"
+    let areMedium = PropertyBuilders.mkClass "are-medium"
+    let areLarge = PropertyBuilders.mkClass "are-large"
+    let hasAddons = PropertyBuilders.mkClass "has-addons"
+
+[<RequireQualifiedAccess>]        
+module title =
+    let isSpaced = PropertyBuilders.mkClass "is-spaced"
+
+[<RequireQualifiedAccess>]        
 module file =
     let hasName = PropertyBuilders.mkClass "has-name"
     let isRight = PropertyBuilders.mkClass "is-right"
