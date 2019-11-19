@@ -947,13 +947,14 @@ type icon =
     static member inline hasTextGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-lighter``
     static member inline hasTextWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-text-white-ter``
     static member inline hasTextWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-text-white-bis``
-    
-    type fa =
-        static member inline solid n = PropertyBuilders.mkClass (sprintf "fas fa-%s" n)
-        static member inline regular n = PropertyBuilders.mkClass (sprintf "far fa-%s" n)
-        static member inline light n = PropertyBuilders.mkClass (sprintf "fal fa-%s" n)
-        static member inline duotone n = PropertyBuilders.mkClass (sprintf "fad fa-%s" n)
-        static member inline brands n = PropertyBuilders.mkClass (sprintf "fab fa-%s" n)
+
+[<Fable.Core.Erase>]       
+type iconFa =
+    static member inline solid n = PropertyBuilders.mkClass (sprintf "fas fa-%s" n)
+    static member inline regular n = PropertyBuilders.mkClass (sprintf "far fa-%s" n)
+    static member inline light n = PropertyBuilders.mkClass (sprintf "fal fa-%s" n)
+    static member inline duotone n = PropertyBuilders.mkClass (sprintf "fad fa-%s" n)
+    static member inline brands n = PropertyBuilders.mkClass (sprintf "fab fa-%s" n)
 
 [<Fable.Core.Erase>]       
 type select =
