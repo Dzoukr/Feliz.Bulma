@@ -67,4 +67,9 @@ module Span =
     let inline children (cn:string) (children:seq<ReactElement>) = Html.span [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
     let inline valueStr (cn:string) (value:string) = Html.span [ prop.className cn; prop.text value ]
-    let inline valueInt (cn:string) (value:int) = Html.span [ prop.className cn; prop.text value ]        
+    let inline valueInt (cn:string) (value:int) = Html.span [ prop.className cn; prop.text value ]
+    
+module Figure =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.figure [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.figure [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn

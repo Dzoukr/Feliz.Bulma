@@ -185,3 +185,25 @@ type Bulma =
     static member inline fileName elm = ElementBuilders.Span.valueElm "file-name" elm
     static member inline fileName s = ElementBuilders.Span.valueStr "file-name" s
     static member inline fileName i = ElementBuilders.Span.valueInt "file-name" i
+    
+    static member inline box props = ElementBuilders.Div.props "box" props
+    static member inline box (elms:#seq<ReactElement>) = ElementBuilders.Div.children "box" elms
+    static member inline box elm = ElementBuilders.Div.valueElm "box" elm
+    static member inline box s = ElementBuilders.Div.valueStr "box" s
+    static member inline box i = ElementBuilders.Div.valueInt "box" i
+    
+    static member inline buttons props = ElementBuilders.Div.props "buttons" props
+    static member inline buttons (elms:#seq<ReactElement>) = ElementBuilders.Div.children "buttons" elms
+    static member inline buttons elm = ElementBuilders.Div.valueElm "buttons" elm
+    
+    static member inline content props = ElementBuilders.Div.props "content" props
+    static member inline content (elms:#seq<ReactElement>) = ElementBuilders.Div.children "content" elms
+    static member inline content elm = ElementBuilders.Div.valueElm "content" elm
+    static member inline content s = ElementBuilders.Div.valueStr "content" s
+    static member inline content i = ElementBuilders.Div.valueInt "content" i
+    
+    static member inline delete props = ElementBuilders.Button.props "delete" props
+    
+    static member inline image props = ElementBuilders.Figure.props "image" props
+    static member inline image (elms:#seq<ReactElement>) = ElementBuilders.Figure.children "image" elms
+    static member inline image elm = ElementBuilders.Figure.valueElm "image" elm

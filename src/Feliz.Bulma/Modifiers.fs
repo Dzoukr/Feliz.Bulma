@@ -12,6 +12,55 @@ module color =
     let isSuccess = PropertyBuilders.mkClass "is-success"
     let isWarning = PropertyBuilders.mkClass "is-warning"
     let isDanger = PropertyBuilders.mkClass "is-danger"
+    
+    let hasTextWhite = PropertyBuilders.mkClass "has-text-white"
+    let hasTextBlack = PropertyBuilders.mkClass "has-text-black"
+    let hasTextLight = PropertyBuilders.mkClass "has-text-light"
+    let hasTextDark = PropertyBuilders.mkClass "has-text-dark"
+    let hasTextPrimary = PropertyBuilders.mkClass "has-text-primary"
+    let hasTextInfo = PropertyBuilders.mkClass "has-text-info"
+    let hasTextLink = PropertyBuilders.mkClass "has-text-link"
+    let hasTextSuccess = PropertyBuilders.mkClass "has-text-success"
+    let hasTextWarning = PropertyBuilders.mkClass "has-text-warning"
+    let hasTextDanger = PropertyBuilders.mkClass "has-text-danger"
+    let hasTextBlackBis = PropertyBuilders.mkClass "has-text-black-bis"
+    let hasTextBlackTer = PropertyBuilders.mkClass "has-text-black-ter"
+    let hasTextGreyDarker = PropertyBuilders.mkClass "has-text-grey-darker"
+    let hasTextGreyDark = PropertyBuilders.mkClass "has-text-grey-dark"
+    let hasTextGrey = PropertyBuilders.mkClass "has-text-grey"
+    let hasTextGreyLight = PropertyBuilders.mkClass "has-text-grey-light"
+    let hasTextGreyLighter = PropertyBuilders.mkClass "has-text-grey-lighter"
+    let hasTextWhiteTer = PropertyBuilders.mkClass "has-text-white-ter"
+    let hasTextWhiteBis = PropertyBuilders.mkClass "has-text-white-bis"    
+
+[<RequireQualifiedAccess>]        
+module image =
+    let is16x16 = PropertyBuilders.mkClass "is-16x16"
+    let is24x24 = PropertyBuilders.mkClass "is-24x24"
+    let is32x32 = PropertyBuilders.mkClass "is-32x32"
+    let is48x48 = PropertyBuilders.mkClass "is-48x48"
+    let is64x64 = PropertyBuilders.mkClass "is-64x64"
+    let is96x96 = PropertyBuilders.mkClass "is-96x96"
+    let is128x128 = PropertyBuilders.mkClass "is-128x128"
+    let isRounded = PropertyBuilders.mkClass "is-rounded"
+    let isSquare = PropertyBuilders.mkClass "is-square"
+    let is1by1 = PropertyBuilders.mkClass "is-1by1"
+    let is5by4 = PropertyBuilders.mkClass "is-5by4"
+    let is4by3 = PropertyBuilders.mkClass "is-4by3"
+    let is3by2 = PropertyBuilders.mkClass "is-3by2"
+    let is5by3 = PropertyBuilders.mkClass "is-5by3"
+    let is16by9 = PropertyBuilders.mkClass "is-16by9"
+    let is2by1 = PropertyBuilders.mkClass "is-2by1"
+    let is3by1 = PropertyBuilders.mkClass "is-3by1"
+    let is4by5 = PropertyBuilders.mkClass "is-4by5"
+    let is3by4 = PropertyBuilders.mkClass "is-3by4"
+    let is2by3 = PropertyBuilders.mkClass "is-2by3"
+    let is3by5 = PropertyBuilders.mkClass "is-3by5"
+    let is9by16 = PropertyBuilders.mkClass "is-9by16"
+    let is1by2 = PropertyBuilders.mkClass "is-1by2"
+    let is1by3 = PropertyBuilders.mkClass "is-1by3"
+    let isFullwidth = PropertyBuilders.mkClass "is-fullwidth"
+    let hasRatio = PropertyBuilders.mkClass "has-ratio"
 
 [<RequireQualifiedAccess>]        
 module file =
@@ -25,7 +74,6 @@ module file =
     let isMedium = PropertyBuilders.mkClass "is-medium"
     let isLarge = PropertyBuilders.mkClass "is-large"
 
-
 [<RequireQualifiedAccess>]        
 module input =
     let file = PropertyBuilders.mkType "file"
@@ -33,6 +81,8 @@ module input =
     let password = PropertyBuilders.mkType "password"
     let email = PropertyBuilders.mkType "email"
     let tel = PropertyBuilders.mkType "tel"
+    let submit = PropertyBuilders.mkType "submit"
+    let reset = PropertyBuilders.mkType "reset"
     
     let isSmall = PropertyBuilders.mkClass "is-small"
     let isMedium = PropertyBuilders.mkClass "is-medium"
@@ -47,6 +97,25 @@ module button =
     let isOutlined = PropertyBuilders.mkClass "is-outlined"
     let isLoading = PropertyBuilders.mkClass "is-loading"
     let isRounded = PropertyBuilders.mkClass "is-rounded"
+    let isSmall = PropertyBuilders.mkClass "is-small"
+    let isNormal = PropertyBuilders.mkClass "is-normal"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+    let isFullwidth = PropertyBuilders.mkClass "is-fullwidth"
+    let isInverted = PropertyBuilders.mkClass "is-inverted"
+    let isHovered = PropertyBuilders.mkClass "is-hovered"
+    let isFocused = PropertyBuilders.mkClass "is-focused"
+    let isActive = PropertyBuilders.mkClass "is-active"
+    let isSelected = PropertyBuilders.mkClass "is-selected"
+
+[<RequireQualifiedAccess>]        
+module buttons =
+    let areSmall = PropertyBuilders.mkClass "are-small"
+    let areMedium = PropertyBuilders.mkClass "are-medium"
+    let areLarge = PropertyBuilders.mkClass "are-large"
+    let hasAddons = PropertyBuilders.mkClass "has-addons"
+    let isCentered = PropertyBuilders.mkClass "is-centered"
+    let isRight = PropertyBuilders.mkClass "is-right"
 
 [<RequireQualifiedAccess>]        
 module fieldLabel =
@@ -88,7 +157,6 @@ module icon =
         let light n = PropertyBuilders.mkClass (sprintf "fal fa-%s" n)
         let duotone n = PropertyBuilders.mkClass (sprintf "fad fa-%s" n)
         let brands n = PropertyBuilders.mkClass (sprintf "fab fa-%s" n)
-    
 
 [<RequireQualifiedAccess>]        
 module select =
@@ -103,13 +171,31 @@ module select =
     let isFocused = PropertyBuilders.mkClass "is-focused"
     let isActive = PropertyBuilders.mkClass "is-active"
 
-
 [<RequireQualifiedAccess>]        
 module control =
     let hasIconsLeft = PropertyBuilders.mkClass "has-icons-left"
     let hasIconsRight = PropertyBuilders.mkClass "has-icons-right"
     let isExpanded = PropertyBuilders.mkClass "is-expanded"
     let isLoading = PropertyBuilders.mkClass "is-loading"
+    let isSmall = PropertyBuilders.mkClass "is-small"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+
+[<RequireQualifiedAccess>]        
+module ol =
+    let isLowerAlpha = PropertyBuilders.mkClass "is-lower-alpha"
+    let isLowerRoman = PropertyBuilders.mkClass "is-lower-roman"
+    let isUpperAlpha = PropertyBuilders.mkClass "is-upper-alpha"
+    let isUpperRoman = PropertyBuilders.mkClass "is-upper-roman"
+
+[<RequireQualifiedAccess>]        
+module content =
+    let isSmall = PropertyBuilders.mkClass "is-small"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+
+[<RequireQualifiedAccess>]        
+module delete =
     let isSmall = PropertyBuilders.mkClass "is-small"
     let isMedium = PropertyBuilders.mkClass "is-medium"
     let isLarge = PropertyBuilders.mkClass "is-large"
