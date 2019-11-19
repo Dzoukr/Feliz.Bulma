@@ -207,3 +207,15 @@ type Bulma =
     static member inline image props = ElementBuilders.Figure.props "image" props
     static member inline image (elms:#seq<ReactElement>) = ElementBuilders.Figure.children "image" elms
     static member inline image elm = ElementBuilders.Figure.valueElm "image" elm
+    
+    static member inline notification props = ElementBuilders.Div.props "notification" props
+    static member inline notification (elms:#seq<ReactElement>) = ElementBuilders.Div.children "notification" elms
+    static member inline notification elm = ElementBuilders.Div.valueElm "notification" elm
+    static member inline notification s = ElementBuilders.Div.valueStr "notification" s
+    static member inline notification i = ElementBuilders.Div.valueInt "notification" i
+    
+    static member inline progress props = ElementBuilders.Div.props "progress" props
+    static member inline progress (elms:#seq<ReactElement>) = ElementBuilders.Div.children "progress" elms
+    static member inline progress elm = ElementBuilders.Div.valueElm "progress" elm
+    static member inline progress s = ElementBuilders.Div.valueStr "progress" s
+    static member inline progress i = ElementBuilders.Div.valueInt "progress" i

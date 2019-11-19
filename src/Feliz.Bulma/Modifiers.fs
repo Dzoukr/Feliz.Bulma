@@ -63,6 +63,11 @@ module image =
     let hasRatio = PropertyBuilders.mkClass "has-ratio"
 
 [<RequireQualifiedAccess>]        
+module progress =
+    let value v = PropertyBuilders.mkValue v
+    let max v = PropertyBuilders.mkMax v
+
+[<RequireQualifiedAccess>]        
 module file =
     let hasName = PropertyBuilders.mkClass "has-name"
     let isRight = PropertyBuilders.mkClass "is-right"

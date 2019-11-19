@@ -73,3 +73,10 @@ module Figure =
     let inline props (cn:string) (xs:IReactProperty list) = Html.figure [ yield! xs; yield Helpers.propClasses cn xs ]
     let inline children (cn:string) (children:seq<ReactElement>) = Html.figure [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    
+module Progress =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.progress [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.progress [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.progress [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.progress [ prop.className cn; prop.text value ]    

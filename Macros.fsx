@@ -38,11 +38,9 @@ let doProps ports v  =
     ]
     
     vals
-    //|> List.map (fun (p,c) -> "let {PROP} = PropertyBuilders.mkClass \"{CLASS}\"" |> fun x -> x.Replace("{PROP}", p).Replace("{CLASS}",c))
     |> String.concat "\n"
     |> System.Console.WriteLine
 
-doModule "Button" "button"
-doType "Div" "control" "control"
-doType "Button" "button" "button"
+doModule "Progress" "progress"
+doType "Div" "progress" "progress"
 doIs 12
