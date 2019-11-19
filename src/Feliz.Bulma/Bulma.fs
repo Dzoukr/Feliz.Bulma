@@ -484,4 +484,34 @@ type Bulma =
     
     static member inline navbarDivider props = ElementBuilders.Hr.props "navbar-divider" props
     
+    static member inline pagination props = ElementBuilders.Nav.props "pagination" props
+    static member inline pagination (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "pagination" elms
+    static member inline pagination elm = ElementBuilders.Nav.valueElm "pagination" elm
     
+    static member inline paginationPrevious props = ElementBuilders.A.props "pagination-previous" props
+    static member inline paginationPrevious (elms:#seq<ReactElement>) = ElementBuilders.A.children "pagination-previous" elms
+    static member inline paginationPrevious elm = ElementBuilders.A.valueElm "pagination-previous" elm
+    static member inline paginationPrevious s = ElementBuilders.A.valueStr "pagination-previous" s
+    static member inline paginationPrevious i = ElementBuilders.A.valueInt "pagination-previous" i
+    
+    static member inline paginationNext props = ElementBuilders.A.props "pagination-next" props
+    static member inline paginationNext (elms:#seq<ReactElement>) = ElementBuilders.A.children "pagination-next" elms
+    static member inline paginationNext elm = ElementBuilders.A.valueElm "pagination-next" elm
+    static member inline paginationNext s = ElementBuilders.A.valueStr "pagination-next" s
+    static member inline paginationNext i = ElementBuilders.A.valueInt "pagination-next" i
+    
+    static member inline paginationList props = ElementBuilders.Ul.props "pagination-list" props
+    static member inline paginationList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children "pagination-list" elms
+    static member inline paginationList elm = ElementBuilders.Ul.valueElm "pagination-list" elm
+    
+    static member inline paginationLink props = ElementBuilders.A.props "pagination-link" props
+    static member inline paginationLink (elms:#seq<ReactElement>) = ElementBuilders.A.children "pagination-link" elms
+    static member inline paginationLink elm = ElementBuilders.A.valueElm "pagination-link" elm
+    static member inline paginationLink s = ElementBuilders.A.valueStr "pagination-link" s
+    static member inline paginationLink i = ElementBuilders.A.valueInt "pagination-link" i
+    
+    static member inline paginationEllipsis props = ElementBuilders.Span.props "pagination-ellipsis" props
+    static member inline paginationEllipsis (elms:#seq<ReactElement>) = ElementBuilders.Span.children "pagination-ellipsis" elms
+    static member inline paginationEllipsis elm = ElementBuilders.Span.valueElm "pagination-ellipsis" elm
+    static member inline paginationEllipsis s = ElementBuilders.Span.valueStr "pagination-ellipsis" s
+    static member inline paginationEllipsis i = ElementBuilders.Span.valueInt "pagination-ellipsis" i    

@@ -159,6 +159,19 @@ module navbarItem =
     let isActive = PropertyBuilders.mkClass "is-active"
 
 [<RequireQualifiedAccess>]        
+module pagination =
+    let isCentered = PropertyBuilders.mkClass "is-centered"
+    let isRounded = PropertyBuilders.mkClass "is-rounded"
+    let isRight = PropertyBuilders.mkClass "is-right"
+    let isSmall = PropertyBuilders.mkClass "is-small"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+
+[<RequireQualifiedAccess>]        
+module paginationLink =
+    let isCurrent = PropertyBuilders.mkClass "is-current"
+
+[<RequireQualifiedAccess>]        
 module file =
     let hasName = PropertyBuilders.mkClass "has-name"
     let isRight = PropertyBuilders.mkClass "is-right"
