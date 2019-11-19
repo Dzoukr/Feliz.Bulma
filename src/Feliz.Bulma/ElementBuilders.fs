@@ -126,4 +126,36 @@ module H6 =
     let inline children (cn:string) (children:seq<ReactElement>) = Html.h6 [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
     let inline valueStr (cn:string) (value:string) = Html.h6 [ prop.className cn; prop.text value ]
-    let inline valueInt (cn:string) (value:int) = Html.h6 [ prop.className cn; prop.text value ]                        
+    let inline valueInt (cn:string) (value:int) = Html.h6 [ prop.className cn; prop.text value ]
+    
+module Hr =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.hr [ yield! xs; yield Helpers.propClasses cn xs ]
+    
+module Aside =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.aside [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.aside [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    
+module P =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.p [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.p [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.p [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.p [ prop.className cn; prop.text value ]    
+
+module Ul =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.ul [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.ul [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+
+module Header =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.header [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.header [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    
+module A =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.a [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.a [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.a [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.a [ prop.className cn; prop.text value ]    

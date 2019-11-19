@@ -99,6 +99,66 @@ module title =
     let isSpaced = PropertyBuilders.mkClass "is-spaced"
 
 [<RequireQualifiedAccess>]        
+module breadcrumb =
+    let isCentered = PropertyBuilders.mkClass "is-centered"
+    let isRight = PropertyBuilders.mkClass "is-right"
+    let hasArrowSeparator = PropertyBuilders.mkClass "has-arrow-separator"
+    let hasBulletSeparator = PropertyBuilders.mkClass "has-bullet-separator"
+    let hasDotSeparator = PropertyBuilders.mkClass "has-dot-separator"
+    let hasSucceedsSeparator = PropertyBuilders.mkClass "has-succeeds-separator"
+    let isSmall = PropertyBuilders.mkClass "is-small"
+    let isMedium = PropertyBuilders.mkClass "is-medium"
+    let isLarge = PropertyBuilders.mkClass "is-large"
+
+[<RequireQualifiedAccess>]        
+module cardHeaderTitle =
+    let isCentered = PropertyBuilders.mkClass "is-centered"
+
+[<RequireQualifiedAccess>]        
+module dropdown =
+    let isHoverable = PropertyBuilders.mkClass "is-hoverable"
+    let isActive = PropertyBuilders.mkClass "is-active"
+    let isRight = PropertyBuilders.mkClass "is-right"
+    let isUp = PropertyBuilders.mkClass "is-up"
+
+[<RequireQualifiedAccess>]        
+module modal =
+    let close = PropertyBuilders.mkClass "modal-close"
+    let isActive = PropertyBuilders.mkClass "is-active"
+
+[<RequireQualifiedAccess>]        
+module navbar =
+    let isTransparent = PropertyBuilders.mkClass "is-transparent"
+
+[<RequireQualifiedAccess>]        
+module navbarMenu =
+    let isActive = PropertyBuilders.mkClass "is-active"
+    let isFixedTop = PropertyBuilders.mkClass "is-fixed-top"
+    let isFixedBottom = PropertyBuilders.mkClass "is-fixed-bottom"
+
+[<RequireQualifiedAccess>]        
+module navbarBurger =
+    let isActive = PropertyBuilders.mkClass "is-active"
+
+[<RequireQualifiedAccess>]        
+module navbarDropdown =
+    let isRight = PropertyBuilders.mkClass "is-right"
+    let isBoxed = PropertyBuilders.mkClass "is-boxed"
+
+[<RequireQualifiedAccess>]        
+module navbarLink =
+    let isArrowless = PropertyBuilders.mkClass "is-arrowless"
+
+[<RequireQualifiedAccess>]        
+module navbarItem =
+    let isExpanded = PropertyBuilders.mkClass "is-expanded"
+    let isTab = PropertyBuilders.mkClass "is-tab"
+    let hasDropdown = PropertyBuilders.mkClass "has-dropdown"
+    let hasDropdownUp = PropertyBuilders.mkClass "has-dropdown-up"
+    let isHoverable = PropertyBuilders.mkClass "is-hoverable"
+    let isActive = PropertyBuilders.mkClass "is-active"
+
+[<RequireQualifiedAccess>]        
 module file =
     let hasName = PropertyBuilders.mkClass "has-name"
     let isRight = PropertyBuilders.mkClass "is-right"
@@ -235,7 +295,6 @@ module delete =
     let isSmall = PropertyBuilders.mkClass "is-small"
     let isMedium = PropertyBuilders.mkClass "is-medium"
     let isLarge = PropertyBuilders.mkClass "is-large"
-
 
 [<RequireQualifiedAccess>]        
 module container =
