@@ -112,13 +112,27 @@ type Bulma =
     static member inline label (elms:#seq<ReactElement>) = ElementBuilders.Label.children "label" elms
     static member inline label elm = ElementBuilders.Label.valueElm "label" elm
     
+    static member inline fieldLabel props = ElementBuilders.Div.props "field-label" props
+    static member inline fieldLabel (elms:#seq<ReactElement>) = ElementBuilders.Div.children "field-label" elms
+    static member inline fieldLabel elm = ElementBuilders.Div.valueElm "field-label" elm
+    static member inline fieldLabel s = ElementBuilders.Div.valueStr "field-label" s
+    static member inline fieldLabel i = ElementBuilders.Div.valueInt "field-label" i
+    
+    static member inline fieldBody props = ElementBuilders.Div.props "field-body" props
+    static member inline fieldBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children "field-body" elms
+    static member inline fieldBody elm = ElementBuilders.Div.valueElm "field-body" elm
+    static member inline fieldBody s = ElementBuilders.Div.valueStr "field-body" s
+    static member inline fieldBody i = ElementBuilders.Div.valueInt "field-body" i
+    
     static member inline control props = ElementBuilders.Div.props "control" props
     static member inline control (elms:#seq<ReactElement>) = ElementBuilders.Div.children "control" elms
     static member inline control elm = ElementBuilders.Div.valueElm "control" elm
     
     static member inline input props = ElementBuilders.Input.props "input" props
-    static member inline input (elms:#seq<ReactElement>) = ElementBuilders.Input.children "input" elms
-    static member inline input elm = ElementBuilders.Input.valueElm "input" elm
+    
+    static member inline textarea props = ElementBuilders.Textarea.props "textarea" props
+    static member inline textarea (elms:#seq<ReactElement>) = ElementBuilders.Textarea.children "textarea" elms
+    static member inline textarea elm = ElementBuilders.Textarea.valueElm "textarea" elm        
     
     static member inline select props = Html.div [ prop.className "select"; prop.children [ Html.select props ] ]
     static member inline select (elms:#seq<ReactElement>) = Html.div [ prop.className "select"; prop.children [ Html.select elms ] ]
@@ -128,4 +142,46 @@ type Bulma =
     static member inline button (elms:#seq<ReactElement>) = ElementBuilders.Button.children "button" elms
     static member inline button elm = ElementBuilders.Button.valueElm "button" elm
     static member inline button s = ElementBuilders.Button.valueStr "button" s
-    static member inline button i = ElementBuilders.Button.valueInt "button" i   
+    static member inline button i = ElementBuilders.Button.valueInt "button" i
+    
+    static member inline checkboxLabel props = ElementBuilders.Label.props "checkbox" props
+    static member inline checkboxLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children "checkbox" elms
+    static member inline checkboxLabel elm = ElementBuilders.Label.valueElm "checkbox" elm
+    
+    static member inline checkboxInput props = ElementBuilders.Input.props "checkbox" props
+    
+    static member inline radioLabel props = ElementBuilders.Label.props "radio" props
+    static member inline radioLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children "radio" elms
+    static member inline radioLabel elm = ElementBuilders.Label.valueElm "radio" elm
+
+    static member inline radioInput props = ElementBuilders.Input.props "radio" props
+        
+    static member inline icon props = ElementBuilders.Span.props "icon" props
+    static member inline icon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "icon" elms
+    static member inline icon elm = ElementBuilders.Span.valueElm "icon" elm
+    
+    static member inline file props = ElementBuilders.Div.props "file" props
+    static member inline file (elms:#seq<ReactElement>) = ElementBuilders.Div.children "file" elms
+    static member inline file elm = ElementBuilders.Div.valueElm "file" elm
+    
+    static member inline fileLabel props = ElementBuilders.Label.props "file-label" props
+    static member inline fileLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children "file-label" elms
+    static member inline fileLabel elm = ElementBuilders.Label.valueElm "file-label" elm
+    static member inline fileLabel s = ElementBuilders.Span.valueStr "file-label" s
+    static member inline fileLabel i = ElementBuilders.Span.valueInt "file-label" i
+    
+    static member inline fileInput props = ElementBuilders.Input.props "file-input" props
+    
+    static member inline fileCta props = ElementBuilders.Span.props "file-cta" props
+    static member inline fileCta (elms:#seq<ReactElement>) = ElementBuilders.Span.children "file-cta" elms
+    static member inline fileCta elm = ElementBuilders.Span.valueElm "file-cta" elm
+    
+    static member inline fileIcon props = ElementBuilders.Span.props "file-icon" props
+    static member inline fileIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "file-icon" elms
+    static member inline fileIcon elm = ElementBuilders.Span.valueElm "file-icon" elm
+    
+    static member inline fileName props = ElementBuilders.Span.props "file-name" props
+    static member inline fileName (elms:#seq<ReactElement>) = ElementBuilders.Span.children "file-name" elms
+    static member inline fileName elm = ElementBuilders.Span.valueElm "file-name" elm
+    static member inline fileName s = ElementBuilders.Span.valueStr "file-name" s
+    static member inline fileName i = ElementBuilders.Span.valueInt "file-name" i

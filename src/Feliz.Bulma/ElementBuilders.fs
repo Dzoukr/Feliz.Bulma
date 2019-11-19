@@ -49,7 +49,10 @@ module Label =
     
 module Input =
     let inline props (cn:string) (xs:IReactProperty list) = Html.input [ yield! xs; yield Helpers.propClasses cn xs ]
-    let inline children (cn:string) (children:seq<ReactElement>) = Html.input [ prop.className cn; prop.children children ]
+    
+module Textarea =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.textarea [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.textarea [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
     
 module Button =
@@ -57,4 +60,11 @@ module Button =
     let inline children (cn:string) (children:seq<ReactElement>) = Html.button [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
     let inline valueStr (cn:string) (value:string) = Html.button [ prop.className cn; prop.text value ]
-    let inline valueInt (cn:string) (value:int) = Html.button [ prop.className cn; prop.text value ]    
+    let inline valueInt (cn:string) (value:int) = Html.button [ prop.className cn; prop.text value ]
+
+module Span =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.span [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.span [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.span [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.span [ prop.className cn; prop.text value ]        
