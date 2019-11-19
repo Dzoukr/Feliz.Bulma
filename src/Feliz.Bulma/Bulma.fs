@@ -1,543 +1,656 @@
 ﻿namespace Feliz.Bulma
 
+module private ElementLiterals =
+    let [<Literal>] ``container`` = "container"
+    let [<Literal>] ``level`` = "level"
+    let [<Literal>] ``level-left`` = "level-left"
+    let [<Literal>] ``level-right`` = "level-right"
+    let [<Literal>] ``level-item`` = "level-item"
+    let [<Literal>] ``media`` = "media"
+    let [<Literal>] ``media-left`` = "media-left"
+    let [<Literal>] ``media-right`` = "media-right"
+    let [<Literal>] ``media-content`` = "media-content"
+    let [<Literal>] ``hero`` = "hero"
+    let [<Literal>] ``hero-body`` = "hero-body"
+    let [<Literal>] ``hero-head`` = "hero-head"
+    let [<Literal>] ``hero-foot`` = "hero-foot"
+    let [<Literal>] ``section`` = "section"
+    let [<Literal>] ``footer`` = "footer"
+    let [<Literal>] ``tile`` = "tile"
+    let [<Literal>] ``columns`` = "columns"
+    let [<Literal>] ``column`` = "column"
+    let [<Literal>] ``field`` = "field"
+    let [<Literal>] ``label`` = "label"
+    let [<Literal>] ``field-label`` = "field-label"
+    let [<Literal>] ``field-body`` = "field-body"
+    let [<Literal>] ``control`` = "control"
+    let [<Literal>] ``input`` = "input"
+    let [<Literal>] ``textarea`` = "textarea"
+    let [<Literal>] ``select`` = "select"
+    let [<Literal>] ``button`` = "button"
+    let [<Literal>] ``checkbox`` = "checkbox"
+    let [<Literal>] ``radio`` = "radio"
+    let [<Literal>] ``icon`` = "icon"
+    let [<Literal>] ``file`` = "file"
+    let [<Literal>] ``file-label`` = "file-label"
+    let [<Literal>] ``file-input`` = "file-input"
+    let [<Literal>] ``file-cta`` = "file-cta"
+    let [<Literal>] ``file-icon`` = "file-icon"
+    let [<Literal>] ``file-name`` = "file-name"
+    let [<Literal>] ``box`` = "box"
+    let [<Literal>] ``buttons`` = "buttons"
+    let [<Literal>] ``content`` = "content"
+    let [<Literal>] ``delete`` = "delete"
+    let [<Literal>] ``image`` = "image"
+    let [<Literal>] ``notification`` = "notification"
+    let [<Literal>] ``progress`` = "progress"
+    let [<Literal>] ``table`` = "table"
+    let [<Literal>] ``table-container`` = "table-container"
+    let [<Literal>] ``tag`` = "tag"
+    let [<Literal>] ``tags`` = "tags"
+    let [<Literal>] ``title`` = "title"
+    let [<Literal>] ``title is-1`` = "title is-1"
+    let [<Literal>] ``title is-2`` = "title is-2"
+    let [<Literal>] ``title is-3`` = "title is-3"
+    let [<Literal>] ``title is-4`` = "title is-4"
+    let [<Literal>] ``title is-5`` = "title is-5"
+    let [<Literal>] ``title is-6`` = "title is-6"
+    let [<Literal>] ``subtitle`` = "subtitle"
+    let [<Literal>] ``subtitle is-1`` = "subtitle is-1"
+    let [<Literal>] ``subtitle is-2`` = "subtitle is-2"
+    let [<Literal>] ``subtitle is-3`` = "subtitle is-3"
+    let [<Literal>] ``subtitle is-4`` = "subtitle is-4"
+    let [<Literal>] ``subtitle is-5`` = "subtitle is-5"
+    let [<Literal>] ``subtitle is-6`` = "subtitle is-6"
+    let [<Literal>] ``breadcrumb`` = "breadcrumb"
+    let [<Literal>] ``card`` = "card"
+    let [<Literal>] ``card-header`` = "card-header"
+    let [<Literal>] ``card-header-title`` = "card-header-title"
+    let [<Literal>] ``card-header-icon`` = "card-header-icon"
+    let [<Literal>] ``card-image`` = "card-image"
+    let [<Literal>] ``card-content`` = "card-content"
+    let [<Literal>] ``card-footer`` = "card-footer"
+    let [<Literal>] ``card-footer-item`` = "card-footer-item"
+    let [<Literal>] ``dropdown`` = "dropdown"
+    let [<Literal>] ``dropdown-trigger`` = "dropdown-trigger"
+    let [<Literal>] ``dropdown-menu`` = "dropdown-menu"
+    let [<Literal>] ``dropdown-content`` = "dropdown-content"
+    let [<Literal>] ``dropdown-item`` = "dropdown-item"
+    let [<Literal>] ``dropdown-divider`` = "dropdown-divider"
+    let [<Literal>] ``menu`` = "menu"
+    let [<Literal>] ``menu-label`` = "menu-label"
+    let [<Literal>] ``menu-list`` = "menu-list"
+    let [<Literal>] ``message`` = "message"
+    let [<Literal>] ``message-header`` = "message-header"
+    let [<Literal>] ``message-body`` = "message-body"
+    let [<Literal>] ``modal`` = "modal"
+    let [<Literal>] ``modal-background`` = "modal-background"
+    let [<Literal>] ``modal-content`` = "modal-content"
+    let [<Literal>] ``modal-card`` = "modal-card"
+    let [<Literal>] ``modal-card-head`` = "modal-card-head"
+    let [<Literal>] ``modal-card-body`` = "modal-card-body"
+    let [<Literal>] ``modal-card-foot`` = "modal-card-foot"
+    let [<Literal>] ``navbar`` = "navbar"
+    let [<Literal>] ``navbar-brand`` = "navbar-brand"
+    let [<Literal>] ``navbar-burger`` = "navbar-burger"
+    let [<Literal>] ``navbar-menu`` = "navbar-menu"
+    let [<Literal>] ``navbar-start`` = "navbar-start"
+    let [<Literal>] ``navbar-end`` = "navbar-end"
+    let [<Literal>] ``navbar-item`` = "navbar-item"
+    let [<Literal>] ``navbar-link`` = "navbar-link"
+    let [<Literal>] ``navbar-dropdown`` = "navbar-dropdown"
+    let [<Literal>] ``navbar-divider`` = "navbar-divider"
+    let [<Literal>] ``pagination`` = "pagination"
+    let [<Literal>] ``pagination-previous`` = "pagination-previous"
+    let [<Literal>] ``pagination-next`` = "pagination-next"
+    let [<Literal>] ``pagination-list`` = "pagination-list"
+    let [<Literal>] ``pagination-link`` = "pagination-link"
+    let [<Literal>] ``pagination-ellipsis`` = "pagination-ellipsis"
+    let [<Literal>] ``panel`` = "panel"
+    let [<Literal>] ``panel-heading`` = "panel-heading"
+    let [<Literal>] ``panel-tabs`` = "panel-tabs"
+    let [<Literal>] ``panel-block`` = "panel-block"
+    let [<Literal>] ``panel-icon`` = "panel-icon"
+    let [<Literal>] ``tabs`` = "tabs"
+
 open Feliz
 
 type Bulma =
-    static member inline container props = ElementBuilders.Div.props "container" props
-    static member inline container (elms:#seq<ReactElement>) = ElementBuilders.Div.children "container" elms
-    static member inline container elm = ElementBuilders.Div.valueElm "container" elm
-    static member inline container s = ElementBuilders.Div.valueStr "container" s
-    static member inline container i = ElementBuilders.Div.valueInt "container" i
+    static member inline container props = ElementBuilders.Div.props ElementLiterals.``container`` props
+    static member inline container (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``container`` elms
+    static member inline container elm = ElementBuilders.Div.valueElm ElementLiterals.``container`` elm
+    static member inline container s = ElementBuilders.Div.valueStr ElementLiterals.``container`` s
+    static member inline container i = ElementBuilders.Div.valueInt ElementLiterals.``container`` i
     
-    static member inline level props = ElementBuilders.Nav.props "level" props
-    static member inline level (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "level" elms
-    static member inline level elm = ElementBuilders.Nav.children "level" elm
+    static member inline level props = ElementBuilders.Nav.props ElementLiterals.``level`` props
+    static member inline level (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``level`` elms
+    static member inline level elm = ElementBuilders.Nav.children ElementLiterals.``level`` elm
     
-    static member inline levelLeft props = ElementBuilders.Div.props "level-left" props
-    static member inline levelLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children "level-left" elms
-    static member inline levelLeft elm = ElementBuilders.Div.valueElm "level-left" elm
-    static member inline levelLeft s = ElementBuilders.Div.valueStr "level-left" s
-    static member inline levelLeft i = ElementBuilders.Div.valueInt "level-left" i
+    static member inline levelLeft props = ElementBuilders.Div.props ElementLiterals.``level-left`` props
+    static member inline levelLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-left`` elms
+    static member inline levelLeft elm = ElementBuilders.Div.valueElm ElementLiterals.``level-left`` elm
+    static member inline levelLeft s = ElementBuilders.Div.valueStr ElementLiterals.``level-left`` s
+    static member inline levelLeft i = ElementBuilders.Div.valueInt ElementLiterals.``level-left`` i
     
-    static member inline levelRight props = ElementBuilders.Div.props "level-right" props
-    static member inline levelRight (elms:#seq<ReactElement>) = ElementBuilders.Div.children "level-right" elms
-    static member inline levelRight elm = ElementBuilders.Div.valueElm "level-right" elm
-    static member inline levelRight s = ElementBuilders.Div.valueStr "level-right" s
-    static member inline levelRight i = ElementBuilders.Div.valueInt "level-right" i
+    static member inline levelRight props = ElementBuilders.Div.props ElementLiterals.``level-right`` props
+    static member inline levelRight (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-right`` elms
+    static member inline levelRight elm = ElementBuilders.Div.valueElm ElementLiterals.``level-right`` elm
+    static member inline levelRight s = ElementBuilders.Div.valueStr ElementLiterals.``level-right`` s
+    static member inline levelRight i = ElementBuilders.Div.valueInt ElementLiterals.``level-right`` i
     
-    static member inline levelItem props = ElementBuilders.Div.props "level-item" props
-    static member inline levelItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children "level-item" elms
-    static member inline levelItem elm = ElementBuilders.Div.valueElm "level-item" elm
-    static member inline levelItem s = ElementBuilders.Div.valueStr "level-item" s
-    static member inline levelItem i = ElementBuilders.Div.valueInt "level-item" i
+    static member inline levelItem props = ElementBuilders.Div.props ElementLiterals.``level-item`` props
+    static member inline levelItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-item`` elms
+    static member inline levelItem elm = ElementBuilders.Div.valueElm ElementLiterals.``level-item`` elm
+    static member inline levelItem s = ElementBuilders.Div.valueStr ElementLiterals.``level-item`` s
+    static member inline levelItem i = ElementBuilders.Div.valueInt ElementLiterals.``level-item`` i
 
-    static member inline media props = ElementBuilders.Article.props "media" props
-    static member inline media (elms:#seq<ReactElement>) = ElementBuilders.Article.children "media" elms
-    static member inline media elm = ElementBuilders.Article.valueElm "media" elm
+    static member inline media props = ElementBuilders.Article.props ElementLiterals.``media`` props
+    static member inline media (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``media`` elms
+    static member inline media elm = ElementBuilders.Article.valueElm ElementLiterals.``media`` elm
     
-    static member inline mediaLeft props = ElementBuilders.Div.props "media-left" props
-    static member inline mediaLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children "media-left" elms
-    static member inline mediaLeft elm = ElementBuilders.Div.valueElm "media-left" elm
-    static member inline mediaLeft s = ElementBuilders.Div.valueStr "media-left" s
-    static member inline mediaLeft i = ElementBuilders.Div.valueInt "media-left" i
+    static member inline mediaLeft props = ElementBuilders.Div.props ElementLiterals.``media-left`` props
+    static member inline mediaLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-left`` elms
+    static member inline mediaLeft elm = ElementBuilders.Div.valueElm ElementLiterals.``media-left`` elm
+    static member inline mediaLeft s = ElementBuilders.Div.valueStr ElementLiterals.``media-left`` s
+    static member inline mediaLeft i = ElementBuilders.Div.valueInt ElementLiterals.``media-left`` i
     
-    static member inline mediaRight props = ElementBuilders.Div.props "media-right" props
-    static member inline mediaRight (elms:#seq<ReactElement>) = ElementBuilders.Div.children "media-right" elms
-    static member inline mediaRight elm = ElementBuilders.Div.valueElm "media-right" elm
-    static member inline mediaRight s = ElementBuilders.Div.valueStr "media-right" s
-    static member inline mediaRight i = ElementBuilders.Div.valueInt "media-right" i
+    static member inline mediaRight props = ElementBuilders.Div.props ElementLiterals.``media-right`` props
+    static member inline mediaRight (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-right`` elms
+    static member inline mediaRight elm = ElementBuilders.Div.valueElm ElementLiterals.``media-right`` elm
+    static member inline mediaRight s = ElementBuilders.Div.valueStr ElementLiterals.``media-right`` s
+    static member inline mediaRight i = ElementBuilders.Div.valueInt ElementLiterals.``media-right`` i
     
-    static member inline mediaContent props = ElementBuilders.Div.props "media-content" props
-    static member inline mediaContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children "media-content" elms
-    static member inline mediaContent elm = ElementBuilders.Div.valueElm "media-content" elm
-    static member inline mediaContent s = ElementBuilders.Div.valueStr "media-content" s
-    static member inline mediaContent i = ElementBuilders.Div.valueInt "media-content" i
+    static member inline mediaContent props = ElementBuilders.Div.props ElementLiterals.``media-content`` props
+    static member inline mediaContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-content`` elms
+    static member inline mediaContent elm = ElementBuilders.Div.valueElm ElementLiterals.``media-content`` elm
+    static member inline mediaContent s = ElementBuilders.Div.valueStr ElementLiterals.``media-content`` s
+    static member inline mediaContent i = ElementBuilders.Div.valueInt ElementLiterals.``media-content`` i
     
-    static member inline hero props = ElementBuilders.Div.props "hero" props
-    static member inline hero (elms:#seq<ReactElement>) = ElementBuilders.Div.children "hero" elms
-    static member inline hero elm = ElementBuilders.Div.valueElm "hero" elm
-    static member inline hero s = ElementBuilders.Div.valueStr "hero" s
-    static member inline hero i = ElementBuilders.Div.valueInt "hero" i
+    static member inline hero props = ElementBuilders.Div.props ElementLiterals.``hero`` props
+    static member inline hero (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero`` elms
+    static member inline hero elm = ElementBuilders.Div.valueElm ElementLiterals.``hero`` elm
+    static member inline hero s = ElementBuilders.Div.valueStr ElementLiterals.``hero`` s
+    static member inline hero i = ElementBuilders.Div.valueInt ElementLiterals.``hero`` i
     
-    static member inline heroBody props = ElementBuilders.Div.props "hero-body" props
-    static member inline heroBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children "hero-body" elms
-    static member inline heroBody elm = ElementBuilders.Div.valueElm "hero-body" elm
-    static member inline heroBody s = ElementBuilders.Div.valueStr "hero-body" s
-    static member inline heroBody i = ElementBuilders.Div.valueInt "hero-body" i
+    static member inline heroBody props = ElementBuilders.Div.props ElementLiterals.``hero-body`` props
+    static member inline heroBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-body`` elms
+    static member inline heroBody elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-body`` elm
+    static member inline heroBody s = ElementBuilders.Div.valueStr ElementLiterals.``hero-body`` s
+    static member inline heroBody i = ElementBuilders.Div.valueInt ElementLiterals.``hero-body`` i
     
-    static member inline heroHead props = ElementBuilders.Div.props "hero-head" props
-    static member inline heroHead (elms:#seq<ReactElement>) = ElementBuilders.Div.children "hero-head" elms
-    static member inline heroHead elm = ElementBuilders.Div.valueElm "hero-head" elm
-    static member inline heroHead s = ElementBuilders.Div.valueStr "hero-head" s
-    static member inline heroHead i = ElementBuilders.Div.valueInt "hero-head" i
+    static member inline heroHead props = ElementBuilders.Div.props ElementLiterals.``hero-head`` props
+    static member inline heroHead (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-head`` elms
+    static member inline heroHead elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-head`` elm
+    static member inline heroHead s = ElementBuilders.Div.valueStr ElementLiterals.``hero-head`` s
+    static member inline heroHead i = ElementBuilders.Div.valueInt ElementLiterals.``hero-head`` i
 
-    static member inline heroFoot props = ElementBuilders.Div.props "hero-foot" props
-    static member inline heroFoot (elms:#seq<ReactElement>) = ElementBuilders.Div.children "hero-foot" elms
-    static member inline heroFoot elm = ElementBuilders.Div.valueElm "hero-foot" elm
-    static member inline heroFoot s = ElementBuilders.Div.valueStr "hero-foot" s
-    static member inline heroFoot i = ElementBuilders.Div.valueInt "hero-foot" i
+    static member inline heroFoot props = ElementBuilders.Div.props ElementLiterals.``hero-foot`` props
+    static member inline heroFoot (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-foot`` elms
+    static member inline heroFoot elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-foot`` elm
+    static member inline heroFoot s = ElementBuilders.Div.valueStr ElementLiterals.``hero-foot`` s
+    static member inline heroFoot i = ElementBuilders.Div.valueInt ElementLiterals.``hero-foot`` i
     
-    static member inline section props = ElementBuilders.Section.props "section" props
-    static member inline section (elms:#seq<ReactElement>) = ElementBuilders.Section.children "section" elms
+    static member inline section props = ElementBuilders.Section.props ElementLiterals.``section`` props
+    static member inline section (elms:#seq<ReactElement>) = ElementBuilders.Section.children ElementLiterals.``section`` elms
     
-    static member inline footer props = ElementBuilders.Footer.props "footer" props
-    static member inline footer (elms:#seq<ReactElement>) = ElementBuilders.Footer.children "footer" elms
-    static member inline footer elm = ElementBuilders.Footer.valueElm "footer" elm
+    static member inline footer props = ElementBuilders.Footer.props ElementLiterals.``footer`` props
+    static member inline footer (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``footer`` elms
+    static member inline footer elm = ElementBuilders.Footer.valueElm ElementLiterals.``footer`` elm
     
-    static member inline tile props = ElementBuilders.Div.props "tile" props
-    static member inline tile (elms:#seq<ReactElement>) = ElementBuilders.Div.children "tile" elms
-    static member inline tile elm = ElementBuilders.Div.valueElm "tile" elm
-    static member inline tile s = ElementBuilders.Div.valueStr "tile" s
-    static member inline tile i = ElementBuilders.Div.valueInt "tile" i
+    static member inline tile props = ElementBuilders.Div.props ElementLiterals.``tile`` props
+    static member inline tile (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tile`` elms
+    static member inline tile elm = ElementBuilders.Div.valueElm ElementLiterals.``tile`` elm
+    static member inline tile s = ElementBuilders.Div.valueStr ElementLiterals.``tile`` s
+    static member inline tile i = ElementBuilders.Div.valueInt ElementLiterals.``tile`` i
     
-    static member inline columns props = ElementBuilders.Div.props "columns" props
-    static member inline columns (elms:#seq<ReactElement>) = ElementBuilders.Div.children "columns" elms
-    static member inline columns elm = ElementBuilders.Div.valueElm "columns" elm
-    static member inline columns s = ElementBuilders.Div.valueStr "columns" s
-    static member inline columns i = ElementBuilders.Div.valueInt "columns" i
+    static member inline columns props = ElementBuilders.Div.props ElementLiterals.``columns`` props
+    static member inline columns (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``columns`` elms
+    static member inline columns elm = ElementBuilders.Div.valueElm ElementLiterals.``columns`` elm
+    static member inline columns s = ElementBuilders.Div.valueStr ElementLiterals.``columns`` s
+    static member inline columns i = ElementBuilders.Div.valueInt ElementLiterals.``columns`` i
     
-    static member inline column props = ElementBuilders.Div.props "column" props
-    static member inline column (elms:#seq<ReactElement>) = ElementBuilders.Div.children "column" elms
-    static member inline column elm = ElementBuilders.Div.valueElm "column" elm
-    static member inline column s = ElementBuilders.Div.valueStr "column" s
-    static member inline column i = ElementBuilders.Div.valueInt "column" i
+    static member inline column props = ElementBuilders.Div.props ElementLiterals.``column`` props
+    static member inline column (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``column`` elms
+    static member inline column elm = ElementBuilders.Div.valueElm ElementLiterals.``column`` elm
+    static member inline column s = ElementBuilders.Div.valueStr ElementLiterals.``column`` s
+    static member inline column i = ElementBuilders.Div.valueInt ElementLiterals.``column`` i
     
-    static member inline field props = ElementBuilders.Div.props "field" props
-    static member inline field (elms:#seq<ReactElement>) = ElementBuilders.Div.children "field" elms
-    static member inline field elm = ElementBuilders.Div.valueElm "field" elm
-    static member inline field s = ElementBuilders.Div.valueStr "field" s
-    static member inline field i = ElementBuilders.Div.valueInt "field" i
+    static member inline field props = ElementBuilders.Div.props ElementLiterals.``field`` props
+    static member inline field (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``field`` elms
+    static member inline field elm = ElementBuilders.Div.valueElm ElementLiterals.``field`` elm
+    static member inline field s = ElementBuilders.Div.valueStr ElementLiterals.``field`` s
+    static member inline field i = ElementBuilders.Div.valueInt ElementLiterals.``field`` i
     
-    static member inline label props = ElementBuilders.Label.props "label" props
-    static member inline label (elms:#seq<ReactElement>) = ElementBuilders.Label.children "label" elms
-    static member inline label elm = ElementBuilders.Label.valueElm "label" elm
+    static member inline label props = ElementBuilders.Label.props ElementLiterals.``label`` props
+    static member inline label (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``label`` elms
+    static member inline label elm = ElementBuilders.Label.valueElm ElementLiterals.``label`` elm
     
-    static member inline fieldLabel props = ElementBuilders.Div.props "field-label" props
-    static member inline fieldLabel (elms:#seq<ReactElement>) = ElementBuilders.Div.children "field-label" elms
-    static member inline fieldLabel elm = ElementBuilders.Div.valueElm "field-label" elm
-    static member inline fieldLabel s = ElementBuilders.Div.valueStr "field-label" s
-    static member inline fieldLabel i = ElementBuilders.Div.valueInt "field-label" i
+    static member inline fieldLabel props = ElementBuilders.Div.props ElementLiterals.``field-label`` props
+    static member inline fieldLabel (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``field-label`` elms
+    static member inline fieldLabel elm = ElementBuilders.Div.valueElm ElementLiterals.``field-label`` elm
+    static member inline fieldLabel s = ElementBuilders.Div.valueStr ElementLiterals.``field-label`` s
+    static member inline fieldLabel i = ElementBuilders.Div.valueInt ElementLiterals.``field-label`` i
     
-    static member inline fieldBody props = ElementBuilders.Div.props "field-body" props
-    static member inline fieldBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children "field-body" elms
-    static member inline fieldBody elm = ElementBuilders.Div.valueElm "field-body" elm
-    static member inline fieldBody s = ElementBuilders.Div.valueStr "field-body" s
-    static member inline fieldBody i = ElementBuilders.Div.valueInt "field-body" i
+    static member inline fieldBody props = ElementBuilders.Div.props ElementLiterals.``field-body`` props
+    static member inline fieldBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``field-body`` elms
+    static member inline fieldBody elm = ElementBuilders.Div.valueElm ElementLiterals.``field-body`` elm
+    static member inline fieldBody s = ElementBuilders.Div.valueStr ElementLiterals.``field-body`` s
+    static member inline fieldBody i = ElementBuilders.Div.valueInt ElementLiterals.``field-body`` i
     
-    static member inline control props = ElementBuilders.Div.props "control" props
-    static member inline control (elms:#seq<ReactElement>) = ElementBuilders.Div.children "control" elms
-    static member inline control elm = ElementBuilders.Div.valueElm "control" elm
+    static member inline control props = ElementBuilders.Div.props ElementLiterals.``control`` props
+    static member inline control (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``control`` elms
+    static member inline control elm = ElementBuilders.Div.valueElm ElementLiterals.``control`` elm
     
-    static member inline input props = ElementBuilders.Input.props "input" props
+    static member inline input props = ElementBuilders.Input.props ElementLiterals.``input`` props
     
-    static member inline textarea props = ElementBuilders.Textarea.props "textarea" props
-    static member inline textarea (elms:#seq<ReactElement>) = ElementBuilders.Textarea.children "textarea" elms
-    static member inline textarea elm = ElementBuilders.Textarea.valueElm "textarea" elm        
+    static member inline textarea props = ElementBuilders.Textarea.props ElementLiterals.``textarea`` props
+    static member inline textarea (elms:#seq<ReactElement>) = ElementBuilders.Textarea.children ElementLiterals.``textarea`` elms
+    static member inline textarea elm = ElementBuilders.Textarea.valueElm ElementLiterals.``textarea`` elm        
     
-    static member inline select props = Html.div [ prop.className "select"; prop.children [ Html.select props ] ]
-    static member inline select (elms:#seq<ReactElement>) = Html.div [ prop.className "select"; prop.children [ Html.select elms ] ]
-    static member inline select (elm:ReactElement) = Html.div [ prop.className "select"; prop.children [ Html.select [ elm ] ] ]
+    static member inline select props = Html.div [ prop.className ElementLiterals.``select``; prop.children [ Html.select props ] ]
+    static member inline select (elms:#seq<ReactElement>) = Html.div [ prop.className ElementLiterals.``select``; prop.children [ Html.select elms ] ]
+    static member inline select (elm:ReactElement) = Html.div [ prop.className ElementLiterals.``select``; prop.children [ Html.select [ elm ] ] ]
     
-    static member inline button props = ElementBuilders.Button.props "button" props
-    static member inline button (elms:#seq<ReactElement>) = ElementBuilders.Button.children "button" elms
-    static member inline button elm = ElementBuilders.Button.valueElm "button" elm
-    static member inline button s = ElementBuilders.Button.valueStr "button" s
-    static member inline button i = ElementBuilders.Button.valueInt "button" i
+    static member inline button props = ElementBuilders.Button.props ElementLiterals.``button`` props
+    static member inline button (elms:#seq<ReactElement>) = ElementBuilders.Button.children ElementLiterals.``button`` elms
+    static member inline button elm = ElementBuilders.Button.valueElm ElementLiterals.``button`` elm
+    static member inline button s = ElementBuilders.Button.valueStr ElementLiterals.``button`` s
+    static member inline button i = ElementBuilders.Button.valueInt ElementLiterals.``button`` i
     
-    static member inline checkboxLabel props = ElementBuilders.Label.props "checkbox" props
-    static member inline checkboxLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children "checkbox" elms
-    static member inline checkboxLabel elm = ElementBuilders.Label.valueElm "checkbox" elm
+    static member inline checkboxLabel props = ElementBuilders.Label.props ElementLiterals.``checkbox`` props
+    static member inline checkboxLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``checkbox`` elms
+    static member inline checkboxLabel elm = ElementBuilders.Label.valueElm ElementLiterals.``checkbox`` elm
     
-    static member inline checkboxInput props = ElementBuilders.Input.props "checkbox" props
+    static member inline checkboxInput props = ElementBuilders.Input.props ElementLiterals.``checkbox`` props
     
-    static member inline radioLabel props = ElementBuilders.Label.props "radio" props
-    static member inline radioLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children "radio" elms
-    static member inline radioLabel elm = ElementBuilders.Label.valueElm "radio" elm
+    static member inline radioLabel props = ElementBuilders.Label.props ElementLiterals.``radio`` props
+    static member inline radioLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``radio`` elms
+    static member inline radioLabel elm = ElementBuilders.Label.valueElm ElementLiterals.``radio`` elm
 
-    static member inline radioInput props = ElementBuilders.Input.props "radio" props
+    static member inline radioInput props = ElementBuilders.Input.props ElementLiterals.``radio`` props
         
-    static member inline icon props = ElementBuilders.Span.props "icon" props
-    static member inline icon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "icon" elms
-    static member inline icon elm = ElementBuilders.Span.valueElm "icon" elm
+    static member inline icon props = ElementBuilders.Span.props ElementLiterals.``icon`` props
+    static member inline icon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``icon`` elms
+    static member inline icon elm = ElementBuilders.Span.valueElm ElementLiterals.``icon`` elm
     
-    static member inline file props = ElementBuilders.Div.props "file" props
-    static member inline file (elms:#seq<ReactElement>) = ElementBuilders.Div.children "file" elms
-    static member inline file elm = ElementBuilders.Div.valueElm "file" elm
+    static member inline file props = ElementBuilders.Div.props ElementLiterals.``file`` props
+    static member inline file (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``file`` elms
+    static member inline file elm = ElementBuilders.Div.valueElm ElementLiterals.``file`` elm
     
-    static member inline fileLabel props = ElementBuilders.Label.props "file-label" props
-    static member inline fileLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children "file-label" elms
-    static member inline fileLabel elm = ElementBuilders.Label.valueElm "file-label" elm
-    static member inline fileLabel s = ElementBuilders.Span.valueStr "file-label" s
-    static member inline fileLabel i = ElementBuilders.Span.valueInt "file-label" i
+    static member inline fileLabel props = ElementBuilders.Label.props ElementLiterals.``file-label`` props
+    static member inline fileLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``file-label`` elms
+    static member inline fileLabel elm = ElementBuilders.Label.valueElm ElementLiterals.``file-label`` elm
+    static member inline fileLabel s = ElementBuilders.Span.valueStr ElementLiterals.``file-label`` s
+    static member inline fileLabel i = ElementBuilders.Span.valueInt ElementLiterals.``file-label`` i
     
-    static member inline fileInput props = ElementBuilders.Input.props "file-input" props
+    static member inline fileInput props = ElementBuilders.Input.props ElementLiterals.``file-input`` props
     
-    static member inline fileCta props = ElementBuilders.Span.props "file-cta" props
-    static member inline fileCta (elms:#seq<ReactElement>) = ElementBuilders.Span.children "file-cta" elms
-    static member inline fileCta elm = ElementBuilders.Span.valueElm "file-cta" elm
+    static member inline fileCta props = ElementBuilders.Span.props ElementLiterals.``file-cta`` props
+    static member inline fileCta (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-cta`` elms
+    static member inline fileCta elm = ElementBuilders.Span.valueElm ElementLiterals.``file-cta`` elm
     
-    static member inline fileIcon props = ElementBuilders.Span.props "file-icon" props
-    static member inline fileIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "file-icon" elms
-    static member inline fileIcon elm = ElementBuilders.Span.valueElm "file-icon" elm
+    static member inline fileIcon props = ElementBuilders.Span.props ElementLiterals.``file-icon`` props
+    static member inline fileIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-icon`` elms
+    static member inline fileIcon elm = ElementBuilders.Span.valueElm ElementLiterals.``file-icon`` elm
     
-    static member inline fileName props = ElementBuilders.Span.props "file-name" props
-    static member inline fileName (elms:#seq<ReactElement>) = ElementBuilders.Span.children "file-name" elms
-    static member inline fileName elm = ElementBuilders.Span.valueElm "file-name" elm
-    static member inline fileName s = ElementBuilders.Span.valueStr "file-name" s
-    static member inline fileName i = ElementBuilders.Span.valueInt "file-name" i
+    static member inline fileName props = ElementBuilders.Span.props ElementLiterals.``file-name`` props
+    static member inline fileName (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-name`` elms
+    static member inline fileName elm = ElementBuilders.Span.valueElm ElementLiterals.``file-name`` elm
+    static member inline fileName s = ElementBuilders.Span.valueStr ElementLiterals.``file-name`` s
+    static member inline fileName i = ElementBuilders.Span.valueInt ElementLiterals.``file-name`` i
     
-    static member inline box props = ElementBuilders.Div.props "box" props
-    static member inline box (elms:#seq<ReactElement>) = ElementBuilders.Div.children "box" elms
-    static member inline box elm = ElementBuilders.Div.valueElm "box" elm
-    static member inline box s = ElementBuilders.Div.valueStr "box" s
-    static member inline box i = ElementBuilders.Div.valueInt "box" i
+    static member inline box props = ElementBuilders.Div.props ElementLiterals.``box`` props
+    static member inline box (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``box`` elms
+    static member inline box elm = ElementBuilders.Div.valueElm ElementLiterals.``box`` elm
+    static member inline box s = ElementBuilders.Div.valueStr ElementLiterals.``box`` s
+    static member inline box i = ElementBuilders.Div.valueInt ElementLiterals.``box`` i
     
-    static member inline buttons props = ElementBuilders.Div.props "buttons" props
-    static member inline buttons (elms:#seq<ReactElement>) = ElementBuilders.Div.children "buttons" elms
-    static member inline buttons elm = ElementBuilders.Div.valueElm "buttons" elm
+    static member inline buttons props = ElementBuilders.Div.props ElementLiterals.``buttons`` props
+    static member inline buttons (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``buttons`` elms
+    static member inline buttons elm = ElementBuilders.Div.valueElm ElementLiterals.``buttons`` elm
     
-    static member inline content props = ElementBuilders.Div.props "content" props
-    static member inline content (elms:#seq<ReactElement>) = ElementBuilders.Div.children "content" elms
-    static member inline content elm = ElementBuilders.Div.valueElm "content" elm
-    static member inline content s = ElementBuilders.Div.valueStr "content" s
-    static member inline content i = ElementBuilders.Div.valueInt "content" i
+    static member inline content props = ElementBuilders.Div.props ElementLiterals.``content`` props
+    static member inline content (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``content`` elms
+    static member inline content elm = ElementBuilders.Div.valueElm ElementLiterals.``content`` elm
+    static member inline content s = ElementBuilders.Div.valueStr ElementLiterals.``content`` s
+    static member inline content i = ElementBuilders.Div.valueInt ElementLiterals.``content`` i
     
-    static member inline delete props = ElementBuilders.Button.props "delete" props
+    static member inline delete props = ElementBuilders.Button.props ElementLiterals.``delete`` props
     
-    static member inline image props = ElementBuilders.Figure.props "image" props
-    static member inline image (elms:#seq<ReactElement>) = ElementBuilders.Figure.children "image" elms
-    static member inline image elm = ElementBuilders.Figure.valueElm "image" elm
+    static member inline image props = ElementBuilders.Figure.props ElementLiterals.``image`` props
+    static member inline image (elms:#seq<ReactElement>) = ElementBuilders.Figure.children ElementLiterals.``image`` elms
+    static member inline image elm = ElementBuilders.Figure.valueElm ElementLiterals.``image`` elm
     
-    static member inline notification props = ElementBuilders.Div.props "notification" props
-    static member inline notification (elms:#seq<ReactElement>) = ElementBuilders.Div.children "notification" elms
-    static member inline notification elm = ElementBuilders.Div.valueElm "notification" elm
-    static member inline notification s = ElementBuilders.Div.valueStr "notification" s
-    static member inline notification i = ElementBuilders.Div.valueInt "notification" i
+    static member inline notification props = ElementBuilders.Div.props ElementLiterals.``notification`` props
+    static member inline notification (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``notification`` elms
+    static member inline notification elm = ElementBuilders.Div.valueElm ElementLiterals.``notification`` elm
+    static member inline notification s = ElementBuilders.Div.valueStr ElementLiterals.``notification`` s
+    static member inline notification i = ElementBuilders.Div.valueInt ElementLiterals.``notification`` i
     
-    static member inline progress props = ElementBuilders.Div.props "progress" props
-    static member inline progress (elms:#seq<ReactElement>) = ElementBuilders.Div.children "progress" elms
-    static member inline progress elm = ElementBuilders.Div.valueElm "progress" elm
-    static member inline progress s = ElementBuilders.Div.valueStr "progress" s
-    static member inline progress i = ElementBuilders.Div.valueInt "progress" i
+    static member inline progress props = ElementBuilders.Div.props ElementLiterals.``progress`` props
+    static member inline progress (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``progress`` elms
+    static member inline progress elm = ElementBuilders.Div.valueElm ElementLiterals.``progress`` elm
+    static member inline progress s = ElementBuilders.Div.valueStr ElementLiterals.``progress`` s
+    static member inline progress i = ElementBuilders.Div.valueInt ElementLiterals.``progress`` i
     
-    static member inline table props = ElementBuilders.Table.props "table" props
-    static member inline table (elms:#seq<ReactElement>) = ElementBuilders.Table.children "table" elms
-    static member inline table elm = ElementBuilders.Table.valueElm "table" elm
+    static member inline table props = ElementBuilders.Table.props ElementLiterals.``table`` props
+    static member inline table (elms:#seq<ReactElement>) = ElementBuilders.Table.children ElementLiterals.``table`` elms
+    static member inline table elm = ElementBuilders.Table.valueElm ElementLiterals.``table`` elm
     
-    static member inline tableContainer props = ElementBuilders.Div.props "table-container" props
-    static member inline tableContainer (elms:#seq<ReactElement>) = ElementBuilders.Div.children "table-container" elms
-    static member inline tableContainer elm = ElementBuilders.Div.valueElm "table-container" elm
+    static member inline tableContainer props = ElementBuilders.Div.props ElementLiterals.``table-container`` props
+    static member inline tableContainer (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``table-container`` elms
+    static member inline tableContainer elm = ElementBuilders.Div.valueElm ElementLiterals.``table-container`` elm
     
-    static member inline tag props = ElementBuilders.Span.props "tag" props
-    static member inline tag (elms:#seq<ReactElement>) = ElementBuilders.Span.children "tag" elms
-    static member inline tag elm = ElementBuilders.Span.valueElm "tag" elm
-    static member inline tag s = ElementBuilders.Span.valueStr "tag" s
-    static member inline tag i = ElementBuilders.Span.valueInt "tag" i
+    static member inline tag props = ElementBuilders.Span.props ElementLiterals.``tag`` props
+    static member inline tag (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``tag`` elms
+    static member inline tag elm = ElementBuilders.Span.valueElm ElementLiterals.``tag`` elm
+    static member inline tag s = ElementBuilders.Span.valueStr ElementLiterals.``tag`` s
+    static member inline tag i = ElementBuilders.Span.valueInt ElementLiterals.``tag`` i
     
-    static member inline tags props = ElementBuilders.Div.props "tags" props
-    static member inline tags (elms:#seq<ReactElement>) = ElementBuilders.Div.children "tags" elms
-    static member inline tags elm = ElementBuilders.Div.valueElm "tags" elm
+    static member inline tags props = ElementBuilders.Div.props ElementLiterals.``tags`` props
+    static member inline tags (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tags`` elms
+    static member inline tags elm = ElementBuilders.Div.valueElm ElementLiterals.``tags`` elm
     
-    static member inline title props = ElementBuilders.H1.props "title" props
-    static member inline title (elms:#seq<ReactElement>) = ElementBuilders.H1.children "title" elms
-    static member inline title elm = ElementBuilders.H1.valueElm "title" elm
-    static member inline title s = ElementBuilders.H1.valueStr "title" s
-    static member inline title i = ElementBuilders.H1.valueInt "title" i
+    static member inline title props = ElementBuilders.H1.props ElementLiterals.``title`` props
+    static member inline title (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``title`` elms
+    static member inline title elm = ElementBuilders.H1.valueElm ElementLiterals.``title`` elm
+    static member inline title s = ElementBuilders.H1.valueStr ElementLiterals.``title`` s
+    static member inline title i = ElementBuilders.H1.valueInt ElementLiterals.``title`` i
     
-    static member inline title1 props = ElementBuilders.H1.props "title is-1" props
-    static member inline title1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children "title is-1" elms
-    static member inline title1 elm = ElementBuilders.H1.valueElm "title is-1" elm
-    static member inline title1 s = ElementBuilders.H1.valueStr "title is-1" s
-    static member inline title1 i = ElementBuilders.H1.valueInt "title is-1" i
+    static member inline title1 props = ElementBuilders.H1.props ElementLiterals.``title is-1`` props
+    static member inline title1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``title is-1`` elms
+    static member inline title1 elm = ElementBuilders.H1.valueElm ElementLiterals.``title is-1`` elm
+    static member inline title1 s = ElementBuilders.H1.valueStr ElementLiterals.``title is-1`` s
+    static member inline title1 i = ElementBuilders.H1.valueInt ElementLiterals.``title is-1`` i
 
-    static member inline title2 props = ElementBuilders.H2.props "title is-2" props
-    static member inline title2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children "title is-2" elms
-    static member inline title2 elm = ElementBuilders.H2.valueElm "title is-2" elm
-    static member inline title2 s = ElementBuilders.H2.valueStr "title is-2" s
-    static member inline title2 i = ElementBuilders.H2.valueInt "title is-2" i
+    static member inline title2 props = ElementBuilders.H2.props ElementLiterals.``title is-2`` props
+    static member inline title2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``title is-2`` elms
+    static member inline title2 elm = ElementBuilders.H2.valueElm ElementLiterals.``title is-2`` elm
+    static member inline title2 s = ElementBuilders.H2.valueStr ElementLiterals.``title is-2`` s
+    static member inline title2 i = ElementBuilders.H2.valueInt ElementLiterals.``title is-2`` i
 
-    static member inline title3 props = ElementBuilders.H3.props "title is-3" props
-    static member inline title3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children "title is-3" elms
-    static member inline title3 elm = ElementBuilders.H3.valueElm "title is-3" elm
-    static member inline title3 s = ElementBuilders.H3.valueStr "title is-3" s
-    static member inline title3 i = ElementBuilders.H3.valueInt "title is-3" i
+    static member inline title3 props = ElementBuilders.H3.props ElementLiterals.``title is-3`` props
+    static member inline title3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children ElementLiterals.``title is-3`` elms
+    static member inline title3 elm = ElementBuilders.H3.valueElm ElementLiterals.``title is-3`` elm
+    static member inline title3 s = ElementBuilders.H3.valueStr ElementLiterals.``title is-3`` s
+    static member inline title3 i = ElementBuilders.H3.valueInt ElementLiterals.``title is-3`` i
 
-    static member inline title4 props = ElementBuilders.H4.props "title is-4" props
-    static member inline title4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children "title is-4" elms
-    static member inline title4 elm = ElementBuilders.H4.valueElm "title is-4" elm
-    static member inline title4 s = ElementBuilders.H4.valueStr "title is-4" s
-    static member inline title4 i = ElementBuilders.H4.valueInt "title is-4" i
+    static member inline title4 props = ElementBuilders.H4.props ElementLiterals.``title is-4`` props
+    static member inline title4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children ElementLiterals.``title is-4`` elms
+    static member inline title4 elm = ElementBuilders.H4.valueElm ElementLiterals.``title is-4`` elm
+    static member inline title4 s = ElementBuilders.H4.valueStr ElementLiterals.``title is-4`` s
+    static member inline title4 i = ElementBuilders.H4.valueInt ElementLiterals.``title is-4`` i
 
-    static member inline title5 props = ElementBuilders.H5.props "title is-5" props
-    static member inline title5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children "title is-5" elms
-    static member inline title5 elm = ElementBuilders.H5.valueElm "title is-5" elm
-    static member inline title5 s = ElementBuilders.H5.valueStr "title is-5" s
-    static member inline title5 i = ElementBuilders.H5.valueInt "title is-5" i
+    static member inline title5 props = ElementBuilders.H5.props ElementLiterals.``title is-5`` props
+    static member inline title5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children ElementLiterals.``title is-5`` elms
+    static member inline title5 elm = ElementBuilders.H5.valueElm ElementLiterals.``title is-5`` elm
+    static member inline title5 s = ElementBuilders.H5.valueStr ElementLiterals.``title is-5`` s
+    static member inline title5 i = ElementBuilders.H5.valueInt ElementLiterals.``title is-5`` i
 
-    static member inline title6 props = ElementBuilders.H6.props "title is-6" props
-    static member inline title6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children "title is-6" elms
-    static member inline title6 elm = ElementBuilders.H6.valueElm "title is-6" elm
-    static member inline title6 s = ElementBuilders.H6.valueStr "title is-6" s
-    static member inline title6 i = ElementBuilders.H6.valueInt "title is-6" i
+    static member inline title6 props = ElementBuilders.H6.props ElementLiterals.``title is-6`` props
+    static member inline title6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children ElementLiterals.``title is-6`` elms
+    static member inline title6 elm = ElementBuilders.H6.valueElm ElementLiterals.``title is-6`` elm
+    static member inline title6 s = ElementBuilders.H6.valueStr ElementLiterals.``title is-6`` s
+    static member inline title6 i = ElementBuilders.H6.valueInt ElementLiterals.``title is-6`` i
     
-    static member inline subtitle props = ElementBuilders.H2.props "subtitle" props
-    static member inline subtitle (elms:#seq<ReactElement>) = ElementBuilders.H2.children "subtitle" elms
-    static member inline subtitle elm = ElementBuilders.H2.valueElm "subtitle" elm
-    static member inline subtitle s = ElementBuilders.H2.valueStr "subtitle" s
-    static member inline subtitle i = ElementBuilders.H2.valueInt "subtitle" i
+    static member inline subtitle props = ElementBuilders.H2.props ElementLiterals.``subtitle`` props
+    static member inline subtitle (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``subtitle`` elms
+    static member inline subtitle elm = ElementBuilders.H2.valueElm ElementLiterals.``subtitle`` elm
+    static member inline subtitle s = ElementBuilders.H2.valueStr ElementLiterals.``subtitle`` s
+    static member inline subtitle i = ElementBuilders.H2.valueInt ElementLiterals.``subtitle`` i
     
-    static member inline subtitle1 props = ElementBuilders.H1.props "subtitle is-1" props
-    static member inline subtitle1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children "subtitle is-1" elms
-    static member inline subtitle1 elm = ElementBuilders.H1.valueElm "subtitle is-1" elm
-    static member inline subtitle1 s = ElementBuilders.H1.valueStr "subtitle is-1" s
-    static member inline subtitle1 i = ElementBuilders.H1.valueInt "subtitle is-1" i
+    static member inline subtitle1 props = ElementBuilders.H1.props ElementLiterals.``subtitle is-1`` props
+    static member inline subtitle1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``subtitle is-1`` elms
+    static member inline subtitle1 elm = ElementBuilders.H1.valueElm ElementLiterals.``subtitle is-1`` elm
+    static member inline subtitle1 s = ElementBuilders.H1.valueStr ElementLiterals.``subtitle is-1`` s
+    static member inline subtitle1 i = ElementBuilders.H1.valueInt ElementLiterals.``subtitle is-1`` i
 
-    static member inline subtitle2 props = ElementBuilders.H2.props "subtitle is-2" props
-    static member inline subtitle2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children "subtitle is-2" elms
-    static member inline subtitle2 elm = ElementBuilders.H2.valueElm "subtitle is-2" elm
-    static member inline subtitle2 s = ElementBuilders.H2.valueStr "subtitle is-2" s
-    static member inline subtitle2 i = ElementBuilders.H2.valueInt "subtitle is-2" i
+    static member inline subtitle2 props = ElementBuilders.H2.props ElementLiterals.``subtitle is-2`` props
+    static member inline subtitle2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``subtitle is-2`` elms
+    static member inline subtitle2 elm = ElementBuilders.H2.valueElm ElementLiterals.``subtitle is-2`` elm
+    static member inline subtitle2 s = ElementBuilders.H2.valueStr ElementLiterals.``subtitle is-2`` s
+    static member inline subtitle2 i = ElementBuilders.H2.valueInt ElementLiterals.``subtitle is-2`` i
     
-    static member inline subtitle3 props = ElementBuilders.H3.props "subtitle is-3" props
-    static member inline subtitle3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children "subtitle is-3" elms
-    static member inline subtitle3 elm = ElementBuilders.H3.valueElm "subtitle is-3" elm
-    static member inline subtitle3 s = ElementBuilders.H3.valueStr "subtitle is-3" s
-    static member inline subtitle3 i = ElementBuilders.H3.valueInt "subtitle is-3" i
+    static member inline subtitle3 props = ElementBuilders.H3.props ElementLiterals.``subtitle is-3`` props
+    static member inline subtitle3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children ElementLiterals.``subtitle is-3`` elms
+    static member inline subtitle3 elm = ElementBuilders.H3.valueElm ElementLiterals.``subtitle is-3`` elm
+    static member inline subtitle3 s = ElementBuilders.H3.valueStr ElementLiterals.``subtitle is-3`` s
+    static member inline subtitle3 i = ElementBuilders.H3.valueInt ElementLiterals.``subtitle is-3`` i
 
-    static member inline subtitle4 props = ElementBuilders.H4.props "subtitle is-4" props
-    static member inline subtitle4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children "subtitle is-4" elms
-    static member inline subtitle4 elm = ElementBuilders.H4.valueElm "subtitle is-4" elm
-    static member inline subtitle4 s = ElementBuilders.H4.valueStr "subtitle is-4" s
-    static member inline subtitle4 i = ElementBuilders.H4.valueInt "subtitle is-4" i
+    static member inline subtitle4 props = ElementBuilders.H4.props ElementLiterals.``subtitle is-4`` props
+    static member inline subtitle4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children ElementLiterals.``subtitle is-4`` elms
+    static member inline subtitle4 elm = ElementBuilders.H4.valueElm ElementLiterals.``subtitle is-4`` elm
+    static member inline subtitle4 s = ElementBuilders.H4.valueStr ElementLiterals.``subtitle is-4`` s
+    static member inline subtitle4 i = ElementBuilders.H4.valueInt ElementLiterals.``subtitle is-4`` i
 
-    static member inline subtitle5 props = ElementBuilders.H5.props "subtitle is-5" props
-    static member inline subtitle5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children "subtitle is-5" elms
-    static member inline subtitle5 elm = ElementBuilders.H5.valueElm "subtitle is-5" elm
-    static member inline subtitle5 s = ElementBuilders.H5.valueStr "subtitle is-5" s
-    static member inline subtitle5 i = ElementBuilders.H5.valueInt "subtitle is-5" i
+    static member inline subtitle5 props = ElementBuilders.H5.props ElementLiterals.``subtitle is-5`` props
+    static member inline subtitle5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children ElementLiterals.``subtitle is-5`` elms
+    static member inline subtitle5 elm = ElementBuilders.H5.valueElm ElementLiterals.``subtitle is-5`` elm
+    static member inline subtitle5 s = ElementBuilders.H5.valueStr ElementLiterals.``subtitle is-5`` s
+    static member inline subtitle5 i = ElementBuilders.H5.valueInt ElementLiterals.``subtitle is-5`` i
 
-    static member inline subtitle6 props = ElementBuilders.H6.props "subtitle is-6" props
-    static member inline subtitle6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children "subtitle is-6" elms
-    static member inline subtitle6 elm = ElementBuilders.H6.valueElm "subtitle is-6" elm
-    static member inline subtitle6 s = ElementBuilders.H6.valueStr "subtitle is-6" s
-    static member inline subtitle6 i = ElementBuilders.H6.valueInt "subtitle is-6" i
+    static member inline subtitle6 props = ElementBuilders.H6.props ElementLiterals.``subtitle is-6`` props
+    static member inline subtitle6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children ElementLiterals.``subtitle is-6`` elms
+    static member inline subtitle6 elm = ElementBuilders.H6.valueElm ElementLiterals.``subtitle is-6`` elm
+    static member inline subtitle6 s = ElementBuilders.H6.valueStr ElementLiterals.``subtitle is-6`` s
+    static member inline subtitle6 i = ElementBuilders.H6.valueInt ElementLiterals.``subtitle is-6`` i
     
-    static member inline breadcrumb props = ElementBuilders.Nav.props "breadcrumb" props
-    static member inline breadcrumb (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "breadcrumb" elms
-    static member inline breadcrumb elm = ElementBuilders.Nav.valueElm "breadcrumb" elm
+    static member inline breadcrumb props = ElementBuilders.Nav.props ElementLiterals.``breadcrumb`` props
+    static member inline breadcrumb (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``breadcrumb`` elms
+    static member inline breadcrumb elm = ElementBuilders.Nav.valueElm ElementLiterals.``breadcrumb`` elm
     
-    static member inline card props = ElementBuilders.Div.props "card" props
-    static member inline card (elms:#seq<ReactElement>) = ElementBuilders.Div.children "card" elms
-    static member inline card elm = ElementBuilders.Div.valueElm "card" elm
+    static member inline card props = ElementBuilders.Div.props ElementLiterals.``card`` props
+    static member inline card (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card`` elms
+    static member inline card elm = ElementBuilders.Div.valueElm ElementLiterals.``card`` elm
     
-    static member inline cardHeader props = ElementBuilders.Div.props "card-header" props
-    static member inline cardHeader (elms:#seq<ReactElement>) = ElementBuilders.Div.children "card-header" elms
-    static member inline cardHeader elm = ElementBuilders.Div.valueElm "card-header" elm
+    static member inline cardHeader props = ElementBuilders.Div.props ElementLiterals.``card-header`` props
+    static member inline cardHeader (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-header`` elms
+    static member inline cardHeader elm = ElementBuilders.Div.valueElm ElementLiterals.``card-header`` elm
     
-    static member inline cardHeaderTitle props = ElementBuilders.Div.props "card-header-title" props
-    static member inline cardHeaderTitle (elms:#seq<ReactElement>) = ElementBuilders.Div.children "card-header-title" elms
-    static member inline cardHeaderTitle elm = ElementBuilders.Div.valueElm "card-header-title" elm
-    static member inline cardHeaderTitle s = ElementBuilders.Div.valueStr "card-header-title" s
-    static member inline cardHeaderTitle i = ElementBuilders.Div.valueInt "card-header-title" i
+    static member inline cardHeaderTitle props = ElementBuilders.Div.props ElementLiterals.``card-header-title`` props
+    static member inline cardHeaderTitle (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-header-title`` elms
+    static member inline cardHeaderTitle elm = ElementBuilders.Div.valueElm ElementLiterals.``card-header-title`` elm
+    static member inline cardHeaderTitle s = ElementBuilders.Div.valueStr ElementLiterals.``card-header-title`` s
+    static member inline cardHeaderTitle i = ElementBuilders.Div.valueInt ElementLiterals.``card-header-title`` i
     
-    static member inline cardHeaderIcon props = ElementBuilders.Span.props "card-header-icon" props
-    static member inline cardHeaderIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "card-header-icon" elms
-    static member inline cardHeaderIcon elm = ElementBuilders.Span.valueElm "card-header-icon" elm
+    static member inline cardHeaderIcon props = ElementBuilders.Span.props ElementLiterals.``card-header-icon`` props
+    static member inline cardHeaderIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``card-header-icon`` elms
+    static member inline cardHeaderIcon elm = ElementBuilders.Span.valueElm ElementLiterals.``card-header-icon`` elm
     
-    static member inline cardImage props = ElementBuilders.Div.props "card-image" props
-    static member inline cardImage (elms:#seq<ReactElement>) = ElementBuilders.Div.children "card-image" elms
-    static member inline cardImage elm = ElementBuilders.Div.valueElm "card-image" elm
+    static member inline cardImage props = ElementBuilders.Div.props ElementLiterals.``card-image`` props
+    static member inline cardImage (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-image`` elms
+    static member inline cardImage elm = ElementBuilders.Div.valueElm ElementLiterals.``card-image`` elm
     
-    static member inline cardContent props = ElementBuilders.Div.props "card-content" props
-    static member inline cardContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children "card-content" elms
-    static member inline cardContent elm = ElementBuilders.Div.valueElm "card-content" elm
-    static member inline cardContent s = ElementBuilders.Div.valueStr "card-content" s
-    static member inline cardContent i = ElementBuilders.Div.valueInt "card-content" i
+    static member inline cardContent props = ElementBuilders.Div.props ElementLiterals.``card-content`` props
+    static member inline cardContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-content`` elms
+    static member inline cardContent elm = ElementBuilders.Div.valueElm ElementLiterals.``card-content`` elm
+    static member inline cardContent s = ElementBuilders.Div.valueStr ElementLiterals.``card-content`` s
+    static member inline cardContent i = ElementBuilders.Div.valueInt ElementLiterals.``card-content`` i
     
-    static member inline cardFooter props = ElementBuilders.Footer.props "card-footer" props
-    static member inline cardFooter (elms:#seq<ReactElement>) = ElementBuilders.Footer.children "card-footer" elms
-    static member inline cardFooter elm = ElementBuilders.Footer.valueElm "card-footer" elm
+    static member inline cardFooter props = ElementBuilders.Footer.props ElementLiterals.``card-footer`` props
+    static member inline cardFooter (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``card-footer`` elms
+    static member inline cardFooter elm = ElementBuilders.Footer.valueElm ElementLiterals.``card-footer`` elm
     
-    static member inline cardFooterItem props = ElementBuilders.Div.props "card-footer-item" props
-    static member inline cardFooterItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children "card-footer-item" elms
-    static member inline cardFooterItem elm = ElementBuilders.Div.valueElm "card-footer-item" elm
-    static member inline cardFooterItem s = ElementBuilders.Div.valueStr "card-footer-item" s
-    static member inline cardFooterItem i = ElementBuilders.Div.valueInt "card-footer-item" i
+    static member inline cardFooterItem props = ElementBuilders.Div.props ElementLiterals.``card-footer-item`` props
+    static member inline cardFooterItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-footer-item`` elms
+    static member inline cardFooterItem elm = ElementBuilders.Div.valueElm ElementLiterals.``card-footer-item`` elm
+    static member inline cardFooterItem s = ElementBuilders.Div.valueStr ElementLiterals.``card-footer-item`` s
+    static member inline cardFooterItem i = ElementBuilders.Div.valueInt ElementLiterals.``card-footer-item`` i
     
-    static member inline dropdown props = ElementBuilders.Div.props "dropdown" props
-    static member inline dropdown (elms:#seq<ReactElement>) = ElementBuilders.Div.children "dropdown" elms
-    static member inline dropdown elm = ElementBuilders.Div.valueElm "dropdown" elm
+    static member inline dropdown props = ElementBuilders.Div.props ElementLiterals.``dropdown`` props
+    static member inline dropdown (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown`` elms
+    static member inline dropdown elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown`` elm
     
-    static member inline dropdownTrigger props = ElementBuilders.Div.props "dropdown-trigger" props
-    static member inline dropdownTrigger (elms:#seq<ReactElement>) = ElementBuilders.Div.children "dropdown-trigger" elms
-    static member inline dropdownTrigger elm = ElementBuilders.Div.valueElm "dropdown-trigger" elm
+    static member inline dropdownTrigger props = ElementBuilders.Div.props ElementLiterals.``dropdown-trigger`` props
+    static member inline dropdownTrigger (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-trigger`` elms
+    static member inline dropdownTrigger elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-trigger`` elm
     
-    static member inline dropdownMenu props = ElementBuilders.Div.props "dropdown-menu" props
-    static member inline dropdownMenu (elms:#seq<ReactElement>) = ElementBuilders.Div.children "dropdown-menu" elms
-    static member inline dropdownMenu elm = ElementBuilders.Div.valueElm "dropdown-menu" elm
+    static member inline dropdownMenu props = ElementBuilders.Div.props ElementLiterals.``dropdown-menu`` props
+    static member inline dropdownMenu (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-menu`` elms
+    static member inline dropdownMenu elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-menu`` elm
     
-    static member inline dropdownContent props = ElementBuilders.Div.props "dropdown-content" props
-    static member inline dropdownContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children "dropdown-content" elms
-    static member inline dropdownContent elm = ElementBuilders.Div.valueElm "dropdown-content" elm
+    static member inline dropdownContent props = ElementBuilders.Div.props ElementLiterals.``dropdown-content`` props
+    static member inline dropdownContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-content`` elms
+    static member inline dropdownContent elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-content`` elm
     
-    static member inline dropdownItem props = ElementBuilders.Div.props "dropdown-item" props
-    static member inline dropdownItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children "dropdown-item" elms
-    static member inline dropdownItem elm = ElementBuilders.Div.valueElm "dropdown-item" elm
-    static member inline dropdownItem s = ElementBuilders.Div.valueStr "dropdown-item" s
-    static member inline dropdownItem i = ElementBuilders.Div.valueInt "dropdown-item" i
+    static member inline dropdownItem props = ElementBuilders.Div.props ElementLiterals.``dropdown-item`` props
+    static member inline dropdownItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-item`` elms
+    static member inline dropdownItem elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-item`` elm
+    static member inline dropdownItem s = ElementBuilders.Div.valueStr ElementLiterals.``dropdown-item`` s
+    static member inline dropdownItem i = ElementBuilders.Div.valueInt ElementLiterals.``dropdown-item`` i
     
-    static member inline dropdownDivider props = ElementBuilders.Hr.props "dropdown-divider" props
+    static member inline dropdownDivider props = ElementBuilders.Hr.props ElementLiterals.``dropdown-divider`` props
     
-    static member inline menu props = ElementBuilders.Aside.props "menu" props
-    static member inline menu (elms:#seq<ReactElement>) = ElementBuilders.Aside.children "menu" elms
-    static member inline menu elm = ElementBuilders.Aside.valueElm "menu" elm
+    static member inline menu props = ElementBuilders.Aside.props ElementLiterals.``menu`` props
+    static member inline menu (elms:#seq<ReactElement>) = ElementBuilders.Aside.children ElementLiterals.``menu`` elms
+    static member inline menu elm = ElementBuilders.Aside.valueElm ElementLiterals.``menu`` elm
     
-    static member inline menuLabel props = ElementBuilders.P.props "menu-label" props
-    static member inline menuLabel (elms:#seq<ReactElement>) = ElementBuilders.P.children "menu-label" elms
-    static member inline menuLabel elm = ElementBuilders.P.valueElm "menu-label" elm
-    static member inline menuLabel s = ElementBuilders.P.valueStr "menu-label" s
-    static member inline menuLabel i = ElementBuilders.P.valueInt "menu-label" i
+    static member inline menuLabel props = ElementBuilders.P.props ElementLiterals.``menu-label`` props
+    static member inline menuLabel (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``menu-label`` elms
+    static member inline menuLabel elm = ElementBuilders.P.valueElm ElementLiterals.``menu-label`` elm
+    static member inline menuLabel s = ElementBuilders.P.valueStr ElementLiterals.``menu-label`` s
+    static member inline menuLabel i = ElementBuilders.P.valueInt ElementLiterals.``menu-label`` i
     
-    static member inline menuList props = ElementBuilders.Ul.props "menu-list" props
-    static member inline menuList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children "menu-list" elms
-    static member inline menuList elm = ElementBuilders.Ul.valueElm "menu-list" elm
+    static member inline menuList props = ElementBuilders.Ul.props ElementLiterals.``menu-list`` props
+    static member inline menuList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children ElementLiterals.``menu-list`` elms
+    static member inline menuList elm = ElementBuilders.Ul.valueElm ElementLiterals.``menu-list`` elm
     
-    static member inline message props = ElementBuilders.Article.props "message" props
-    static member inline message (elms:#seq<ReactElement>) = ElementBuilders.Article.children "message" elms
-    static member inline message elm = ElementBuilders.Article.valueElm "message" elm
+    static member inline message props = ElementBuilders.Article.props ElementLiterals.``message`` props
+    static member inline message (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``message`` elms
+    static member inline message elm = ElementBuilders.Article.valueElm ElementLiterals.``message`` elm
     
-    static member inline messageHeader props = ElementBuilders.Div.props "message-header" props
-    static member inline messageHeader (elms:#seq<ReactElement>) = ElementBuilders.Div.children "message-header" elms
-    static member inline messageHeader elm = ElementBuilders.Div.valueElm "message-header" elm
+    static member inline messageHeader props = ElementBuilders.Div.props ElementLiterals.``message-header`` props
+    static member inline messageHeader (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``message-header`` elms
+    static member inline messageHeader elm = ElementBuilders.Div.valueElm ElementLiterals.``message-header`` elm
     
-    static member inline messageBody props = ElementBuilders.Div.props "message-body" props
-    static member inline messageBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children "message-body" elms
-    static member inline messageBody elm = ElementBuilders.Div.valueElm "message-body" elm
-    static member inline messageBody s = ElementBuilders.Div.valueStr "message-body" s
-    static member inline messageBody i = ElementBuilders.Div.valueInt "message-body" i
+    static member inline messageBody props = ElementBuilders.Div.props ElementLiterals.``message-body`` props
+    static member inline messageBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``message-body`` elms
+    static member inline messageBody elm = ElementBuilders.Div.valueElm ElementLiterals.``message-body`` elm
+    static member inline messageBody s = ElementBuilders.Div.valueStr ElementLiterals.``message-body`` s
+    static member inline messageBody i = ElementBuilders.Div.valueInt ElementLiterals.``message-body`` i
     
-    static member inline modal props = ElementBuilders.Div.props "modal" props
-    static member inline modal (elms:#seq<ReactElement>) = ElementBuilders.Div.children "modal" elms
-    static member inline modal elm = ElementBuilders.Div.valueElm "modal" elm
+    static member inline modal props = ElementBuilders.Div.props ElementLiterals.``modal`` props
+    static member inline modal (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``modal`` elms
+    static member inline modal elm = ElementBuilders.Div.valueElm ElementLiterals.``modal`` elm
     
-    static member inline modalBackground props = ElementBuilders.Div.props "modal-background" props
+    static member inline modalBackground props = ElementBuilders.Div.props ElementLiterals.``modal-background`` props
     
-    static member inline modalContent props = ElementBuilders.Div.props "modal-content" props
-    static member inline modalContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children "modal-content" elms
-    static member inline modalContent elm = ElementBuilders.Div.valueElm "modal-content" elm
-    static member inline modalContent s = ElementBuilders.Div.valueStr "modal-content" s
-    static member inline modalContent i = ElementBuilders.Div.valueInt "modal-content" i
+    static member inline modalContent props = ElementBuilders.Div.props ElementLiterals.``modal-content`` props
+    static member inline modalContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``modal-content`` elms
+    static member inline modalContent elm = ElementBuilders.Div.valueElm ElementLiterals.``modal-content`` elm
+    static member inline modalContent s = ElementBuilders.Div.valueStr ElementLiterals.``modal-content`` s
+    static member inline modalContent i = ElementBuilders.Div.valueInt ElementLiterals.``modal-content`` i
     
-    static member inline modalCard props = ElementBuilders.Div.props "modal-card" props
-    static member inline modalCard (elms:#seq<ReactElement>) = ElementBuilders.Div.children "modal-card" elms
-    static member inline modalCard elm = ElementBuilders.Div.valueElm "modal-card" elm
+    static member inline modalCard props = ElementBuilders.Div.props ElementLiterals.``modal-card`` props
+    static member inline modalCard (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``modal-card`` elms
+    static member inline modalCard elm = ElementBuilders.Div.valueElm ElementLiterals.``modal-card`` elm
     
-    static member inline modalCardHead props = ElementBuilders.Header.props "modal-card-head" props
-    static member inline modalCardHead (elms:#seq<ReactElement>) = ElementBuilders.Header.children "modal-card-head" elms
-    static member inline modalCardHead elm = ElementBuilders.Header.valueElm "modal-card-head" elm
+    static member inline modalCardHead props = ElementBuilders.Header.props ElementLiterals.``modal-card-head`` props
+    static member inline modalCardHead (elms:#seq<ReactElement>) = ElementBuilders.Header.children ElementLiterals.``modal-card-head`` elms
+    static member inline modalCardHead elm = ElementBuilders.Header.valueElm ElementLiterals.``modal-card-head`` elm
     
-    static member inline modalCardBody props = ElementBuilders.Section.props "modal-card-body" props
-    static member inline modalCardBody (elms:#seq<ReactElement>) = ElementBuilders.Section.children "modal-card-body" elms
-    static member inline modalCardBody elm = ElementBuilders.Section.valueElm "modal-card-body" elm
+    static member inline modalCardBody props = ElementBuilders.Section.props ElementLiterals.``modal-card-body`` props
+    static member inline modalCardBody (elms:#seq<ReactElement>) = ElementBuilders.Section.children ElementLiterals.``modal-card-body`` elms
+    static member inline modalCardBody elm = ElementBuilders.Section.valueElm ElementLiterals.``modal-card-body`` elm
     
-    static member inline modalCardFoot props = ElementBuilders.Footer.props "modal-card-foot" props
-    static member inline modalCardFoot (elms:#seq<ReactElement>) = ElementBuilders.Footer.children "modal-card-foot" elms
-    static member inline modalCardFoot elm = ElementBuilders.Footer.valueElm "modal-card-foot" elm
+    static member inline modalCardFoot props = ElementBuilders.Footer.props ElementLiterals.``modal-card-foot`` props
+    static member inline modalCardFoot (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``modal-card-foot`` elms
+    static member inline modalCardFoot elm = ElementBuilders.Footer.valueElm ElementLiterals.``modal-card-foot`` elm
     
-    static member inline navbar props = ElementBuilders.Nav.props "navbar" props
-    static member inline navbar (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "navbar" elms
-    static member inline navbar elm = ElementBuilders.Nav.valueElm "navbar" elm
+    static member inline navbar props = ElementBuilders.Nav.props ElementLiterals.``navbar`` props
+    static member inline navbar (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``navbar`` elms
+    static member inline navbar elm = ElementBuilders.Nav.valueElm ElementLiterals.``navbar`` elm
     
-    static member inline navbarBrand props = ElementBuilders.Div.props "navbar-brand" props
-    static member inline navbarBrand (elms:#seq<ReactElement>) = ElementBuilders.Div.children "navbar-brand" elms
-    static member inline navbarBrand elm = ElementBuilders.Div.valueElm "navbar-brand" elm    
+    static member inline navbarBrand props = ElementBuilders.Div.props ElementLiterals.``navbar-brand`` props
+    static member inline navbarBrand (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-brand`` elms
+    static member inline navbarBrand elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-brand`` elm    
     
-    static member inline navbarBurger props = ElementBuilders.A.props "navbar-burger" props
-    static member inline navbarBurger (elms:#seq<ReactElement>) = ElementBuilders.A.children "navbar-burger" elms
-    static member inline navbarBurger elm = ElementBuilders.A.valueElm "navbar-burger" elm
+    static member inline navbarBurger props = ElementBuilders.A.props ElementLiterals.``navbar-burger`` props
+    static member inline navbarBurger (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-burger`` elms
+    static member inline navbarBurger elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-burger`` elm
     
-    static member inline navbarMenu props = ElementBuilders.Div.props "navbar-menu" props
-    static member inline navbarMenu (elms:#seq<ReactElement>) = ElementBuilders.Div.children "navbar-menu" elms
-    static member inline navbarMenu elm = ElementBuilders.Div.valueElm "navbar-menu" elm    
+    static member inline navbarMenu props = ElementBuilders.Div.props ElementLiterals.``navbar-menu`` props
+    static member inline navbarMenu (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-menu`` elms
+    static member inline navbarMenu elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-menu`` elm    
 
-    static member inline navbarStart props = ElementBuilders.Div.props "navbar-start" props
-    static member inline navbarStart (elms:#seq<ReactElement>) = ElementBuilders.Div.children "navbar-start" elms
-    static member inline navbarStart elm = ElementBuilders.Div.valueElm "navbar-start" elm
+    static member inline navbarStart props = ElementBuilders.Div.props ElementLiterals.``navbar-start`` props
+    static member inline navbarStart (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-start`` elms
+    static member inline navbarStart elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-start`` elm
     
-    static member inline navbarEnd props = ElementBuilders.Div.props "navbar-end" props
-    static member inline navbarEnd (elms:#seq<ReactElement>) = ElementBuilders.Div.children "navbar-end" elms
-    static member inline navbarEnd elm = ElementBuilders.Div.valueElm "navbar-end" elm    
+    static member inline navbarEnd props = ElementBuilders.Div.props ElementLiterals.``navbar-end`` props
+    static member inline navbarEnd (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-end`` elms
+    static member inline navbarEnd elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-end`` elm    
 
-    static member inline navbarItem props = ElementBuilders.Div.props "navbar-item" props
-    static member inline navbarItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children "navbar-item" elms
-    static member inline navbarItem elm = ElementBuilders.Div.valueElm "navbar-item" elm
+    static member inline navbarItem props = ElementBuilders.Div.props ElementLiterals.``navbar-item`` props
+    static member inline navbarItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-item`` elms
+    static member inline navbarItem elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-item`` elm
 
-    static member inline navbarLink props = ElementBuilders.A.props "navbar-link" props
-    static member inline navbarLink (elms:#seq<ReactElement>) = ElementBuilders.A.children "navbar-link" elms
-    static member inline navbarLink elm = ElementBuilders.A.valueElm "navbar-link" elm
-    static member inline navbarLink s = ElementBuilders.A.valueStr "navbar-link" s
-    static member inline navbarLink i = ElementBuilders.A.valueInt "navbar-link" i
+    static member inline navbarLink props = ElementBuilders.A.props ElementLiterals.``navbar-link`` props
+    static member inline navbarLink (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-link`` elms
+    static member inline navbarLink elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-link`` elm
+    static member inline navbarLink s = ElementBuilders.A.valueStr ElementLiterals.``navbar-link`` s
+    static member inline navbarLink i = ElementBuilders.A.valueInt ElementLiterals.``navbar-link`` i
     
-    static member inline navbarDropdown props = ElementBuilders.Div.props "navbar-dropdown" props
-    static member inline navbarDropdown (elms:#seq<ReactElement>) = ElementBuilders.Div.children "navbar-dropdown" elms
-    static member inline navbarDropdown elm = ElementBuilders.Div.valueElm "navbar-dropdown" elm
+    static member inline navbarDropdown props = ElementBuilders.Div.props ElementLiterals.``navbar-dropdown`` props
+    static member inline navbarDropdown (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-dropdown`` elms
+    static member inline navbarDropdown elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-dropdown`` elm
     
-    static member inline navbarDivider props = ElementBuilders.Hr.props "navbar-divider" props
+    static member inline navbarDivider props = ElementBuilders.Hr.props ElementLiterals.``navbar-divider`` props
     
-    static member inline pagination props = ElementBuilders.Nav.props "pagination" props
-    static member inline pagination (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "pagination" elms
-    static member inline pagination elm = ElementBuilders.Nav.valueElm "pagination" elm
+    static member inline pagination props = ElementBuilders.Nav.props ElementLiterals.``pagination`` props
+    static member inline pagination (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``pagination`` elms
+    static member inline pagination elm = ElementBuilders.Nav.valueElm ElementLiterals.``pagination`` elm
     
-    static member inline paginationPrevious props = ElementBuilders.A.props "pagination-previous" props
-    static member inline paginationPrevious (elms:#seq<ReactElement>) = ElementBuilders.A.children "pagination-previous" elms
-    static member inline paginationPrevious elm = ElementBuilders.A.valueElm "pagination-previous" elm
-    static member inline paginationPrevious s = ElementBuilders.A.valueStr "pagination-previous" s
-    static member inline paginationPrevious i = ElementBuilders.A.valueInt "pagination-previous" i
+    static member inline paginationPrevious props = ElementBuilders.A.props ElementLiterals.``pagination-previous`` props
+    static member inline paginationPrevious (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``pagination-previous`` elms
+    static member inline paginationPrevious elm = ElementBuilders.A.valueElm ElementLiterals.``pagination-previous`` elm
+    static member inline paginationPrevious s = ElementBuilders.A.valueStr ElementLiterals.``pagination-previous`` s
+    static member inline paginationPrevious i = ElementBuilders.A.valueInt ElementLiterals.``pagination-previous`` i
     
-    static member inline paginationNext props = ElementBuilders.A.props "pagination-next" props
-    static member inline paginationNext (elms:#seq<ReactElement>) = ElementBuilders.A.children "pagination-next" elms
-    static member inline paginationNext elm = ElementBuilders.A.valueElm "pagination-next" elm
-    static member inline paginationNext s = ElementBuilders.A.valueStr "pagination-next" s
-    static member inline paginationNext i = ElementBuilders.A.valueInt "pagination-next" i
+    static member inline paginationNext props = ElementBuilders.A.props ElementLiterals.``pagination-next`` props
+    static member inline paginationNext (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``pagination-next`` elms
+    static member inline paginationNext elm = ElementBuilders.A.valueElm ElementLiterals.``pagination-next`` elm
+    static member inline paginationNext s = ElementBuilders.A.valueStr ElementLiterals.``pagination-next`` s
+    static member inline paginationNext i = ElementBuilders.A.valueInt ElementLiterals.``pagination-next`` i
     
-    static member inline paginationList props = ElementBuilders.Ul.props "pagination-list" props
-    static member inline paginationList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children "pagination-list" elms
-    static member inline paginationList elm = ElementBuilders.Ul.valueElm "pagination-list" elm
+    static member inline paginationList props = ElementBuilders.Ul.props ElementLiterals.``pagination-list`` props
+    static member inline paginationList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children ElementLiterals.``pagination-list`` elms
+    static member inline paginationList elm = ElementBuilders.Ul.valueElm ElementLiterals.``pagination-list`` elm
     
-    static member inline paginationLink props = ElementBuilders.A.props "pagination-link" props
-    static member inline paginationLink (elms:#seq<ReactElement>) = ElementBuilders.A.children "pagination-link" elms
-    static member inline paginationLink elm = ElementBuilders.A.valueElm "pagination-link" elm
-    static member inline paginationLink s = ElementBuilders.A.valueStr "pagination-link" s
-    static member inline paginationLink i = ElementBuilders.A.valueInt "pagination-link" i
+    static member inline paginationLink props = ElementBuilders.A.props ElementLiterals.``pagination-link`` props
+    static member inline paginationLink (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``pagination-link`` elms
+    static member inline paginationLink elm = ElementBuilders.A.valueElm ElementLiterals.``pagination-link`` elm
+    static member inline paginationLink s = ElementBuilders.A.valueStr ElementLiterals.``pagination-link`` s
+    static member inline paginationLink i = ElementBuilders.A.valueInt ElementLiterals.``pagination-link`` i
     
-    static member inline paginationEllipsis props = ElementBuilders.Span.props "pagination-ellipsis" props
-    static member inline paginationEllipsis (elms:#seq<ReactElement>) = ElementBuilders.Span.children "pagination-ellipsis" elms
-    static member inline paginationEllipsis elm = ElementBuilders.Span.valueElm "pagination-ellipsis" elm
-    static member inline paginationEllipsis s = ElementBuilders.Span.valueStr "pagination-ellipsis" s
-    static member inline paginationEllipsis i = ElementBuilders.Span.valueInt "pagination-ellipsis" i
+    static member inline paginationEllipsis props = ElementBuilders.Span.props ElementLiterals.``pagination-ellipsis`` props
+    static member inline paginationEllipsis (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``pagination-ellipsis`` elms
+    static member inline paginationEllipsis elm = ElementBuilders.Span.valueElm ElementLiterals.``pagination-ellipsis`` elm
+    static member inline paginationEllipsis s = ElementBuilders.Span.valueStr ElementLiterals.``pagination-ellipsis`` s
+    static member inline paginationEllipsis i = ElementBuilders.Span.valueInt ElementLiterals.``pagination-ellipsis`` i
     
-    static member inline panel props = ElementBuilders.Nav.props "panel" props
-    static member inline panel (elms:#seq<ReactElement>) = ElementBuilders.Nav.children "panel" elms
-    static member inline panel elm = ElementBuilders.Nav.valueElm "panel" elm
+    static member inline panel props = ElementBuilders.Nav.props ElementLiterals.``panel`` props
+    static member inline panel (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``panel`` elms
+    static member inline panel elm = ElementBuilders.Nav.valueElm ElementLiterals.``panel`` elm
     
-    static member inline panelHeading props = ElementBuilders.P.props "panel-heading" props
-    static member inline panelHeading (elms:#seq<ReactElement>) = ElementBuilders.P.children "panel-heading" elms
-    static member inline panelHeading elm = ElementBuilders.P.valueElm "panel-heading" elm    
+    static member inline panelHeading props = ElementBuilders.P.props ElementLiterals.``panel-heading`` props
+    static member inline panelHeading (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``panel-heading`` elms
+    static member inline panelHeading elm = ElementBuilders.P.valueElm ElementLiterals.``panel-heading`` elm    
     
-    static member inline panelTabs props = ElementBuilders.P.props "panel-tabs" props
-    static member inline panelTabs (elms:#seq<ReactElement>) = ElementBuilders.P.children "panel-tabs" elms
-    static member inline panelTabs elm = ElementBuilders.P.valueElm "panel-tabs" elm    
+    static member inline panelTabs props = ElementBuilders.P.props ElementLiterals.``panel-tabs`` props
+    static member inline panelTabs (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``panel-tabs`` elms
+    static member inline panelTabs elm = ElementBuilders.P.valueElm ElementLiterals.``panel-tabs`` elm    
     
-    static member inline panelBlock props = ElementBuilders.Div.props "panel-block" props
-    static member inline panelBlock (elms:#seq<ReactElement>) = ElementBuilders.Div.children "panel-block" elms
-    static member inline panelBlock elm = ElementBuilders.Div.valueElm "panel-block" elm
-    static member inline panelBlock s = ElementBuilders.Div.valueStr "panel-block" s
-    static member inline panelBlock i = ElementBuilders.Div.valueInt "panel-block" i    
+    static member inline panelBlock props = ElementBuilders.Div.props ElementLiterals.``panel-block`` props
+    static member inline panelBlock (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``panel-block`` elms
+    static member inline panelBlock elm = ElementBuilders.Div.valueElm ElementLiterals.``panel-block`` elm
+    static member inline panelBlock s = ElementBuilders.Div.valueStr ElementLiterals.``panel-block`` s
+    static member inline panelBlock i = ElementBuilders.Div.valueInt ElementLiterals.``panel-block`` i    
     
-    static member inline panelIcon props = ElementBuilders.Span.props "panel-icon" props
-    static member inline panelIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children "panel-icon" elms
-    static member inline panelIcon elm = ElementBuilders.Span.valueElm "panel-icon" elm    
+    static member inline panelIcon props = ElementBuilders.Span.props ElementLiterals.``panel-icon`` props
+    static member inline panelIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``panel-icon`` elms
+    static member inline panelIcon elm = ElementBuilders.Span.valueElm ElementLiterals.``panel-icon`` elm    
     
-    static member inline tabs props = ElementBuilders.Div.props "tabs" props
-    static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children "tabs" elms
-    static member inline tabs elm = ElementBuilders.Div.valueElm "tabs" elm    
+    static member inline tabs props = ElementBuilders.Div.props ElementLiterals.``tabs`` props
+    static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tabs`` elms
+    static member inline tabs elm = ElementBuilders.Div.valueElm ElementLiterals.``tabs`` elm
