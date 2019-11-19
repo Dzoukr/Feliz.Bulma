@@ -1,4 +1,4 @@
-﻿let doType elm name className =
+﻿﻿let doType elm name className =
     """
     static member inline {NAME} props = ElementBuilders.{ELM}.props "{CLASS}" props
     static member inline {NAME} (elms:#seq<ReactElement>) = ElementBuilders.{ELM}.children "{CLASS}" elms
@@ -19,12 +19,37 @@ let doModule modul elm =
     """
     |> fun x -> x.Replace("{MODULE}", modul).Replace("{ELM}", elm)
 
-let doIs max =
-    let item v =
-        "let isOffset{NUM} = PropertyBuilders.mkClass \"is-offset-{NUM}\""
-        |> fun x -> x.Replace("{NUM}", string v)
+let hasTextCentered{NAME} = PropertyBuilders.makeClass "has-text-centered-{DEV}"
+let hasTextJustified{NAME} = PropertyBuilders.makeClass "has-text-justified-{DEV}"
+let hasTextLeft{NAME} = PropertyBuilders.makeClass "has-text-left-{DEV}"
+let hasTextRight{NAME} = PropertyBuilders.makeClass "has-text-right-{DEV}"
+
+let doIs list =
+    let item (n,d) =
+        """
+        let hasTextCentered{NAME} = PropertyBuilders.makeClass "has-text-centered-{DEV}"
+        let hasTextJustified{NAME} = PropertyBuilders.makeClass "has-text-justified-{DEV}"
+        let hasTextLeft{NAME} = PropertyBuilders.makeClass "has-text-left-{DEV}"
+        let hasTextRight{NAME} = PropertyBuilders.makeClass "has-text-right-{DEV}"
+        """
+        
+        //"let isSize{NUM}FullHd = PropertyBuilders.mkClass \"is-size-{NUM}-fullhd\""
+        |> fun x -> x.Replace("{NAME}", n).Replace("{DEV}",d)
         |> System.Console.WriteLine
-    [1..max] |> List.iter item
+    [
+        "Mobile", "mobile"
+        "Tablet", "tablet"
+        "TabletOnly", "tablet-only"
+        "Touch", "touch"
+        "Desktop", "desktop"
+        "DesktopOnly", "desktop-only"
+        "Widescreen", "widescreen"
+        "WidescreenOnly", "widescreen-only"
+        "FullHd", "fullhd"
+        
+        
+    ] |> List.iter item
+doIs 7   
 
 let doProps ports v  =
     let vals = [
@@ -41,6 +66,13 @@ let doProps ports v  =
     |> String.concat "\n"
     |> System.Console.WriteLine
 
-doModule "Progress" "progress"
-doType "Div" "progress" "progress"
-doIs 12
+doModule "A" "a"
+
+[1..6]
+|> List.map (fun x ->
+    doType (sprintf "H%i" x) (sprintf "subtitle%i" x) (sprintf "subtitle is-%i" x)
+)
+|> List.iter System.Console.WriteLine
+doIs 7
+
+doType "Div" "tabs" "tabs"
