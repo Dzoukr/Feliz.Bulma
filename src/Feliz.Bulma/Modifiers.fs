@@ -380,790 +380,790 @@ module private ClassLiterals =
     let [<Literal>] ``is-variable`` = "is-variable"
     let [<Literal>] ``is-vcentered`` = "is-vcentered"
 
-[<RequireQualifiedAccess>]        
-module helpers =
-    let isClearfix = PropertyBuilders.mkClass ClassLiterals.``is-clearfix``
-    let isPulledLeft = PropertyBuilders.mkClass ClassLiterals.``is-pulled-left``
-    let isPulledRight = PropertyBuilders.mkClass ClassLiterals.``is-pulled-right``
-    let isMarginless = PropertyBuilders.mkClass ClassLiterals.``is-marginless``
-    let isPaddingless = PropertyBuilders.mkClass ClassLiterals.``is-paddingless``
-    let isOverlay = PropertyBuilders.mkClass ClassLiterals.``is-overlay``
-    let isClipped = PropertyBuilders.mkClass ClassLiterals.``is-clipped``
-    let isRadiusless = PropertyBuilders.mkClass ClassLiterals.``is-radiusless``
-    let isShadowless = PropertyBuilders.mkClass ClassLiterals.``is-shadowless``
-    let isUnselectable = PropertyBuilders.mkClass ClassLiterals.``is-unselectable``
-    let isInvisible = PropertyBuilders.mkClass ClassLiterals.``is-invisible``
-    let isHidden = PropertyBuilders.mkClass ClassLiterals.``is-hidden``
-    let isSrOnly = PropertyBuilders.mkClass ClassLiterals.``is-sr-only``
-    let isRelative = PropertyBuilders.mkClass ClassLiterals.``is-relative``
-    let isBlock = PropertyBuilders.mkClass ClassLiterals.``is-block``
-    let isFlex = PropertyBuilders.mkClass ClassLiterals.``is-flex``
-    let isInline = PropertyBuilders.mkClass ClassLiterals.``is-inline``
-    let isInlineBlock = PropertyBuilders.mkClass ClassLiterals.``is-inline-block``
-    let isInlineFlex = PropertyBuilders.mkClass ClassLiterals.``is-inline-flex``
+[<Fable.Core.Erase>]       
+type helpers =
+    static member inline isClearfix = PropertyBuilders.mkClass ClassLiterals.``is-clearfix``
+    static member inline isPulledLeft = PropertyBuilders.mkClass ClassLiterals.``is-pulled-left``
+    static member inline isPulledRight = PropertyBuilders.mkClass ClassLiterals.``is-pulled-right``
+    static member inline isMarginless = PropertyBuilders.mkClass ClassLiterals.``is-marginless``
+    static member inline isPaddingless = PropertyBuilders.mkClass ClassLiterals.``is-paddingless``
+    static member inline isOverlay = PropertyBuilders.mkClass ClassLiterals.``is-overlay``
+    static member inline isClipped = PropertyBuilders.mkClass ClassLiterals.``is-clipped``
+    static member inline isRadiusless = PropertyBuilders.mkClass ClassLiterals.``is-radiusless``
+    static member inline isShadowless = PropertyBuilders.mkClass ClassLiterals.``is-shadowless``
+    static member inline isUnselectable = PropertyBuilders.mkClass ClassLiterals.``is-unselectable``
+    static member inline isInvisible = PropertyBuilders.mkClass ClassLiterals.``is-invisible``
+    static member inline isHidden = PropertyBuilders.mkClass ClassLiterals.``is-hidden``
+    static member inline isSrOnly = PropertyBuilders.mkClass ClassLiterals.``is-sr-only``
+    static member inline isRelative = PropertyBuilders.mkClass ClassLiterals.``is-relative``
+    static member inline isBlock = PropertyBuilders.mkClass ClassLiterals.``is-block``
+    static member inline isFlex = PropertyBuilders.mkClass ClassLiterals.``is-flex``
+    static member inline isInline = PropertyBuilders.mkClass ClassLiterals.``is-inline``
+    static member inline isInlineBlock = PropertyBuilders.mkClass ClassLiterals.``is-inline-block``
+    static member inline isInlineFlex = PropertyBuilders.mkClass ClassLiterals.``is-inline-flex``
 
-[<RequireQualifiedAccess>]        
-module size =
-    let isSize1 = PropertyBuilders.mkClass ClassLiterals.``is-size-1``
-    let isSize2 = PropertyBuilders.mkClass ClassLiterals.``is-size-2``
-    let isSize3 = PropertyBuilders.mkClass ClassLiterals.``is-size-3``
-    let isSize4 = PropertyBuilders.mkClass ClassLiterals.``is-size-4``
-    let isSize5 = PropertyBuilders.mkClass ClassLiterals.``is-size-5``
-    let isSize6 = PropertyBuilders.mkClass ClassLiterals.``is-size-6``
-    let isSize7 = PropertyBuilders.mkClass ClassLiterals.``is-size-7``
+[<Fable.Core.Erase>]       
+type size =
+    static member inline isSize1 = PropertyBuilders.mkClass ClassLiterals.``is-size-1``
+    static member inline isSize2 = PropertyBuilders.mkClass ClassLiterals.``is-size-2``
+    static member inline isSize3 = PropertyBuilders.mkClass ClassLiterals.``is-size-3``
+    static member inline isSize4 = PropertyBuilders.mkClass ClassLiterals.``is-size-4``
+    static member inline isSize5 = PropertyBuilders.mkClass ClassLiterals.``is-size-5``
+    static member inline isSize6 = PropertyBuilders.mkClass ClassLiterals.``is-size-6``
+    static member inline isSize7 = PropertyBuilders.mkClass ClassLiterals.``is-size-7``
     
-    let isSize1Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-1-mobile``
-    let isSize2Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-2-mobile``
-    let isSize3Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-3-mobile``
-    let isSize4Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-4-mobile``
-    let isSize5Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-5-mobile``
-    let isSize6Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-6-mobile``
-    let isSize7Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-7-mobile``
+    static member inline isSize1Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-1-mobile``
+    static member inline isSize2Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-2-mobile``
+    static member inline isSize3Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-3-mobile``
+    static member inline isSize4Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-4-mobile``
+    static member inline isSize5Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-5-mobile``
+    static member inline isSize6Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-6-mobile``
+    static member inline isSize7Mobile = PropertyBuilders.mkClass ClassLiterals.``is-size-7-mobile``
 
-    let isSize1Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-1-tablet``
-    let isSize2Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-2-tablet``
-    let isSize3Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-3-tablet``
-    let isSize4Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-4-tablet``
-    let isSize5Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-5-tablet``
-    let isSize6Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-6-tablet``
-    let isSize7Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-7-tablet``
+    static member inline isSize1Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-1-tablet``
+    static member inline isSize2Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-2-tablet``
+    static member inline isSize3Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-3-tablet``
+    static member inline isSize4Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-4-tablet``
+    static member inline isSize5Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-5-tablet``
+    static member inline isSize6Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-6-tablet``
+    static member inline isSize7Tablet = PropertyBuilders.mkClass ClassLiterals.``is-size-7-tablet``
     
-    let isSize1Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-1-touch``
-    let isSize2Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-2-touch``
-    let isSize3Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-3-touch``
-    let isSize4Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-4-touch``
-    let isSize5Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-5-touch``
-    let isSize6Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-6-touch``
-    let isSize7Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-7-touch``
+    static member inline isSize1Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-1-touch``
+    static member inline isSize2Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-2-touch``
+    static member inline isSize3Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-3-touch``
+    static member inline isSize4Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-4-touch``
+    static member inline isSize5Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-5-touch``
+    static member inline isSize6Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-6-touch``
+    static member inline isSize7Touch = PropertyBuilders.mkClass ClassLiterals.``is-size-7-touch``
 
-    let isSize1Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-1-desktop``
-    let isSize2Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-2-desktop``
-    let isSize3Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-3-desktop``
-    let isSize4Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-4-desktop``
-    let isSize5Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-5-desktop``
-    let isSize6Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-6-desktop``
-    let isSize7Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-7-desktop``
+    static member inline isSize1Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-1-desktop``
+    static member inline isSize2Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-2-desktop``
+    static member inline isSize3Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-3-desktop``
+    static member inline isSize4Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-4-desktop``
+    static member inline isSize5Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-5-desktop``
+    static member inline isSize6Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-6-desktop``
+    static member inline isSize7Desktop = PropertyBuilders.mkClass ClassLiterals.``is-size-7-desktop``
 
-    let isSize1Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-1-widescreen``
-    let isSize2Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-2-widescreen``
-    let isSize3Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-3-widescreen``
-    let isSize4Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-4-widescreen``
-    let isSize5Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-5-widescreen``
-    let isSize6Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-6-widescreen``
-    let isSize7Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-7-widescreen``
+    static member inline isSize1Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-1-widescreen``
+    static member inline isSize2Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-2-widescreen``
+    static member inline isSize3Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-3-widescreen``
+    static member inline isSize4Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-4-widescreen``
+    static member inline isSize5Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-5-widescreen``
+    static member inline isSize6Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-6-widescreen``
+    static member inline isSize7Widescreen = PropertyBuilders.mkClass ClassLiterals.``is-size-7-widescreen``
 
-    let isSize1FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-1-fullhd``
-    let isSize2FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-2-fullhd``
-    let isSize3FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-3-fullhd``
-    let isSize4FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-4-fullhd``
-    let isSize5FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-5-fullhd``
-    let isSize6FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-6-fullhd``
-    let isSize7FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-7-fullhd``
+    static member inline isSize1FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-1-fullhd``
+    static member inline isSize2FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-2-fullhd``
+    static member inline isSize3FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-3-fullhd``
+    static member inline isSize4FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-4-fullhd``
+    static member inline isSize5FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-5-fullhd``
+    static member inline isSize6FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-6-fullhd``
+    static member inline isSize7FullHd = PropertyBuilders.mkClass ClassLiterals.``is-size-7-fullhd``
 
-[<RequireQualifiedAccess>]        
-module text =
-    let isFamilySansSerif = PropertyBuilders.mkClass ClassLiterals.``is-family-sans-serif``
-    let isFamilyMonospace = PropertyBuilders.mkClass ClassLiterals.``is-family-monospace``
-    let isFamilyPrimary = PropertyBuilders.mkClass ClassLiterals.``is-family-primary``
-    let isFamilySecondary = PropertyBuilders.mkClass ClassLiterals.``is-family-secondary``
-    let isFamilyCode = PropertyBuilders.mkClass ClassLiterals.``is-family-code``
+[<Fable.Core.Erase>]       
+type text =
+    static member inline isFamilySansSerif = PropertyBuilders.mkClass ClassLiterals.``is-family-sans-serif``
+    static member inline isFamilyMonospace = PropertyBuilders.mkClass ClassLiterals.``is-family-monospace``
+    static member inline isFamilyPrimary = PropertyBuilders.mkClass ClassLiterals.``is-family-primary``
+    static member inline isFamilySecondary = PropertyBuilders.mkClass ClassLiterals.``is-family-secondary``
+    static member inline isFamilyCode = PropertyBuilders.mkClass ClassLiterals.``is-family-code``
     
-    let isCapitalized = PropertyBuilders.mkClass ClassLiterals.``is-capitalized``
-    let isLowercase = PropertyBuilders.mkClass ClassLiterals.``is-lowercase``
-    let isUppercase = PropertyBuilders.mkClass ClassLiterals.``is-uppercase``
-    let isItalic= PropertyBuilders.mkClass ClassLiterals.``is-italic``
+    static member inline isCapitalized = PropertyBuilders.mkClass ClassLiterals.``is-capitalized``
+    static member inline isLowercase = PropertyBuilders.mkClass ClassLiterals.``is-lowercase``
+    static member inline isUppercase = PropertyBuilders.mkClass ClassLiterals.``is-uppercase``
+    static member inline isItalic= PropertyBuilders.mkClass ClassLiterals.``is-italic``
     
-    let hasTextWeightLight = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-light``
-    let hasTextWeightNormal = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-normal``
-    let hasTextWeightMedium = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-medium``
-    let hasTextWeightSemibold = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-semibold``
-    let hasTextWeightBold = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-bold``
+    static member inline hasTextWeightLight = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-light``
+    static member inline hasTextWeightNormal = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-normal``
+    static member inline hasTextWeightMedium = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-medium``
+    static member inline hasTextWeightSemibold = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-semibold``
+    static member inline hasTextWeightBold = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-bold``
     
-    let hasTextCentered = PropertyBuilders.mkClass ClassLiterals.``has-text-centered``
-    let hasTextJustified = PropertyBuilders.mkClass ClassLiterals.``has-text-justified``
-    let hasTextLeft = PropertyBuilders.mkClass ClassLiterals.``has-text-left``
-    let hasTextRight = PropertyBuilders.mkClass ClassLiterals.``has-text-right``
+    static member inline hasTextCentered = PropertyBuilders.mkClass ClassLiterals.``has-text-centered``
+    static member inline hasTextJustified = PropertyBuilders.mkClass ClassLiterals.``has-text-justified``
+    static member inline hasTextLeft = PropertyBuilders.mkClass ClassLiterals.``has-text-left``
+    static member inline hasTextRight = PropertyBuilders.mkClass ClassLiterals.``has-text-right``
     
-    let hasTextCenteredMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-mobile``
-    let hasTextJustifiedMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-mobile``
-    let hasTextLeftMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-left-mobile``
-    let hasTextRightMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-right-mobile``
+    static member inline hasTextCenteredMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-mobile``
+    static member inline hasTextJustifiedMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-mobile``
+    static member inline hasTextLeftMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-left-mobile``
+    static member inline hasTextRightMobile = PropertyBuilders.mkClass ClassLiterals.``has-text-right-mobile``
     
-    let hasTextCenteredTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-tablet``
-    let hasTextJustifiedTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-tablet``
-    let hasTextLeftTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-left-tablet``
-    let hasTextRightTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-right-tablet``
+    static member inline hasTextCenteredTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-tablet``
+    static member inline hasTextJustifiedTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-tablet``
+    static member inline hasTextLeftTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-left-tablet``
+    static member inline hasTextRightTablet = PropertyBuilders.mkClass ClassLiterals.``has-text-right-tablet``
 
-    let hasTextCenteredTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-tablet-only``
-    let hasTextJustifiedTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-tablet-only``
-    let hasTextLeftTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-left-tablet-only``
-    let hasTextRightTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-right-tablet-only``
+    static member inline hasTextCenteredTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-tablet-only``
+    static member inline hasTextJustifiedTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-tablet-only``
+    static member inline hasTextLeftTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-left-tablet-only``
+    static member inline hasTextRightTabletOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-right-tablet-only``
 
-    let hasTextCenteredTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-touch``
-    let hasTextJustifiedTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-touch``
-    let hasTextLeftTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-left-touch``
-    let hasTextRightTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-right-touch``
+    static member inline hasTextCenteredTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-touch``
+    static member inline hasTextJustifiedTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-touch``
+    static member inline hasTextLeftTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-left-touch``
+    static member inline hasTextRightTouch = PropertyBuilders.mkClass ClassLiterals.``has-text-right-touch``
 
-    let hasTextCenteredDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-desktop``
-    let hasTextJustifiedDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-desktop``
-    let hasTextLeftDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-left-desktop``
-    let hasTextRightDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-right-desktop``
+    static member inline hasTextCenteredDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-desktop``
+    static member inline hasTextJustifiedDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-desktop``
+    static member inline hasTextLeftDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-left-desktop``
+    static member inline hasTextRightDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-right-desktop``
     
 
-    let hasTextCenteredDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-desktop-only``
-    let hasTextJustifiedDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-desktop-only``
-    let hasTextLeftDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-left-desktop-only``
-    let hasTextRightDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-right-desktop-only``
+    static member inline hasTextCenteredDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-desktop-only``
+    static member inline hasTextJustifiedDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-desktop-only``
+    static member inline hasTextLeftDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-left-desktop-only``
+    static member inline hasTextRightDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-right-desktop-only``
 
-    let hasTextCenteredWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-widescreen``
-    let hasTextJustifiedWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-widescreen``
-    let hasTextLeftWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-left-widescreen``
-    let hasTextRightWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-right-widescreen``
+    static member inline hasTextCenteredWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-widescreen``
+    static member inline hasTextJustifiedWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-widescreen``
+    static member inline hasTextLeftWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-left-widescreen``
+    static member inline hasTextRightWidescreen = PropertyBuilders.mkClass ClassLiterals.``has-text-right-widescreen``
 
-    let hasTextCenteredWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-widescreen-only``
-    let hasTextJustifiedWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-widescreen-only``
-    let hasTextLeftWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-left-widescreen-only``
-    let hasTextRightWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-right-widescreen-only``
+    static member inline hasTextCenteredWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-widescreen-only``
+    static member inline hasTextJustifiedWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-widescreen-only``
+    static member inline hasTextLeftWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-left-widescreen-only``
+    static member inline hasTextRightWidescreenOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-right-widescreen-only``
 
-    let hasTextCenteredFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-fullhd``
-    let hasTextJustifiedFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-fullhd``
-    let hasTextLeftFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-left-fullhd``
-    let hasTextRightFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-right-fullhd``    
+    static member inline hasTextCenteredFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-fullhd``
+    static member inline hasTextJustifiedFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-fullhd``
+    static member inline hasTextLeftFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-left-fullhd``
+    static member inline hasTextRightFullHd = PropertyBuilders.mkClass ClassLiterals.``has-text-right-fullhd``    
     
-[<RequireQualifiedAccess>]        
-module color =
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+[<Fable.Core.Erase>]       
+type color =
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
     
-    let hasTextWhite = PropertyBuilders.mkClass ClassLiterals.``has-text-white``
-    let hasTextBlack = PropertyBuilders.mkClass ClassLiterals.``has-text-black``
-    let hasTextLight = PropertyBuilders.mkClass ClassLiterals.``has-text-light``
-    let hasTextDark = PropertyBuilders.mkClass ClassLiterals.``has-text-dark``
-    let hasTextPrimary = PropertyBuilders.mkClass ClassLiterals.``has-text-primary``
-    let hasTextInfo = PropertyBuilders.mkClass ClassLiterals.``has-text-info``
-    let hasTextLink = PropertyBuilders.mkClass ClassLiterals.``has-text-link``
-    let hasTextSuccess = PropertyBuilders.mkClass ClassLiterals.``has-text-success``
-    let hasTextWarning = PropertyBuilders.mkClass ClassLiterals.``has-text-warning``
-    let hasTextDanger = PropertyBuilders.mkClass ClassLiterals.``has-text-danger``
-    let hasTextBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-text-black-bis``
-    let hasTextBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-text-black-ter``
-    let hasTextGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-darker``
-    let hasTextGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-dark``
-    let hasTextGrey = PropertyBuilders.mkClass ClassLiterals.``has-text-grey``
-    let hasTextGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-light``
-    let hasTextGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-lighter``
-    let hasTextWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-text-white-ter``
-    let hasTextWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-text-white-bis``
+    static member inline hasTextWhite = PropertyBuilders.mkClass ClassLiterals.``has-text-white``
+    static member inline hasTextBlack = PropertyBuilders.mkClass ClassLiterals.``has-text-black``
+    static member inline hasTextLight = PropertyBuilders.mkClass ClassLiterals.``has-text-light``
+    static member inline hasTextDark = PropertyBuilders.mkClass ClassLiterals.``has-text-dark``
+    static member inline hasTextPrimary = PropertyBuilders.mkClass ClassLiterals.``has-text-primary``
+    static member inline hasTextInfo = PropertyBuilders.mkClass ClassLiterals.``has-text-info``
+    static member inline hasTextLink = PropertyBuilders.mkClass ClassLiterals.``has-text-link``
+    static member inline hasTextSuccess = PropertyBuilders.mkClass ClassLiterals.``has-text-success``
+    static member inline hasTextWarning = PropertyBuilders.mkClass ClassLiterals.``has-text-warning``
+    static member inline hasTextDanger = PropertyBuilders.mkClass ClassLiterals.``has-text-danger``
+    static member inline hasTextBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-text-black-bis``
+    static member inline hasTextBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-text-black-ter``
+    static member inline hasTextGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-darker``
+    static member inline hasTextGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-dark``
+    static member inline hasTextGrey = PropertyBuilders.mkClass ClassLiterals.``has-text-grey``
+    static member inline hasTextGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-light``
+    static member inline hasTextGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-lighter``
+    static member inline hasTextWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-text-white-ter``
+    static member inline hasTextWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-text-white-bis``
     
-    let hasBackgroundWhite = PropertyBuilders.mkClass ClassLiterals.``has-background-white``
-    let hasBackgroundBlack = PropertyBuilders.mkClass ClassLiterals.``has-background-black``
-    let hasBackgroundLight = PropertyBuilders.mkClass ClassLiterals.``has-background-light``
-    let hasBackgroundDark = PropertyBuilders.mkClass ClassLiterals.``has-background-dark``
-    let hasBackgroundPrimary = PropertyBuilders.mkClass ClassLiterals.``has-background-primary``
-    let hasBackgroundInfo = PropertyBuilders.mkClass ClassLiterals.``has-background-info``
-    let hasBackgroundLink = PropertyBuilders.mkClass ClassLiterals.``has-background-link``
-    let hasBackgroundSuccess = PropertyBuilders.mkClass ClassLiterals.``has-background-success``
-    let hasBackgroundWarning = PropertyBuilders.mkClass ClassLiterals.``has-background-warning``
-    let hasBackgroundDanger = PropertyBuilders.mkClass ClassLiterals.``has-background-danger``
-    let hasBackgroundBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-background-black-bis``
-    let hasBackgroundBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-background-black-ter``
-    let hasBackgroundGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-darker``
-    let hasBackgroundGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-dark``
-    let hasBackgroundGrey = PropertyBuilders.mkClass ClassLiterals.``has-background-grey``
-    let hasBackgroundGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-light``
-    let hasBackgroundGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-lighter``
-    let hasBackgroundWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-background-white-ter``
-    let hasBackgroundWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-background-white-bis``
+    static member inline hasBackgroundWhite = PropertyBuilders.mkClass ClassLiterals.``has-background-white``
+    static member inline hasBackgroundBlack = PropertyBuilders.mkClass ClassLiterals.``has-background-black``
+    static member inline hasBackgroundLight = PropertyBuilders.mkClass ClassLiterals.``has-background-light``
+    static member inline hasBackgroundDark = PropertyBuilders.mkClass ClassLiterals.``has-background-dark``
+    static member inline hasBackgroundPrimary = PropertyBuilders.mkClass ClassLiterals.``has-background-primary``
+    static member inline hasBackgroundInfo = PropertyBuilders.mkClass ClassLiterals.``has-background-info``
+    static member inline hasBackgroundLink = PropertyBuilders.mkClass ClassLiterals.``has-background-link``
+    static member inline hasBackgroundSuccess = PropertyBuilders.mkClass ClassLiterals.``has-background-success``
+    static member inline hasBackgroundWarning = PropertyBuilders.mkClass ClassLiterals.``has-background-warning``
+    static member inline hasBackgroundDanger = PropertyBuilders.mkClass ClassLiterals.``has-background-danger``
+    static member inline hasBackgroundBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-background-black-bis``
+    static member inline hasBackgroundBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-background-black-ter``
+    static member inline hasBackgroundGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-darker``
+    static member inline hasBackgroundGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-dark``
+    static member inline hasBackgroundGrey = PropertyBuilders.mkClass ClassLiterals.``has-background-grey``
+    static member inline hasBackgroundGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-light``
+    static member inline hasBackgroundGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-lighter``
+    static member inline hasBackgroundWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-background-white-ter``
+    static member inline hasBackgroundWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-background-white-bis``
 
-[<RequireQualifiedAccess>]        
-module image =
-    let is16x16 = PropertyBuilders.mkClass ClassLiterals.``is-16x16``
-    let is24x24 = PropertyBuilders.mkClass ClassLiterals.``is-24x24``
-    let is32x32 = PropertyBuilders.mkClass ClassLiterals.``is-32x32``
-    let is48x48 = PropertyBuilders.mkClass ClassLiterals.``is-48x48``
-    let is64x64 = PropertyBuilders.mkClass ClassLiterals.``is-64x64``
-    let is96x96 = PropertyBuilders.mkClass ClassLiterals.``is-96x96``
-    let is128x128 = PropertyBuilders.mkClass ClassLiterals.``is-128x128``
-    let isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
-    let isSquare = PropertyBuilders.mkClass ClassLiterals.``is-square``
-    let is1by1 = PropertyBuilders.mkClass ClassLiterals.``is-1by1``
-    let is5by4 = PropertyBuilders.mkClass ClassLiterals.``is-5by4``
-    let is4by3 = PropertyBuilders.mkClass ClassLiterals.``is-4by3``
-    let is3by2 = PropertyBuilders.mkClass ClassLiterals.``is-3by2``
-    let is5by3 = PropertyBuilders.mkClass ClassLiterals.``is-5by3``
-    let is16by9 = PropertyBuilders.mkClass ClassLiterals.``is-16by9``
-    let is2by1 = PropertyBuilders.mkClass ClassLiterals.``is-2by1``
-    let is3by1 = PropertyBuilders.mkClass ClassLiterals.``is-3by1``
-    let is4by5 = PropertyBuilders.mkClass ClassLiterals.``is-4by5``
-    let is3by4 = PropertyBuilders.mkClass ClassLiterals.``is-3by4``
-    let is2by3 = PropertyBuilders.mkClass ClassLiterals.``is-2by3``
-    let is3by5 = PropertyBuilders.mkClass ClassLiterals.``is-3by5``
-    let is9by16 = PropertyBuilders.mkClass ClassLiterals.``is-9by16``
-    let is1by2 = PropertyBuilders.mkClass ClassLiterals.``is-1by2``
-    let is1by3 = PropertyBuilders.mkClass ClassLiterals.``is-1by3``
-    let isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
-    let hasRatio = PropertyBuilders.mkClass ClassLiterals.``has-ratio``
+[<Fable.Core.Erase>]       
+type image =
+    static member inline is16x16 = PropertyBuilders.mkClass ClassLiterals.``is-16x16``
+    static member inline is24x24 = PropertyBuilders.mkClass ClassLiterals.``is-24x24``
+    static member inline is32x32 = PropertyBuilders.mkClass ClassLiterals.``is-32x32``
+    static member inline is48x48 = PropertyBuilders.mkClass ClassLiterals.``is-48x48``
+    static member inline is64x64 = PropertyBuilders.mkClass ClassLiterals.``is-64x64``
+    static member inline is96x96 = PropertyBuilders.mkClass ClassLiterals.``is-96x96``
+    static member inline is128x128 = PropertyBuilders.mkClass ClassLiterals.``is-128x128``
+    static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
+    static member inline isSquare = PropertyBuilders.mkClass ClassLiterals.``is-square``
+    static member inline is1by1 = PropertyBuilders.mkClass ClassLiterals.``is-1by1``
+    static member inline is5by4 = PropertyBuilders.mkClass ClassLiterals.``is-5by4``
+    static member inline is4by3 = PropertyBuilders.mkClass ClassLiterals.``is-4by3``
+    static member inline is3by2 = PropertyBuilders.mkClass ClassLiterals.``is-3by2``
+    static member inline is5by3 = PropertyBuilders.mkClass ClassLiterals.``is-5by3``
+    static member inline is16by9 = PropertyBuilders.mkClass ClassLiterals.``is-16by9``
+    static member inline is2by1 = PropertyBuilders.mkClass ClassLiterals.``is-2by1``
+    static member inline is3by1 = PropertyBuilders.mkClass ClassLiterals.``is-3by1``
+    static member inline is4by5 = PropertyBuilders.mkClass ClassLiterals.``is-4by5``
+    static member inline is3by4 = PropertyBuilders.mkClass ClassLiterals.``is-3by4``
+    static member inline is2by3 = PropertyBuilders.mkClass ClassLiterals.``is-2by3``
+    static member inline is3by5 = PropertyBuilders.mkClass ClassLiterals.``is-3by5``
+    static member inline is9by16 = PropertyBuilders.mkClass ClassLiterals.``is-9by16``
+    static member inline is1by2 = PropertyBuilders.mkClass ClassLiterals.``is-1by2``
+    static member inline is1by3 = PropertyBuilders.mkClass ClassLiterals.``is-1by3``
+    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline hasRatio = PropertyBuilders.mkClass ClassLiterals.``has-ratio``
 
-[<RequireQualifiedAccess>]        
-module progress =
-    let value v = PropertyBuilders.mkValue v
-    let max v = PropertyBuilders.mkMax v
+[<Fable.Core.Erase>]       
+type progress =
+    static member inline value v = PropertyBuilders.mkValue v
+    static member inline max v = PropertyBuilders.mkMax v
     
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module table =    
-    let isBordered = PropertyBuilders.mkClass ClassLiterals.``is-bordered``    
-    let isStriped = PropertyBuilders.mkClass ClassLiterals.``is-striped``    
-    let isNarrow = PropertyBuilders.mkClass ClassLiterals.``is-narrow``    
-    let isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``    
-    let isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``    
+[<Fable.Core.Erase>]       
+type table =    
+    static member inline isBordered = PropertyBuilders.mkClass ClassLiterals.``is-bordered``    
+    static member inline isStriped = PropertyBuilders.mkClass ClassLiterals.``is-striped``    
+    static member inline isNarrow = PropertyBuilders.mkClass ClassLiterals.``is-narrow``    
+    static member inline isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``    
+    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``    
 
-[<RequireQualifiedAccess>]        
-module tr =    
-    let isSelected = PropertyBuilders.mkClass ClassLiterals.``is-selected``    
+[<Fable.Core.Erase>]       
+type tr =    
+    static member inline isSelected = PropertyBuilders.mkClass ClassLiterals.``is-selected``    
 
-[<RequireQualifiedAccess>]        
-module tag =    
-    let isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
-    let isDelete = PropertyBuilders.mkClass ClassLiterals.``is-delete``
+[<Fable.Core.Erase>]       
+type tag =    
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
+    static member inline isDelete = PropertyBuilders.mkClass ClassLiterals.``is-delete``
     
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module tags =
-    let areSmall = PropertyBuilders.mkClass ClassLiterals.``are-small``
-    let areMedium = PropertyBuilders.mkClass ClassLiterals.``are-medium``
-    let areLarge = PropertyBuilders.mkClass ClassLiterals.``are-large``
-    let hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
+[<Fable.Core.Erase>]       
+type tags =
+    static member inline areSmall = PropertyBuilders.mkClass ClassLiterals.``are-small``
+    static member inline areMedium = PropertyBuilders.mkClass ClassLiterals.``are-medium``
+    static member inline areLarge = PropertyBuilders.mkClass ClassLiterals.``are-large``
+    static member inline hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
 
-[<RequireQualifiedAccess>]        
-module title =
-    let isSpaced = PropertyBuilders.mkClass ClassLiterals.``is-spaced``
+[<Fable.Core.Erase>]       
+type title =
+    static member inline isSpaced = PropertyBuilders.mkClass ClassLiterals.``is-spaced``
     
-[<RequireQualifiedAccess>]        
-module tab =
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
-    let isToggle = PropertyBuilders.mkClass ClassLiterals.``is-toggle``
-    let isToggleRounded = PropertyBuilders.mkClass ClassLiterals.``is-toggle-rounded``
-    let isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+[<Fable.Core.Erase>]       
+type tab =
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
+    static member inline isToggle = PropertyBuilders.mkClass ClassLiterals.``is-toggle``
+    static member inline isToggleRounded = PropertyBuilders.mkClass ClassLiterals.``is-toggle-rounded``
+    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
 
-[<RequireQualifiedAccess>]        
-module breadcrumb =
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let hasArrowSeparator = PropertyBuilders.mkClass ClassLiterals.``has-arrow-separator``
-    let hasBulletSeparator = PropertyBuilders.mkClass ClassLiterals.``has-bullet-separator``
-    let hasDotSeparator = PropertyBuilders.mkClass ClassLiterals.``has-dot-separator``
-    let hasSucceedsSeparator = PropertyBuilders.mkClass ClassLiterals.``has-succeeds-separator``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type breadcrumb =
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline hasArrowSeparator = PropertyBuilders.mkClass ClassLiterals.``has-arrow-separator``
+    static member inline hasBulletSeparator = PropertyBuilders.mkClass ClassLiterals.``has-bullet-separator``
+    static member inline hasDotSeparator = PropertyBuilders.mkClass ClassLiterals.``has-dot-separator``
+    static member inline hasSucceedsSeparator = PropertyBuilders.mkClass ClassLiterals.``has-succeeds-separator``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module cardHeaderTitle =
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+[<Fable.Core.Erase>]       
+type cardHeaderTitle =
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
 
-[<RequireQualifiedAccess>]        
-module dropdown =
-    let isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let isUp = PropertyBuilders.mkClass ClassLiterals.``is-up``
+[<Fable.Core.Erase>]       
+type dropdown =
+    static member inline isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline isUp = PropertyBuilders.mkClass ClassLiterals.``is-up``
 
 [<RequireQualifiedAccess>]
-module notification =
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+type notification =
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module modal =
-    let close = PropertyBuilders.mkClass ClassLiterals.``modal-close``
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+[<Fable.Core.Erase>]       
+type modal =
+    static member inline close = PropertyBuilders.mkClass ClassLiterals.``modal-close``
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
 
-[<RequireQualifiedAccess>]        
-module navbar =
-    let isTransparent = PropertyBuilders.mkClass ClassLiterals.``is-transparent``
+[<Fable.Core.Erase>]       
+type navbar =
+    static member inline isTransparent = PropertyBuilders.mkClass ClassLiterals.``is-transparent``
     
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module navbarMenu =
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
-    let isFixedTop = PropertyBuilders.mkClass ClassLiterals.``is-fixed-top``
-    let isFixedBottom = PropertyBuilders.mkClass ClassLiterals.``is-fixed-bottom``
+[<Fable.Core.Erase>]       
+type navbarMenu =
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+    static member inline isFixedTop = PropertyBuilders.mkClass ClassLiterals.``is-fixed-top``
+    static member inline isFixedBottom = PropertyBuilders.mkClass ClassLiterals.``is-fixed-bottom``
 
-[<RequireQualifiedAccess>]        
-module navbarBurger =
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+[<Fable.Core.Erase>]       
+type navbarBurger =
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
 
-[<RequireQualifiedAccess>]        
-module navbarDropdown =
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
+[<Fable.Core.Erase>]       
+type navbarDropdown =
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
 
-[<RequireQualifiedAccess>]        
-module navbarLink =
-    let isArrowless = PropertyBuilders.mkClass ClassLiterals.``is-arrowless``
+[<Fable.Core.Erase>]       
+type navbarLink =
+    static member inline isArrowless = PropertyBuilders.mkClass ClassLiterals.``is-arrowless``
 
-[<RequireQualifiedAccess>]        
-module navbarItem =
-    let isExpanded = PropertyBuilders.mkClass ClassLiterals.``is-expanded``
-    let isTab = PropertyBuilders.mkClass ClassLiterals.``is-tab``
-    let hasDropdown = PropertyBuilders.mkClass ClassLiterals.``has-dropdown``
-    let hasDropdownUp = PropertyBuilders.mkClass ClassLiterals.``has-dropdown-up``
-    let isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+[<Fable.Core.Erase>]       
+type navbarItem =
+    static member inline isExpanded = PropertyBuilders.mkClass ClassLiterals.``is-expanded``
+    static member inline isTab = PropertyBuilders.mkClass ClassLiterals.``is-tab``
+    static member inline hasDropdown = PropertyBuilders.mkClass ClassLiterals.``has-dropdown``
+    static member inline hasDropdownUp = PropertyBuilders.mkClass ClassLiterals.``has-dropdown-up``
+    static member inline isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
 
-[<RequireQualifiedAccess>]        
-module pagination =
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    let isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type pagination =
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module paginationLink =
-    let isCurrent = PropertyBuilders.mkClass ClassLiterals.``is-current``
+[<Fable.Core.Erase>]       
+type paginationLink =
+    static member inline isCurrent = PropertyBuilders.mkClass ClassLiterals.``is-current``
 
-[<RequireQualifiedAccess>]        
-module panel =
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+[<Fable.Core.Erase>]       
+type panel =
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module file =
-    let hasName = PropertyBuilders.mkClass ClassLiterals.``has-name``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    let isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
-    let isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type file =
+    static member inline hasName = PropertyBuilders.mkClass ClassLiterals.``has-name``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
     
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module input =
-    let file = PropertyBuilders.mkType ClassLiterals.``file``
-    let text = PropertyBuilders.mkType ClassLiterals.``text``
-    let password = PropertyBuilders.mkType ClassLiterals.``password``
-    let email = PropertyBuilders.mkType ClassLiterals.``email``
-    let tel = PropertyBuilders.mkType ClassLiterals.``tel``
-    let submit = PropertyBuilders.mkType ClassLiterals.``submit``
-    let reset = PropertyBuilders.mkType ClassLiterals.``reset``
+[<Fable.Core.Erase>]       
+type input =
+    static member inline file = PropertyBuilders.mkType ClassLiterals.``file``
+    static member inline text = PropertyBuilders.mkType ClassLiterals.``text``
+    static member inline password = PropertyBuilders.mkType ClassLiterals.``password``
+    static member inline email = PropertyBuilders.mkType ClassLiterals.``email``
+    static member inline tel = PropertyBuilders.mkType ClassLiterals.``tel``
+    static member inline submit = PropertyBuilders.mkType ClassLiterals.``submit``
+    static member inline reset = PropertyBuilders.mkType ClassLiterals.``reset``
     
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
-    let isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
-    let isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
+    static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
+    static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
     
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module button =
-    let isStatic = PropertyBuilders.mkClass ClassLiterals.``is-static``
-    let isOutlined = PropertyBuilders.mkClass ClassLiterals.``is-outlined``
-    let isLoading = PropertyBuilders.mkClass ClassLiterals.``is-loading``
-    let isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
-    let isInverted = PropertyBuilders.mkClass ClassLiterals.``is-inverted``
-    let isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
-    let isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
-    let isSelected = PropertyBuilders.mkClass ClassLiterals.``is-selected``
+[<Fable.Core.Erase>]       
+type button =
+    static member inline isStatic = PropertyBuilders.mkClass ClassLiterals.``is-static``
+    static member inline isOutlined = PropertyBuilders.mkClass ClassLiterals.``is-outlined``
+    static member inline isLoading = PropertyBuilders.mkClass ClassLiterals.``is-loading``
+    static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isInverted = PropertyBuilders.mkClass ClassLiterals.``is-inverted``
+    static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
+    static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+    static member inline isSelected = PropertyBuilders.mkClass ClassLiterals.``is-selected``
     
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module buttons =
-    let areSmall = PropertyBuilders.mkClass ClassLiterals.``are-small``
-    let areMedium = PropertyBuilders.mkClass ClassLiterals.``are-medium``
-    let areLarge = PropertyBuilders.mkClass ClassLiterals.``are-large``
-    let hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+[<Fable.Core.Erase>]       
+type buttons =
+    static member inline areSmall = PropertyBuilders.mkClass ClassLiterals.``are-small``
+    static member inline areMedium = PropertyBuilders.mkClass ClassLiterals.``are-medium``
+    static member inline areLarge = PropertyBuilders.mkClass ClassLiterals.``are-large``
+    static member inline hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
 
-[<RequireQualifiedAccess>]        
-module fieldLabel =
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type fieldLabel =
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module textarea =
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
-    let isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
-    let hasFixedSize = PropertyBuilders.mkClass ClassLiterals.``has-fixed-size``
+[<Fable.Core.Erase>]       
+type textarea =
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
+    static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
+    static member inline hasFixedSize = PropertyBuilders.mkClass ClassLiterals.``has-fixed-size``
     
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module field =
-    let hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
-    let hasAddonsRight = PropertyBuilders.mkClass ClassLiterals.``has-addons-right``
-    let hasAddonsCentered = PropertyBuilders.mkClass ClassLiterals.``has-addons-centered``
-    let isGrouped = PropertyBuilders.mkClass ClassLiterals.``is-grouped``
-    let isGroupedRight = PropertyBuilders.mkClass ClassLiterals.``is-grouped-right``
-    let isGroupedCentered = PropertyBuilders.mkClass ClassLiterals.``is-grouped-centered``
-    let isGroupedMultiline = PropertyBuilders.mkClass ClassLiterals.``is-grouped-multiline``
-    let isHorizontal = PropertyBuilders.mkClass ClassLiterals.``is-horizontal``
+[<Fable.Core.Erase>]       
+type field =
+    static member inline hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
+    static member inline hasAddonsRight = PropertyBuilders.mkClass ClassLiterals.``has-addons-right``
+    static member inline hasAddonsCentered = PropertyBuilders.mkClass ClassLiterals.``has-addons-centered``
+    static member inline isGrouped = PropertyBuilders.mkClass ClassLiterals.``is-grouped``
+    static member inline isGroupedRight = PropertyBuilders.mkClass ClassLiterals.``is-grouped-right``
+    static member inline isGroupedCentered = PropertyBuilders.mkClass ClassLiterals.``is-grouped-centered``
+    static member inline isGroupedMultiline = PropertyBuilders.mkClass ClassLiterals.``is-grouped-multiline``
+    static member inline isHorizontal = PropertyBuilders.mkClass ClassLiterals.``is-horizontal``
 
-[<RequireQualifiedAccess>] 
-module message =
-    let isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    let isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+[<Fable.Core.Erase>]
+type message =
+    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
+    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module icon =
-    let isLeft = PropertyBuilders.mkClass ClassLiterals.``is-left``
-    let isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+[<Fable.Core.Erase>]       
+type icon =
+    static member inline isLeft = PropertyBuilders.mkClass ClassLiterals.``is-left``
+    static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
     
-    let hasTextWhite = PropertyBuilders.mkClass ClassLiterals.``has-text-white``
-    let hasTextBlack = PropertyBuilders.mkClass ClassLiterals.``has-text-black``
-    let hasTextLight = PropertyBuilders.mkClass ClassLiterals.``has-text-light``
-    let hasTextDark = PropertyBuilders.mkClass ClassLiterals.``has-text-dark``
-    let hasTextPrimary = PropertyBuilders.mkClass ClassLiterals.``has-text-primary``
-    let hasTextInfo = PropertyBuilders.mkClass ClassLiterals.``has-text-info``
-    let hasTextLink = PropertyBuilders.mkClass ClassLiterals.``has-text-link``
-    let hasTextSuccess = PropertyBuilders.mkClass ClassLiterals.``has-text-success``
-    let hasTextWarning = PropertyBuilders.mkClass ClassLiterals.``has-text-warning``
-    let hasTextDanger = PropertyBuilders.mkClass ClassLiterals.``has-text-danger``
-    let hasTextBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-text-black-bis``
-    let hasTextBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-text-black-ter``
-    let hasTextGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-darker``
-    let hasTextGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-dark``
-    let hasTextGrey = PropertyBuilders.mkClass ClassLiterals.``has-text-grey``
-    let hasTextGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-light``
-    let hasTextGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-lighter``
-    let hasTextWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-text-white-ter``
-    let hasTextWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-text-white-bis``
+    static member inline hasTextWhite = PropertyBuilders.mkClass ClassLiterals.``has-text-white``
+    static member inline hasTextBlack = PropertyBuilders.mkClass ClassLiterals.``has-text-black``
+    static member inline hasTextLight = PropertyBuilders.mkClass ClassLiterals.``has-text-light``
+    static member inline hasTextDark = PropertyBuilders.mkClass ClassLiterals.``has-text-dark``
+    static member inline hasTextPrimary = PropertyBuilders.mkClass ClassLiterals.``has-text-primary``
+    static member inline hasTextInfo = PropertyBuilders.mkClass ClassLiterals.``has-text-info``
+    static member inline hasTextLink = PropertyBuilders.mkClass ClassLiterals.``has-text-link``
+    static member inline hasTextSuccess = PropertyBuilders.mkClass ClassLiterals.``has-text-success``
+    static member inline hasTextWarning = PropertyBuilders.mkClass ClassLiterals.``has-text-warning``
+    static member inline hasTextDanger = PropertyBuilders.mkClass ClassLiterals.``has-text-danger``
+    static member inline hasTextBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-text-black-bis``
+    static member inline hasTextBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-text-black-ter``
+    static member inline hasTextGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-darker``
+    static member inline hasTextGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-dark``
+    static member inline hasTextGrey = PropertyBuilders.mkClass ClassLiterals.``has-text-grey``
+    static member inline hasTextGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-light``
+    static member inline hasTextGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-lighter``
+    static member inline hasTextWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-text-white-ter``
+    static member inline hasTextWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-text-white-bis``
     
-    module fa =
-        let solid n = PropertyBuilders.mkClass (sprintf "fas fa-%s" n)
-        let regular n = PropertyBuilders.mkClass (sprintf "far fa-%s" n)
-        let light n = PropertyBuilders.mkClass (sprintf "fal fa-%s" n)
-        let duotone n = PropertyBuilders.mkClass (sprintf "fad fa-%s" n)
-        let brands n = PropertyBuilders.mkClass (sprintf "fab fa-%s" n)
+    type fa =
+        static member inline solid n = PropertyBuilders.mkClass (sprintf "fas fa-%s" n)
+        static member inline regular n = PropertyBuilders.mkClass (sprintf "far fa-%s" n)
+        static member inline light n = PropertyBuilders.mkClass (sprintf "fal fa-%s" n)
+        static member inline duotone n = PropertyBuilders.mkClass (sprintf "fad fa-%s" n)
+        static member inline brands n = PropertyBuilders.mkClass (sprintf "fab fa-%s" n)
 
-[<RequireQualifiedAccess>]        
-module select =
-    let isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
-    let isMultiple = PropertyBuilders.mkClass ClassLiterals.``is-multiple``
-    let isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
-    let isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
-    let isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+[<Fable.Core.Erase>]       
+type select =
+    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isMultiple = PropertyBuilders.mkClass ClassLiterals.``is-multiple``
+    static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
+    static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
     
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
-[<RequireQualifiedAccess>]        
-module control =
-    let hasIconsLeft = PropertyBuilders.mkClass ClassLiterals.``has-icons-left``
-    let hasIconsRight = PropertyBuilders.mkClass ClassLiterals.``has-icons-right``
-    let isExpanded = PropertyBuilders.mkClass ClassLiterals.``is-expanded``
-    let isLoading = PropertyBuilders.mkClass ClassLiterals.``is-loading``
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type control =
+    static member inline hasIconsLeft = PropertyBuilders.mkClass ClassLiterals.``has-icons-left``
+    static member inline hasIconsRight = PropertyBuilders.mkClass ClassLiterals.``has-icons-right``
+    static member inline isExpanded = PropertyBuilders.mkClass ClassLiterals.``is-expanded``
+    static member inline isLoading = PropertyBuilders.mkClass ClassLiterals.``is-loading``
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module ol =
-    let isLowerAlpha = PropertyBuilders.mkClass ClassLiterals.``is-lower-alpha``
-    let isLowerRoman = PropertyBuilders.mkClass ClassLiterals.``is-lower-roman``
-    let isUpperAlpha = PropertyBuilders.mkClass ClassLiterals.``is-upper-alpha``
-    let isUpperRoman = PropertyBuilders.mkClass ClassLiterals.``is-upper-roman``
+[<Fable.Core.Erase>]       
+type ol =
+    static member inline isLowerAlpha = PropertyBuilders.mkClass ClassLiterals.``is-lower-alpha``
+    static member inline isLowerRoman = PropertyBuilders.mkClass ClassLiterals.``is-lower-roman``
+    static member inline isUpperAlpha = PropertyBuilders.mkClass ClassLiterals.``is-upper-alpha``
+    static member inline isUpperRoman = PropertyBuilders.mkClass ClassLiterals.``is-upper-roman``
 
-[<RequireQualifiedAccess>]        
-module content =
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type content =
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module delete =
-    let isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+[<Fable.Core.Erase>]       
+type delete =
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module container =
-    let isFluid = PropertyBuilders.mkClass ClassLiterals.``is-fluid``
-    let isWidescreen = PropertyBuilders.mkClass ClassLiterals.``is-widescreen``
-    let isFullHd = PropertyBuilders.mkClass ClassLiterals.``is-fullhd``
+[<Fable.Core.Erase>]       
+type container =
+    static member inline isFluid = PropertyBuilders.mkClass ClassLiterals.``is-fluid``
+    static member inline isWidescreen = PropertyBuilders.mkClass ClassLiterals.``is-widescreen``
+    static member inline isFullHd = PropertyBuilders.mkClass ClassLiterals.``is-fullhd``
 
-[<RequireQualifiedAccess>]        
-module level =
-    let isMobile = PropertyBuilders.mkClass ClassLiterals.``is-mobile``
+[<Fable.Core.Erase>]       
+type level =
+    static member inline isMobile = PropertyBuilders.mkClass ClassLiterals.``is-mobile``
 
 [<RequireQualifiedAccess>]
-module section =
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+type section =
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-[<RequireQualifiedAccess>]        
-module hero =
-    let isBold = PropertyBuilders.mkClass ClassLiterals.``is-bold``
-    let isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
-    let isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    let isFullHeight = PropertyBuilders.mkClass ClassLiterals.``is-fullheight``
-    let isFullHeightWithNavbar = PropertyBuilders.mkClass ClassLiterals.``is-fullheight-with-navbar``
+[<Fable.Core.Erase>]       
+type hero =
+    static member inline isBold = PropertyBuilders.mkClass ClassLiterals.``is-bold``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
+    static member inline isFullHeight = PropertyBuilders.mkClass ClassLiterals.``is-fullheight``
+    static member inline isFullHeightWithNavbar = PropertyBuilders.mkClass ClassLiterals.``is-fullheight-with-navbar``
     
-    let isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    let isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    let isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    let isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    let isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-    let isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    let isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
+    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
 
-[<RequireQualifiedAccess>]        
-module tile =
-    let isAncestor = PropertyBuilders.mkClass ClassLiterals.``is-ancestor``
-    let isParent = PropertyBuilders.mkClass ClassLiterals.``is-parent``
-    let isChild = PropertyBuilders.mkClass ClassLiterals.``is-child``
-    let isVertical = PropertyBuilders.mkClass ClassLiterals.``is-vertical``
-    let is1 = PropertyBuilders.mkClass ClassLiterals.``is-1``
-    let is2 = PropertyBuilders.mkClass ClassLiterals.``is-2``
-    let is3 = PropertyBuilders.mkClass ClassLiterals.``is-3``
-    let is4 = PropertyBuilders.mkClass ClassLiterals.``is-4``
-    let is5 = PropertyBuilders.mkClass ClassLiterals.``is-5``
-    let is6 = PropertyBuilders.mkClass ClassLiterals.``is-6``
-    let is7 = PropertyBuilders.mkClass ClassLiterals.``is-7``
-    let is8 = PropertyBuilders.mkClass ClassLiterals.``is-8``
-    let is9 = PropertyBuilders.mkClass ClassLiterals.``is-9``
-    let is10 = PropertyBuilders.mkClass ClassLiterals.``is-10``
-    let is11 = PropertyBuilders.mkClass ClassLiterals.``is-11``
-    let is12 = PropertyBuilders.mkClass ClassLiterals.``is-12``
+[<Fable.Core.Erase>]       
+type tile =
+    static member inline isAncestor = PropertyBuilders.mkClass ClassLiterals.``is-ancestor``
+    static member inline isParent = PropertyBuilders.mkClass ClassLiterals.``is-parent``
+    static member inline isChild = PropertyBuilders.mkClass ClassLiterals.``is-child``
+    static member inline isVertical = PropertyBuilders.mkClass ClassLiterals.``is-vertical``
+    static member inline is1 = PropertyBuilders.mkClass ClassLiterals.``is-1``
+    static member inline is2 = PropertyBuilders.mkClass ClassLiterals.``is-2``
+    static member inline is3 = PropertyBuilders.mkClass ClassLiterals.``is-3``
+    static member inline is4 = PropertyBuilders.mkClass ClassLiterals.``is-4``
+    static member inline is5 = PropertyBuilders.mkClass ClassLiterals.``is-5``
+    static member inline is6 = PropertyBuilders.mkClass ClassLiterals.``is-6``
+    static member inline is7 = PropertyBuilders.mkClass ClassLiterals.``is-7``
+    static member inline is8 = PropertyBuilders.mkClass ClassLiterals.``is-8``
+    static member inline is9 = PropertyBuilders.mkClass ClassLiterals.``is-9``
+    static member inline is10 = PropertyBuilders.mkClass ClassLiterals.``is-10``
+    static member inline is11 = PropertyBuilders.mkClass ClassLiterals.``is-11``
+    static member inline is12 = PropertyBuilders.mkClass ClassLiterals.``is-12``
 
-[<RequireQualifiedAccess>]        
-module column =
-    let isMobile = PropertyBuilders.mkClass ClassLiterals.``is-mobile``
-    let isDesktop = PropertyBuilders.mkClass ClassLiterals.``is-desktop``
+[<Fable.Core.Erase>]       
+type column =
+    static member inline isMobile = PropertyBuilders.mkClass ClassLiterals.``is-mobile``
+    static member inline isDesktop = PropertyBuilders.mkClass ClassLiterals.``is-desktop``
     
-    let is1 = PropertyBuilders.mkClass ClassLiterals.``is-1``
-    let is2 = PropertyBuilders.mkClass ClassLiterals.``is-2``
-    let is3 = PropertyBuilders.mkClass ClassLiterals.``is-3``
-    let is4 = PropertyBuilders.mkClass ClassLiterals.``is-4``
-    let is5 = PropertyBuilders.mkClass ClassLiterals.``is-5``
-    let is6 = PropertyBuilders.mkClass ClassLiterals.``is-6``
-    let is7 = PropertyBuilders.mkClass ClassLiterals.``is-7``
-    let is8 = PropertyBuilders.mkClass ClassLiterals.``is-8``
-    let is9 = PropertyBuilders.mkClass ClassLiterals.``is-9``
-    let is10 = PropertyBuilders.mkClass ClassLiterals.``is-10``
-    let is11 = PropertyBuilders.mkClass ClassLiterals.``is-11``
-    let is12 = PropertyBuilders.mkClass ClassLiterals.``is-12``
+    static member inline is1 = PropertyBuilders.mkClass ClassLiterals.``is-1``
+    static member inline is2 = PropertyBuilders.mkClass ClassLiterals.``is-2``
+    static member inline is3 = PropertyBuilders.mkClass ClassLiterals.``is-3``
+    static member inline is4 = PropertyBuilders.mkClass ClassLiterals.``is-4``
+    static member inline is5 = PropertyBuilders.mkClass ClassLiterals.``is-5``
+    static member inline is6 = PropertyBuilders.mkClass ClassLiterals.``is-6``
+    static member inline is7 = PropertyBuilders.mkClass ClassLiterals.``is-7``
+    static member inline is8 = PropertyBuilders.mkClass ClassLiterals.``is-8``
+    static member inline is9 = PropertyBuilders.mkClass ClassLiterals.``is-9``
+    static member inline is10 = PropertyBuilders.mkClass ClassLiterals.``is-10``
+    static member inline is11 = PropertyBuilders.mkClass ClassLiterals.``is-11``
+    static member inline is12 = PropertyBuilders.mkClass ClassLiterals.``is-12``
     
-    let isThreeQuarters = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters``
-    let isTwoThirds = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds``
-    let isHalf = PropertyBuilders.mkClass ClassLiterals.``is-half``
-    let isOneThird = PropertyBuilders.mkClass ClassLiterals.``is-one-third``
-    let isOneQuarter = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter``
-    let isFull = PropertyBuilders.mkClass ClassLiterals.``is-full``
-    let isFourFifths = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths``
-    let isThreeFifths = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths``
-    let isTwoFifths = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths``
-    let isOneFifth = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth``
-    let isNarrowMobile = PropertyBuilders.mkClass ClassLiterals.``is-narrow-mobile``
-    let isNarrowTablet = PropertyBuilders.mkClass ClassLiterals.``is-narrow-tablet``
-    let isNarrowTouch = PropertyBuilders.mkClass ClassLiterals.``is-narrow-touch``
-    let isNarrowDesktop = PropertyBuilders.mkClass ClassLiterals.``is-narrow-desktop``
-    let isNarrowWidescreen = PropertyBuilders.mkClass ClassLiterals.``is-narrow-widescreen``
-    let isNarrowFullhd = PropertyBuilders.mkClass ClassLiterals.``is-narrow-fullhd``
+    static member inline isThreeQuarters = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters``
+    static member inline isTwoThirds = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds``
+    static member inline isHalf = PropertyBuilders.mkClass ClassLiterals.``is-half``
+    static member inline isOneThird = PropertyBuilders.mkClass ClassLiterals.``is-one-third``
+    static member inline isOneQuarter = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter``
+    static member inline isFull = PropertyBuilders.mkClass ClassLiterals.``is-full``
+    static member inline isFourFifths = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths``
+    static member inline isThreeFifths = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths``
+    static member inline isTwoFifths = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths``
+    static member inline isOneFifth = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth``
+    static member inline isNarrowMobile = PropertyBuilders.mkClass ClassLiterals.``is-narrow-mobile``
+    static member inline isNarrowTablet = PropertyBuilders.mkClass ClassLiterals.``is-narrow-tablet``
+    static member inline isNarrowTouch = PropertyBuilders.mkClass ClassLiterals.``is-narrow-touch``
+    static member inline isNarrowDesktop = PropertyBuilders.mkClass ClassLiterals.``is-narrow-desktop``
+    static member inline isNarrowWidescreen = PropertyBuilders.mkClass ClassLiterals.``is-narrow-widescreen``
+    static member inline isNarrowFullhd = PropertyBuilders.mkClass ClassLiterals.``is-narrow-fullhd``
     
-    let isOffset1 = PropertyBuilders.mkClass ClassLiterals.``is-offset-1``
-    let isOffset2 = PropertyBuilders.mkClass ClassLiterals.``is-offset-2``
-    let isOffset3 = PropertyBuilders.mkClass ClassLiterals.``is-offset-3``
-    let isOffset4 = PropertyBuilders.mkClass ClassLiterals.``is-offset-4``
-    let isOffset5 = PropertyBuilders.mkClass ClassLiterals.``is-offset-5``
-    let isOffset6 = PropertyBuilders.mkClass ClassLiterals.``is-offset-6``
-    let isOffset7 = PropertyBuilders.mkClass ClassLiterals.``is-offset-7``
-    let isOffset8 = PropertyBuilders.mkClass ClassLiterals.``is-offset-8``
-    let isOffset9 = PropertyBuilders.mkClass ClassLiterals.``is-offset-9``
-    let isOffset10 = PropertyBuilders.mkClass ClassLiterals.``is-offset-10``
-    let isOffset11 = PropertyBuilders.mkClass ClassLiterals.``is-offset-11``
-    let isOffset12 = PropertyBuilders.mkClass ClassLiterals.``is-offset-12``
-    let isOffsetThreeQuarters = PropertyBuilders.mkClass ClassLiterals.``is-offset-three-quarters``
-    let isOffsetTwoThirds = PropertyBuilders.mkClass ClassLiterals.``is-offset-two-thirds``
-    let isOffsetHalf = PropertyBuilders.mkClass ClassLiterals.``is-offset-half``
-    let isOffsetOneThird = PropertyBuilders.mkClass ClassLiterals.``is-offset-one-third``
-    let isOffsetOneQuarter = PropertyBuilders.mkClass ClassLiterals.``is-offset-one-quarter``
-    let isOffsetFull = PropertyBuilders.mkClass ClassLiterals.``is-offset-full``
-    let isOffsetFourFifths = PropertyBuilders.mkClass ClassLiterals.``is-offset-four-fifths``
-    let isOffsetThreeFifths = PropertyBuilders.mkClass ClassLiterals.``is-offset-three-fifths``
-    let isOffsetTwoFifths = PropertyBuilders.mkClass ClassLiterals.``is-offset-two-fifths``
-    let isOffsetOneFifth = PropertyBuilders.mkClass ClassLiterals.``is-offset-one-fifth``
+    static member inline isOffset1 = PropertyBuilders.mkClass ClassLiterals.``is-offset-1``
+    static member inline isOffset2 = PropertyBuilders.mkClass ClassLiterals.``is-offset-2``
+    static member inline isOffset3 = PropertyBuilders.mkClass ClassLiterals.``is-offset-3``
+    static member inline isOffset4 = PropertyBuilders.mkClass ClassLiterals.``is-offset-4``
+    static member inline isOffset5 = PropertyBuilders.mkClass ClassLiterals.``is-offset-5``
+    static member inline isOffset6 = PropertyBuilders.mkClass ClassLiterals.``is-offset-6``
+    static member inline isOffset7 = PropertyBuilders.mkClass ClassLiterals.``is-offset-7``
+    static member inline isOffset8 = PropertyBuilders.mkClass ClassLiterals.``is-offset-8``
+    static member inline isOffset9 = PropertyBuilders.mkClass ClassLiterals.``is-offset-9``
+    static member inline isOffset10 = PropertyBuilders.mkClass ClassLiterals.``is-offset-10``
+    static member inline isOffset11 = PropertyBuilders.mkClass ClassLiterals.``is-offset-11``
+    static member inline isOffset12 = PropertyBuilders.mkClass ClassLiterals.``is-offset-12``
+    static member inline isOffsetThreeQuarters = PropertyBuilders.mkClass ClassLiterals.``is-offset-three-quarters``
+    static member inline isOffsetTwoThirds = PropertyBuilders.mkClass ClassLiterals.``is-offset-two-thirds``
+    static member inline isOffsetHalf = PropertyBuilders.mkClass ClassLiterals.``is-offset-half``
+    static member inline isOffsetOneThird = PropertyBuilders.mkClass ClassLiterals.``is-offset-one-third``
+    static member inline isOffsetOneQuarter = PropertyBuilders.mkClass ClassLiterals.``is-offset-one-quarter``
+    static member inline isOffsetFull = PropertyBuilders.mkClass ClassLiterals.``is-offset-full``
+    static member inline isOffsetFourFifths = PropertyBuilders.mkClass ClassLiterals.``is-offset-four-fifths``
+    static member inline isOffsetThreeFifths = PropertyBuilders.mkClass ClassLiterals.``is-offset-three-fifths``
+    static member inline isOffsetTwoFifths = PropertyBuilders.mkClass ClassLiterals.``is-offset-two-fifths``
+    static member inline isOffsetOneFifth = PropertyBuilders.mkClass ClassLiterals.``is-offset-one-fifth``
     
-    let isThreeQuartersMobile = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-mobile``
-    let isTwoThirdsMobile = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-mobile``
-    let isHalfMobile = PropertyBuilders.mkClass ClassLiterals.``is-half-mobile``
-    let isOneThirdMobile = PropertyBuilders.mkClass ClassLiterals.``is-one-third-mobile``
-    let isOneQuarterMobile = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-mobile``
-    let isFullMobile = PropertyBuilders.mkClass ClassLiterals.``is-full-mobile``
-    let isFourFifthsMobile = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-mobile``
-    let isThreeFifthsMobile = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-mobile``
-    let isTwoFifthsMobile = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-mobile``
-    let isOneFifthMobile = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-mobile``
-    let isThreeQuartersTablet = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-tablet``
-    let isTwoThirdsTablet = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-tablet``
-    let isHalfTablet = PropertyBuilders.mkClass ClassLiterals.``is-half-tablet``
-    let isOneThirdTablet = PropertyBuilders.mkClass ClassLiterals.``is-one-third-tablet``
-    let isOneQuarterTablet = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-tablet``
-    let isFullTablet = PropertyBuilders.mkClass ClassLiterals.``is-full-tablet``
-    let isFourFifthsTablet = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-tablet``
-    let isThreeFifthsTablet = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-tablet``
-    let isTwoFifthsTablet = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-tablet``
-    let isOneFifthTablet = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-tablet``
-    let isThreeQuartersDesktop = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-desktop``
-    let isTwoThirdsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-desktop``
-    let isHalfDesktop = PropertyBuilders.mkClass ClassLiterals.``is-half-desktop``
-    let isOneThirdDesktop = PropertyBuilders.mkClass ClassLiterals.``is-one-third-desktop``
-    let isOneQuarterDesktop = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-desktop``
-    let isFullDesktop = PropertyBuilders.mkClass ClassLiterals.``is-full-desktop``
-    let isFourFifthsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-desktop``
-    let isThreeFifthsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-desktop``
-    let isTwoFifthsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-desktop``
-    let isOneFifthDesktop = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-desktop``
-    let isThreeQuartersWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-widescreen``
-    let isTwoThirdsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-widescreen``
-    let isHalfWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-half-widescreen``
-    let isOneThirdWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-one-third-widescreen``
-    let isOneQuarterWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-widescreen``
-    let isFullWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-full-widescreen``
-    let isFourFifthsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-widescreen``
-    let isThreeFifthsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-widescreen``
-    let isTwoFifthsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-widescreen``
-    let isOneFifthWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-widescreen``
-    let isThreeQuartersFullHd = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-fullhd``
-    let isTwoThirdsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-fullhd``
-    let isHalfFullHd = PropertyBuilders.mkClass ClassLiterals.``is-half-fullhd``
-    let isOneThirdFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-third-fullhd``
-    let isOneQuarterFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-fullhd``
-    let isFullFullHd = PropertyBuilders.mkClass ClassLiterals.``is-full-fullhd``
-    let isFourFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-fullhd``
-    let isThreeFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-fullhd``
-    let isTwoFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-fullhd``
-    let isOneFifthFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-fullhd``
+    static member inline isThreeQuartersMobile = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-mobile``
+    static member inline isTwoThirdsMobile = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-mobile``
+    static member inline isHalfMobile = PropertyBuilders.mkClass ClassLiterals.``is-half-mobile``
+    static member inline isOneThirdMobile = PropertyBuilders.mkClass ClassLiterals.``is-one-third-mobile``
+    static member inline isOneQuarterMobile = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-mobile``
+    static member inline isFullMobile = PropertyBuilders.mkClass ClassLiterals.``is-full-mobile``
+    static member inline isFourFifthsMobile = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-mobile``
+    static member inline isThreeFifthsMobile = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-mobile``
+    static member inline isTwoFifthsMobile = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-mobile``
+    static member inline isOneFifthMobile = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-mobile``
+    static member inline isThreeQuartersTablet = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-tablet``
+    static member inline isTwoThirdsTablet = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-tablet``
+    static member inline isHalfTablet = PropertyBuilders.mkClass ClassLiterals.``is-half-tablet``
+    static member inline isOneThirdTablet = PropertyBuilders.mkClass ClassLiterals.``is-one-third-tablet``
+    static member inline isOneQuarterTablet = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-tablet``
+    static member inline isFullTablet = PropertyBuilders.mkClass ClassLiterals.``is-full-tablet``
+    static member inline isFourFifthsTablet = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-tablet``
+    static member inline isThreeFifthsTablet = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-tablet``
+    static member inline isTwoFifthsTablet = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-tablet``
+    static member inline isOneFifthTablet = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-tablet``
+    static member inline isThreeQuartersDesktop = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-desktop``
+    static member inline isTwoThirdsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-desktop``
+    static member inline isHalfDesktop = PropertyBuilders.mkClass ClassLiterals.``is-half-desktop``
+    static member inline isOneThirdDesktop = PropertyBuilders.mkClass ClassLiterals.``is-one-third-desktop``
+    static member inline isOneQuarterDesktop = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-desktop``
+    static member inline isFullDesktop = PropertyBuilders.mkClass ClassLiterals.``is-full-desktop``
+    static member inline isFourFifthsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-desktop``
+    static member inline isThreeFifthsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-desktop``
+    static member inline isTwoFifthsDesktop = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-desktop``
+    static member inline isOneFifthDesktop = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-desktop``
+    static member inline isThreeQuartersWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-widescreen``
+    static member inline isTwoThirdsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-widescreen``
+    static member inline isHalfWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-half-widescreen``
+    static member inline isOneThirdWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-one-third-widescreen``
+    static member inline isOneQuarterWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-widescreen``
+    static member inline isFullWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-full-widescreen``
+    static member inline isFourFifthsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-widescreen``
+    static member inline isThreeFifthsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-widescreen``
+    static member inline isTwoFifthsWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-widescreen``
+    static member inline isOneFifthWideScreen = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-widescreen``
+    static member inline isThreeQuartersFullHd = PropertyBuilders.mkClass ClassLiterals.``is-three-quarters-fullhd``
+    static member inline isTwoThirdsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-two-thirds-fullhd``
+    static member inline isHalfFullHd = PropertyBuilders.mkClass ClassLiterals.``is-half-fullhd``
+    static member inline isOneThirdFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-third-fullhd``
+    static member inline isOneQuarterFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-quarter-fullhd``
+    static member inline isFullFullHd = PropertyBuilders.mkClass ClassLiterals.``is-full-fullhd``
+    static member inline isFourFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-four-fifths-fullhd``
+    static member inline isThreeFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-fullhd``
+    static member inline isTwoFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-fullhd``
+    static member inline isOneFifthFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-fullhd``
     
-    let isGapless = PropertyBuilders.mkClass ClassLiterals.``is-gapless``
-    let isMultiline = PropertyBuilders.mkClass ClassLiterals.``is-multiline``
-    let isVariable = PropertyBuilders.mkClass ClassLiterals.``is-variable``
-    let isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    let isVcentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
+    static member inline isGapless = PropertyBuilders.mkClass ClassLiterals.``is-gapless``
+    static member inline isMultiline = PropertyBuilders.mkClass ClassLiterals.``is-multiline``
+    static member inline isVariable = PropertyBuilders.mkClass ClassLiterals.``is-variable``
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isVcentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
