@@ -1,0 +1,20 @@
+﻿﻿<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>Feliz.Bulma</id>
+        <version>1.0.0</version>
+        <authors>Roman Provazník</authors>
+        <owners>Roman Provazník</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <licenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/Dzoukr/Feliz.Bulma</projectUrl>
+        <description>Bulma wrapper for amazing Feliz DSL</description>
+        <releaseNotes>Initial release</releaseNotes>
+        <tags>fsharp bulma fable react html feliz</tags>
+        <dependencies>
+            <group targetFramework=".NETStandard2.0">
+                <dependency id="FSharp.Core" version="4.7.0" exclude="Build,Analyzers" />
+                <dependency id="Feliz" version="0.68.0" exclude="Build,Analyzers" />
+            </group>
+        </dependencies>
+    </metadata>
+</package>

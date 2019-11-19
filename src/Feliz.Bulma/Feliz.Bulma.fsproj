@@ -1,14 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NuspecFile>Feliz.Bulma.nuspec</NuspecFile>
     </PropertyGroup>
-
+    <PropertyGroup>
+        <NpmDependencies>
+            <NpmPackage Name="bulma" Version="&gt;= 0.8.0" />
+        </NpmDependencies>
+    </PropertyGroup>
     <ItemGroup>
         <Compile Include="PropertyBuilders.fs" />
         <Compile Include="ElementBuilders.fs" />
         <Compile Include="Modifiers.fs" />
         <Compile Include="Bulma.fs" />
+        <Content Include="Feliz.Bulma.nuspec" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
