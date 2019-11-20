@@ -112,6 +112,12 @@ module private ElementLiterals =
     let [<Literal>] ``panel-block`` = "panel-block"
     let [<Literal>] ``panel-icon`` = "panel-icon"
     let [<Literal>] ``tabs`` = "tabs"
+    let [<Literal>] ``text`` = "text"
+    let [<Literal>] ``password`` = "password"
+    let [<Literal>] ``email`` = "email"
+    let [<Literal>] ``tel`` = "tel"
+    let [<Literal>] ``submit`` = "submit"
+    let [<Literal>] ``reset`` = "reset"
 
 open Feliz
 
@@ -241,7 +247,10 @@ type Bulma =
     static member inline control (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``control`` elms
     static member inline control elm = ElementBuilders.Div.valueElm ElementLiterals.``control`` elm
     
-    static member inline input props = ElementBuilders.Input.props ElementLiterals.``input`` props
+    static member inline textInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``text`` props
+    static member inline passwordInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``password`` props
+    static member inline emailInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``email`` props
+    static member inline telInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``tel`` props
     
     static member inline textarea props = ElementBuilders.Textarea.props ElementLiterals.``textarea`` props
     static member inline textarea (elms:#seq<ReactElement>) = ElementBuilders.Textarea.children ElementLiterals.``textarea`` elms
@@ -257,17 +266,26 @@ type Bulma =
     static member inline button s = ElementBuilders.Button.valueStr ElementLiterals.``button`` s
     static member inline button i = ElementBuilders.Button.valueInt ElementLiterals.``button`` i
     
+    static member inline buttonLink props = ElementBuilders.A.props ElementLiterals.``button`` props
+    static member inline buttonLink (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``button`` elms
+    static member inline buttonLink elm = ElementBuilders.A.valueElm ElementLiterals.``button`` elm
+    static member inline buttonLink s = ElementBuilders.A.valueStr ElementLiterals.``button`` s
+    static member inline buttonLink i = ElementBuilders.A.valueInt ElementLiterals.``button`` i
+    
+    static member inline buttonSubmit props = ElementBuilders.Input.propsWithType ElementLiterals.``button`` ElementLiterals.``submit`` props
+    static member inline buttonReset props = ElementBuilders.Input.propsWithType ElementLiterals.``button`` ElementLiterals.``reset`` props
+    
     static member inline checkboxLabel props = ElementBuilders.Label.props ElementLiterals.``checkbox`` props
     static member inline checkboxLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``checkbox`` elms
     static member inline checkboxLabel elm = ElementBuilders.Label.valueElm ElementLiterals.``checkbox`` elm
     
-    static member inline checkboxInput props = ElementBuilders.Input.props ElementLiterals.``checkbox`` props
+    static member inline checkboxInput props = ElementBuilders.Input.propsWithType ElementLiterals.``checkbox`` ElementLiterals.``checkbox`` props
     
     static member inline radioLabel props = ElementBuilders.Label.props ElementLiterals.``radio`` props
     static member inline radioLabel (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``radio`` elms
     static member inline radioLabel elm = ElementBuilders.Label.valueElm ElementLiterals.``radio`` elm
 
-    static member inline radioInput props = ElementBuilders.Input.props ElementLiterals.``radio`` props
+    static member inline radioInput props = ElementBuilders.Input.propsWithType ElementLiterals.``radio`` ElementLiterals.``radio`` props
         
     static member inline icon props = ElementBuilders.Span.props ElementLiterals.``icon`` props
     static member inline icon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``icon`` elms
@@ -283,7 +301,7 @@ type Bulma =
     static member inline fileLabel s = ElementBuilders.Span.valueStr ElementLiterals.``file-label`` s
     static member inline fileLabel i = ElementBuilders.Span.valueInt ElementLiterals.``file-label`` i
     
-    static member inline fileInput props = ElementBuilders.Input.props ElementLiterals.``file-input`` props
+    static member inline fileInput props = ElementBuilders.Input.propsWithType ElementLiterals.``file-input`` ElementLiterals.``file`` props
     
     static member inline fileCta props = ElementBuilders.Span.props ElementLiterals.``file-cta`` props
     static member inline fileCta (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-cta`` elms

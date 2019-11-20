@@ -234,13 +234,6 @@ module private ClassLiterals =
     let [<Literal>] ``has-dropdown-up`` = "has-dropdown-up"
     let [<Literal>] ``is-current`` = "is-current"
     let [<Literal>] ``has-name`` = "has-name"
-    let [<Literal>] ``file`` = "file"
-    let [<Literal>] ``text`` = "text"
-    let [<Literal>] ``password`` = "password"
-    let [<Literal>] ``email`` = "email"
-    let [<Literal>] ``tel`` = "tel"
-    let [<Literal>] ``submit`` = "submit"
-    let [<Literal>] ``reset`` = "reset"
     let [<Literal>] ``is-hovered`` = "is-hovered"
     let [<Literal>] ``is-focused`` = "is-focused"
     let [<Literal>] ``is-static`` = "is-static"
@@ -817,14 +810,6 @@ type file =
 
 [<Fable.Core.Erase>]       
 type input =
-    static member inline file = PropertyBuilders.mkType ClassLiterals.``file``
-    static member inline text = PropertyBuilders.mkType ClassLiterals.``text``
-    static member inline password = PropertyBuilders.mkType ClassLiterals.``password``
-    static member inline email = PropertyBuilders.mkType ClassLiterals.``email``
-    static member inline tel = PropertyBuilders.mkType ClassLiterals.``tel``
-    static member inline submit = PropertyBuilders.mkType ClassLiterals.``submit``
-    static member inline reset = PropertyBuilders.mkType ClassLiterals.``reset``
-    
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
     static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
     static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``

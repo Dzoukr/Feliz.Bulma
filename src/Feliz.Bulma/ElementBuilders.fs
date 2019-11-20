@@ -1,6 +1,7 @@
 ﻿module Feliz.Bulma.ElementBuilders
 
 open Feliz
+open Feliz.Bulma
 
 module Helpers =
     let getClasses (xs:IReactProperty list) =
@@ -48,7 +49,8 @@ module Label =
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
     
 module Input =
-    let inline props (cn:string) (xs:IReactProperty list) = Html.input [ yield! xs; yield Helpers.propClasses cn xs ]
+    let inline propsWithType (cn:string) (typ:string) (xs:IReactProperty list) =
+        Html.input [ yield! xs; yield PropertyBuilders.mkType typ; yield Helpers.propClasses cn xs ]
     
 module Textarea =
     let inline props (cn:string) (xs:IReactProperty list) = Html.textarea [ yield! xs; yield Helpers.propClasses cn xs ]
