@@ -1,0 +1,6 @@
+group Sandbox
+    FSharp.Core
+    Fable.Core
+    Fable.Elmish.Debugger
+    Fable.Elmish.React
+    Fable.Elmish.HMR

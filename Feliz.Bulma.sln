@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma", "src\Feliz.Bulma\Feliz.Bulma.fsproj", "{43305628-0021-4187-B975-B71FC374B90B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sandbox", "sandbox\Sandbox\Sandbox.fsproj", "{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{43305628-0021-4187-B975-B71FC374B90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43305628-0021-4187-B975-B71FC374B90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43305628-0021-4187-B975-B71FC374B90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
