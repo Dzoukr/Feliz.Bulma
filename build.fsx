@@ -1,10 +1,7 @@
 open Fake.IO
 
 #r "paket: groupref Build //"
-
-#if !FAKE
-#load ".fake/build.fsx/intellisense_lazy.fsx"
-#endif
+#load ".fake/build.fsx/intellisense.fsx"
 
 open System.IO
 open Fake.Core
@@ -13,7 +10,7 @@ open Fake.IO.FileSystemOperators
 open Fake.Core.TargetOperators
 
 module Tools =
-    let private runTool cmd args workingDir =
+    let private runTool (cmd:string) args workingDir =
         let arguments = args |> String.split ' ' |> Arguments.OfArgs
         Command.RawCommand (cmd, arguments)
         |> CreateProcess.fromCommand
@@ -26,6 +23,7 @@ module Tools =
         let result =
             DotNet.exec (DotNet.Options.withWorkingDirectory workingDir) cmd ""
         if result.ExitCode <> 0 then failwithf "'dotnet %s' failed in %s" cmd workingDir
+    let femto = runTool "femto"        
 
 let projectPath = "src" </> "Feliz.Bulma"
 
@@ -36,6 +34,10 @@ Target.create "Clean" (fun _ ->
     ]
     |> Shell.cleanDirs
 )        
+
+Target.create "ValidateFemto" (fun _ ->
+    Tools.femto "--validate" projectPath
+)
 
 Target.create "CreateNuget" (fun _ ->
     Tools.dotnet "restore --no-cache" projectPath
@@ -54,6 +56,6 @@ Target.create "PublishNuget" (fun _ ->
     Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) projectPath
 )
 
-"Clean" ==> "CreateNuget" ==> "PublishNuget"
+"Clean" ==> "ValidateFemto" ==> "CreateNuget" ==> "PublishNuget"
 
 Target.runOrDefaultWithArguments ""

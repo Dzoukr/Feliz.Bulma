@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "paket": {
-      "version": "5.236.0",
+      "version": "5.236.3",
       "commands": [
         "paket"
       ]
@@ -12,6 +12,12 @@
       "version": "5.18.3",
       "commands": [
         "fake"
+      ]
+    },
+    "femto": {
+      "version": "0.8.3",
+      "commands": [
+        "femto"
       ]
     }
   }
