@@ -13,6 +13,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\src\Feliz.Bulma\Feliz.Bulma.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.Extensions.QuickView\Feliz.Bulma.Extensions.QuickView.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

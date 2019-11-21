@@ -1278,6 +1278,11 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
+bulma-quickview@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/bulma-quickview/-/bulma-quickview-2.0.0.tgz#ac85d6cc23f98bd4b4be5cef11e9524554d2bbf3"
+  integrity sha512-EJq9XYcJ+pG94FIYgw9AI2NoRDRjQX/Iua0H3iIJq4C3D+4sVOCg/Y+I7gd/G0v7fez/qvKX/S+91UZqaTmXSQ==
+
 bulma@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.8.0.tgz#ac1606431703a4761b18a4a2d5cc1fa864a2aece"
@@ -5196,11 +5201,6 @@ supports-color@^5.3.0:
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   dependencies:
     has-flag "^3.0.0"
-
-sweetalert2@^8.18.7:
-  version "8.18.7"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.18.7.tgz#164053b2053b02539836ee5a697c0688b89c52a7"
-  integrity sha512-6vU8iTLPWrUrWdG/mpR1vcQCA7PH6DHyuzsSScsR7MTC3fX8FbFMQA7G56G+UsuF3IOry+P9UrSy3G8Au7Tk0Q==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
