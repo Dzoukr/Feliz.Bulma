@@ -38,37 +38,35 @@ module Tools =
     let node = runTool (findTool "node" "node.exe")        
     let yarn = runTool (findTool "yarn" "yarn.cmd")             
 
-let projectPath = "src" </> "Feliz.Bulma"
 let sandboxPath = "sandbox"
 
-Target.create "Clean" (fun _ ->
-    [
-        projectPath </> "bin"
-        projectPath </> "obj"
-    ]
-    |> Shell.cleanDirs
-)        
+// Targets
+let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
 
-Target.create "ValidateFemto" (fun _ ->
-    Tools.femto "--validate" projectPath
-)
+let validateFemto proj = Tools.femto "--validate" proj
 
-Target.create "CreateNuget" (fun _ ->
-    Tools.dotnet "restore --no-cache" projectPath
-    Tools.dotnet "pack -c Release" projectPath
-)
+let createNuget proj =
+    clean proj
+    validateFemto proj
+    Tools.dotnet "restore --no-cache" proj
+    Tools.dotnet "pack -c Release" proj
 
-Target.create "PublishNuget" (fun _ ->
+let publishNuget proj =
+    createNuget proj
     let nugetKey =
         match Environment.environVarOrNone "NUGET_KEY" with
         | Some nugetKey -> nugetKey
         | None -> failwith "The Nuget API key must be set in a NUGET_KEY environmental variable"
     let nupkg =
-        Directory.GetFiles(projectPath </> "bin" </> "Release")
+        Directory.GetFiles(proj </> "bin" </> "Release")
         |> Seq.head
         |> Path.GetFullPath
-    Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) projectPath
-)
+    Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) proj
+    
+Target.create "PackBulma" (fun _ -> "src" </> "Feliz.Bulma" |> createNuget)
+Target.create "PublishBulma" (fun _ -> "src" </> "Feliz.Bulma" |> createNuget)
+Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> createNuget)
+Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> createNuget)
 
 Target.create "InstallSandbox" (fun _ ->
     printfn "Node version:"
@@ -78,11 +76,8 @@ Target.create "InstallSandbox" (fun _ ->
     Tools.yarn "install --frozen-lockfile" sandboxPath
 )
 
-Target.create "RunSandbox" (fun _ ->
-    Tools.yarn "webpack-dev-server" sandboxPath
-) 
+Target.create "RunSandbox" (fun _ -> Tools.yarn "webpack-dev-server" sandboxPath)
 
 "InstallSandbox" ==> "RunSandbox"
-"Clean" ==> "ValidateFemto" ==> "CreateNuget" ==> "PublishNuget"
 
 Target.runOrDefaultWithArguments "RunSandbox"

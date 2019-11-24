@@ -6,6 +6,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sandbox", "sandbox\Sandbox\
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.QuickView", "src\Feliz.Bulma.Extensions.QuickView\Feliz.Bulma.Extensions.QuickView.fsproj", "{1D2AB86E-C371-411A-8516-7B55845DDCDD}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.Calendar", "src\Feliz.Bulma.Extensions.Calendar\Feliz.Bulma.Extensions.Calendar.fsproj", "{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1D2AB86E-C371-411A-8516-7B55845DDCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D2AB86E-C371-411A-8516-7B55845DDCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D2AB86E-C371-411A-8516-7B55845DDCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

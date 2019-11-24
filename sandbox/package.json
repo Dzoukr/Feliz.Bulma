@@ -30,6 +30,7 @@
     "dependencies": {
         "bulma": "^0.8.0",
         "bulma-quickview": "^2.0.0",
+        "bulma-calendar": "^6.0.7",
         "react": "16.9.0",
         "react-dom": "16.9.0"
     }

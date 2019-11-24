@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <PackageId>Feliz.Bulma.Extensions.QuickView</PackageId>
-        <Description>QuickView extension for Feliz.Bulma</Description>
+        <PackageId>Feliz.Bulma.Extensions.Calendar</PackageId>
+        <Description>Calendar extension for Feliz.Bulma</Description>
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
@@ -14,11 +14,11 @@
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
-            <NpmPackage Name="bulma-quickview" Version="&gt;= 2.0.0 &lt; 3.0.0" ResolutionStrategy="Max" />
+            <NpmPackage Name="bulma-calendar" Version="&gt;= 6.0.7 &lt; 7.0.0" ResolutionStrategy="Max" />
         </NpmDependencies>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="QuickView.fs" />
+        <Compile Include="Calendar.fs" />
         <Compile Include="Modifiers.fs" />
     </ItemGroup>
     <ItemGroup>
