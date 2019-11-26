@@ -3,14 +3,14 @@
 open Feliz
 open Feliz.Bulma
 
-module Helpers =
-    let getClasses (xs:IReactProperty list) =
+module internal Helpers =
+    let inline getClasses (xs:IReactProperty list) =
         xs
         |> List.map unbox<string * obj>
         |> List.filter (fun (v,_) -> v = "className")
         |> List.map (snd >> string)
     
-    let propClasses cn (xs:IReactProperty list) =
+    let inline propClasses cn (xs:IReactProperty list) =
         xs
         |> getClasses
         |> List.append [cn]
