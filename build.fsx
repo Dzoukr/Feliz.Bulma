@@ -38,7 +38,8 @@ module Tools =
     let node = runTool (findTool "node" "node.exe")        
     let yarn = runTool (findTool "yarn" "yarn.cmd")             
 
-let sandboxPath = "sandbox"
+let docsSrcPath = "src/Docs"
+let docsDeployPath = "docs"
 
 // Targets
 let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
@@ -48,6 +49,7 @@ let validateFemto proj = Tools.femto "--validate" proj
 let createNuget proj =
     clean proj
     validateFemto proj
+    Tools.yarn "install" proj
     Tools.dotnet "restore --no-cache" proj
     Tools.dotnet "pack -c Release" proj
 
@@ -64,20 +66,30 @@ let publishNuget proj =
     Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) proj
     
 Target.create "PackBulma" (fun _ -> "src" </> "Feliz.Bulma" |> createNuget)
-Target.create "PublishBulma" (fun _ -> "src" </> "Feliz.Bulma" |> createNuget)
-Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> createNuget)
-Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> createNuget)
+Target.create "PublishBulma" (fun _ -> "src" </> "Feliz.Bulma" |> publishNuget)
 
-Target.create "InstallSandbox" (fun _ ->
+Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> createNuget)
+Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> publishNuget)
+    
+Target.create "PackCalendar" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Calendar" |> createNuget)
+Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Calendar" |> publishNuget)
+
+Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"
-    Tools.node "--version" sandboxPath
+    Tools.node "--version" docsSrcPath
     printfn "Yarn version:"
-    Tools.yarn "--version" sandboxPath
-    Tools.yarn "install --frozen-lockfile" sandboxPath
+    Tools.yarn "--version" docsSrcPath
+    Tools.yarn "install --frozen-lockfile" docsSrcPath
 )
 
-Target.create "RunSandbox" (fun _ -> Tools.yarn "webpack-dev-server" sandboxPath)
+Target.create "PublishDocs" (fun _ ->
+    Tools.yarn "webpack-cli -p" docsSrcPath
+    Shell.copyDir docsDeployPath (docsSrcPath </> "deploy") FileFilter.allFiles
+)
 
-"InstallSandbox" ==> "RunSandbox"
+Target.create "RunDocs" (fun _ -> Tools.yarn "webpack-dev-server" docsSrcPath)
 
-Target.runOrDefaultWithArguments "RunSandbox"
+"InstallDocs" ==> "RunDocs"
+"InstallDocs" ==> "PublishDocs"
+
+Target.runOrDefaultWithArguments "RunDocs"

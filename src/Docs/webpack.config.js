@@ -12,17 +12,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-var clientProject = 'Sandbox';
-var clientPath = './' + clientProject;
-
 var CONFIG = {
     // The tags to include the generated JS and CSS will be automatically injected in the HTML template
     // See https://github.com/jantimon/html-webpack-plugin
-    indexHtmlTemplate: clientPath + '/public/index.html',
-    fsharpEntry: clientPath + '/' + clientProject + '.fsproj',
-    cssEntry: clientPath + '/styles/style.scss',
-    outputDir: clientPath + '/deploy',
-    assetsDir: clientPath + '/public',
+    indexHtmlTemplate: './public/index.html',
+    fsharpEntry: './Docs.fsproj',
+    cssEntry: './styles/style.scss',
+    outputDir: './deploy',
+    assetsDir: './public',
     devServerPort: 8080,
     // When using webpack-dev-server, you may need to redirect some calls
     // to a external API server. See https://webpack.js.org/configuration/dev-server/#devserver-proxy

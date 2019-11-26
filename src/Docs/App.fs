@@ -1,4 +1,4 @@
-module Sandbox.App
+module Docs.App
 
 open Elmish
 open Elmish.React

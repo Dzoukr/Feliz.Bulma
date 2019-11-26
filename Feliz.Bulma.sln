@@ -2,11 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma", "src\Feliz.Bulma\Feliz.Bulma.fsproj", "{43305628-0021-4187-B975-B71FC374B90B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sandbox", "sandbox\Sandbox\Sandbox.fsproj", "{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}"
-EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.QuickView", "src\Feliz.Bulma.Extensions.QuickView\Feliz.Bulma.Extensions.QuickView.fsproj", "{1D2AB86E-C371-411A-8516-7B55845DDCDD}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.Calendar", "src\Feliz.Bulma.Extensions.Calendar\Feliz.Bulma.Extensions.Calendar.fsproj", "{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Docs", "src\Docs\Docs.fsproj", "{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +18,6 @@ Global
 		{43305628-0021-4187-B975-B71FC374B90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43305628-0021-4187-B975-B71FC374B90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43305628-0021-4187-B975-B71FC374B90B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4FE4D49-E75E-44A3-9087-F6A2B22669B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D2AB86E-C371-411A-8516-7B55845DDCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D2AB86E-C371-411A-8516-7B55845DDCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D2AB86E-C371-411A-8516-7B55845DDCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,5 +26,9 @@ Global
 		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

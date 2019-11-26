@@ -1,4 +1,4 @@
-﻿module Sandbox.Domain
+﻿module Docs.Domain
 
 type Model = string
 
