@@ -394,6 +394,7 @@ type helpers =
     static member inline isInline = PropertyBuilders.mkClass ClassLiterals.``is-inline``
     static member inline isInlineBlock = PropertyBuilders.mkClass ClassLiterals.``is-inline-block``
     static member inline isInlineFlex = PropertyBuilders.mkClass ClassLiterals.``is-inline-flex``
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
 
 [<Fable.Core.Erase>]       
 type size =
