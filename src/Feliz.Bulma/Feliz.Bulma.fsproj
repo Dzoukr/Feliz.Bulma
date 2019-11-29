@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>Feliz.Bulma</PackageId>
         <Description>Bulma wrapper for amazing Feliz DSL</Description>
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
@@ -7,10 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;fulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.1.0</Version>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Adding isActive to helpers</PackageReleaseNotes>
+        <Version>1.2.0</Version>
+        <PackageReleaseNotes>Added menuItem</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>

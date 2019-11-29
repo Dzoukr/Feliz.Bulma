@@ -533,6 +533,12 @@ type Bulma =
     static member inline menuList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children ElementLiterals.``menu-list`` elms
     static member inline menuList elm = ElementBuilders.Ul.valueElm ElementLiterals.``menu-list`` elm
     
+    static member inline menuItem props = Html.li [ ElementBuilders.A.props "" props ]
+    static member inline menuItem (elms:#seq<ReactElement>) = Html.li [ prop.children (ElementBuilders.A.children "" elms) ]
+    static member inline menuItem elm = Html.li [ prop.children (ElementBuilders.A.valueElm "" elm) ]
+    static member inline menuItem s = Html.li [ ElementBuilders.A.valueStr "" s ]
+    static member inline menuItem i = Html.li [ ElementBuilders.A.valueInt "" i ]
+    
     static member inline message props = ElementBuilders.Article.props ElementLiterals.``message`` props
     static member inline message (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``message`` elms
     static member inline message elm = ElementBuilders.Article.valueElm ElementLiterals.``message`` elm
