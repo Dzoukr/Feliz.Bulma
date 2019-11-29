@@ -6,7 +6,10 @@
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="Router.fs" />
         <Compile Include="Domain.fs" />
+        <Compile Include="Views.Shared.fs" />
+        <Compile Include="Views.Bulma.fs" />
         <Compile Include="View.fs" />
         <Compile Include="State.fs" />
         <Compile Include="App.fs" />

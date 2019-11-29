@@ -2,9 +2,11 @@
 
 open Domain
 open Elmish
+open Docs.Router
 
-let init () : Model * Cmd<Msg> = "", Cmd.none
+let init () = Model.init, Cmd.none
 
 let update (msg : Msg) (currentModel : Model) : Model * Cmd<Msg> =
     match msg with
-    | Nothing -> System.Guid.NewGuid().ToString(), Cmd.none
+    | UrlChanged p -> { currentModel with CurrentPage = p }, Cmd.none
+    | Nothing -> currentModel, Cmd.none

@@ -84,6 +84,7 @@ Target.create "InstallDocs" (fun _ ->
 
 Target.create "PublishDocs" (fun _ ->
     Tools.yarn "webpack-cli -p" docsSrcPath
+    docsDeployPath |> Shell.cleanDir
     Shell.copyDir docsDeployPath (docsSrcPath </> "deploy") FileFilter.allFiles
 )
 

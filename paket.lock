@@ -796,7 +796,7 @@ NUGET
       System.Xml.XmlDocument (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= net46)
       System.Xml.XPath (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= net46)
 
-GROUP Sandbox
+GROUP Docs
 STORAGE: NONE
 NUGET
   remote: https://api.nuget.org/v3/index.json
@@ -844,6 +844,15 @@ NUGET
     Fable.React (5.3.5) - restriction: >= netstandard2.0
       Fable.Browser.Dom (>= 1.0) - restriction: >= netstandard2.0
       Fable.Core (>= 3.0) - restriction: >= netstandard2.0
+      FSharp.Core (>= 4.7) - restriction: >= netstandard2.0
+    Feliz (0.68.2) - restriction: >= netstandard2.0
+      Fable.Core (>= 3.1.1) - restriction: >= netstandard2.0
+      Fable.React (>= 5.3.2) - restriction: >= netstandard2.0
+      FSharp.Core (>= 4.7) - restriction: >= netstandard2.0
+    Feliz.Router (1.7)
+      Fable.Core (>= 3.1.2) - restriction: >= netstandard2.0
+      Fable.Elmish (>= 3.0.5) - restriction: >= netstandard2.0
+      Feliz (>= 0.68) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7) - restriction: >= netstandard2.0
     FSharp.Core (4.7)
     Thoth.Json (3.4.1) - restriction: >= netstandard2.0

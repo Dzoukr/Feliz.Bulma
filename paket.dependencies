@@ -15,7 +15,7 @@ group Build
     nuget Fake.IO.FileSystem
     nuget Fake.Core.ReleaseNotes
     
-group Sandbox
+group Docs
     source https://api.nuget.org/v3/index.json
     storage: none
     nuget FSharp.Core
@@ -23,3 +23,4 @@ group Sandbox
     nuget Fable.Elmish.Debugger
     nuget Fable.Elmish.React
     nuget Fable.Elmish.HMR
+    nuget Feliz.Router
