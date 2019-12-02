@@ -12,16 +12,26 @@ const makeCall = function (calc, callback) {
     });
 };
 
+const isAlreadyAttached = function (selector) {
+    const elm = document.querySelector(selector);
+    return elm.className === "is-hidden";
+};
+
 export function attach (id, callback, optObj) {
     const options = {
         ...defaultOptions,
         ...optObj
     };
-    const calendars = bulmaCalendar.attach('input[type="date"]', options);
-    calendars.forEach(calendar => {
-        if (calendar.element.id === id) {
-            calendar.on('hide', calc => makeCall(calc, callback));
-            calendar.on('select', calc => makeCall(calc, callback));
-        }
-    });
+    const selector = 'input[id="'+id+'"]';
+    const isAttached = isAlreadyAttached(selector);
+    
+    if (isAttached === false) {
+        const calendars = bulmaCalendar.attach(selector, options);
+        calendars.forEach(calendar => {
+            if (calendar.element.id === id) {
+                calendar.on('hide', calc => makeCall(calc, callback));
+                calendar.on('select', calc => makeCall(calc, callback));
+            }
+        });
+    }
 }
