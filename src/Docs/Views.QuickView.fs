@@ -43,7 +43,9 @@ let overview model dispatch =
         Html.hr []
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding QuickView component"
-            code """QuickView.quickview [
+            code """open Feliz.Bulma.Extensions.QuickView
+            
+QuickView.quickview [
     if model.ShowQuickView then yield quickview.isActive
     yield prop.children [
         QuickView.header [

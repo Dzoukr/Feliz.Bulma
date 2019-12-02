@@ -40,7 +40,9 @@ let overview =
 ]
 """
             Html.p "You just simply write:"
-            code """Bulma.columns [
+            code """open Feliz.Bulma
+
+Bulma.columns [
     Bulma.column [
         column.is2 // <-- note context helper here
         prop.children [
@@ -90,7 +92,9 @@ let apiDescription =
         ]
         Bulma.content [
             Bulma.title4 "Example"
-            code """Bulma.button [
+            code """open Feliz.Bulma
+            
+Bulma.button [
     button.isWarning
     prop.onClick (fun _ -> Fable.Core.JS.eval "alert('Hello Feliz.Bulma')" |> ignore)
     prop.text "Amazing button, ain't it?"
