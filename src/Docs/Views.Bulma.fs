@@ -1,7 +1,5 @@
 ﻿module Docs.Views.Bulma
 
-open Fable.Core
-open Fable.Core.JsInterop
 open Feliz
 open Feliz.Bulma
 open Shared
@@ -61,11 +59,7 @@ let overview =
                 
             ]
         ]
-        
-        
-        
     ]
-    
     
 let installation =
     Html.div [
@@ -101,7 +95,6 @@ let apiDescription =
     prop.onClick (fun _ -> Fable.Core.JS.eval "alert('Hello Feliz.Bulma')" |> ignore)
     prop.text "Amazing button, ain't it?"
 ]
-
 """
             Html.p "will generate this button"
             Bulma.button [

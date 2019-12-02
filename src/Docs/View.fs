@@ -26,7 +26,11 @@ let menuPart model =
             item "Installation" BulmaInstallation
             item "API description" BulmaAPIDescription
         ]
-//        Bulma.menuLabel "Feliz.Bulma.Extensions.QuickView"
+        Bulma.menuLabel "Feliz.Bulma.Extensions.QuickView"
+        Bulma.menuList [
+            item "Overview" QuickViewOverview
+            item "Installation" QuickViewInstallation
+        ]
 //        Bulma.menuList [
 //            Html.li [ Html.a [ prop.text "Overview"] ]
 //            Html.li [ Html.a [ prop.text "Installation"] ]
@@ -38,11 +42,13 @@ let menuPart model =
 //        ]
     ]
 
-let contentPart model =
+let contentPart model dispatch =
     match model.CurrentPage with
     | BulmaOverview -> Views.Bulma.overview
     | BulmaInstallation -> Views.Bulma.installation
     | BulmaAPIDescription -> Views.Bulma.apiDescription
+    | QuickViewOverview -> Views.QuickView.overview model dispatch
+    | QuickViewInstallation -> Views.QuickView.installation
     
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
@@ -55,7 +61,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                             tile.is3
                             prop.children (menuPart model)
                         ]
-                        Bulma.tile (contentPart model)
+                        Bulma.tile (contentPart model dispatch)
                     ]
                 ]
             ]
