@@ -11,6 +11,7 @@
         <Compile Include="Views.Shared.fs" />
         <Compile Include="Views.Bulma.fs" />
         <Compile Include="Views.QuickView.fs" />
+        <Compile Include="Views.Calendar.fs" />
         <Compile Include="View.fs" />
         <Compile Include="State.fs" />
         <Compile Include="App.fs" />

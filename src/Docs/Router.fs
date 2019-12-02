@@ -8,6 +8,8 @@ type Page =
     | BulmaAPIDescription
     | QuickViewOverview
     | QuickViewInstallation
+    | CalendarOverview
+    | CalendarInstallation
 let defaultPage = BulmaOverview
     
 let parseUrl = function
@@ -15,7 +17,9 @@ let parseUrl = function
     | [ "installation" ] -> BulmaInstallation 
     | [ "api-description" ] -> BulmaAPIDescription 
     | [ "quickview"; "installation" ] -> QuickViewInstallation 
-    | [ "quickview" ] -> QuickViewOverview 
+    | [ "quickview" ] -> QuickViewOverview
+    | [ "calendar"; "installation" ] -> CalendarInstallation 
+    | [ "calendar" ] -> CalendarOverview 
     | _ -> defaultPage
     
 let getHref = function
@@ -24,3 +28,5 @@ let getHref = function
     | BulmaAPIDescription -> Router.format("api-description")
     | QuickViewOverview -> Router.format("quickview")
     | QuickViewInstallation -> Router.format("quickview","installation")
+    | CalendarOverview -> Router.format("calendar")
+    | CalendarInstallation -> Router.format("calendar","installation")

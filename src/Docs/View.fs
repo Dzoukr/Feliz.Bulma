@@ -1,11 +1,8 @@
 ﻿module Docs.View
 
-open System
 open Domain
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Extensions.QuickView
-open Feliz.Bulma.Extensions.Calendar
 open Feliz.Router
 open Docs.Router
 
@@ -31,15 +28,11 @@ let menuPart model =
             item "Overview" QuickViewOverview
             item "Installation" QuickViewInstallation
         ]
-//        Bulma.menuList [
-//            Html.li [ Html.a [ prop.text "Overview"] ]
-//            Html.li [ Html.a [ prop.text "Installation"] ]
-//        ]
-//        Bulma.menuLabel "Feliz.Bulma.Extensions.Calendar"
-//        Bulma.menuList [
-//            Html.li [ Html.a [ prop.text "Overview"] ]
-//            Html.li [ Html.a [ prop.text "Installation"] ]
-//        ]
+        Bulma.menuLabel "Feliz.Bulma.Extensions.Calendar"
+        Bulma.menuList [
+            item "Overview" CalendarOverview
+            item "Installation" CalendarInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -49,6 +42,9 @@ let contentPart model dispatch =
     | BulmaAPIDescription -> Views.Bulma.apiDescription
     | QuickViewOverview -> Views.QuickView.overview model dispatch
     | QuickViewInstallation -> Views.QuickView.installation
+    | CalendarOverview -> Views.Calendar.overview model dispatch
+    | CalendarInstallation -> Views.Calendar.installation
+    
     
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
@@ -70,65 +66,3 @@ let view (model : Model) (dispatch : Msg -> unit) =
         Router.onUrlChanged (Router.parseUrl >> UrlChanged >> dispatch)
         Router.application render
     ]
-    
-    
-    
-    
-    
-//    Bulma.section [
-//        Bulma.hero [
-//            Bulma.title "Feliz.Bulma |> Hello"
-//        ]
-//    ]
-
-//    QuickView.quickview [
-//        prop.className "is-active"
-//        prop.children [
-//            QuickView.header [
-//                Html.div "AHOJ"
-//            ]
-//            QuickView.body [
-//                QuickView.block "AAA"
-//                QuickView.block "BBB"
-//            ]
-//            QuickView.footer [
-//                Bulma.button "CLICK"
-//            ]
-//        ]
-//    ]
-    
-        
-//    Bulma.content [
-//        
-//        Bulma.field [
-//            Bulma.fieldLabel "TEST"
-//            Bulma.fieldBody [
-//                
-//                Calendar.calendar [
-//                    prop.id "MOJE"
-//                    prop.name model
-//                    
-//                    calendar.options [
-//                        calendar.options.type'.datetime
-//                        calendar.options.isRange true
-//                        calendar.options.todayLabel model
-//                        calendar.options.disabledDates [
-//                            DateTime.Now
-//                        ]
-//                    ]
-//                    calendar.onValueSelected (fun x ->
-//                        Fable.Core.JS.console.log(x)
-//                    )
-//                    
-//                ]
-//                Bulma.button [
-//                    prop.onClick (fun _ -> Nothing |> dispatch)
-//                    prop.text "POME"
-//                ]
-//            ]
-//        ]
-//        
-//    ]
-    
-    
-    
