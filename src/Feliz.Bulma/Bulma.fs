@@ -230,6 +230,8 @@ type Bulma =
     static member inline label props = ElementBuilders.Label.props ElementLiterals.``label`` props
     static member inline label (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``label`` elms
     static member inline label elm = ElementBuilders.Label.valueElm ElementLiterals.``label`` elm
+    static member inline label s = ElementBuilders.Label.valueStr ElementLiterals.``label`` s
+    static member inline label i = ElementBuilders.Label.valueInt ElementLiterals.``label`` i
     
     static member inline fieldLabel props = ElementBuilders.Div.props ElementLiterals.``field-label`` props
     static member inline fieldLabel (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``field-label`` elms

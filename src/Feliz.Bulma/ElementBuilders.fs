@@ -47,6 +47,8 @@ module Label =
     let inline props (cn:string) (xs:IReactProperty list) = Html.label [ yield! xs; yield Helpers.propClasses cn xs ]
     let inline children (cn:string) (children:seq<ReactElement>) = Html.label [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+    let inline valueStr (cn:string) (value:string) = Html.label [ prop.className cn; prop.text value ]
+    let inline valueInt (cn:string) (value:int) = Html.label [ prop.className cn; prop.text value ]
     
 module Input =
     let inline propsWithType (cn:string) (typ:string) (xs:IReactProperty list) =
