@@ -15,7 +15,7 @@ type RangeValue =
     | Time of TimeValue * TimeValue
 
 type SelectedValue =
-    | Single of SingleValue
-    | Range of RangeValue
+    | SingleValue of SingleValue
+    | RangeValue of RangeValue
 
 type ICalendarOption = interface end

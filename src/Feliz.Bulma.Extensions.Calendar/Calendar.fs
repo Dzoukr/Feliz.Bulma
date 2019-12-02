@@ -27,14 +27,14 @@ module internal Calendar =
             | "datetime" -> ((tryToDateTime p.startDate p.startTime),(tryToDateTime p.endDate p.endTime)) |> RangeValue.DateTime
             | "time" -> ((p.startTime |> toTime),(p.endTime |> toTime)) |> RangeValue.Time  
             | v -> failwithf "Unrecognized Calendar component type '%s'" v)
-            |> SelectedValue.Range
+            |> RangeValue
         else
             (match p.mode with
             | "date" -> p.startDate |> tryToDate |> SingleValue.Date
             | "datetime" -> tryToDateTime p.startDate p.startTime |> SingleValue.DateTime
             | "time" -> p.startTime |> toTime |> SingleValue.Time  
             | v -> failwithf "Unrecognized Calendar component type '%s'" v)
-            |> SelectedValue.Single
+            |> SingleValue
 
 module internal ParamsFinder =
     let inline tryFind name props =
