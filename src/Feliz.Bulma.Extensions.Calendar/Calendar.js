@@ -12,6 +12,18 @@ const makeCall = function (calc, callback) {
     });
 };
 
+const timers = [];
+
+const makeThrottledCall = function (delay, calc, callback) {
+    if (timers[calc._id]) {
+        return
+    }
+    timers[calc._id] = setTimeout(function () {
+        makeCall(calc, callback);
+        timers[calc._id] = undefined;
+    }, delay)
+};
+
 const isAlreadyAttached = function (selector) {
     const elm = document.querySelector(selector);
     return elm.className === "is-hidden";
@@ -29,8 +41,8 @@ export function attach (id, callback, optObj) {
         const calendars = bulmaCalendar.attach(selector, options);
         calendars.forEach(calendar => {
             if (calendar.element.id === id) {
-                calendar.on('hide', calc => makeCall(calc, callback));
-                calendar.on('select', calc => makeCall(calc, callback));
+                calendar.on('hide', calc => makeThrottledCall(10, calc, callback));
+                calendar.on('select', calc => makeThrottledCall(10, calc, callback));
             }
         });
     }

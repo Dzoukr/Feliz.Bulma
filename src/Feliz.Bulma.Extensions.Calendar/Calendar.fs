@@ -59,11 +59,13 @@ type Calendar =
             |> Option.defaultValue []
             |> JsInterop.keyValueList CaseRules.None
             
-        Html.input [
-            prop.type'.date
-            prop.id id
-            prop.ref (fun elm ->
-                if not (isNull elm) then
-                    Interop.attachCalendar id (Calendar.toParams >> onValueSelectedHandler) options
-            )
+        Html.div [
+            Html.input [
+                prop.type'.date
+                prop.id id
+                prop.ref (fun elm ->
+                    if not (isNull elm) then
+                        Interop.attachCalendar id (Calendar.toParams >> onValueSelectedHandler) options
+                )
+            ]
         ]
