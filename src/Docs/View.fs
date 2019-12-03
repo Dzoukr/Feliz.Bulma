@@ -33,6 +33,11 @@ let menuPart model =
             item "Overview" CalendarOverview
             item "Installation" CalendarInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.Extensions.Tooltip"
+        Bulma.menuList [
+            item "Overview" TooltipOverview
+            item "Installation" TooltipInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -42,8 +47,10 @@ let contentPart model dispatch =
     | BulmaAPIDescription -> Views.Bulma.apiDescription
     | QuickViewOverview -> Views.QuickView.overview model dispatch
     | QuickViewInstallation -> Views.QuickView.installation
-    | CalendarOverview -> Views.Calendar.overview model dispatch
+    | CalendarOverview -> Views.Calendar.overview
     | CalendarInstallation -> Views.Calendar.installation
+    | TooltipOverview -> Views.Tooltip.overview
+    | TooltipInstallation -> Views.Tooltip.installation
     
     
 let view (model : Model) (dispatch : Msg -> unit) =

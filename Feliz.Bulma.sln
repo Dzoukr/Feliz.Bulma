@@ -8,6 +8,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.Cale
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Docs", "src\Docs\Docs.fsproj", "{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.Tooltip", "src\Feliz.Bulma.Extensions.Tooltip\Feliz.Bulma.Extensions.Tooltip.fsproj", "{671DD722-16D8-4D0A-8909-96E2E07E2EA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671DD722-16D8-4D0A-8909-96E2E07E2EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671DD722-16D8-4D0A-8909-96E2E07E2EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671DD722-16D8-4D0A-8909-96E2E07E2EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671DD722-16D8-4D0A-8909-96E2E07E2EA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,30 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <PackageId>Feliz.Bulma.Extensions.Calendar</PackageId>
-        <Description>Calendar extension for Feliz.Bulma</Description>
+        <PackageId>Feliz.Bulma.Extensions.Tooltip</PackageId>
+        <Description>Tooltip extension for Feliz.Bulma</Description>
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.0.1</Version>
+        <Version>1.0.0</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Fixing errors in react + simple event throttling</PackageReleaseNotes>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    </PropertyGroup>
+    <PropertyGroup>
+        <NpmDependencies>
+            <NpmPackage Name="bulma-tooltip" Version="&gt;= 3.0.2 &lt; 4.0.0" ResolutionStrategy="Max" />
+        </NpmDependencies>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="Types.fs" />
         <Compile Include="Modifiers.fs" />
-        <Compile Include="Calendar.fs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
         <ProjectReference Include="..\..\src\Feliz.Bulma\Feliz.Bulma.fsproj" />
     </ItemGroup>
-    <PropertyGroup>
-        <NpmDependencies>
-            <NpmPackage Name="bulma-calendar" Version="&gt;= 6.0.7 &lt; 7.0.0" ResolutionStrategy="Max" />
-        </NpmDependencies>
-    </PropertyGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

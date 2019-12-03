@@ -100,7 +100,7 @@ Bulma.button [
     prop.text "Amazing button, ain't it?"
 ]
 """
-            Html.p "will generate this button"
+            Html.p "Code above will generate this button:"
             Bulma.button [
                 button.isWarning
                 prop.onClick (fun _ -> Fable.Core.JS.eval "alert('Hello Feliz.Bulma')" |> ignore)

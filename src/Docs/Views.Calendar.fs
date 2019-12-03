@@ -5,9 +5,8 @@ open Feliz
 open Feliz.Bulma
 open Feliz.Bulma.Extensions.Calendar
 open Shared
-open Docs.Domain
 
-let overview model dispatch =
+let overview =
     let calcRanged =
         Calendar.calendar [
             prop.id "RangeCal"
@@ -71,7 +70,7 @@ Calendar.calendar [
         Fable.Core.JS.console.log(x)
     )
 ]"""
-            Html.p "will generate ranged calendar:"
+            Html.p "Code above will generate ranged calendar:"
             calcRanged
         ]
         Bulma.content [
@@ -115,7 +114,7 @@ type SelectedValue =
     )
 ]
 """
-            Html.p "will generate dialog calendar:"
+            Html.p "Code above will generate dialog calendar:"
             calcDialog
         ]
         Bulma.content [

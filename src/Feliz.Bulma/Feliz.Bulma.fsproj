@@ -7,7 +7,7 @@
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
-        <PackageTags>fsharp;fable;fulma;feliz;react;html</PackageTags>
+        <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
         <Version>1.3.0</Version>
         <PackageReleaseNotes>Added overloads for Label</PackageReleaseNotes>

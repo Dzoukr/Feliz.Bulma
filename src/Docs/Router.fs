@@ -10,6 +10,8 @@ type Page =
     | QuickViewInstallation
     | CalendarOverview
     | CalendarInstallation
+    | TooltipOverview
+    | TooltipInstallation
 let defaultPage = BulmaOverview
     
 let parseUrl = function
@@ -20,6 +22,8 @@ let parseUrl = function
     | [ "quickview" ] -> QuickViewOverview
     | [ "calendar"; "installation" ] -> CalendarInstallation 
     | [ "calendar" ] -> CalendarOverview 
+    | [ "tooltip"; "installation" ] -> TooltipInstallation 
+    | [ "tooltip" ] -> TooltipOverview 
     | _ -> defaultPage
     
 let getHref = function
@@ -30,3 +34,5 @@ let getHref = function
     | QuickViewInstallation -> Router.format("quickview","installation")
     | CalendarOverview -> Router.format("calendar")
     | CalendarInstallation -> Router.format("calendar","installation")
+    | TooltipOverview -> Router.format("tooltip")
+    | TooltipInstallation -> Router.format("tooltip","installation")
