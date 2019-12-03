@@ -74,6 +74,9 @@ Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Qui
 Target.create "PackCalendar" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Calendar" |> createNuget)
 Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Calendar" |> publishNuget)
 
+Target.create "PackTooltip" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Tooltip" |> createNuget)
+Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Tooltip" |> publishNuget)
+
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"
     Tools.node "--version" docsSrcPath
