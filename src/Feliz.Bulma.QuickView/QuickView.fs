@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.Extensions.QuickView
+﻿namespace Feliz.Bulma.QuickView
 
 open Feliz
 open Feliz.Bulma

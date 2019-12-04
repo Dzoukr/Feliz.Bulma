@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.Extensions.Tooltip
+﻿namespace Feliz.Bulma.Tooltip
 
 open Feliz
 

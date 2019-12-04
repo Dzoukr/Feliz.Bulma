@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <PackageId>Feliz.Bulma.Extensions.QuickView</PackageId>
+        <PackageId>Feliz.Bulma.QuickView</PackageId>
         <Description>QuickView extension for Feliz.Bulma</Description>
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>

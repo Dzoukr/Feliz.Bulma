@@ -23,17 +23,17 @@ let menuPart model =
             item "Installation" BulmaInstallation
             item "API description" BulmaAPIDescription
         ]
-        Bulma.menuLabel "Feliz.Bulma.Extensions.QuickView"
+        Bulma.menuLabel "Feliz.Bulma.QuickView"
         Bulma.menuList [
             item "Overview" QuickViewOverview
             item "Installation" QuickViewInstallation
         ]
-        Bulma.menuLabel "Feliz.Bulma.Extensions.Calendar"
+        Bulma.menuLabel "Feliz.Bulma.Calendar"
         Bulma.menuList [
             item "Overview" CalendarOverview
             item "Installation" CalendarInstallation
         ]
-        Bulma.menuLabel "Feliz.Bulma.Extensions.Tooltip"
+        Bulma.menuLabel "Feliz.Bulma.Tooltip"
         Bulma.menuList [
             item "Overview" TooltipOverview
             item "Installation" TooltipInstallation
@@ -61,7 +61,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                     tile.isAncestor
                     prop.children [
                         Bulma.tile [
-                            tile.is3
+                            tile.is2
                             prop.children (menuPart model)
                         ]
                         Bulma.tile (contentPart model dispatch)

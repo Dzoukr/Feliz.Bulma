@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.Extensions.Calendar
+﻿namespace Feliz.Bulma.Calendar
 
 open System
 

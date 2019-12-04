@@ -19,9 +19,9 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\src\Feliz.Bulma\Feliz.Bulma.fsproj" />
-        <ProjectReference Include="..\..\src\Feliz.Bulma.Extensions.QuickView\Feliz.Bulma.Extensions.QuickView.fsproj" />
-        <ProjectReference Include="..\..\src\Feliz.Bulma.Extensions.Calendar\Feliz.Bulma.Extensions.Calendar.fsproj" />
-        <ProjectReference Include="..\..\src\Feliz.Bulma.Extensions.Tooltip\Feliz.Bulma.Extensions.Tooltip.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.QuickView\Feliz.Bulma.QuickView.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.Calendar\Feliz.Bulma.Calendar.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.Tooltip\Feliz.Bulma.Tooltip.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project> 

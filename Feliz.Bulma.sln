@@ -2,13 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma", "src\Feliz.Bulma\Feliz.Bulma.fsproj", "{43305628-0021-4187-B975-B71FC374B90B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.QuickView", "src\Feliz.Bulma.Extensions.QuickView\Feliz.Bulma.Extensions.QuickView.fsproj", "{1D2AB86E-C371-411A-8516-7B55845DDCDD}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.QuickView", "src\Feliz.Bulma.QuickView\Feliz.Bulma.QuickView.fsproj", "{1D2AB86E-C371-411A-8516-7B55845DDCDD}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.Calendar", "src\Feliz.Bulma.Extensions.Calendar\Feliz.Bulma.Extensions.Calendar.fsproj", "{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Calendar", "src\Feliz.Bulma.Calendar\Feliz.Bulma.Calendar.fsproj", "{BFE39054-7F17-4FFB-8C8B-EDAD9B90AE60}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Docs", "src\Docs\Docs.fsproj", "{5BBD25A7-0399-45CA-8D90-BFF2C8B54D7D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Extensions.Tooltip", "src\Feliz.Bulma.Extensions.Tooltip\Feliz.Bulma.Extensions.Tooltip.fsproj", "{671DD722-16D8-4D0A-8909-96E2E07E2EA3}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Tooltip", "src\Feliz.Bulma.Tooltip\Feliz.Bulma.Tooltip.fsproj", "{671DD722-16D8-4D0A-8909-96E2E07E2EA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
