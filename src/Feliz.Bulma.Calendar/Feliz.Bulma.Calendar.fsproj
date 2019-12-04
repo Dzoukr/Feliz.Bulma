@@ -7,10 +7,10 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Fixing errors in react + simple event throttling</PackageReleaseNotes>
+        <PackageReleaseNotes>Simplifying extension package name #6</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Types.fs" />

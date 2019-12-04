@@ -68,14 +68,14 @@ let publishNuget proj =
 Target.create "PackBulma" (fun _ -> "src" </> "Feliz.Bulma" |> createNuget)
 Target.create "PublishBulma" (fun _ -> "src" </> "Feliz.Bulma" |> publishNuget)
 
-Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> createNuget)
-Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.Extensions.QuickView" |> publishNuget)
+Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.QuickView" |> createNuget)
+Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.QuickView" |> publishNuget)
     
-Target.create "PackCalendar" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Calendar" |> createNuget)
-Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Calendar" |> publishNuget)
+Target.create "PackCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> createNuget)
+Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> publishNuget)
 
-Target.create "PackTooltip" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Tooltip" |> createNuget)
-Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Extensions.Tooltip" |> publishNuget)
+Target.create "PackTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> createNuget)
+Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> publishNuget)
 
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"
