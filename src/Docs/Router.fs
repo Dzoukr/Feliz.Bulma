@@ -12,6 +12,8 @@ type Page =
     | CalendarInstallation
     | TooltipOverview
     | TooltipInstallation
+    | CheckradioOverview
+    | CheckradioInstallation
 let defaultPage = BulmaOverview
     
 let parseUrl = function
@@ -24,6 +26,8 @@ let parseUrl = function
     | [ "calendar" ] -> CalendarOverview 
     | [ "tooltip"; "installation" ] -> TooltipInstallation 
     | [ "tooltip" ] -> TooltipOverview 
+    | [ "checkradio"; "installation" ] -> CheckradioInstallation 
+    | [ "checkradio" ] -> CheckradioOverview 
     | _ -> defaultPage
     
 let getHref = function
@@ -36,3 +40,6 @@ let getHref = function
     | CalendarInstallation -> Router.format("calendar","installation")
     | TooltipOverview -> Router.format("tooltip")
     | TooltipInstallation -> Router.format("tooltip","installation")
+    | CheckradioOverview -> Router.format("checkradio")
+    | CheckradioInstallation -> Router.format("checkradio","installation")
+    

@@ -58,7 +58,7 @@ let installation =
             Html.p "If you want to install this package manually, use usual NuGet package command"
             code "Install-Package Feliz.Bulma.Tooltip"
             Html.p "or using Paket"
-            code "paket add Feliz.Feliz.Bulma.Tooltip"
+            code "paket add Feliz.Bulma.Tooltip"
             Html.p "Please don't forget that this library has also dependencies on frontend (css styles), so you need to add it to package.json file using yarn / npm command"
             code "yarn add bulma-tooltip"
         ]

@@ -12,6 +12,7 @@
         <Compile Include="Views.Bulma.fs" />
         <Compile Include="Views.QuickView.fs" />
         <Compile Include="Views.Tooltip.fs" />
+        <Compile Include="Views.Checkradio.fs" />
         <Compile Include="Views.Calendar.fs" />
         <Compile Include="View.fs" />
         <Compile Include="State.fs" />
@@ -22,6 +23,7 @@
         <ProjectReference Include="..\..\src\Feliz.Bulma.QuickView\Feliz.Bulma.QuickView.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Calendar\Feliz.Bulma.Calendar.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Tooltip\Feliz.Bulma.Tooltip.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.Checkradio\Feliz.Bulma.Checkradio.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project> 

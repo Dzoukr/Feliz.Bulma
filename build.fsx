@@ -77,6 +77,9 @@ Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> pu
 Target.create "PackTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> createNuget)
 Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> publishNuget)
 
+Target.create "PackCheckradio" (fun _ -> "src" </> "Feliz.Bulma.Checkradio" |> createNuget)
+Target.create "PublishCheckradio" (fun _ -> "src" </> "Feliz.Bulma.Checkradio" |> publishNuget)
+
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"
     Tools.node "--version" docsSrcPath
