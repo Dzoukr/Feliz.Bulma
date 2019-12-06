@@ -14,7 +14,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
-            <NpmPackage Name="bulma-popover" Version="&gt;= 3.0.2 &lt; 4.0.0" ResolutionStrategy="Max" />
+            <NpmPackage Name="bulma-popover" Version="&gt;= 1.0.0 &lt; 2.0.0" ResolutionStrategy="Max" />
         </NpmDependencies>
     </PropertyGroup>
     <ItemGroup>
