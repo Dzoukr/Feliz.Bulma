@@ -43,6 +43,11 @@ let menuPart model =
             item "Overview" CheckradioOverview
             item "Installation" CheckradioInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.Popover"
+        Bulma.menuList [
+            item "Overview" PopoverOverview
+            item "Installation" PopoverInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -58,6 +63,8 @@ let contentPart model dispatch =
     | TooltipInstallation -> Views.Tooltip.installation
     | CheckradioOverview -> Views.Checkradio.overview
     | CheckradioInstallation -> Views.Checkradio.installation
+    | PopoverOverview -> Views.Popover.overview
+    | PopoverInstallation -> Views.Popover.installation
     
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =

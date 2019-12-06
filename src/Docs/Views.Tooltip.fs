@@ -31,6 +31,7 @@ let overview =
 Bulma.button [
     tooltip.text "This is tooltip"
     tooltip.hasTooltipWarning
+    button.isWarning
     prop.text "Hover me for tooltip"
 ]"""
             
@@ -38,28 +39,11 @@ Bulma.button [
             Bulma.button [
                 tooltip.text "This is tooltip"
                 tooltip.hasTooltipWarning
+                button.isWarning
                 prop.text "Hover me for tooltip"
             ]
             
         ]
     ]
 
-let installation =
-    Html.div [
-        Bulma.title "Feliz.Bulma.Tooltip - Installation"
-        Html.hr []
-        Bulma.content [
-            Bulma.title4 "Using Femto (recommended)"
-            Html.p [ prop.dangerouslySetInnerHTML "The easiest way is to use <a href='https://github.com/zaid-ajaj/femto'>Femto CLI</a> which will take care of all dependencies including npm libraries." ]
-            code "femto install Feliz.Bulma.Tooltip"
-        ]
-        Bulma.content [
-            Bulma.title4 "Manual"
-            Html.p "If you want to install this package manually, use usual NuGet package command"
-            code "Install-Package Feliz.Bulma.Tooltip"
-            Html.p "or using Paket"
-            code "paket add Feliz.Bulma.Tooltip"
-            Html.p "Please don't forget that this library has also dependencies on frontend (css styles), so you need to add it to package.json file using yarn / npm command"
-            code "yarn add bulma-tooltip"
-        ]
-    ]
+let installation = Shared.installationView "Feliz.Bulma.Tooltip" "bulma-tooltip"

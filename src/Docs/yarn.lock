@@ -1305,6 +1305,11 @@ bulma-checkradio@^1.1.1:
   resolved "https://registry.yarnpkg.com/bulma-checkradio/-/bulma-checkradio-1.1.1.tgz#d94c4bce810089957102670b19cafb194bcb97be"
   integrity sha512-6Wn2faBiFkctSeiaQkeU2MbjkQeuXsN4AthBDEKrHGGPl5wmV2GEj4iZCqzvw7Te7baaHdU8PbUgrmlD5D6oGA==
 
+bulma-popover@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/bulma-popover/-/bulma-popover-1.0.0.tgz#fe4b93fa6a68cb233145c16f69ee39ee0f7d4237"
+  integrity sha512-uc74pIcFIBG7vJMOOYwlcsyiN5HH1LmeDbDame2gLAtiM7EFGsHe58L6wQr6GNDJNrN/adwE2tNzqIb1yjL/Bw==
+
 bulma-quickview@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/bulma-quickview/-/bulma-quickview-2.0.0.tgz#ac85d6cc23f98bd4b4be5cef11e9524554d2bbf3"

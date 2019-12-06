@@ -80,6 +80,9 @@ Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> publ
 Target.create "PackCheckradio" (fun _ -> "src" </> "Feliz.Bulma.Checkradio" |> createNuget)
 Target.create "PublishCheckradio" (fun _ -> "src" </> "Feliz.Bulma.Checkradio" |> publishNuget)
 
+Target.create "PackPopover" (fun _ -> "src" </> "Feliz.Bulma.Popover" |> createNuget)
+Target.create "PublishPopover" (fun _ -> "src" </> "Feliz.Bulma.Popover" |> publishNuget)
+
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"
     Tools.node "--version" docsSrcPath

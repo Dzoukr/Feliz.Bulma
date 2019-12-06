@@ -11,6 +11,7 @@ There are various Feliz.Bulma extensions available:
 | Feliz.Bulma.QuickView | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.QuickView.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.QuickView/)  |
 | Feliz.Bulma.Tooltip | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Tooltip.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.Tooltip/)  |
 | Feliz.Bulma.Checkradio | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Checkradio.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.Checkradio/)  |
+| Feliz.Bulma.Popover | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.Popover/)  |
 
 
 ## Installation (manual)
