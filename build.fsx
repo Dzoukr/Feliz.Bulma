@@ -34,7 +34,7 @@ module Tools =
             DotNet.exec (DotNet.Options.withWorkingDirectory workingDir) cmd ""
         if result.ExitCode <> 0 then failwithf "'dotnet %s' failed in %s" cmd workingDir
     
-    let femto = runTool "femto"        
+    let femto args = args |> sprintf "femto %s" |> dotnet        
     let node = runTool (findTool "node" "node.exe")        
     let yarn = runTool (findTool "yarn" "yarn.cmd")             
 
