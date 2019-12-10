@@ -118,6 +118,7 @@ module private ElementLiterals =
     let [<Literal>] ``tel`` = "tel"
     let [<Literal>] ``submit`` = "submit"
     let [<Literal>] ``reset`` = "reset"
+    let [<Literal>] ``help`` = "help"
 
 open Feliz
 
@@ -680,3 +681,9 @@ type Bulma =
     static member inline tabs props = ElementBuilders.Div.props ElementLiterals.``tabs`` props
     static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tabs`` elms
     static member inline tabs elm = ElementBuilders.Div.valueElm ElementLiterals.``tabs`` elm
+    
+    static member inline help props = ElementBuilders.P.props ElementLiterals.``help`` props
+    static member inline help (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``help`` elms
+    static member inline help elm = ElementBuilders.P.valueElm ElementLiterals.``help`` elm
+    static member inline help s = ElementBuilders.P.valueStr ElementLiterals.``help`` s
+    static member inline help i = ElementBuilders.P.valueInt ElementLiterals.``help`` i

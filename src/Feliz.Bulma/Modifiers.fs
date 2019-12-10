@@ -1146,3 +1146,11 @@ type column =
     static member inline isVariable = PropertyBuilders.mkClass ClassLiterals.``is-variable``
     static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
     static member inline isVcentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
+    
+[<Fable.Core.Erase>]       
+type help =
+    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
+    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
+    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
+    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
+    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
