@@ -9,8 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.4.0</Version>
-        <PackageReleaseNotes>Added help element for forms</PackageReleaseNotes>
+        <Version>1.5.0</Version>
+        <PackageReleaseNotes>Added modalClose, modalCardTitle + small refactoring</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>

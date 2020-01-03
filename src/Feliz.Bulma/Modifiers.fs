@@ -223,7 +223,6 @@ module private ClassLiterals =
     let [<Literal>] ``has-succeeds-separator`` = "has-succeeds-separator"
     let [<Literal>] ``is-active`` = "is-active"
     let [<Literal>] ``is-up`` = "is-up"
-    let [<Literal>] ``modal-close`` = "modal-close"
     let [<Literal>] ``is-transparent`` = "is-transparent"
     let [<Literal>] ``is-fixed-top`` = "is-fixed-top"
     let [<Literal>] ``is-fixed-bottom`` = "is-fixed-bottom"
@@ -714,8 +713,14 @@ type notification =
 
 [<Fable.Core.Erase>]       
 type modal =
-    static member inline close = PropertyBuilders.mkClass ClassLiterals.``modal-close``
     static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+
+[<Fable.Core.Erase>]       
+type modalClose =
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
 [<Fable.Core.Erase>]       
 type navbar =

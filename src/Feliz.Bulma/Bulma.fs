@@ -85,9 +85,11 @@ module private ElementLiterals =
     let [<Literal>] ``message-body`` = "message-body"
     let [<Literal>] ``modal`` = "modal"
     let [<Literal>] ``modal-background`` = "modal-background"
+    let [<Literal>] ``modal-close`` = "modal-close"
     let [<Literal>] ``modal-content`` = "modal-content"
     let [<Literal>] ``modal-card`` = "modal-card"
     let [<Literal>] ``modal-card-head`` = "modal-card-head"
+    let [<Literal>] ``modal-card-title`` = "modal-card-title"
     let [<Literal>] ``modal-card-body`` = "modal-card-body"
     let [<Literal>] ``modal-card-foot`` = "modal-card-foot"
     let [<Literal>] ``navbar`` = "navbar"
@@ -561,6 +563,7 @@ type Bulma =
     static member inline modal elm = ElementBuilders.Div.valueElm ElementLiterals.``modal`` elm
     
     static member inline modalBackground props = ElementBuilders.Div.props ElementLiterals.``modal-background`` props
+    static member inline modalClose props = ElementBuilders.Button.props ElementLiterals.``modal-close`` props
     
     static member inline modalContent props = ElementBuilders.Div.props ElementLiterals.``modal-content`` props
     static member inline modalContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``modal-content`` elms
@@ -575,6 +578,12 @@ type Bulma =
     static member inline modalCardHead props = ElementBuilders.Header.props ElementLiterals.``modal-card-head`` props
     static member inline modalCardHead (elms:#seq<ReactElement>) = ElementBuilders.Header.children ElementLiterals.``modal-card-head`` elms
     static member inline modalCardHead elm = ElementBuilders.Header.valueElm ElementLiterals.``modal-card-head`` elm
+    
+    static member inline modalCardTitle props = ElementBuilders.P.props ElementLiterals.``modal-card-title`` props
+    static member inline modalCardTitle (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``modal-card-title`` elms
+    static member inline modalCardTitle elm = ElementBuilders.P.valueElm ElementLiterals.``modal-card-title`` elm
+    static member inline modalCardTitle s = ElementBuilders.P.valueStr ElementLiterals.``modal-card-title`` s
+    static member inline modalCardTitle i = ElementBuilders.P.valueInt ElementLiterals.``modal-card-title`` i    
     
     static member inline modalCardBody props = ElementBuilders.Section.props ElementLiterals.``modal-card-body`` props
     static member inline modalCardBody (elms:#seq<ReactElement>) = ElementBuilders.Section.children ElementLiterals.``modal-card-body`` elms
