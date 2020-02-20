@@ -122,6 +122,7 @@ module private ElementLiterals =
     let [<Literal>] ``reset`` = "reset"
     let [<Literal>] ``help`` = "help"
 
+open System
 open Feliz
 
 type Bulma =
@@ -617,9 +618,20 @@ type Bulma =
     static member inline navbarEnd (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-end`` elms
     static member inline navbarEnd elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-end`` elm    
 
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.navbarItemDiv or Bulma.navbarItemA to specify concrete HTML tag used for rendering.")>]
     static member inline navbarItem props = ElementBuilders.Div.props ElementLiterals.``navbar-item`` props
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.navbarItemDiv or Bulma.navbarItemA to specify concrete HTML tag used for rendering.")>]
     static member inline navbarItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-item`` elms
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.navbarItemDiv or Bulma.navbarItemA to specify concrete HTML tag used for rendering.")>]
     static member inline navbarItem elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-item`` elm
+    
+    static member inline navbarItemDiv props = ElementBuilders.Div.props ElementLiterals.``navbar-item`` props
+    static member inline navbarItemDiv (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-item`` elms
+    static member inline navbarItemDiv elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-item`` elm
+    
+    static member inline navbarItemA props = ElementBuilders.A.props ElementLiterals.``navbar-item`` props
+    static member inline navbarItemA (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-item`` elms
+    static member inline navbarItemA elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-item`` elm
 
     static member inline navbarLink props = ElementBuilders.A.props ElementLiterals.``navbar-link`` props
     static member inline navbarLink (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-link`` elms
