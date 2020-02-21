@@ -1038,10 +1038,17 @@ type tile =
     static member inline is12 = PropertyBuilders.mkClass ClassLiterals.``is-12``
 
 [<Fable.Core.Erase>]       
-type column =
+type columns =
     static member inline isMobile = PropertyBuilders.mkClass ClassLiterals.``is-mobile``
     static member inline isDesktop = PropertyBuilders.mkClass ClassLiterals.``is-desktop``
-    
+    static member inline isGapless = PropertyBuilders.mkClass ClassLiterals.``is-gapless``
+    static member inline isMultiline = PropertyBuilders.mkClass ClassLiterals.``is-multiline``
+    static member inline isVariable = PropertyBuilders.mkClass ClassLiterals.``is-variable``
+    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
+    static member inline isVcentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
+
+[<Fable.Core.Erase>]       
+type column =
     static member inline is1 = PropertyBuilders.mkClass ClassLiterals.``is-1``
     static member inline is2 = PropertyBuilders.mkClass ClassLiterals.``is-2``
     static member inline is3 = PropertyBuilders.mkClass ClassLiterals.``is-3``
@@ -1145,12 +1152,6 @@ type column =
     static member inline isThreeFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-fullhd``
     static member inline isTwoFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-fullhd``
     static member inline isOneFifthFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-fullhd``
-    
-    static member inline isGapless = PropertyBuilders.mkClass ClassLiterals.``is-gapless``
-    static member inline isMultiline = PropertyBuilders.mkClass ClassLiterals.``is-multiline``
-    static member inline isVariable = PropertyBuilders.mkClass ClassLiterals.``is-variable``
-    static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    static member inline isVcentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
     
 [<Fable.Core.Erase>]       
 type help =
