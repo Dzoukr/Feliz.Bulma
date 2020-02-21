@@ -918,6 +918,8 @@ type icon =
     static member inline isLeft = PropertyBuilders.mkClass ClassLiterals.``is-left``
     static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
     
     static member inline hasTextWhite = PropertyBuilders.mkClass ClassLiterals.``has-text-white``
     static member inline hasTextBlack = PropertyBuilders.mkClass ClassLiterals.``has-text-black``
