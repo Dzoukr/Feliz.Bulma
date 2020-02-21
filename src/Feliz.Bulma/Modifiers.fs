@@ -664,7 +664,7 @@ type title =
     static member inline isSpaced = PropertyBuilders.mkClass ClassLiterals.``is-spaced``
     
 [<Fable.Core.Erase>]       
-type tab =
+type tabs =
     static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
     static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``

@@ -3,6 +3,7 @@
 open Feliz
 open Feliz.Bulma
 open Shared
+open Feliz.Bulma.Operators
 
 let overview =
     Html.div [
@@ -91,5 +92,28 @@ Bulma.button [
         ]
         Bulma.content [
             Html.p [ prop.dangerouslySetInnerHTML "API was designed to be more less 1:1 with Bulma. To see what elements are available in Feliz.Bulma, please check <a href='https://bulma.io/documentation/'>official Bulma documentation</a>." ]
+        ]
+        
+        Bulma.content [
+            Bulma.title "Using Bulma props in Feliz elements"
+            Html.p [ prop.dangerouslySetInnerHTML "Feliz.Bulma contains some helpers that could be handy to combine with <i>classic</i> Feliz API. Unfortunately this is not supported out of the box - <a href='https://github.com/Zaid-Ajaj/Feliz/issues/128'>see this issue.</a>"]
+            Html.p [ prop.dangerouslySetInnerHTML "To allow this behavior, there is new <code>Feliz.Bulma.Operators</code> module with <code>++</code> operator" ]
+            code """open Feliz.Bulma.Operators
+            
+Html.p [
+    text.isUppercase
+    ++ text.isItalic
+    ++ color.hasTextSuccess
+    prop.text "Hello Feliz"
+]
+"""
+            
+            Html.p "Code above will work as expected:"
+            Html.p [
+                text.isUppercase
+                ++ text.isItalic
+                ++ color.hasTextSuccess
+                prop.text "Hello Feliz"
+            ]
         ]
     ]

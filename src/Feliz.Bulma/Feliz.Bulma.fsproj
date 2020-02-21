@@ -9,8 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.6.0</Version>
-        <PackageReleaseNotes>Added new methods for navbarItem to specify used tag for rendering. Old implementation marked as obsolete.</PackageReleaseNotes>
+        <Version>1.7.0</Version>
+        <PackageReleaseNotes>Fixing #7 and adding new Operators module for combining props in Feliz elements</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
@@ -21,6 +21,7 @@
         <Compile Include="PropertyBuilders.fs" />
         <Compile Include="ElementBuilders.fs" />
         <Compile Include="Modifiers.fs" />
+        <Compile Include="Operators.fs" />
         <Compile Include="Bulma.fs" />
     </ItemGroup>
     <ItemGroup>
