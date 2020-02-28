@@ -899,6 +899,7 @@ type field =
     static member inline isGroupedCentered = PropertyBuilders.mkClass ClassLiterals.``is-grouped-centered``
     static member inline isGroupedMultiline = PropertyBuilders.mkClass ClassLiterals.``is-grouped-multiline``
     static member inline isHorizontal = PropertyBuilders.mkClass ClassLiterals.``is-horizontal``
+    static member inline isNarrow = PropertyBuilders.mkClass ClassLiterals.``is-narrow``
 
 [<Fable.Core.Erase>]
 type message =
