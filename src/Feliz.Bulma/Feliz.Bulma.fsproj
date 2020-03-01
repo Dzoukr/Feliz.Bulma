@@ -9,8 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.8.0</Version>
-        <PackageReleaseNotes>Add missing size modifiers to icon #9</PackageReleaseNotes>
+        <Version>1.9.1</Version>
+        <PackageReleaseNotes>Fixing problem with Select modifiers generated in wrong element #10</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>

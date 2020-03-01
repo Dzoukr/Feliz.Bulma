@@ -4,11 +4,17 @@ open Feliz
 open Feliz.Bulma
 
 module internal Helpers =
+    let [<Literal>] ClassName = "className"
+    
     let inline getClasses (xs:IReactProperty list) =
         xs
         |> List.map unbox<string * obj>
-        |> List.filter (fun (v,_) -> v = "className")
+        |> List.filter (fun (v,_) -> v = ClassName)
         |> List.map (snd >> string)
+    
+    let inline partitionClasses (xs:IReactProperty list) =
+        xs
+        |> List.partition (unbox<string * obj> >> fst >> ((=) ClassName))
     
     let inline combineClasses cn (xs:IReactProperty list) =
         xs
