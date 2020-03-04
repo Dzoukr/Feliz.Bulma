@@ -1075,6 +1075,7 @@ type column =
     static member inline isThreeFifths = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths``
     static member inline isTwoFifths = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths``
     static member inline isOneFifth = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth``
+    static member inline isNarrow = PropertyBuilders.mkClass ClassLiterals.``is-narrow``
     static member inline isNarrowMobile = PropertyBuilders.mkClass ClassLiterals.``is-narrow-mobile``
     static member inline isNarrowTablet = PropertyBuilders.mkClass ClassLiterals.``is-narrow-tablet``
     static member inline isNarrowTouch = PropertyBuilders.mkClass ClassLiterals.``is-narrow-touch``
