@@ -133,6 +133,7 @@ module private ClassLiterals =
     let [<Literal>] ``is-success`` = "is-success"
     let [<Literal>] ``is-warning`` = "is-warning"
     let [<Literal>] ``is-danger`` = "is-danger"
+    let [<Literal>] ``is-text`` = "is-text"
     let [<Literal>] ``has-text-white`` = "has-text-white"
     let [<Literal>] ``has-text-black`` = "has-text-black"
     let [<Literal>] ``has-text-light`` = "has-text-light"
@@ -856,6 +857,8 @@ type button =
     static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
     static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
     static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
+    
+    static member inline isText = PropertyBuilders.mkClass ClassLiterals.``is-text``
 
 [<Fable.Core.Erase>]       
 type buttons =
