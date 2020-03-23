@@ -1,4 +1,4 @@
-import bulmaCalendar from 'bulma-calendar/src/js/index.js';
+import bulmaCalendar from 'bulma-calendar/dist/js/bulma-calendar.js';
 import defaultOptions from 'bulma-calendar/src/js/defaultOptions';
 
 const makeCall = function (calc, callback) {
