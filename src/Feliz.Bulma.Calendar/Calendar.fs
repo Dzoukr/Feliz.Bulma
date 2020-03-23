@@ -7,7 +7,18 @@ open Feliz
 module Interop =
     let attachCalendar (x:string) (y:obj) (z:obj) : unit = JsInterop.import "attach" "./Calendar.js"
 
+    type JsParams = {
+        startDate : DateTime
+        endDate : DateTime
+        startTime : DateTime
+        endTime : DateTime
+        mode : string
+        isRange : bool
+    }
+
 module internal Calendar = 
+    
+    
     let inline tryToDateTime (date:DateTime) (time:DateTime) =
         match box date, box time with
         | null, _ | _, null -> None
@@ -20,7 +31,7 @@ module internal Calendar =
     
     let inline toTime (time:DateTime) = { Hours = time.Hour; Minutes = time.Minute }
     
-    let inline toParams (p:{|startDate:DateTime; endDate:DateTime; startTime:DateTime; endTime:DateTime; mode:string; isRange:bool|}) =
+    let inline toParams (p:Interop.JsParams) =
         if p.isRange then
             (match p.mode with
             | "date" -> (tryToDate p.startDate, tryToDate p.endDate) |> RangeValue.Date
