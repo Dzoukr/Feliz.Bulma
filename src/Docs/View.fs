@@ -48,6 +48,11 @@ let menuPart model =
             item "Overview" PopoverOverview
             item "Installation" PopoverInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.PageLoader"
+        Bulma.menuList [
+            item "Overview" PageLoaderOverview
+            item "Installation" PageLoaderInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -65,6 +70,9 @@ let contentPart model dispatch =
     | CheckradioInstallation -> Views.Checkradio.installation
     | PopoverOverview -> Views.Popover.overview
     | PopoverInstallation -> Views.Popover.installation
+    | PageLoaderOverview -> Views.PageLoader.overview model dispatch
+    | PageLoaderInstallation -> Views.PageLoader.installation
+    
     
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =

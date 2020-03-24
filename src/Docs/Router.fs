@@ -16,6 +16,8 @@ type Page =
     | CheckradioInstallation
     | PopoverOverview
     | PopoverInstallation
+    | PageLoaderOverview
+    | PageLoaderInstallation
 
 let defaultPage = BulmaOverview
     
@@ -33,6 +35,8 @@ let parseUrl = function
     | [ "checkradio" ] -> CheckradioOverview 
     | [ "popover"; "installation" ] -> PopoverInstallation 
     | [ "popover" ] -> PopoverOverview 
+    | [ "pageloader"; "installation" ] -> PageLoaderInstallation 
+    | [ "pageloader" ] -> PageLoaderOverview 
     | _ -> defaultPage
     
 let getHref = function
@@ -49,4 +53,6 @@ let getHref = function
     | CheckradioInstallation -> Router.format("checkradio","installation")
     | PopoverOverview -> Router.format("popover")
     | PopoverInstallation -> Router.format("popover","installation")
+    | PageLoaderOverview -> Router.format("pageloader")
+    | PageLoaderInstallation -> Router.format("pageloader","installation")
     

@@ -14,6 +14,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Checkradio", "s
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Popover", "src\Feliz.Bulma.Popover\Feliz.Bulma.Popover.fsproj", "{580F4270-A643-42F7-ACEE-399581D44A1B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.PageLoader", "src\Feliz.Bulma.PageLoader\Feliz.Bulma.PageLoader.fsproj", "{BB8E1C6C-AE56-437C-9613-47F336CF86CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{580F4270-A643-42F7-ACEE-399581D44A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{580F4270-A643-42F7-ACEE-399581D44A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{580F4270-A643-42F7-ACEE-399581D44A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8E1C6C-AE56-437C-9613-47F336CF86CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8E1C6C-AE56-437C-9613-47F336CF86CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8E1C6C-AE56-437C-9613-47F336CF86CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8E1C6C-AE56-437C-9613-47F336CF86CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
