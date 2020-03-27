@@ -118,6 +118,7 @@ module private ElementLiterals =
     let [<Literal>] ``password`` = "password"
     let [<Literal>] ``email`` = "email"
     let [<Literal>] ``tel`` = "tel"
+    let [<Literal>] ``number`` = "number"
     let [<Literal>] ``submit`` = "submit"
     let [<Literal>] ``reset`` = "reset"
     let [<Literal>] ``help`` = "help"
@@ -257,6 +258,7 @@ type Bulma =
     static member inline passwordInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``password`` props
     static member inline emailInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``email`` props
     static member inline telInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``tel`` props
+    static member inline numberInput props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` ElementLiterals.``number`` props
     
     static member inline textarea props = ElementBuilders.Textarea.props ElementLiterals.``textarea`` props
     static member inline textarea (elms:#seq<ReactElement>) = ElementBuilders.Textarea.children ElementLiterals.``textarea`` elms

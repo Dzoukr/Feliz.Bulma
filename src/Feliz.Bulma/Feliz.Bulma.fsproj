@@ -9,8 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.11.0</Version>
-        <PackageReleaseNotes>Added button.isText #14</PackageReleaseNotes>
+        <Version>1.12.0</Version>
+        <PackageReleaseNotes>Added numberInput</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
