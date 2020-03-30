@@ -9,8 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.12.0</Version>
-        <PackageReleaseNotes>Added numberInput</PackageReleaseNotes>
+        <Version>1.13.0</Version>
+        <PackageReleaseNotes>Added isActive modifier for Tabs</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
