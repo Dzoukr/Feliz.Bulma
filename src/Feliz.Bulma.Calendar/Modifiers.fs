@@ -9,6 +9,10 @@ module internal PropertyBuilders =
 module calendar =
     module options =
         [<Fable.Core.Erase>]       
+        type experimental =
+            static member inline triggerOnTimeChange (v:bool) = PropertyBuilders.mkOpt "expTriggerOnTimeChange" v
+        
+        [<Fable.Core.Erase>]       
         type type' =
             static member inline date = PropertyBuilders.mkOpt "type" "date"
             static member inline datetime = PropertyBuilders.mkOpt "type" "datetime"
@@ -65,7 +69,6 @@ module calendar =
         static member inline labelTo (v:string) = PropertyBuilders.mkOpt "labelTo" v
         static member inline closeOnOverlayClick (v:bool) = PropertyBuilders.mkOpt "closeOnOverlayClick" v
         static member inline closeOnSelect (v:bool) = PropertyBuilders.mkOpt "closeOnSelect" v
-            
 
 [<Fable.Core.Erase>]       
 type calendar =
