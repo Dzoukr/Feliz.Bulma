@@ -101,7 +101,6 @@ export function attach (id, callback, optObj) {
         const element = document.querySelector(selector);
         if (element) {
             refreshHandlers(element.bulmaCalendar);
-            fixPrefilledDateTime(element.bulmaCalendar);
         }
     }
 }
