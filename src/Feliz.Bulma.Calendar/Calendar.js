@@ -41,9 +41,19 @@ export function attach (id, callback, optObj) {
         const calendars = bulmaCalendar.attach(selector, options);
         calendars.forEach(calendar => {
             if (calendar.element.id === id) {
+                calendar.removeListeners('hide');
+                calendar.removeListeners('select');
                 calendar.on('hide', calc => makeThrottledCall(10, calc, callback));
                 calendar.on('select', calc => makeThrottledCall(10, calc, callback));
             }
         });
+    } else {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.bulmaCalendar.removeListeners('hide');
+            element.bulmaCalendar.removeListeners('select');
+            element.bulmaCalendar.on('hide', calc => makeThrottledCall(10, calc, callback));
+            element.bulmaCalendar.on('select', calc => makeThrottledCall(10, calc, callback));
+        }
     }
 }

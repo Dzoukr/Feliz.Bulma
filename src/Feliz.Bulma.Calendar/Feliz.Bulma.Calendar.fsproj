@@ -7,10 +7,10 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.0.4</Version>
+        <Version>1.1.0</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Fixing unnecessary build warnings #17</PackageReleaseNotes>
+        <PackageReleaseNotes>Removing old listeners before attaching new ones</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Types.fs" />
