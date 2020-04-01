@@ -11,6 +11,7 @@ module calendar =
         [<Fable.Core.Erase>]       
         type experimental =
             static member inline triggerOnTimeChange (v:bool) = PropertyBuilders.mkOpt "expTriggerOnTimeChange" v
+            static member inline liveUpdate (v:bool) = PropertyBuilders.mkOpt "expLiveUpdate" v
         
         [<Fable.Core.Erase>]       
         type type' =

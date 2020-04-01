@@ -37,15 +37,24 @@ export function attach (id, callback, optObj) {
     
     const selector = 'input[id="'+id+'"]';
     const isAttached = isAlreadyAttached(selector);
+    const useLiveUpdate = options.expLiveUpdate === true;
+    const triggerOnTimeChange = options.expTriggerOnTimeChange === true;
     
-    function fixPrefilledDateTime (calendar) {
+    function setDate (calendar, startDate, endDate) {
         
-        if (options.startDate != null) {
-            const hours = options.startDate.getHours();
-            const minutes = options.startDate.getMinutes();
+        function fixNumbers (n) {
+            return ("0" + n).slice(-2);
+        }
+        
+        if (startDate != null) {
+            const hours = fixNumbers(startDate.getHours());
+            const minutes = fixNumbers(startDate.getMinutes());
             // set value
+            if (calendar.datePicker._date.start != null) {
+                calendar.datePicker._date.start = startDate;
+            }
             if (calendar.timePicker._time.start != null) {
-                calendar.timePicker._time.start = options.startDate;
+                calendar.timePicker._time.start = startDate;
             }
             // set ui
             if (calendar.timePicker._ui.start.hours.number != null && calendar.timePicker._ui.start.minutes.number != null) {
@@ -54,12 +63,15 @@ export function attach (id, callback, optObj) {
             }
         }
         
-        if (options.endDate != null) {
-            const hours = options.endDate.getHours();
-            const minutes = options.endDate.getMinutes();
+        if (endDate != null) {
+            const hours = fixNumbers(endDate.getHours());
+            const minutes = fixNumbers(endDate.getMinutes());
             // set value
+            if (calendar.datePicker._date.end != null) {
+                calendar.datePicker._date.end = endDate;
+            }
             if (calendar.timePicker._time.end != null) {
-                calendar.timePicker._time.end = options.endDate;
+                calendar.timePicker._time.end = endDate;
             }
             // set ui
             if (calendar.timePicker._ui.end.hours.number != null && calendar.timePicker._ui.end.minutes.number != null) {
@@ -70,7 +82,7 @@ export function attach (id, callback, optObj) {
         calendar.refresh();
     }
     
-    function triggerOnTimeChange(element) {
+    function addOnTimeChangeTriggers(element) {
         const searchRoot = element.element.parentElement.parentElement.parentElement;
         const timepickers = searchRoot.querySelectorAll('.timepicker-next,.timepicker-previous');
         timepickers.forEach(tp => {
@@ -90,10 +102,11 @@ export function attach (id, callback, optObj) {
         calendars.forEach(calendar => {
             if (calendar.element.id === id) {
                 refreshHandlers(calendar);
-                fixPrefilledDateTime(calendar);
                 
-                if(options.expTriggerOnTimeChange === true) {
-                    triggerOnTimeChange(calendar);
+                setDate(calendar, options.startDate, options.endDate);
+                
+                if(triggerOnTimeChange) {
+                    addOnTimeChangeTriggers(calendar);
                 }
             }
         });
@@ -101,6 +114,9 @@ export function attach (id, callback, optObj) {
         const element = document.querySelector(selector);
         if (element) {
             refreshHandlers(element.bulmaCalendar);
+            if (useLiveUpdate) {
+                setDate(element.bulmaCalendar, options.startDate, options.endDate);
+            }
         }
     }
 }
