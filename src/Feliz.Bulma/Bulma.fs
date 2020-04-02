@@ -521,11 +521,28 @@ type Bulma =
     static member inline dropdownContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-content`` elms
     static member inline dropdownContent elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-content`` elm
     
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.dropdownItemDiv or Bulma.dropdownItemA to specify concrete HTML tag used for rendering.")>]
     static member inline dropdownItem props = ElementBuilders.Div.props ElementLiterals.``dropdown-item`` props
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.dropdownItemDiv or Bulma.dropdownItemA to specify concrete HTML tag used for rendering.")>]
     static member inline dropdownItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-item`` elms
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.dropdownItemDiv or Bulma.dropdownItemA to specify concrete HTML tag used for rendering.")>]
     static member inline dropdownItem elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-item`` elm
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.dropdownItemDiv or Bulma.dropdownItemA to specify concrete HTML tag used for rendering.")>]
     static member inline dropdownItem s = ElementBuilders.Div.valueStr ElementLiterals.``dropdown-item`` s
+    [<Obsolete("This method is deprecated and will be removed in future version. Please use Bulma.dropdownItemDiv or Bulma.dropdownItemA to specify concrete HTML tag used for rendering.")>]
     static member inline dropdownItem i = ElementBuilders.Div.valueInt ElementLiterals.``dropdown-item`` i
+    
+    static member inline dropdownItemA props = ElementBuilders.A.props ElementLiterals.``dropdown-item`` props
+    static member inline dropdownItemA (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``dropdown-item`` elms
+    static member inline dropdownItemA elm = ElementBuilders.A.valueElm ElementLiterals.``dropdown-item`` elm
+    static member inline dropdownItemA s = ElementBuilders.A.valueStr ElementLiterals.``dropdown-item`` s
+    static member inline dropdownItemA i = ElementBuilders.A.valueInt ElementLiterals.``dropdown-item`` i
+    
+    static member inline dropdownItemDiv props = ElementBuilders.Div.props ElementLiterals.``dropdown-item`` props
+    static member inline dropdownItemDiv (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-item`` elms
+    static member inline dropdownItemDiv elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-item`` elm
+    static member inline dropdownItemDiv s = ElementBuilders.Div.valueStr ElementLiterals.``dropdown-item`` s
+    static member inline dropdownItemDiv i = ElementBuilders.Div.valueInt ElementLiterals.``dropdown-item`` i
     
     static member inline dropdownDivider props = ElementBuilders.Hr.props ElementLiterals.``dropdown-divider`` props
     
