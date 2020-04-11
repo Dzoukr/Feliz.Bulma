@@ -104,7 +104,11 @@ module.exports = {
         ]),
     resolve: {
         // See https://github.com/fable-compiler/Fable/issues/1490
-        symlinks: false
+        symlinks: false,
+        modules: [
+            "node_modules",
+            path.resolve(__dirname, "node_modules")
+        ]
     },
     // Configuration for webpack-dev-server
     devServer: {
