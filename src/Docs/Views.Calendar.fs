@@ -19,7 +19,7 @@ let overview =
                 Fable.Core.JS.console.log(x)
             )
         ]
-        
+
     let calcDialog =
         Calendar.calendar [
             prop.id "DialogCal"
@@ -37,9 +37,9 @@ let overview =
                 Fable.Core.JS.console.log(x)
             )
         ]
-       
+
     Html.div [
-        Bulma.title [
+        Bulma.title.h1 [
             Html.text "Feliz.Bulma.Calendar "
             Html.a [
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Calendar/"
@@ -50,7 +50,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle [
+        Bulma.subtitle.h2 [
             Html.a [ prop.href "https://creativebulma.net/product/calendar/demo"; prop.text "Calendar" ]
             Html.text " extension for Feliz.Bulma"
         ]
@@ -58,7 +58,7 @@ let overview =
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Calendar component"
             code """open Feliz.Bulma.Calendar
-            
+
 Calendar.calendar [
     prop.id "RangeCal"
     calendar.options [
@@ -74,7 +74,7 @@ Calendar.calendar [
             calcRanged
         ]
         Bulma.content [
-            Bulma.title4 "OnValueSelected arguments"
+            Bulma.title.h4 "OnValueSelected arguments"
             Html.p [ prop.dangerouslySetInnerHTML "When value selected or calendar closed, strongly typed <code>SelectedValue</code> is passed to callback function <code>onValueSelected</code>" ]
             code """type TimeValue = { Hours : int; Minutes : int }
 
@@ -93,9 +93,9 @@ type SelectedValue =
     | RangeValue of RangeValue
 """
         ]
-        
+
         Bulma.content [
-            Bulma.title4 "Configuration"
+            Bulma.title.h4 "Configuration"
             Html.p "Calendar component supports various options for configuration"
             code """Calendar.calendar [
     prop.id "DialogCal"
