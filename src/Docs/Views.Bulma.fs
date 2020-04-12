@@ -116,20 +116,23 @@ Html.p [
                 prop.text "Hello Feliz"
             ]
         ]
-
-        Bulma.card [
-            Bulma.cardHeader [
-                Bulma.cardHeaderTitle "Test"
-            ]
-
-            Bulma.cardContent [
-                prop.text "jkdkzodk"
-            ]
-
-            Bulma.cardFooter [
-                Bulma.cardFooterItem.a "First item"
-                Bulma.cardFooterItem.a "Second item"
-                Bulma.cardFooterItem.a "Third item"
-            ]
-        ]
     ]
+
+
+Bulma.card [
+    Bulma.card.header [
+        Bulma.card.header.title.div "aaa"
+    ]
+    Bulma.card.footer [
+        Bulma.card.footer.item.div "AAA"
+    ]
+]
+
+//Bulma.file [
+//    Bulma.file.label [
+//        Bulma.file.label.cta [
+//            
+//        ]
+//        Bulma.file.label.input []
+//    ]
+//]
