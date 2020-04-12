@@ -120,31 +120,7 @@ open Feliz
 
 [<Fable.Core.Erase>]
 type Bulma =
-
-    static member inline hero props = ElementBuilders.Div.props ElementLiterals.``hero`` props
-    static member inline hero (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero`` elms
-    static member inline hero elm = ElementBuilders.Div.valueElm ElementLiterals.``hero`` elm
-    static member inline hero s = ElementBuilders.Div.valueStr ElementLiterals.``hero`` s
-    static member inline hero i = ElementBuilders.Div.valueInt ElementLiterals.``hero`` i
-
-    static member inline heroBody props = ElementBuilders.Div.props ElementLiterals.``hero-body`` props
-    static member inline heroBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-body`` elms
-    static member inline heroBody elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-body`` elm
-    static member inline heroBody s = ElementBuilders.Div.valueStr ElementLiterals.``hero-body`` s
-    static member inline heroBody i = ElementBuilders.Div.valueInt ElementLiterals.``hero-body`` i
-
-    static member inline heroHead props = ElementBuilders.Div.props ElementLiterals.``hero-head`` props
-    static member inline heroHead (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-head`` elms
-    static member inline heroHead elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-head`` elm
-    static member inline heroHead s = ElementBuilders.Div.valueStr ElementLiterals.``hero-head`` s
-    static member inline heroHead i = ElementBuilders.Div.valueInt ElementLiterals.``hero-head`` i
-
-    static member inline heroFoot props = ElementBuilders.Div.props ElementLiterals.``hero-foot`` props
-    static member inline heroFoot (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-foot`` elms
-    static member inline heroFoot elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-foot`` elm
-    static member inline heroFoot s = ElementBuilders.Div.valueStr ElementLiterals.``hero-foot`` s
-    static member inline heroFoot i = ElementBuilders.Div.valueInt ElementLiterals.``hero-foot`` i
-
+    
     static member inline section props = ElementBuilders.Section.props ElementLiterals.``section`` props
     static member inline section (elms:#seq<ReactElement>) = ElementBuilders.Section.children ElementLiterals.``section`` elms
 
@@ -536,6 +512,39 @@ module Bulma =
             static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``media-content`` elm
             static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``media-content`` s
             static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``media-content`` i
+    
+    [<Fable.Core.Erase>]
+    type hero =
+        static member inline div props = ElementBuilders.Div.props ElementLiterals.``hero`` props
+        static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero`` elms
+        static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``hero`` elm
+        static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``hero`` s
+        static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``hero`` i
+    
+    module hero =        
+        [<Fable.Core.Erase>]
+        type body =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``hero-body`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-body`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-body`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``hero-body`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``hero-body`` i
+        
+        [<Fable.Core.Erase>]
+        type head =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``hero-head`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-head`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-head`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``hero-head`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``hero-head`` i
+
+        [<Fable.Core.Erase>]
+        type foot =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``hero-foot`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-foot`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-foot`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``hero-foot`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``hero-foot`` i
         
     [<Fable.Core.Erase>]
     type cardFooterItem =
