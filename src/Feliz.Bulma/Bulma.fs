@@ -120,34 +120,7 @@ open Feliz
 
 [<Fable.Core.Erase>]
 type Bulma =
-    static member inline container props = ElementBuilders.Div.props ElementLiterals.``container`` props
-    static member inline container (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``container`` elms
-    static member inline container elm = ElementBuilders.Div.valueElm ElementLiterals.``container`` elm
-    static member inline container s = ElementBuilders.Div.valueStr ElementLiterals.``container`` s
-    static member inline container i = ElementBuilders.Div.valueInt ElementLiterals.``container`` i
-
-    static member inline level props = ElementBuilders.Nav.props ElementLiterals.``level`` props
-    static member inline level (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``level`` elms
-    static member inline level elm = ElementBuilders.Nav.children ElementLiterals.``level`` elm
-
-    static member inline levelLeft props = ElementBuilders.Div.props ElementLiterals.``level-left`` props
-    static member inline levelLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-left`` elms
-    static member inline levelLeft elm = ElementBuilders.Div.valueElm ElementLiterals.``level-left`` elm
-    static member inline levelLeft s = ElementBuilders.Div.valueStr ElementLiterals.``level-left`` s
-    static member inline levelLeft i = ElementBuilders.Div.valueInt ElementLiterals.``level-left`` i
-
-    static member inline levelRight props = ElementBuilders.Div.props ElementLiterals.``level-right`` props
-    static member inline levelRight (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-right`` elms
-    static member inline levelRight elm = ElementBuilders.Div.valueElm ElementLiterals.``level-right`` elm
-    static member inline levelRight s = ElementBuilders.Div.valueStr ElementLiterals.``level-right`` s
-    static member inline levelRight i = ElementBuilders.Div.valueInt ElementLiterals.``level-right`` i
-
-    static member inline levelItem props = ElementBuilders.Div.props ElementLiterals.``level-item`` props
-    static member inline levelItem (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-item`` elms
-    static member inline levelItem elm = ElementBuilders.Div.valueElm ElementLiterals.``level-item`` elm
-    static member inline levelItem s = ElementBuilders.Div.valueStr ElementLiterals.``level-item`` s
-    static member inline levelItem i = ElementBuilders.Div.valueInt ElementLiterals.``level-item`` i
-
+    
     static member inline media props = ElementBuilders.Article.props ElementLiterals.``media`` props
     static member inline media (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``media`` elms
     static member inline media elm = ElementBuilders.Article.valueElm ElementLiterals.``media`` elm
@@ -513,7 +486,48 @@ type Bulma =
     static member inline help i = ElementBuilders.P.valueInt ElementLiterals.``help`` i
 
 module Bulma =
-
+    
+    [<Fable.Core.Erase>]
+    type container =
+        static member inline div props = ElementBuilders.Div.props ElementLiterals.``container`` props
+        static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``container`` elms
+        static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``container`` elm
+        static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``container`` s
+        static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``container`` i
+    
+    [<Fable.Core.Erase>]
+    type level =
+        static member inline nav props = ElementBuilders.Nav.props ElementLiterals.``level`` props
+        static member inline nav (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``level`` elms
+        static member inline nav elm = ElementBuilders.Nav.children ElementLiterals.``level`` elm
+    
+    module level =
+        
+        [<Fable.Core.Erase>]
+        type left =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``level-left`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-left`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``level-left`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``level-left`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``level-left`` i
+        
+        [<Fable.Core.Erase>]
+        type right =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``level-right`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-right`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``level-right`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``level-right`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``level-right`` i
+        
+        [<Fable.Core.Erase>]
+        type item =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``level-item`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-item`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``level-item`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``level-item`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``level-item`` i
+        
+        
     [<Fable.Core.Erase>]
     type cardFooterItem =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``card-footer-item`` props
