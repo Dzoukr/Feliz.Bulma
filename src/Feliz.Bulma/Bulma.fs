@@ -120,28 +120,6 @@ open Feliz
 
 [<Fable.Core.Erase>]
 type Bulma =
-    
-    static member inline media props = ElementBuilders.Article.props ElementLiterals.``media`` props
-    static member inline media (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``media`` elms
-    static member inline media elm = ElementBuilders.Article.valueElm ElementLiterals.``media`` elm
-
-    static member inline mediaLeft props = ElementBuilders.Div.props ElementLiterals.``media-left`` props
-    static member inline mediaLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-left`` elms
-    static member inline mediaLeft elm = ElementBuilders.Div.valueElm ElementLiterals.``media-left`` elm
-    static member inline mediaLeft s = ElementBuilders.Div.valueStr ElementLiterals.``media-left`` s
-    static member inline mediaLeft i = ElementBuilders.Div.valueInt ElementLiterals.``media-left`` i
-
-    static member inline mediaRight props = ElementBuilders.Div.props ElementLiterals.``media-right`` props
-    static member inline mediaRight (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-right`` elms
-    static member inline mediaRight elm = ElementBuilders.Div.valueElm ElementLiterals.``media-right`` elm
-    static member inline mediaRight s = ElementBuilders.Div.valueStr ElementLiterals.``media-right`` s
-    static member inline mediaRight i = ElementBuilders.Div.valueInt ElementLiterals.``media-right`` i
-
-    static member inline mediaContent props = ElementBuilders.Div.props ElementLiterals.``media-content`` props
-    static member inline mediaContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-content`` elms
-    static member inline mediaContent elm = ElementBuilders.Div.valueElm ElementLiterals.``media-content`` elm
-    static member inline mediaContent s = ElementBuilders.Div.valueStr ElementLiterals.``media-content`` s
-    static member inline mediaContent i = ElementBuilders.Div.valueInt ElementLiterals.``media-content`` i
 
     static member inline hero props = ElementBuilders.Div.props ElementLiterals.``hero`` props
     static member inline hero (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero`` elms
@@ -526,7 +504,38 @@ module Bulma =
             static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``level-item`` elm
             static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``level-item`` s
             static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``level-item`` i
+    
+    [<Fable.Core.Erase>]
+    type media =
+        static member inline article props = ElementBuilders.Article.props ElementLiterals.``media`` props
+        static member inline article (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``media`` elms
+        static member inline article elm = ElementBuilders.Article.valueElm ElementLiterals.``media`` elm
+    
+    module media =
         
+        [<Fable.Core.Erase>]
+        type left =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``media-left`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-left`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``media-left`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``media-left`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``media-left`` i
+
+        [<Fable.Core.Erase>]
+        type right =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``media-right`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-right`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``media-right`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``media-right`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``media-right`` i
+        
+        [<Fable.Core.Erase>]
+        type content =
+            static member inline div props = ElementBuilders.Div.props ElementLiterals.``media-content`` props
+            static member inline div (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-content`` elms
+            static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``media-content`` elm
+            static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``media-content`` s
+            static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``media-content`` i
         
     [<Fable.Core.Erase>]
     type cardFooterItem =

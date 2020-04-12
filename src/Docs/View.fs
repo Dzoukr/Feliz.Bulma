@@ -76,7 +76,7 @@ let contentPart model dispatch =
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
-        Bulma.container [
+        Bulma.container.div [
             Bulma.section [
                 Bulma.tile [
                     tile.isAncestor
