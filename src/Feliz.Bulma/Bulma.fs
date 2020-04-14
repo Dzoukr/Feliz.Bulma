@@ -125,11 +125,11 @@ type Bulma =
     static member inline container elm = ElementBuilders.Div.valueElm ElementLiterals.``container`` elm
     static member inline container s = ElementBuilders.Div.valueStr ElementLiterals.``container`` s
     static member inline container i = ElementBuilders.Div.valueInt ElementLiterals.``container`` i
-    
+
     static member inline level props = ElementBuilders.Nav.props ElementLiterals.``level`` props
     static member inline level (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``level`` elms
     static member inline level elm = ElementBuilders.Nav.children ElementLiterals.``level`` elm
-    
+
     static member inline levelLeft props = ElementBuilders.Div.props ElementLiterals.``level-left`` props
     static member inline levelLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``level-left`` elms
     static member inline levelLeft elm = ElementBuilders.Div.valueElm ElementLiterals.``level-left`` elm
@@ -147,11 +147,11 @@ type Bulma =
     static member inline levelItem elm = ElementBuilders.Div.valueElm ElementLiterals.``level-item`` elm
     static member inline levelItem s = ElementBuilders.Div.valueStr ElementLiterals.``level-item`` s
     static member inline levelItem i = ElementBuilders.Div.valueInt ElementLiterals.``level-item`` i
-    
+
     static member inline media props = ElementBuilders.Article.props ElementLiterals.``media`` props
     static member inline media (elms:#seq<ReactElement>) = ElementBuilders.Article.children ElementLiterals.``media`` elms
     static member inline media elm = ElementBuilders.Article.valueElm ElementLiterals.``media`` elm
-    
+
     static member inline mediaLeft props = ElementBuilders.Div.props ElementLiterals.``media-left`` props
     static member inline mediaLeft (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-left`` elms
     static member inline mediaLeft elm = ElementBuilders.Div.valueElm ElementLiterals.``media-left`` elm
@@ -163,7 +163,7 @@ type Bulma =
     static member inline mediaRight elm = ElementBuilders.Div.valueElm ElementLiterals.``media-right`` elm
     static member inline mediaRight s = ElementBuilders.Div.valueStr ElementLiterals.``media-right`` s
     static member inline mediaRight i = ElementBuilders.Div.valueInt ElementLiterals.``media-right`` i
-    
+
     static member inline mediaContent props = ElementBuilders.Div.props ElementLiterals.``media-content`` props
     static member inline mediaContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``media-content`` elms
     static member inline mediaContent elm = ElementBuilders.Div.valueElm ElementLiterals.``media-content`` elm
@@ -173,13 +173,13 @@ type Bulma =
     static member inline hero props = ElementBuilders.Section.props ElementLiterals.``hero`` props
     static member inline hero (elms:#seq<ReactElement>) = ElementBuilders.Section.children ElementLiterals.``hero`` elms
     static member inline hero elm = ElementBuilders.Section.valueElm ElementLiterals.``hero`` elm
-    
+
     static member inline heroBody props = ElementBuilders.Div.props ElementLiterals.``hero-body`` props
     static member inline heroBody (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-body`` elms
     static member inline heroBody elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-body`` elm
     static member inline heroBody s = ElementBuilders.Div.valueStr ElementLiterals.``hero-body`` s
     static member inline heroBody i = ElementBuilders.Div.valueInt ElementLiterals.``hero-body`` i
-    
+
     static member inline heroHead props = ElementBuilders.Div.props ElementLiterals.``hero-head`` props
     static member inline heroHead (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``hero-head`` elms
     static member inline heroHead elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-head`` elm
@@ -191,7 +191,7 @@ type Bulma =
     static member inline heroFoot elm = ElementBuilders.Div.valueElm ElementLiterals.``hero-foot`` elm
     static member inline heroFoot s = ElementBuilders.Div.valueStr ElementLiterals.``hero-foot`` s
     static member inline heroFoot i = ElementBuilders.Div.valueInt ElementLiterals.``hero-foot`` i
-    
+
     static member inline fieldLabel props = ElementBuilders.Div.props ElementLiterals.``field-label`` props
     static member inline fieldLabel (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``field-label`` elms
     static member inline fieldLabel elm = ElementBuilders.Div.valueElm ElementLiterals.``field-label`` elm
@@ -203,9 +203,9 @@ type Bulma =
     static member inline fieldBody elm = ElementBuilders.Div.valueElm ElementLiterals.``field-body`` elm
     static member inline fieldBody s = ElementBuilders.Div.valueStr ElementLiterals.``field-body`` s
     static member inline fieldBody i = ElementBuilders.Div.valueInt ElementLiterals.``field-body`` i
-    
+
     static member inline fileInput props = ElementBuilders.Input.propsWithType ElementLiterals.``file-input`` prop.type'.file props
-            
+
     static member inline fileCta props = ElementBuilders.Span.props ElementLiterals.``file-cta`` props
     static member inline fileCta (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-cta`` elms
     static member inline fileCta elm = ElementBuilders.Span.valueElm ElementLiterals.``file-cta`` elm
@@ -215,14 +215,14 @@ type Bulma =
     static member inline fileName elm = ElementBuilders.Span.valueElm ElementLiterals.``file-name`` elm
     static member inline fileName s = ElementBuilders.Span.valueStr ElementLiterals.``file-name`` s
     static member inline fileName i = ElementBuilders.Span.valueInt ElementLiterals.``file-name`` i
-    
+
     static member inline fileIcon props = ElementBuilders.Span.props ElementLiterals.``file-icon`` props
     static member inline fileIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-icon`` elms
     static member inline fileIcon elm = ElementBuilders.Span.valueElm ElementLiterals.``file-icon`` elm
-    
+
     static member inline section props = ElementBuilders.Section.props ElementLiterals.``section`` props
     static member inline section (elms:#seq<ReactElement>) = ElementBuilders.Section.children ElementLiterals.``section`` elms
-    
+
     static member inline footer props = ElementBuilders.Footer.props ElementLiterals.``footer`` props
     static member inline footer (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``footer`` elms
     static member inline footer elm = ElementBuilders.Footer.valueElm ElementLiterals.``footer`` elm
@@ -232,7 +232,7 @@ type Bulma =
     static member inline tile elm = ElementBuilders.Div.valueElm ElementLiterals.``tile`` elm
     static member inline tile s = ElementBuilders.Div.valueStr ElementLiterals.``tile`` s
     static member inline tile i = ElementBuilders.Div.valueInt ElementLiterals.``tile`` i
-    
+
     static member inline columns props = ElementBuilders.Div.props ElementLiterals.``columns`` props
     static member inline columns (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``columns`` elms
     static member inline columns elm = ElementBuilders.Div.valueElm ElementLiterals.``columns`` elm
@@ -244,17 +244,17 @@ type Bulma =
     static member inline column elm = ElementBuilders.Div.valueElm ElementLiterals.``column`` elm
     static member inline column s = ElementBuilders.Div.valueStr ElementLiterals.``column`` s
     static member inline column i = ElementBuilders.Div.valueInt ElementLiterals.``column`` i
-    
+
     static member inline label props = ElementBuilders.Label.props ElementLiterals.``label`` props
     static member inline label (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``label`` elms
     static member inline label elm = ElementBuilders.Label.valueElm ElementLiterals.``label`` elm
     static member inline label s = ElementBuilders.Label.valueStr ElementLiterals.``label`` s
     static member inline label i = ElementBuilders.Label.valueInt ElementLiterals.``label`` i
-    
+
     static member inline textarea props = ElementBuilders.Textarea.props ElementLiterals.``textarea`` props
     static member inline textarea (elms:#seq<ReactElement>) = ElementBuilders.Textarea.children ElementLiterals.``textarea`` elms
     static member inline textarea elm = ElementBuilders.Textarea.valueElm ElementLiterals.``textarea`` elm
-    
+
     static member inline select props =
         let cp,nonCp = ElementBuilders.Helpers.partitionClasses props
         Html.div [ ElementBuilders.Helpers.combineClasses ElementLiterals.``select`` cp; prop.children [ Html.select nonCp ] ]
@@ -328,25 +328,25 @@ type Bulma =
     static member inline card props = ElementBuilders.Div.props ElementLiterals.``card`` props
     static member inline card (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card`` elms
     static member inline card elm = ElementBuilders.Div.valueElm ElementLiterals.``card`` elm
-    
+
     static member inline cardHeader props = ElementBuilders.Header.props ElementLiterals.``card-header`` props
     static member inline cardHeader (elms:#seq<ReactElement>) = ElementBuilders.Header.children ElementLiterals.``card-header`` elms
     static member inline cardHeader elm = ElementBuilders.Header.valueElm ElementLiterals.``card-header`` elm
-    
+
     static member inline cardImage props = ElementBuilders.Div.props ElementLiterals.``card-image`` props
     static member inline cardImage (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-image`` elms
     static member inline cardImage elm = ElementBuilders.Div.valueElm ElementLiterals.``card-image`` elm
-    
+
     static member inline cardContent props = ElementBuilders.Div.props ElementLiterals.``card-content`` props
     static member inline cardContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``card-content`` elms
     static member inline cardContent elm = ElementBuilders.Div.valueElm ElementLiterals.``card-content`` elm
     static member inline cardContent s = ElementBuilders.Div.valueStr ElementLiterals.``card-content`` s
     static member inline cardContent i = ElementBuilders.Div.valueInt ElementLiterals.``card-content`` i
-        
+
     static member inline cardFooter props = ElementBuilders.Footer.props ElementLiterals.``card-footer`` props
     static member inline cardFooter (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``card-footer`` elms
     static member inline cardFooter elm = ElementBuilders.Footer.valueElm ElementLiterals.``card-footer`` elm
-    
+
     static member inline dropdown props = ElementBuilders.Div.props ElementLiterals.``dropdown`` props
     static member inline dropdown (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown`` elms
     static member inline dropdown elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown`` elm
@@ -354,17 +354,17 @@ type Bulma =
     static member inline dropdownTrigger props = ElementBuilders.Div.props ElementLiterals.``dropdown-trigger`` props
     static member inline dropdownTrigger (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-trigger`` elms
     static member inline dropdownTrigger elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-trigger`` elm
-    
+
     static member inline dropdownMenu props = ElementBuilders.Div.props ElementLiterals.``dropdown-menu`` props
     static member inline dropdownMenu (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-menu`` elms
     static member inline dropdownMenu elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-menu`` elm
-    
+
     static member inline dropdownContent props = ElementBuilders.Div.props ElementLiterals.``dropdown-content`` props
     static member inline dropdownContent (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``dropdown-content`` elms
     static member inline dropdownContent elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-content`` elm
-    
+
     static member inline dropdownDivider props = ElementBuilders.Hr.props ElementLiterals.``dropdown-divider`` props
-    
+
     static member inline menu props = ElementBuilders.Aside.props ElementLiterals.``menu`` props
     static member inline menu (elms:#seq<ReactElement>) = ElementBuilders.Aside.children ElementLiterals.``menu`` elms
     static member inline menu elm = ElementBuilders.Aside.valueElm ElementLiterals.``menu`` elm
@@ -392,13 +392,13 @@ type Bulma =
     static member inline messageBody elm = ElementBuilders.Div.valueElm ElementLiterals.``message-body`` elm
     static member inline messageBody s = ElementBuilders.Div.valueStr ElementLiterals.``message-body`` s
     static member inline messageBody i = ElementBuilders.Div.valueInt ElementLiterals.``message-body`` i
-    
+
     static member inline modal props = ElementBuilders.Div.props ElementLiterals.``modal`` props
     static member inline modal (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``modal`` elms
     static member inline modal elm = ElementBuilders.Div.valueElm ElementLiterals.``modal`` elm
-    
+
     static member inline modalBackground props = ElementBuilders.Div.props ElementLiterals.``modal-background`` props
-    
+
     static member inline modalClose props = ElementBuilders.Button.props ElementLiterals.``modal-close`` props
 
     static member inline modalContent props = ElementBuilders.Div.props ElementLiterals.``modal-content`` props
@@ -410,7 +410,7 @@ type Bulma =
     static member inline modalCard props = ElementBuilders.Div.props ElementLiterals.``modal-card`` props
     static member inline modalCard (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``modal-card`` elms
     static member inline modalCard elm = ElementBuilders.Div.valueElm ElementLiterals.``modal-card`` elm
-    
+
     static member inline modalCardHead props = ElementBuilders.Header.props ElementLiterals.``modal-card-head`` props
     static member inline modalCardHead (elms:#seq<ReactElement>) = ElementBuilders.Header.children ElementLiterals.``modal-card-head`` elms
     static member inline modalCardHead elm = ElementBuilders.Header.valueElm ElementLiterals.``modal-card-head`` elm
@@ -422,27 +422,27 @@ type Bulma =
     static member inline modalCardFoot props = ElementBuilders.Footer.props ElementLiterals.``modal-card-foot`` props
     static member inline modalCardFoot (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``modal-card-foot`` elms
     static member inline modalCardFoot elm = ElementBuilders.Footer.valueElm ElementLiterals.``modal-card-foot`` elm
-    
+
     static member inline modalCardTitle props = ElementBuilders.P.props ElementLiterals.``modal-card-title`` props
     static member inline modalCardTitle (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``modal-card-title`` elms
     static member inline modalCardTitle elm = ElementBuilders.P.valueElm ElementLiterals.``modal-card-title`` elm
     static member inline modalCardTitle s = ElementBuilders.P.valueStr ElementLiterals.``modal-card-title`` s
     static member inline modalCardTitle i = ElementBuilders.P.valueInt ElementLiterals.``modal-card-title`` i
-    
+
     static member inline navbar props = ElementBuilders.Nav.props ElementLiterals.``navbar`` props
     static member inline navbar (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``navbar`` elms
     static member inline navbar elm = ElementBuilders.Nav.valueElm ElementLiterals.``navbar`` elm
-    
+
     static member inline navbarDivider props = ElementBuilders.Hr.props ElementLiterals.``navbar-divider`` props
-    
+
     static member inline navbarMenu props = ElementBuilders.Div.props ElementLiterals.``navbar-menu`` props
     static member inline navbarMenu (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``navbar-menu`` elms
     static member inline navbarMenu elm = ElementBuilders.Div.valueElm ElementLiterals.``navbar-menu`` elm
-    
+
     static member inline navbarBurger props = ElementBuilders.A.props ElementLiterals.``navbar-burger`` props
     static member inline navbarBurger (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-burger`` elms
     static member inline navbarBurger elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-burger`` elm
-    
+
     static member inline pagination props = ElementBuilders.Nav.props ElementLiterals.``pagination`` props
     static member inline pagination (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``pagination`` elms
     static member inline pagination elm = ElementBuilders.Nav.valueElm ElementLiterals.``pagination`` elm
@@ -450,17 +450,17 @@ type Bulma =
     static member inline paginationList props = ElementBuilders.Ul.props ElementLiterals.``pagination-list`` props
     static member inline paginationList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children ElementLiterals.``pagination-list`` elms
     static member inline paginationList elm = ElementBuilders.Ul.valueElm ElementLiterals.``pagination-list`` elm
-    
+
     static member inline paginationEllipsis props = ElementBuilders.Span.props ElementLiterals.``pagination-ellipsis`` props
     static member inline paginationEllipsis (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``pagination-ellipsis`` elms
     static member inline paginationEllipsis elm = ElementBuilders.Span.valueElm ElementLiterals.``pagination-ellipsis`` elm
     static member inline paginationEllipsis s = ElementBuilders.Span.valueStr ElementLiterals.``pagination-ellipsis`` s
     static member inline paginationEllipsis i = ElementBuilders.Span.valueInt ElementLiterals.``pagination-ellipsis`` i
-    
+
     static member inline panel props = ElementBuilders.Nav.props ElementLiterals.``panel`` props
     static member inline panel (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``panel`` elms
     static member inline panel elm = ElementBuilders.Nav.valueElm ElementLiterals.``panel`` elm
-    
+
     static member inline panelHeading props = ElementBuilders.P.props ElementLiterals.``panel-heading`` props
     static member inline panelHeading (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``panel-heading`` elms
     static member inline panelHeading elm = ElementBuilders.P.valueElm ElementLiterals.``panel-heading`` elm
@@ -468,11 +468,11 @@ type Bulma =
     static member inline panelTabs props = ElementBuilders.P.props ElementLiterals.``panel-tabs`` props
     static member inline panelTabs (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``panel-tabs`` elms
     static member inline panelTabs elm = ElementBuilders.P.valueElm ElementLiterals.``panel-tabs`` elm
-    
+
     static member inline panelIcon props = ElementBuilders.Span.props ElementLiterals.``panel-icon`` props
     static member inline panelIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``panel-icon`` elms
     static member inline panelIcon elm = ElementBuilders.Span.valueElm ElementLiterals.``panel-icon`` elm
-    
+
     static member inline tabs props = ElementBuilders.Div.props ElementLiterals.``tabs`` props
     static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tabs`` elms
     static member inline tabs elm = ElementBuilders.Div.valueElm ElementLiterals.``tabs`` elm
@@ -484,7 +484,7 @@ type Bulma =
     static member inline help i = ElementBuilders.P.valueInt ElementLiterals.``help`` i
 
 module Bulma =
-    
+
     [<Fable.Core.Erase>]
     type button =
         static member inline button props = ElementBuilders.Button.props ElementLiterals.``button`` props
@@ -619,7 +619,7 @@ module Bulma =
         static member inline p elm = ElementBuilders.P.valueElm ElementLiterals.``field`` elm
         static member inline p s = ElementBuilders.P.valueStr ElementLiterals.``field`` s
         static member inline p i = ElementBuilders.P.valueInt ElementLiterals.``field`` i
-    
+
     [<Fable.Core.Erase>]
     type fileLabel =
         static member inline label props = ElementBuilders.Label.props ElementLiterals.``file-label`` props
@@ -627,13 +627,13 @@ module Bulma =
         static member inline label elm = ElementBuilders.Label.valueElm ElementLiterals.``file-label`` elm
         static member inline label s = ElementBuilders.Label.valueStr ElementLiterals.``file-label`` s
         static member inline label i = ElementBuilders.Label.valueInt ElementLiterals.``file-label`` i
-        
+
         static member inline span props = ElementBuilders.Span.props ElementLiterals.``file-label`` props
         static member inline span (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``file-label`` elms
         static member inline span elm = ElementBuilders.Span.valueElm ElementLiterals.``file-label`` elm
         static member inline span s = ElementBuilders.Span.valueStr ElementLiterals.``file-label`` s
         static member inline span i = ElementBuilders.Span.valueInt ElementLiterals.``file-label`` i
-    
+
     [<Fable.Core.Erase>]
     type cardHeaderTitle =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``card-header-title`` props
@@ -641,13 +641,13 @@ module Bulma =
         static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``card-header-title`` elm
         static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``card-header-title`` s
         static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``card-header-title`` i
-        
+
         static member inline p props = ElementBuilders.P.props ElementLiterals.``card-header-title`` props
         static member inline p (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``card-header-title`` elms
         static member inline p elm = ElementBuilders.P.valueElm ElementLiterals.``card-header-title`` elm
         static member inline p s = ElementBuilders.P.valueStr ElementLiterals.``card-header-title`` s
         static member inline p i = ElementBuilders.P.valueInt ElementLiterals.``card-header-title`` i
-    
+
     [<Fable.Core.Erase>]
     type cardHeaderIcon =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``card-header-icon`` props
@@ -655,13 +655,13 @@ module Bulma =
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``card-header-icon`` elm
         static member inline a s = ElementBuilders.A.valueStr ElementLiterals.``card-header-icon`` s
         static member inline a i = ElementBuilders.A.valueInt ElementLiterals.``card-header-icon`` i
-        
+
         static member inline span props = ElementBuilders.Span.props ElementLiterals.``card-header-icon`` props
         static member inline span (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``card-header-icon`` elms
         static member inline span elm = ElementBuilders.Span.valueElm ElementLiterals.``card-header-icon`` elm
         static member inline span s = ElementBuilders.Span.valueStr ElementLiterals.``card-header-icon`` s
         static member inline span i = ElementBuilders.Span.valueInt ElementLiterals.``card-header-icon`` i
-        
+
     [<Fable.Core.Erase>]
     type cardFooterItem =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``card-footer-item`` props
@@ -681,7 +681,7 @@ module Bulma =
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``card-footer-item`` elm
         static member inline a s = ElementBuilders.A.valueStr ElementLiterals.``card-footer-item`` s
         static member inline a i = ElementBuilders.A.valueInt ElementLiterals.``card-footer-item`` i
-            
+
     [<Fable.Core.Erase>]
     type dropdownItem =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``dropdown-item`` props
@@ -695,8 +695,8 @@ module Bulma =
         static member inline div elm = ElementBuilders.Div.valueElm ElementLiterals.``dropdown-item`` elm
         static member inline div s = ElementBuilders.Div.valueStr ElementLiterals.``dropdown-item`` s
         static member inline div i = ElementBuilders.Div.valueInt ElementLiterals.``dropdown-item`` i
-        
-        // TODO: Based on docs (https://bulma.io/documentation/components/dropdown/) only A and DIV is allowed - is BUTTON ok here? 
+
+        // TODO: Based on docs (https://bulma.io/documentation/components/dropdown/) only A and DIV is allowed - is BUTTON ok here?
         static member inline button props = ElementBuilders.Button.props ElementLiterals.``dropdown-item`` props
         static member inline button (elms:#seq<ReactElement>) = ElementBuilders.Button.children ElementLiterals.``dropdown-item`` elms
         static member inline button elm = ElementBuilders.Button.valueElm ElementLiterals.``dropdown-item`` elm
@@ -735,7 +735,7 @@ module Bulma =
         /// You control the `a` element
         /// </summary>
         static member inline a i = Html.li [ ElementBuilders.A.valueInt "" i ]
-        
+
     [<Fable.Core.Erase>]
     type navbarBrand =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``navbar-brand`` props
@@ -745,7 +745,7 @@ module Bulma =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``navbar-brand`` props
         static member inline a (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-brand`` elms
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-brand`` elm
-        
+
     [<Fable.Core.Erase>]
     type navbarStart =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``navbar-start`` props
@@ -755,7 +755,7 @@ module Bulma =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``navbar-start`` props
         static member inline a (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-start`` elms
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-start`` elm
-    
+
     [<Fable.Core.Erase>]
     type navbarEnd =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``navbar-end`` props
@@ -766,7 +766,7 @@ module Bulma =
         static member inline a (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-end`` elms
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-end`` elm
 
-       
+
     [<Fable.Core.Erase>]
     type navbarItem =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``navbar-item`` props
@@ -776,7 +776,7 @@ module Bulma =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``navbar-item`` props
         static member inline a (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-item`` elms
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-item`` elm
-                
+
     [<Fable.Core.Erase>]
     type navbarLink =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``navbar-link`` props
@@ -800,7 +800,7 @@ module Bulma =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``navbar-dropdown`` props
         static member inline a (elms:#seq<ReactElement>) = ElementBuilders.A.children ElementLiterals.``navbar-dropdown`` elms
         static member inline a elm = ElementBuilders.A.valueElm ElementLiterals.``navbar-dropdown`` elm
-        
+
     [<Fable.Core.Erase>]
     type paginationPrevious =
         static member inline a props = ElementBuilders.A.props ElementLiterals.``pagination-previous`` props
@@ -828,7 +828,7 @@ module Bulma =
         static member inline button elm = ElementBuilders.Button.valueElm ElementLiterals.``pagination-next`` elm
         static member inline button s = ElementBuilders.Button.valueStr ElementLiterals.``pagination-next`` s
         static member inline button i = ElementBuilders.Button.valueInt ElementLiterals.``pagination-next`` i
-            
+
     [<Fable.Core.Erase>]
     type paginationLink =
         /// <summary>
@@ -892,8 +892,8 @@ module Bulma =
         /// You control the `button` element
         /// </summary>
         static member inline button i = Html.li [ ElementBuilders.Button.valueInt ElementLiterals.``pagination-link`` i ]
-    
-    
+
+
     [<Fable.Core.Erase>]
     type panelBlock =
         static member inline div props = ElementBuilders.Div.props ElementLiterals.``panel-block`` props
@@ -919,7 +919,7 @@ module Bulma =
         static member inline p elm = ElementBuilders.P.valueElm ElementLiterals.``panel-block`` elm
         static member inline p s = ElementBuilders.P.valueStr ElementLiterals.``panel-block`` s
         static member inline p i = ElementBuilders.P.valueInt ElementLiterals.``panel-block`` i
-                            
+
     [<Fable.Core.Erase>]
     type input =
         static member inline text props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` prop.type'.text props
@@ -937,15 +937,29 @@ module Bulma =
         static member inline number props = ElementBuilders.Input.propsWithType ElementLiterals.``input`` prop.type'.number props
         static member inline checkbox props = ElementBuilders.Input.propsWithType ElementLiterals.``checkbox`` prop.type'.checkbox props
         static member inline radio props = ElementBuilders.Input.propsWithType ElementLiterals.``radio`` prop.type'.radio props
-    
+
     module input =
-        
+
         [<Fable.Core.Erase>]
         type labels =
             static member inline checkbox props = ElementBuilders.Label.props ElementLiterals.``checkbox`` props
             static member inline checkbox (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``checkbox`` elms
             static member inline checkbox elm = ElementBuilders.Label.valueElm ElementLiterals.``checkbox`` elm
-            
+
             static member inline radio props = ElementBuilders.Label.props ElementLiterals.``radio`` props
             static member inline radio (elms:#seq<ReactElement>) = ElementBuilders.Label.children ElementLiterals.``radio`` elms
-            static member inline radio elm = ElementBuilders.Label.valueElm ElementLiterals.``radio`` elm                
+            static member inline radio elm = ElementBuilders.Label.valueElm ElementLiterals.``radio`` elm
+
+    [<Fable.Core.Erase>]
+    type text =
+        static member inline p props = ElementBuilders.P.props "" props
+        static member inline p s = ElementBuilders.P.valueStr "" s
+        static member inline p i = ElementBuilders.P.valueInt "" i
+
+        static member inline div props = ElementBuilders.Div.props "" props
+        static member inline div s = ElementBuilders.Div.valueStr "" s
+        static member inline div i = ElementBuilders.Div.valueInt "" i
+
+        static member inline span props = ElementBuilders.Span.props "" props
+        static member inline span s = ElementBuilders.Span.valueStr "" s
+        static member inline span i = ElementBuilders.Span.valueInt "" i
