@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma
+namespace Feliz.Bulma
 
 module private ElementLiterals =
     let [<Literal>] ``container`` = "container"
@@ -451,12 +451,11 @@ type Bulma =
     static member inline paginationList (elms:#seq<ReactElement>) = ElementBuilders.Ul.children ElementLiterals.``pagination-list`` elms
     static member inline paginationList elm = ElementBuilders.Ul.valueElm ElementLiterals.``pagination-list`` elm
     
-    static member inline paginationEllipsis props = ElementBuilders.Span.props ElementLiterals.``pagination-ellipsis`` props
-    static member inline paginationEllipsis (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``pagination-ellipsis`` elms
-    static member inline paginationEllipsis elm = ElementBuilders.Span.valueElm ElementLiterals.``pagination-ellipsis`` elm
-    static member inline paginationEllipsis s = ElementBuilders.Span.valueStr ElementLiterals.``pagination-ellipsis`` s
-    static member inline paginationEllipsis i = ElementBuilders.Span.valueInt ElementLiterals.``pagination-ellipsis`` i
-    
+    static member inline paginationEllipsis props =
+        Html.li [
+            ElementBuilders.Span.props ElementLiterals.``pagination-ellipsis`` (prop.dangerouslySetInnerHTML "&hellip;" :: props )
+        ]
+
     static member inline panel props = ElementBuilders.Nav.props ElementLiterals.``panel`` props
     static member inline panel (elms:#seq<ReactElement>) = ElementBuilders.Nav.children ElementLiterals.``panel`` elms
     static member inline panel elm = ElementBuilders.Nav.valueElm ElementLiterals.``panel`` elm
