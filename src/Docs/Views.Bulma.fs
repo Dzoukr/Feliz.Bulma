@@ -117,22 +117,3 @@ Html.p [
             ]
         ]
     ]
-
-
-Bulma.card [
-    Bulma.card.header [
-        Bulma.card.header.title.div "aaa"
-    ]
-    Bulma.card.footer [
-        Bulma.card.footer.item.div "AAA"
-    ]
-]
-
-//Bulma.file [
-//    Bulma.file.label [
-//        Bulma.file.label.cta [
-//            
-//        ]
-//        Bulma.file.label.input []
-//    ]
-//]

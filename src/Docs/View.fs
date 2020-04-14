@@ -10,46 +10,46 @@ let menuPart model =
     let item (t:string) p =
         let isActive =
             if model.CurrentPage = p then [ helpers.isActive; color.hasBackgroundPrimary ] else []
-        Bulma.menu.item.a [
+        Bulma.menuItem.a [
             yield! isActive
             yield prop.text t
             yield prop.href (Router.getHref p)
         ]
 
     Bulma.menu [
-        Bulma.menu.label "Feliz.Bulma"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma"
+        Bulma.menuList [
             item "Overview" BulmaOverview
             item "Installation" BulmaInstallation
             item "API description" BulmaAPIDescription
         ]
-        Bulma.menu.label "Feliz.Bulma.QuickView"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma.QuickView"
+        Bulma.menuList [
             item "Overview" QuickViewOverview
             item "Installation" QuickViewInstallation
         ]
-        Bulma.menu.label "Feliz.Bulma.Calendar"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma.Calendar"
+        Bulma.menuList [
             item "Overview" CalendarOverview
             item "Installation" CalendarInstallation
         ]
-        Bulma.menu.label "Feliz.Bulma.Tooltip"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma.Tooltip"
+        Bulma.menuList [
             item "Overview" TooltipOverview
             item "Installation" TooltipInstallation
         ]
-        Bulma.menu.label "Feliz.Bulma.Checkradio"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma.Checkradio"
+        Bulma.menuList [
             item "Overview" CheckradioOverview
             item "Installation" CheckradioInstallation
         ]
-        Bulma.menu.label "Feliz.Bulma.Popover"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma.Popover"
+        Bulma.menuList [
             item "Overview" PopoverOverview
             item "Installation" PopoverInstallation
         ]
-        Bulma.menu.label "Feliz.Bulma.PageLoader"
-        Bulma.menu.list [
+        Bulma.menuLabel "Feliz.Bulma.PageLoader"
+        Bulma.menuList [
             item "Overview" PageLoaderOverview
             item "Installation" PageLoaderInstallation
         ]
