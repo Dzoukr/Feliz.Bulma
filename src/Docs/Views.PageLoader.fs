@@ -53,7 +53,7 @@ Bulma.button [
             ]
 
             Bulma.button.a [
-                button.isSuccess
+                color.isSuccess
                 prop.text "Show page loader for 2 seconds"
                 prop.onClick (fun _ -> ToggleLoader |> dispatch)
             ]

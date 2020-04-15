@@ -603,32 +603,21 @@ type image =
     static member inline is9by16 = PropertyBuilders.mkClass ClassLiterals.``is-9by16``
     static member inline is1by2 = PropertyBuilders.mkClass ClassLiterals.``is-1by2``
     static member inline is1by3 = PropertyBuilders.mkClass ClassLiterals.``is-1by3``
-    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
     static member inline hasRatio = PropertyBuilders.mkClass ClassLiterals.``has-ratio``
 
 [<Fable.Core.Erase>]
 type progress =
     static member inline value v = PropertyBuilders.mkValue v
     static member inline max v = PropertyBuilders.mkMax v
-
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-
+   
 [<Fable.Core.Erase>]
 type table =
     static member inline isBordered = PropertyBuilders.mkClass ClassLiterals.``is-bordered``
     static member inline isStriped = PropertyBuilders.mkClass ClassLiterals.``is-striped``
     static member inline isNarrow = PropertyBuilders.mkClass ClassLiterals.``is-narrow``
     static member inline isHoverable = PropertyBuilders.mkClass ClassLiterals.``is-hoverable``
-    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
 
 [<Fable.Core.Erase>]
 type tr =
@@ -641,17 +630,6 @@ type tag =
     static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
     static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
     static member inline isDelete = PropertyBuilders.mkClass ClassLiterals.``is-delete``
-
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
 [<Fable.Core.Erase>]
 type tags =
@@ -675,7 +653,7 @@ type tabs =
     static member inline isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
     static member inline isToggle = PropertyBuilders.mkClass ClassLiterals.``is-toggle``
     static member inline isToggleRounded = PropertyBuilders.mkClass ClassLiterals.``is-toggle-rounded``
-    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
 
 [<Fable.Core.Erase>]
 type breadcrumb =
@@ -700,19 +678,6 @@ type dropdown =
     static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
     static member inline isUp = PropertyBuilders.mkClass ClassLiterals.``is-up``
 
-[<RequireQualifiedAccess>]
-type notification =
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-
 [<Fable.Core.Erase>]
 type modal =
     static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
@@ -727,17 +692,6 @@ type modalClose =
 [<Fable.Core.Erase>]
 type navbar =
     static member inline isTransparent = PropertyBuilders.mkClass ClassLiterals.``is-transparent``
-
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
 [<Fable.Core.Erase>]
 type navbarMenu =
@@ -781,40 +735,16 @@ type paginationLink =
     static member inline isCurrent = PropertyBuilders.mkClass ClassLiterals.``is-current``
 
 [<Fable.Core.Erase>]
-type panel =
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-
-[<Fable.Core.Erase>]
 type file =
     static member inline hasName = PropertyBuilders.mkClass ClassLiterals.``has-name``
     static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
     static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
     static member inline isBoxed = PropertyBuilders.mkClass ClassLiterals.``is-boxed``
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
     static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
     static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
     static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
 [<Fable.Core.Erase>]
 type input =
@@ -824,12 +754,6 @@ type input =
     static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
     static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
     static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
-
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
 [<Fable.Core.Erase>]
 type button =
@@ -841,24 +765,12 @@ type button =
     static member inline isNormal = PropertyBuilders.mkClass ClassLiterals.``is-normal``
     static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
     static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
-    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
     static member inline isInverted = PropertyBuilders.mkClass ClassLiterals.``is-inverted``
     static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
     static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
     static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
     static member inline isSelected = PropertyBuilders.mkClass ClassLiterals.``is-selected``
-
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-
     static member inline isText = PropertyBuilders.mkClass ClassLiterals.``is-text``
 
 [<Fable.Core.Erase>]
@@ -887,12 +799,6 @@ type textarea =
     static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
     static member inline hasFixedSize = PropertyBuilders.mkClass ClassLiterals.``has-fixed-size``
 
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-
 [<Fable.Core.Erase>]
 type field =
     static member inline hasAddons = PropertyBuilders.mkClass ClassLiterals.``has-addons``
@@ -906,19 +812,6 @@ type field =
     static member inline isNarrow = PropertyBuilders.mkClass ClassLiterals.``is-narrow``
 
 [<Fable.Core.Erase>]
-type message =
-    static member inline isWhite = PropertyBuilders.mkClass ClassLiterals.``is-white``
-    static member inline isBlack = PropertyBuilders.mkClass ClassLiterals.``is-black``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isLink = PropertyBuilders.mkClass ClassLiterals.``is-link``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-
-[<Fable.Core.Erase>]
 type icon =
     static member inline isLeft = PropertyBuilders.mkClass ClassLiterals.``is-left``
     static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
@@ -926,29 +819,9 @@ type icon =
     static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
     static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
-    static member inline hasTextWhite = PropertyBuilders.mkClass ClassLiterals.``has-text-white``
-    static member inline hasTextBlack = PropertyBuilders.mkClass ClassLiterals.``has-text-black``
-    static member inline hasTextLight = PropertyBuilders.mkClass ClassLiterals.``has-text-light``
-    static member inline hasTextDark = PropertyBuilders.mkClass ClassLiterals.``has-text-dark``
-    static member inline hasTextPrimary = PropertyBuilders.mkClass ClassLiterals.``has-text-primary``
-    static member inline hasTextInfo = PropertyBuilders.mkClass ClassLiterals.``has-text-info``
-    static member inline hasTextLink = PropertyBuilders.mkClass ClassLiterals.``has-text-link``
-    static member inline hasTextSuccess = PropertyBuilders.mkClass ClassLiterals.``has-text-success``
-    static member inline hasTextWarning = PropertyBuilders.mkClass ClassLiterals.``has-text-warning``
-    static member inline hasTextDanger = PropertyBuilders.mkClass ClassLiterals.``has-text-danger``
-    static member inline hasTextBlackBis = PropertyBuilders.mkClass ClassLiterals.``has-text-black-bis``
-    static member inline hasTextBlackTer = PropertyBuilders.mkClass ClassLiterals.``has-text-black-ter``
-    static member inline hasTextGreyDarker = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-darker``
-    static member inline hasTextGreyDark = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-dark``
-    static member inline hasTextGrey = PropertyBuilders.mkClass ClassLiterals.``has-text-grey``
-    static member inline hasTextGreyLight = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-light``
-    static member inline hasTextGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-text-grey-lighter``
-    static member inline hasTextWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-text-white-ter``
-    static member inline hasTextWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-text-white-bis``
-
 [<Fable.Core.Erase>]
 type select =
-    static member inline isFullwidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+    static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
     static member inline isMultiple = PropertyBuilders.mkClass ClassLiterals.``is-multiple``
     static member inline isRounded = PropertyBuilders.mkClass ClassLiterals.``is-rounded``
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
@@ -958,12 +831,6 @@ type select =
     static member inline isHovered = PropertyBuilders.mkClass ClassLiterals.``is-hovered``
     static member inline isFocused = PropertyBuilders.mkClass ClassLiterals.``is-focused``
     static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
-
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
 
 [<Fable.Core.Erase>]
 type control =
@@ -1017,14 +884,6 @@ type hero =
     static member inline isFullHeight = PropertyBuilders.mkClass ClassLiterals.``is-fullheight``
     static member inline isFullHeightWithNavbar = PropertyBuilders.mkClass ClassLiterals.``is-fullheight-with-navbar``
 
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``
-    static member inline isLight = PropertyBuilders.mkClass ClassLiterals.``is-light``
-    static member inline isDark = PropertyBuilders.mkClass ClassLiterals.``is-dark``
-
 [<Fable.Core.Erase>]
 type tile =
     static member inline isAncestor = PropertyBuilders.mkClass ClassLiterals.``is-ancestor``
@@ -1052,7 +911,7 @@ type columns =
     static member inline isMultiline = PropertyBuilders.mkClass ClassLiterals.``is-multiline``
     static member inline isVariable = PropertyBuilders.mkClass ClassLiterals.``is-variable``
     static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
-    static member inline isVcentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
+    static member inline isVCentered = PropertyBuilders.mkClass ClassLiterals.``is-vcentered``
 
 [<Fable.Core.Erase>]
 type column =
@@ -1085,7 +944,7 @@ type column =
     static member inline isNarrowTouch = PropertyBuilders.mkClass ClassLiterals.``is-narrow-touch``
     static member inline isNarrowDesktop = PropertyBuilders.mkClass ClassLiterals.``is-narrow-desktop``
     static member inline isNarrowWidescreen = PropertyBuilders.mkClass ClassLiterals.``is-narrow-widescreen``
-    static member inline isNarrowFullhd = PropertyBuilders.mkClass ClassLiterals.``is-narrow-fullhd``
+    static member inline isNarrowFullHd = PropertyBuilders.mkClass ClassLiterals.``is-narrow-fullhd``
 
     static member inline isOffset1 = PropertyBuilders.mkClass ClassLiterals.``is-offset-1``
     static member inline isOffset2 = PropertyBuilders.mkClass ClassLiterals.``is-offset-2``
@@ -1160,11 +1019,3 @@ type column =
     static member inline isThreeFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-three-fifths-fullhd``
     static member inline isTwoFifthsFullHd = PropertyBuilders.mkClass ClassLiterals.``is-two-fifths-fullhd``
     static member inline isOneFifthFullHd = PropertyBuilders.mkClass ClassLiterals.``is-one-fifth-fullhd``
-
-[<Fable.Core.Erase>]
-type help =
-    static member inline isPrimary = PropertyBuilders.mkClass ClassLiterals.``is-primary``
-    static member inline isInfo = PropertyBuilders.mkClass ClassLiterals.``is-info``
-    static member inline isSuccess = PropertyBuilders.mkClass ClassLiterals.``is-success``
-    static member inline isWarning = PropertyBuilders.mkClass ClassLiterals.``is-warning``
-    static member inline isDanger = PropertyBuilders.mkClass ClassLiterals.``is-danger``

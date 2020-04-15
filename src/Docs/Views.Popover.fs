@@ -44,7 +44,7 @@ Popover.popover [
             Popover.popover [
                 Bulma.button.a [
                     prop.text "Hover me for popover"
-                    button.isInfo
+                    color.isInfo
                     popover.trigger
                 ]
                 Popover.content [
@@ -77,7 +77,7 @@ Popover.popover [
                 prop.children [
                     Bulma.button.a [
                         prop.text "Hover me for popover"
-                        button.isInfo
+                        color.isInfo
                         popover.trigger
                     ]
                     Popover.content [
@@ -112,7 +112,7 @@ Popover.popover [
                 prop.children [
                     Bulma.button.a [
                         prop.text "No need to hover me"
-                        button.isInfo
+                        color.isInfo
                         popover.trigger
                     ]
                     Popover.content [

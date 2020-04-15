@@ -61,7 +61,7 @@ QuickView.quickview [
     ]
 ]"""
             Bulma.button.a [
-                button.isInfo
+                color.isInfo
                 prop.text (if model.ShowQuickView then "Hide QuickView" else "Show QuickView")
                 prop.onClick (fun _ -> ToggleQuickView |> dispatch)
             ]
