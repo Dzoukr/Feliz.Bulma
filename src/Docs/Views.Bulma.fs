@@ -31,7 +31,7 @@ let overview =
         Html.div [
             prop.className "column is-2"
             prop.children [
-                Html.button [
+                Html.button.a [
                     prop.className "button"
                     prop.text "Click me"
                 ]
@@ -77,8 +77,8 @@ let apiDescription =
             Bulma.title.h4 "Example"
             code """open Feliz.Bulma
 
-Bulma.button [
-    button.isWarning
+Bulma.button.a [
+    color.isWarning
     prop.onClick (fun _ -> Fable.Core.JS.eval "alert('Hello Feliz.Bulma')" |> ignore)
     prop.text "Amazing button, ain't it?"
 ]

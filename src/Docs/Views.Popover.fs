@@ -4,7 +4,6 @@ open Feliz
 open Feliz.Bulma
 open Feliz.Bulma.Popover
 open Shared
-open Docs.Domain
 
 let overview =
     Html.div [
@@ -29,9 +28,9 @@ let overview =
             code """open Feliz.Bulma.Popover
 
 Popover.popover [
-    Bulma.button [
+    Bulma.button.a [
         prop.text "Hover me for popover"
-        button.isInfo
+        color.isInfo
         popover.trigger
     ]
     Popover.content [
@@ -60,9 +59,9 @@ Popover.popover [
 Popover.popover [
     popover.isRight
     prop.children [
-        Bulma.button [
+        Bulma.button.a [
             prop.text "Hover me for popover"
-            button.isInfo
+            color.isInfo
             popover.trigger
         ]
         Popover.content [
@@ -94,9 +93,9 @@ Popover.popover [
     popover.isActive
     popover.isBottom
     prop.children [
-        Bulma.button [
+        Bulma.button.a [
             prop.text "No need to hover me"
-            button.isInfo
+            color.isInfo
             popover.trigger
         ]
         Popover.content [

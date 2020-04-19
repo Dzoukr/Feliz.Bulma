@@ -28,10 +28,10 @@ let overview =
             Html.p "This library extends Feliz.Bulma by adding Tooltip component"
             code """open Feliz.Bulma.Tooltip
 
-Bulma.button [
+Bulma.button.a [
     tooltip.text "This is tooltip"
     tooltip.hasTooltipWarning
-    button.isWarning
+    color.isWarning
     prop.text "Hover me for tooltip"
 ]"""
 
