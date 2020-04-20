@@ -158,6 +158,11 @@ module Ul =
     let inline children (cn:string) (children:seq<ReactElement>) = Html.ul [ prop.className cn; prop.children children ]
     let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
 
+module Li =
+    let inline props (cn:string) (xs:IReactProperty list) = Html.li [ yield! xs; yield Helpers.combineClasses cn xs ]
+    let inline children (cn:string) (children:seq<ReactElement>) = Html.li [ prop.className cn; prop.children children ]
+    let inline valueElm (cn:string) (value:ReactElement) = value |> List.singleton |> children cn
+
 module Header =
     let inline props (cn:string) (xs:IReactProperty list) = Html.header [ yield! xs; yield Helpers.combineClasses cn xs ]
     let inline children (cn:string) (children:seq<ReactElement>) = Html.header [ prop.className cn; prop.children children ]
