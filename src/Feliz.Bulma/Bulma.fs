@@ -475,6 +475,9 @@ type Bulma =
     static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tabs`` elms
     static member inline tabs elm = ElementBuilders.Div.valueElm ElementLiterals.``tabs`` elm
 
+    static member inline tab props = ElementBuilders.Li.props "" props
+    static member inline tab (elms:#seq<ReactElement>) = ElementBuilders.Li.children "" elms
+
     static member inline help props = ElementBuilders.P.props ElementLiterals.``help`` props
     static member inline help (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``help`` elms
     static member inline help elm = ElementBuilders.P.valueElm ElementLiterals.``help`` elm

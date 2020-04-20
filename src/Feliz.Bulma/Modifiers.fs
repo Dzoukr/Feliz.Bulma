@@ -610,7 +610,7 @@ type image =
 type progress =
     static member inline value v = PropertyBuilders.mkValue v
     static member inline max v = PropertyBuilders.mkMax v
-   
+
 [<Fable.Core.Erase>]
 type table =
     static member inline isBordered = PropertyBuilders.mkClass ClassLiterals.``is-bordered``
@@ -644,7 +644,6 @@ type title =
 
 [<Fable.Core.Erase>]
 type tabs =
-    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
     static member inline isCentered = PropertyBuilders.mkClass ClassLiterals.``is-centered``
     static member inline isRight = PropertyBuilders.mkClass ClassLiterals.``is-right``
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
@@ -654,6 +653,10 @@ type tabs =
     static member inline isToggle = PropertyBuilders.mkClass ClassLiterals.``is-toggle``
     static member inline isToggleRounded = PropertyBuilders.mkClass ClassLiterals.``is-toggle-rounded``
     static member inline isFullWidth = PropertyBuilders.mkClass ClassLiterals.``is-fullwidth``
+
+[<Fable.Core.Erase>]
+type tab =
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
 
 [<Fable.Core.Erase>]
 type breadcrumb =
