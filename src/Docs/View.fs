@@ -9,13 +9,13 @@ open Docs.Router
 let menuPart model =
     let item (t:string) p =
         let isActive =
-            if model.CurrentPage = p then [ helpers.isActive; color.hasBackgroundPrimary ] else []  
-        Bulma.menuItem [
+            if model.CurrentPage = p then [ helpers.isActive; color.hasBackgroundPrimary ] else []
+        Bulma.menuItem.a [
             yield! isActive
             yield prop.text t
             yield prop.href (Router.getHref p)
         ]
-    
+
     Bulma.menu [
         Bulma.menuLabel "Feliz.Bulma"
         Bulma.menuList [
@@ -72,8 +72,7 @@ let contentPart model dispatch =
     | PopoverInstallation -> Views.Popover.installation
     | PageLoaderOverview -> Views.PageLoader.overview model dispatch
     | PageLoaderInstallation -> Views.PageLoader.installation
-    
-    
+
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
         Bulma.container [

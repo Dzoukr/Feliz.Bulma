@@ -8,7 +8,7 @@ open Docs.Domain
 
 let overview =
     Html.div [
-        Bulma.title [
+        Bulma.title.h1 [
             Html.text "Feliz.Bulma.Checkradio "
             Html.a [
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Checkradio/"
@@ -19,7 +19,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle [
+        Bulma.subtitle.h2 [
             Html.a [ prop.href "https://wikiki.github.io/form/checkradio/"; prop.text "Checkradio" ]
             Html.text " extension for Feliz.Bulma"
         ]
@@ -27,7 +27,7 @@ let overview =
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Checkradio component"
             code """open Feliz.Bulma.Checkradio
-            
+
 Bulma.field [
     Checkradio.checkbox [
         prop.id "mycheck"
@@ -38,9 +38,9 @@ Bulma.field [
         prop.text "Check me"
     ]
 ]"""
-            
+
             Html.p "Code above will generate a nice checkbox:"
-            Bulma.field [
+            Bulma.field.div [
                 Checkradio.checkbox [
                     prop.id "mycheck"
                     color.isDanger
@@ -53,7 +53,7 @@ Bulma.field [
         ]
         Bulma.content [
             code """open Feliz.Bulma.Checkradio
-            
+
 Bulma.field [
     Checkradio.radio [ prop.id "myradio1"; prop.name "radio" ]
     Html.label [ prop.htmlFor "myradio1"; prop.text "Option one" ]
@@ -62,18 +62,18 @@ Bulma.field [
 ]
 """
             Html.p "Code above will generate a nice two radio buttons:"
-            Bulma.field [
+            Bulma.field.div [
                 Checkradio.radio [ prop.id "myradio1"; prop.name "radio" ]
                 Html.label [ prop.htmlFor "myradio1"; prop.text "Option one" ]
                 Checkradio.radio [ prop.id "myradio2"; prop.name "radio" ]
                 Html.label [ prop.htmlFor "myradio2"; prop.text "Option two" ]
             ]
-            
+
         ]
         Bulma.content [
             Html.p [ prop.dangerouslySetInnerHTML "All the modifiers mentioned in <a href='https://wikiki.github.io/form/checkradio/'>official documentation</a> will work as expected." ]
             code """open Feliz.Bulma.Checkradio
-            
+
 Bulma.field [
     Checkradio.checkbox [
         prop.id "bigcheck"
@@ -86,9 +86,9 @@ Bulma.field [
         prop.htmlFor "bigcheck"
         prop.text "Large round success checkbox"
     ]
-]                        
+]
 """
-            Bulma.field [
+            Bulma.field.div [
                 Checkradio.checkbox [
                     prop.id "bigcheck"
                     color.isSuccess

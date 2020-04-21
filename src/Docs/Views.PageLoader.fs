@@ -9,7 +9,7 @@ open Docs.Views
 
 let overview (model:Model) dispatch =
     Html.div [
-        Bulma.title [
+        Bulma.title.h1 [
             Html.text "Feliz.Bulma.PageLoader "
             Html.a [
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.PageLoader/"
@@ -20,7 +20,7 @@ let overview (model:Model) dispatch =
                 ]
             ]
         ]
-        Bulma.subtitle [
+        Bulma.subtitle.h2 [
             Html.a [ prop.href "https://wikiki.github.io/elements/pageloader/"; prop.text "Page Loader" ]
             Html.text " extension for Feliz.Bulma"
         ]
@@ -28,7 +28,7 @@ let overview (model:Model) dispatch =
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Page Loader component"
             code """open Feliz.Bulma.PageLoader
-            
+
 PageLoader.pageLoader [
     pageLoader.isSuccess
     if model.ShowLoader then pageLoader.isActive
@@ -37,12 +37,12 @@ PageLoader.pageLoader [
     ]
 ]
 
-Bulma.button [
+Bulma.button.a [
     button.isSuccess
     prop.text "Show page loader for 2 seconds"
     prop.onClick (fun _ -> ToggleLoader |> dispatch)
 ]"""
-            
+
             Html.p "Code above will setup Page Loader:"
             PageLoader.pageLoader [
                 pageLoader.isSuccess
@@ -51,13 +51,13 @@ Bulma.button [
                     PageLoader.title "I am loading some awesomeness"
                 ]
             ]
-            
-            Bulma.button [
-                button.isSuccess
+
+            Bulma.button.a [
+                color.isSuccess
                 prop.text "Show page loader for 2 seconds"
                 prop.onClick (fun _ -> ToggleLoader |> dispatch)
             ]
-            
+
         ]
     ]
 

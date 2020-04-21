@@ -19,13 +19,13 @@ let overview model dispatch =
                     QuickView.block "Bulma is great"
                 ]
                 QuickView.footer [
-                    Bulma.button "Save"
+                    Bulma.button.a "Save"
                 ]
             ]
         ]
-    
+
     Html.div [
-        Bulma.title [
+        Bulma.title.h1 [
             Html.text "Feliz.Bulma.QuickView "
             Html.a [
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.QuickView/"
@@ -36,7 +36,7 @@ let overview model dispatch =
                 ]
             ]
         ]
-        Bulma.subtitle [
+        Bulma.subtitle.h2 [
             Html.a [ prop.href "https://wikiki.github.io/components/quickview/"; prop.text "QuickView" ]
             Html.text " extension for Feliz.Bulma"
         ]
@@ -44,7 +44,7 @@ let overview model dispatch =
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding QuickView component"
             code """open Feliz.Bulma.QuickView
-            
+
 QuickView.quickview [
     if model.ShowQuickView then yield quickview.isActive
     yield prop.children [
@@ -60,8 +60,8 @@ QuickView.quickview [
         ]
     ]
 ]"""
-            Bulma.button [
-                button.isInfo
+            Bulma.button.a [
+                color.isInfo
                 prop.text (if model.ShowQuickView then "Hide QuickView" else "Show QuickView")
                 prop.onClick (fun _ -> ToggleQuickView |> dispatch)
             ]

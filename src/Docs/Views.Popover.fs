@@ -4,11 +4,10 @@ open Feliz
 open Feliz.Bulma
 open Feliz.Bulma.Popover
 open Shared
-open Docs.Domain
 
 let overview =
     Html.div [
-        Bulma.title [
+        Bulma.title.h1 [
             Html.text "Feliz.Bulma.Popover "
             Html.a [
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Popover/"
@@ -19,7 +18,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle [
+        Bulma.subtitle.h2 [
             Html.a [ prop.href "https://github.com/apnsngr/bulma-popover"; prop.text "Popover" ]
             Html.text " extension for Feliz.Bulma"
         ]
@@ -27,11 +26,11 @@ let overview =
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Popover component"
             code """open Feliz.Bulma.Popover
-            
+
 Popover.popover [
-    Bulma.button [
+    Bulma.button.a [
         prop.text "Hover me for popover"
-        button.isInfo
+        color.isInfo
         popover.trigger
     ]
     Popover.content [
@@ -39,12 +38,12 @@ Popover.popover [
         Html.img [ prop.src "https://pbs.twimg.com/profile_images/518069764510330880/yRNL7yTW_200x200.png" ]
     ]
 ]"""
-            
+
             Html.p "Code above will add popover to button:"
             Popover.popover [
-                Bulma.button [
+                Bulma.button.a [
                     prop.text "Hover me for popover"
-                    button.isInfo
+                    color.isInfo
                     popover.trigger
                 ]
                 Popover.content [
@@ -60,9 +59,9 @@ Popover.popover [
 Popover.popover [
     popover.isRight
     prop.children [
-        Bulma.button [
+        Bulma.button.a [
             prop.text "Hover me for popover"
-            button.isInfo
+            color.isInfo
             popover.trigger
         ]
         Popover.content [
@@ -75,9 +74,9 @@ Popover.popover [
             Popover.popover [
                 popover.isRight
                 prop.children [
-                    Bulma.button [
+                    Bulma.button.a [
                         prop.text "Hover me for popover"
-                        button.isInfo
+                        color.isInfo
                         popover.trigger
                     ]
                     Popover.content [
@@ -94,9 +93,9 @@ Popover.popover [
     popover.isActive
     popover.isBottom
     prop.children [
-        Bulma.button [
+        Bulma.button.a [
             prop.text "No need to hover me"
-            button.isInfo
+            color.isInfo
             popover.trigger
         ]
         Popover.content [
@@ -110,9 +109,9 @@ Popover.popover [
                 popover.isActive
                 popover.isBottom
                 prop.children [
-                    Bulma.button [
+                    Bulma.button.a [
                         prop.text "No need to hover me"
-                        button.isInfo
+                        color.isInfo
                         popover.trigger
                     ]
                     Popover.content [
