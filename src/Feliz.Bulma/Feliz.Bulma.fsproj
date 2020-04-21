@@ -9,8 +9,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.14.0</Version>
-        <PackageReleaseNotes>Making specific versions of dropdownItem</PackageReleaseNotes>
+        <Version>2.0.0</Version>
+        <PackageReleaseNotes>Releasing v2.0 - Thanks Maxime!!! #20</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
