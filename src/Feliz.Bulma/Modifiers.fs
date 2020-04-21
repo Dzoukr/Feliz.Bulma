@@ -610,6 +610,9 @@ type image =
 type progress =
     static member inline value v = PropertyBuilders.mkValue v
     static member inline max v = PropertyBuilders.mkMax v
+    static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
+    static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
+    static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
 
 [<Fable.Core.Erase>]
 type table =
