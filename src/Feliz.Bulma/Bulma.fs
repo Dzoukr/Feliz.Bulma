@@ -297,11 +297,11 @@ type Bulma =
     static member inline notification s = ElementBuilders.Div.valueStr ElementLiterals.``notification`` s
     static member inline notification i = ElementBuilders.Div.valueInt ElementLiterals.``notification`` i
 
-    static member inline progress props = ElementBuilders.Div.props ElementLiterals.``progress`` props
-    static member inline progress (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``progress`` elms
-    static member inline progress elm = ElementBuilders.Div.valueElm ElementLiterals.``progress`` elm
-    static member inline progress s = ElementBuilders.Div.valueStr ElementLiterals.``progress`` s
-    static member inline progress i = ElementBuilders.Div.valueInt ElementLiterals.``progress`` i
+    static member inline progress props = ElementBuilders.Progress.props ElementLiterals.``progress`` props
+    static member inline progress (elms:#seq<ReactElement>) = ElementBuilders.Progress.children ElementLiterals.``progress`` elms
+    static member inline progress elm = ElementBuilders.Progress.valueElm ElementLiterals.``progress`` elm
+    static member inline progress s = ElementBuilders.Progress.valueStr ElementLiterals.``progress`` s
+    static member inline progress i = ElementBuilders.Progress.valueInt ElementLiterals.``progress`` i
 
     static member inline table props = ElementBuilders.Table.props ElementLiterals.``table`` props
     static member inline table (elms:#seq<ReactElement>) = ElementBuilders.Table.children ElementLiterals.``table`` elms
