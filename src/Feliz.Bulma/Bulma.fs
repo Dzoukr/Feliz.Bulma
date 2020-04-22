@@ -511,41 +511,41 @@ module Bulma =
 
     [<Fable.Core.Erase>]
     type title =
-        static member inline h1 props = ElementBuilders.H1.props ElementLiterals.``title`` props
-        static member inline h1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``title`` elms
-        static member inline h1 elm = ElementBuilders.H1.valueElm ElementLiterals.``title`` elm
-        static member inline h1 s = ElementBuilders.H1.valueStr ElementLiterals.``title`` s
-        static member inline h1 i = ElementBuilders.H1.valueInt ElementLiterals.``title`` i
+        static member inline h1 props = ElementBuilders.H1.props ElementLiterals.``title is-1`` props
+        static member inline h1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``title is-1`` elms
+        static member inline h1 elm = ElementBuilders.H1.valueElm ElementLiterals.``title is-1`` elm
+        static member inline h1 s = ElementBuilders.H1.valueStr ElementLiterals.``title is-1`` s
+        static member inline h1 i = ElementBuilders.H1.valueInt ElementLiterals.``title is-1`` i
 
-        static member inline h2 props = ElementBuilders.H2.props ElementLiterals.``title`` props
-        static member inline h2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``title`` elms
-        static member inline h2 elm = ElementBuilders.H2.valueElm ElementLiterals.``title`` elm
-        static member inline h2 s = ElementBuilders.H2.valueStr ElementLiterals.``title`` s
-        static member inline h2 i = ElementBuilders.H2.valueInt ElementLiterals.``title`` i
+        static member inline h2 props = ElementBuilders.H2.props ElementLiterals.``title is-2`` props
+        static member inline h2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``title is-2`` elms
+        static member inline h2 elm = ElementBuilders.H2.valueElm ElementLiterals.``title is-2`` elm
+        static member inline h2 s = ElementBuilders.H2.valueStr ElementLiterals.``title is-2`` s
+        static member inline h2 i = ElementBuilders.H2.valueInt ElementLiterals.``title is-2`` i
 
-        static member inline h3 props = ElementBuilders.H3.props ElementLiterals.``title`` props
-        static member inline h3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children ElementLiterals.``title`` elms
-        static member inline h3 elm = ElementBuilders.H3.valueElm ElementLiterals.``title`` elm
-        static member inline h3 s = ElementBuilders.H3.valueStr ElementLiterals.``title`` s
-        static member inline h3 i = ElementBuilders.H3.valueInt ElementLiterals.``title`` i
+        static member inline h3 props = ElementBuilders.H3.props ElementLiterals.``title is-3`` props
+        static member inline h3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children ElementLiterals.``title is-3`` elms
+        static member inline h3 elm = ElementBuilders.H3.valueElm ElementLiterals.``title is-3`` elm
+        static member inline h3 s = ElementBuilders.H3.valueStr ElementLiterals.``title is-3`` s
+        static member inline h3 i = ElementBuilders.H3.valueInt ElementLiterals.``title is-3`` i
 
-        static member inline h4 props = ElementBuilders.H4.props ElementLiterals.``title`` props
-        static member inline h4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children ElementLiterals.``title`` elms
-        static member inline h4 elm = ElementBuilders.H4.valueElm ElementLiterals.``title`` elm
-        static member inline h4 s = ElementBuilders.H4.valueStr ElementLiterals.``title`` s
-        static member inline h4 i = ElementBuilders.H4.valueInt ElementLiterals.``title`` i
+        static member inline h4 props = ElementBuilders.H4.props ElementLiterals.``title is-4`` props
+        static member inline h4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children ElementLiterals.``title is-4`` elms
+        static member inline h4 elm = ElementBuilders.H4.valueElm ElementLiterals.``title is-4`` elm
+        static member inline h4 s = ElementBuilders.H4.valueStr ElementLiterals.``title is-4`` s
+        static member inline h4 i = ElementBuilders.H4.valueInt ElementLiterals.``title is-4`` i
 
-        static member inline h5 props = ElementBuilders.H5.props ElementLiterals.``title`` props
-        static member inline h5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children ElementLiterals.``title`` elms
-        static member inline h5 elm = ElementBuilders.H5.valueElm ElementLiterals.``title`` elm
-        static member inline h5 s = ElementBuilders.H5.valueStr ElementLiterals.``title`` s
-        static member inline h5 i = ElementBuilders.H5.valueInt ElementLiterals.``title`` i
+        static member inline h5 props = ElementBuilders.H5.props ElementLiterals.``title is-5`` props
+        static member inline h5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children ElementLiterals.``title is-5`` elms
+        static member inline h5 elm = ElementBuilders.H5.valueElm ElementLiterals.``title is-5`` elm
+        static member inline h5 s = ElementBuilders.H5.valueStr ElementLiterals.``title is-5`` s
+        static member inline h5 i = ElementBuilders.H5.valueInt ElementLiterals.``title is-5`` i
 
-        static member inline h6 props = ElementBuilders.H6.props ElementLiterals.``title`` props
-        static member inline h6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children ElementLiterals.``title`` elms
-        static member inline h6 elm = ElementBuilders.H6.valueElm ElementLiterals.``title`` elm
-        static member inline h6 s = ElementBuilders.H6.valueStr ElementLiterals.``title`` s
-        static member inline h6 i = ElementBuilders.H6.valueInt ElementLiterals.``title`` i
+        static member inline h6 props = ElementBuilders.H6.props ElementLiterals.``title is-6`` props
+        static member inline h6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children ElementLiterals.``title is-6`` elms
+        static member inline h6 elm = ElementBuilders.H6.valueElm ElementLiterals.``title is-6`` elm
+        static member inline h6 s = ElementBuilders.H6.valueStr ElementLiterals.``title is-6`` s
+        static member inline h6 i = ElementBuilders.H6.valueInt ElementLiterals.``title is-6`` i
 
         static member inline p props = ElementBuilders.P.props ElementLiterals.``title`` props
         static member inline p (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``title`` elms
@@ -555,41 +555,41 @@ module Bulma =
 
     [<Fable.Core.Erase>]
     type subtitle =
-        static member inline h1 props = ElementBuilders.H1.props ElementLiterals.``subtitle`` props
-        static member inline h1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``subtitle`` elms
-        static member inline h1 elm = ElementBuilders.H1.valueElm ElementLiterals.``subtitle`` elm
-        static member inline h1 s = ElementBuilders.H1.valueStr ElementLiterals.``subtitle`` s
-        static member inline h1 i = ElementBuilders.H1.valueInt ElementLiterals.``subtitle`` i
+        static member inline h1 props = ElementBuilders.H1.props ElementLiterals.``subtitle is-1`` props
+        static member inline h1 (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``subtitle is-1`` elms
+        static member inline h1 elm = ElementBuilders.H1.valueElm ElementLiterals.``subtitle is-1`` elm
+        static member inline h1 s = ElementBuilders.H1.valueStr ElementLiterals.``subtitle is-1`` s
+        static member inline h1 i = ElementBuilders.H1.valueInt ElementLiterals.``subtitle is-1`` i
 
-        static member inline h2 props = ElementBuilders.H2.props ElementLiterals.``subtitle`` props
-        static member inline h2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``subtitle`` elms
-        static member inline h2 elm = ElementBuilders.H2.valueElm ElementLiterals.``subtitle`` elm
-        static member inline h2 s = ElementBuilders.H2.valueStr ElementLiterals.``subtitle`` s
-        static member inline h2 i = ElementBuilders.H2.valueInt ElementLiterals.``subtitle`` i
+        static member inline h2 props = ElementBuilders.H2.props ElementLiterals.``subtitle is-2`` props
+        static member inline h2 (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``subtitle is-2`` elms
+        static member inline h2 elm = ElementBuilders.H2.valueElm ElementLiterals.``subtitle is-2`` elm
+        static member inline h2 s = ElementBuilders.H2.valueStr ElementLiterals.``subtitle is-2`` s
+        static member inline h2 i = ElementBuilders.H2.valueInt ElementLiterals.``subtitle is-2`` i
 
-        static member inline h3 props = ElementBuilders.H3.props ElementLiterals.``subtitle`` props
-        static member inline h3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children ElementLiterals.``subtitle`` elms
-        static member inline h3 elm = ElementBuilders.H3.valueElm ElementLiterals.``subtitle`` elm
-        static member inline h3 s = ElementBuilders.H3.valueStr ElementLiterals.``subtitle`` s
-        static member inline h3 i = ElementBuilders.H3.valueInt ElementLiterals.``subtitle`` i
+        static member inline h3 props = ElementBuilders.H3.props ElementLiterals.``subtitle is-3`` props
+        static member inline h3 (elms:#seq<ReactElement>) = ElementBuilders.H3.children ElementLiterals.``subtitle is-3`` elms
+        static member inline h3 elm = ElementBuilders.H3.valueElm ElementLiterals.``subtitle is-3`` elm
+        static member inline h3 s = ElementBuilders.H3.valueStr ElementLiterals.``subtitle is-3`` s
+        static member inline h3 i = ElementBuilders.H3.valueInt ElementLiterals.``subtitle is-3`` i
 
-        static member inline h4 props = ElementBuilders.H4.props ElementLiterals.``subtitle`` props
-        static member inline h4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children ElementLiterals.``subtitle`` elms
-        static member inline h4 elm = ElementBuilders.H4.valueElm ElementLiterals.``subtitle`` elm
-        static member inline h4 s = ElementBuilders.H4.valueStr ElementLiterals.``subtitle`` s
-        static member inline h4 i = ElementBuilders.H4.valueInt ElementLiterals.``subtitle`` i
+        static member inline h4 props = ElementBuilders.H4.props ElementLiterals.``subtitle is-4`` props
+        static member inline h4 (elms:#seq<ReactElement>) = ElementBuilders.H4.children ElementLiterals.``subtitle is-4`` elms
+        static member inline h4 elm = ElementBuilders.H4.valueElm ElementLiterals.``subtitle is-4`` elm
+        static member inline h4 s = ElementBuilders.H4.valueStr ElementLiterals.``subtitle is-4`` s
+        static member inline h4 i = ElementBuilders.H4.valueInt ElementLiterals.``subtitle is-4`` i
 
-        static member inline h5 props = ElementBuilders.H5.props ElementLiterals.``subtitle`` props
-        static member inline h5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children ElementLiterals.``subtitle`` elms
-        static member inline h5 elm = ElementBuilders.H5.valueElm ElementLiterals.``subtitle`` elm
-        static member inline h5 s = ElementBuilders.H5.valueStr ElementLiterals.``subtitle`` s
-        static member inline h5 i = ElementBuilders.H5.valueInt ElementLiterals.``subtitle`` i
+        static member inline h5 props = ElementBuilders.H5.props ElementLiterals.``subtitle is-5`` props
+        static member inline h5 (elms:#seq<ReactElement>) = ElementBuilders.H5.children ElementLiterals.``subtitle is-5`` elms
+        static member inline h5 elm = ElementBuilders.H5.valueElm ElementLiterals.``subtitle is-5`` elm
+        static member inline h5 s = ElementBuilders.H5.valueStr ElementLiterals.``subtitle is-5`` s
+        static member inline h5 i = ElementBuilders.H5.valueInt ElementLiterals.``subtitle is-5`` i
 
-        static member inline h6 props = ElementBuilders.H6.props ElementLiterals.``subtitle`` props
-        static member inline h6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children ElementLiterals.``subtitle`` elms
-        static member inline h6 elm = ElementBuilders.H6.valueElm ElementLiterals.``subtitle`` elm
-        static member inline h6 s = ElementBuilders.H6.valueStr ElementLiterals.``subtitle`` s
-        static member inline h6 i = ElementBuilders.H6.valueInt ElementLiterals.``subtitle`` i
+        static member inline h6 props = ElementBuilders.H6.props ElementLiterals.``subtitle is-6`` props
+        static member inline h6 (elms:#seq<ReactElement>) = ElementBuilders.H6.children ElementLiterals.``subtitle is-6`` elms
+        static member inline h6 elm = ElementBuilders.H6.valueElm ElementLiterals.``subtitle is-6`` elm
+        static member inline h6 s = ElementBuilders.H6.valueStr ElementLiterals.``subtitle is-6`` s
+        static member inline h6 i = ElementBuilders.H6.valueInt ElementLiterals.``subtitle is-6`` i
 
         static member inline p props = ElementBuilders.P.props ElementLiterals.``subtitle`` props
         static member inline p (elms:#seq<ReactElement>) = ElementBuilders.P.children ElementLiterals.``subtitle`` elms

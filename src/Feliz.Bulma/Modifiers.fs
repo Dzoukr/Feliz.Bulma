@@ -641,6 +641,12 @@ type tags =
 [<Fable.Core.Erase>]
 type title =
     static member inline isSpaced = PropertyBuilders.mkClass ClassLiterals.``is-spaced``
+    static member inline is1 = PropertyBuilders.mkClass ClassLiterals.``is-1``
+    static member inline is2 = PropertyBuilders.mkClass ClassLiterals.``is-2``
+    static member inline is3 = PropertyBuilders.mkClass ClassLiterals.``is-3``
+    static member inline is4 = PropertyBuilders.mkClass ClassLiterals.``is-4``
+    static member inline is5 = PropertyBuilders.mkClass ClassLiterals.``is-5``
+    static member inline is6 = PropertyBuilders.mkClass ClassLiterals.``is-6``
 
 [<Fable.Core.Erase>]
 type tabs =
