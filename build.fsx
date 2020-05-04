@@ -19,7 +19,7 @@ module Tools =
                 tool + " was not found in path. " +
                 "Please install it and make sure it's available from your path. "
             failwith errorMsg
-            
+
     let private runTool (cmd:string) args workingDir =
         let arguments = args |> String.split ' ' |> Arguments.OfArgs
         Command.RawCommand (cmd, arguments)
@@ -28,15 +28,15 @@ module Tools =
         |> CreateProcess.ensureExitCode
         |> Proc.run
         |> ignore
-        
+
     let dotnet cmd workingDir =
         let result =
             DotNet.exec (DotNet.Options.withWorkingDirectory workingDir) cmd ""
         if result.ExitCode <> 0 then failwithf "'dotnet %s' failed in %s" cmd workingDir
-    
-    let femto args = args |> sprintf "femto %s" |> dotnet        
-    let node = runTool (findTool "node" "node.exe")        
-    let yarn = runTool (findTool "yarn" "yarn.cmd")             
+
+    let femto args = args |> sprintf "femto %s" |> dotnet
+    let node = runTool (findTool "node" "node.exe")
+    let yarn = runTool (findTool "yarn" "yarn.cmd")
 
 let docsSrcPath = "src/Docs"
 let docsDeployPath = "docs"
@@ -64,13 +64,13 @@ let publishNuget proj =
         |> Seq.head
         |> Path.GetFullPath
     Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) proj
-    
+
 Target.create "PackBulma" (fun _ -> "src" </> "Feliz.Bulma" |> createNuget)
 Target.create "PublishBulma" (fun _ -> "src" </> "Feliz.Bulma" |> publishNuget)
 
 Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.QuickView" |> createNuget)
 Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.QuickView" |> publishNuget)
-    
+
 Target.create "PackCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> createNuget)
 Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> publishNuget)
 
@@ -79,6 +79,9 @@ Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> publ
 
 Target.create "PackCheckradio" (fun _ -> "src" </> "Feliz.Bulma.Checkradio" |> createNuget)
 Target.create "PublishCheckradio" (fun _ -> "src" </> "Feliz.Bulma.Checkradio" |> publishNuget)
+
+Target.create "PackSwitch" (fun _ -> "src" </> "Feliz.Bulma.Switch" |> createNuget)
+Target.create "PublishSwitch" (fun _ -> "src" </> "Feliz.Bulma.Switch" |> publishNuget)
 
 Target.create "PackPopover" (fun _ -> "src" </> "Feliz.Bulma.Popover" |> createNuget)
 Target.create "PublishPopover" (fun _ -> "src" </> "Feliz.Bulma.Popover" |> publishNuget)
