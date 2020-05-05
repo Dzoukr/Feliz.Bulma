@@ -53,6 +53,11 @@ let menuPart model =
             item "Overview" PageLoaderOverview
             item "Installation" PageLoaderInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.Switch"
+        Bulma.menuList [
+            item "Overview" SwitchOverview
+            item "Installation" SwitchInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -68,6 +73,8 @@ let contentPart model dispatch =
     | TooltipInstallation -> Views.Tooltip.installation
     | CheckradioOverview -> Views.Checkradio.overview
     | CheckradioInstallation -> Views.Checkradio.installation
+    | SwitchOverview -> Views.Switch.overview
+    | SwitchInstallation -> Views.Switch.installation
     | PopoverOverview -> Views.Popover.overview
     | PopoverInstallation -> Views.Popover.installation
     | PageLoaderOverview -> Views.PageLoader.overview model dispatch
