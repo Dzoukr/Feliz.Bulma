@@ -3,6 +3,7 @@
         <PackageId>Feliz.Bulma.Switch</PackageId>
         <Description>Checkbox as a switch button for Feliz.Bulma</Description>
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
+        <PackageProjectUrl>https://dzoukr.github.io/Feliz.Bulma</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
@@ -24,6 +25,7 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
+        <Content Include="paket.references" />
         <ProjectReference Include="..\..\src\Feliz.Bulma\Feliz.Bulma.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
