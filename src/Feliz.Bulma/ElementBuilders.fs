@@ -1,26 +1,25 @@
-﻿module Feliz.Bulma.ElementBuilders
+module Feliz.Bulma.ElementBuilders
 
 open Feliz
 open Feliz.Bulma
 
-module internal Helpers =
-    let [<Literal>] ClassName = "className"
+module Helpers =
+    let [<Literal>] private ClassName = "className"
 
-    let inline getClasses (xs:IReactProperty list) =
+    let inline internal getClasses (xs:IReactProperty list) =
         xs
-        |> List.map unbox<string * obj>
-        |> List.filter (fun (v,_) -> v = ClassName)
-        |> List.map (snd >> string)
+        |> List.choose (unbox<string * obj> >> function
+            | (k, v) when k = ClassName -> Some (string v)
+            | _ -> None)
 
-    let inline partitionClasses (xs:IReactProperty list) =
+    let inline internal partitionClasses (xs:IReactProperty list) =
         xs
         |> List.partition (unbox<string * obj> >> fst >> ((=) ClassName))
 
-    let inline combineClasses cn (xs:IReactProperty list) =
+    let combineClasses cn (xs:IReactProperty list) =
         xs
         |> getClasses
-        |> List.append [cn]
-        |> fun x -> prop.classes x
+        |> fun x -> cn :: x |> prop.classes
 
 module Div =
     let inline props (cn:string) (xs:IReactProperty list) = Html.div [ yield! xs; yield Helpers.combineClasses cn xs ]
