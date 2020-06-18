@@ -10,12 +10,12 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.2.0</Version>
-        <PackageReleaseNotes>Reduce effect on bundle size by not inlining combineClasses #39</PackageReleaseNotes>
+        <Version>2.3.0</Version>
+        <PackageReleaseNotes>Add Bulma 0.9.0 spacing helpers #42</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
-            <NpmPackage Name="bulma" Version="&gt;= 0.8.0 &lt; 0.9.0" ResolutionStrategy="Max" />
+            <NpmPackage Name="bulma" Version="&gt;= 0.9.0 &lt; 0.10.0" ResolutionStrategy="Max" />
         </NpmDependencies>
     </PropertyGroup>
     <ItemGroup>
