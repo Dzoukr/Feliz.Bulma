@@ -95,6 +95,7 @@ export function attach (id, callback, optObj) {
         element.removeListeners('select');
         element.on('hide', calc => makeThrottledCall(10, calc, callback));
         element.on('select', calc => makeThrottledCall(10, calc, callback));
+        element.on('clear', calc => makeThrottledCall(10, calc, callback));
     }
     
     if (isAttached === false) {
