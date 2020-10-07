@@ -34,18 +34,18 @@ export function attach (id, callback, optObj) {
         ...defaultOptions,
         ...optObj
     };
-    
+
     const selector = 'input[id="'+id+'"]';
     const isAttached = isAlreadyAttached(selector);
     const useLiveUpdate = options.expLiveUpdate === true;
     const triggerOnTimeChange = options.expTriggerOnTimeChange === true;
-    
+
     function setDate (calendar, startDate, endDate) {
-        
+
         function fixNumbers (n) {
             return ("0" + n).slice(-2);
         }
-        
+
         if (startDate != null) {
             const hours = fixNumbers(startDate.getHours());
             const minutes = fixNumbers(startDate.getMinutes());
@@ -62,7 +62,7 @@ export function attach (id, callback, optObj) {
                 calendar.timePicker._ui.start.minutes.number.innerHTML = minutes;
             }
         }
-        
+
         if (endDate != null) {
             const hours = fixNumbers(endDate.getHours());
             const minutes = fixNumbers(endDate.getMinutes());
@@ -81,7 +81,7 @@ export function attach (id, callback, optObj) {
         }
         calendar.refresh();
     }
-    
+
     function addOnTimeChangeTriggers(element) {
         const searchRoot = element.element.parentElement.parentElement.parentElement;
         const timepickers = searchRoot.querySelectorAll('.timepicker-next,.timepicker-previous');
@@ -89,23 +89,24 @@ export function attach (id, callback, optObj) {
             tp.addEventListener('click', ign => element.emit('select',element));
         });
     }
-    
+
     function refreshHandlers(element) {
         element.removeListeners('hide');
         element.removeListeners('select');
+        element.removeListeners('clear');
         element.on('hide', calc => makeThrottledCall(10, calc, callback));
         element.on('select', calc => makeThrottledCall(10, calc, callback));
         element.on('clear', calc => makeThrottledCall(10, calc, callback));
     }
-    
+
     if (isAttached === false) {
         const calendars = bulmaCalendar.attach(selector, options);
         calendars.forEach(calendar => {
             if (calendar.element.id === id) {
                 refreshHandlers(calendar);
-                
+
                 setDate(calendar, options.startDate, options.endDate);
-                
+
                 if(triggerOnTimeChange) {
                     addOnTimeChangeTriggers(calendar);
                 }
