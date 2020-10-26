@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.3.0</Version>
-        <PackageReleaseNotes>Add Bulma 0.9.0 spacing helpers #42</PackageReleaseNotes>
+        <Version>2.4.0</Version>
+        <PackageReleaseNotes>Filter out className properties when combining classes to avoid React errors in development mode #50</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
