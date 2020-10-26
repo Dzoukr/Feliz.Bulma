@@ -256,8 +256,8 @@ type Bulma =
     static member inline textarea elm = ElementBuilders.Textarea.valueElm ElementLiterals.``textarea`` elm
 
     static member inline select props =
-        let cp,nonCp = ElementBuilders.Helpers.partitionClasses props
-        Html.div [ ElementBuilders.Helpers.combineClasses ElementLiterals.``select`` cp; prop.children [ Html.select nonCp ] ]
+        let classes, props = ElementBuilders.Helpers.extractClasses props
+        Html.div [ prop.classes (ElementLiterals.``select`` :: classes); prop.children [ Html.select props ] ]
     static member inline select (elms:#seq<ReactElement>) = Html.div [ prop.className ElementLiterals.``select``; prop.children [ Html.select elms ] ]
     static member inline select (elm:ReactElement) = Html.div [ prop.className ElementLiterals.``select``; prop.children [ Html.select [ elm ] ] ]
 
