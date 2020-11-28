@@ -1,4 +1,4 @@
-﻿module Docs.Views.Bulma
+module Docs.Views.Bulma
 
 open Feliz
 open Feliz.Bulma
@@ -47,7 +47,7 @@ Bulma.columns [
     Bulma.column [
         column.is2 // <-- note context helper here
         prop.children [
-            Bulma.button "Click me"
+            Bulma.button.button "Click me"
         ]
     ]
 ]
