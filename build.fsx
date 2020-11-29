@@ -38,8 +38,9 @@ module Tools =
     let node = runTool (findTool "node" "node.exe")
     let yarn = runTool (findTool "yarn" "yarn.cmd")
 
-let docsSrcPath = "src/Docs"
-let docsDeployPath = "docs"
+let docsSrcPath = "src" </> "Docs"
+let docsPublishPath = "publish" </> "docs"
+let fableBuildPath = ".fable-build" //docsSrcPath </> ".fable-build"
 
 // Targets
 let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
@@ -98,13 +99,11 @@ Target.create "InstallDocs" (fun _ ->
 )
 
 Target.create "PublishDocs" (fun _ ->
-    let docsDeployLocalPath = (docsSrcPath </> "deploy")
-    [ docsDeployPath; docsDeployLocalPath] |> Shell.cleanDirs
-    Tools.yarn "webpack-cli -p" docsSrcPath
-    Shell.copyDir docsDeployPath docsDeployLocalPath FileFilter.allFiles
+    [ docsPublishPath] |> Shell.cleanDirs
+    Tools.dotnet (sprintf "fable --outDir %s --run webpack-cli -p" fableBuildPath) docsSrcPath
 )
 
-Target.create "RunDocs" (fun _ -> Tools.yarn "webpack-dev-server" docsSrcPath)
+Target.create "RunDocs" (fun _ -> Tools.dotnet (sprintf "fable watch --outDir %s --run webpack-dev-server" fableBuildPath) docsSrcPath)
 
 "InstallDocs" ==> "RunDocs"
 "InstallDocs" ==> "PublishDocs"

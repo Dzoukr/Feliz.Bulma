@@ -15,3 +15,5 @@ src/Yobo.Client/output/
 /.ionide
 config.development.json
 local.settings.json
+.fable-build
+/publish
