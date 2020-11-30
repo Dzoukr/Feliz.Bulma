@@ -1,5 +1,7 @@
 namespace Feliz.Bulma
 
+open System
+
 module private ClassLiterals =
     let [<Literal>] ``is-clearfix`` = "is-clearfix"
     let [<Literal>] ``is-pulled-left`` = "is-pulled-left"
@@ -225,6 +227,7 @@ module private ClassLiterals =
     let [<Literal>] ``is-active`` = "is-active"
     let [<Literal>] ``is-up`` = "is-up"
     let [<Literal>] ``is-transparent`` = "is-transparent"
+    let [<Literal>] ``has-shadow`` = "has-shadow"
     let [<Literal>] ``is-fixed-top`` = "is-fixed-top"
     let [<Literal>] ``is-fixed-bottom`` = "is-fixed-bottom"
     let [<Literal>] ``is-arrowless`` = "is-arrowless"
@@ -623,7 +626,7 @@ type spacing =
     static member inline py3 = PropertyBuilders.mkClass ClassLiterals.``py-3``
     static member inline py4 = PropertyBuilders.mkClass ClassLiterals.``py-4``
     static member inline py5 = PropertyBuilders.mkClass ClassLiterals.``py-5``
-    static member inline py6 = PropertyBuilders.mkClass ClassLiterals.``py-6``    
+    static member inline py6 = PropertyBuilders.mkClass ClassLiterals.``py-6``
 
 [<Fable.Core.Erase>]
 type text =
@@ -875,11 +878,16 @@ type modalClose =
 [<Fable.Core.Erase>]
 type navbar =
     static member inline isTransparent = PropertyBuilders.mkClass ClassLiterals.``is-transparent``
+    static member inline hasShadow = PropertyBuilders.mkClass ClassLiterals.``has-shadow``
+    static member inline isFixedTop = PropertyBuilders.mkClass ClassLiterals.``is-fixed-top``
+    static member inline isFixedBottom = PropertyBuilders.mkClass ClassLiterals.``is-fixed-bottom``
 
 [<Fable.Core.Erase>]
 type navbarMenu =
     static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+    [<Obsolete("This prop is deprecated. Use `navbar.isFixedTop` instead.")>]
     static member inline isFixedTop = PropertyBuilders.mkClass ClassLiterals.``is-fixed-top``
+    [<Obsolete("This prop is deprecated. Use `navbar.isFixedBottom` instead.")>]
     static member inline isFixedBottom = PropertyBuilders.mkClass ClassLiterals.``is-fixed-bottom``
 
 [<Fable.Core.Erase>]
