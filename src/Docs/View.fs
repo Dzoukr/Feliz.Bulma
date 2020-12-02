@@ -3,8 +3,8 @@
 open Domain
 open Feliz
 open Feliz.Bulma
-open Feliz.Router
 open Docs.Router
+open Feliz.Router
 
 let menuPart model =
     let item (t:string) p =
@@ -32,6 +32,11 @@ let menuPart model =
         Bulma.menuList [
             item "Overview" CalendarOverview
             item "Installation" CalendarInstallation
+        ]
+        Bulma.menuLabel "Feliz.Bulma.DateTimePicker"
+        Bulma.menuList [
+            item "Overview" DateTimePickerOverview
+            item "Installation" DateTimePickerInstallation
         ]
         Bulma.menuLabel "Feliz.Bulma.Tooltip"
         Bulma.menuList [
@@ -69,6 +74,8 @@ let contentPart model dispatch =
     | QuickViewInstallation -> Views.QuickView.installation
     | CalendarOverview -> Views.Calendar.overview
     | CalendarInstallation -> Views.Calendar.installation
+    | DateTimePickerOverview -> Views.DateTimePicker.overview
+    | DateTimePickerInstallation -> Views.DateTimePicker.installation
     | TooltipOverview -> Views.Tooltip.overview
     | TooltipInstallation -> Views.Tooltip.installation
     | CheckradioOverview -> Views.Checkradio.overview
@@ -96,7 +103,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                 ]
             ]
         ]
-    Router.router [
-        Router.onUrlChanged (Router.parseUrl >> UrlChanged >> dispatch)
-        Router.application render
+    React.router [
+        router.onUrlChanged (parseUrl >> UrlChanged >> dispatch)
+        router.children render
     ]

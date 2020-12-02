@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma", "src\Feliz.Bulma\Feliz.Bulma.fsproj", "{43305628-0021-4187-B975-B71FC374B90B}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.QuickView", "src\Feliz.Bulma.QuickView\Feliz.Bulma.QuickView.fsproj", "{1D2AB86E-C371-411A-8516-7B55845DDCDD}"
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{39C8F2F3-FEC5-400E-8E35-558A9B69C059}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Switch", "src\Feliz.Bulma.Switch\Feliz.Bulma.Switch.fsproj", "{849219C3-3B17-477A-8BC7-7993709F9008}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.DateTimePicker", "src\Feliz.Bulma.DateTimePicker\Feliz.Bulma.DateTimePicker.fsproj", "{F9290879-A222-42EC-AACA-00937848CB19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{849219C3-3B17-477A-8BC7-7993709F9008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{849219C3-3B17-477A-8BC7-7993709F9008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{849219C3-3B17-477A-8BC7-7993709F9008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9290879-A222-42EC-AACA-00937848CB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9290879-A222-42EC-AACA-00937848CB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9290879-A222-42EC-AACA-00937848CB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9290879-A222-42EC-AACA-00937848CB19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{849219C3-3B17-477A-8BC7-7993709F9008} = {39C8F2F3-FEC5-400E-8E35-558A9B69C059}

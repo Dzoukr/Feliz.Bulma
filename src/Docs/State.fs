@@ -2,8 +2,11 @@
 
 open Domain
 open Elmish
+open Feliz.Router
 
-let init () = Model.init, Cmd.none
+let init () =
+    let nextPage = (Router.currentUrl() |> Router.parseUrl)
+    { Model.init with CurrentPage = nextPage }, Cmd.none
 
 let private delay (msg:Msg) =
     async {
@@ -20,4 +23,3 @@ let update (msg : Msg) (currentModel : Model) : Model * Cmd<Msg> =
             if not currentModel.ShowLoader then Cmd.OfAsync.perform delay ToggleLoader id
             else Cmd.none
         { currentModel with ShowLoader = not currentModel.ShowLoader }, cmd
-    

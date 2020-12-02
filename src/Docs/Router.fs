@@ -10,6 +10,8 @@ type Page =
     | QuickViewInstallation
     | CalendarOverview
     | CalendarInstallation
+    | DateTimePickerOverview
+    | DateTimePickerInstallation
     | TooltipOverview
     | TooltipInstallation
     | CheckradioOverview
@@ -31,6 +33,8 @@ let parseUrl = function
     | [ "quickview" ] -> QuickViewOverview
     | [ "calendar"; "installation" ] -> CalendarInstallation
     | [ "calendar" ] -> CalendarOverview
+    | [ "datetimepicker"; "installation" ] -> DateTimePickerInstallation
+    | [ "datetimepicker" ] -> DateTimePickerOverview
     | [ "tooltip"; "installation" ] -> TooltipInstallation
     | [ "tooltip" ] -> TooltipOverview
     | [ "checkradio"; "installation" ] -> CheckradioInstallation
@@ -51,6 +55,8 @@ let getHref = function
     | QuickViewInstallation -> Router.format("quickview","installation")
     | CalendarOverview -> Router.format("calendar")
     | CalendarInstallation -> Router.format("calendar","installation")
+    | DateTimePickerOverview -> Router.format("datetimepicker")
+    | DateTimePickerInstallation -> Router.format("datetimepicker","installation")
     | TooltipOverview -> Router.format("tooltip")
     | TooltipInstallation -> Router.format("tooltip","installation")
     | CheckradioOverview -> Router.format("checkradio")

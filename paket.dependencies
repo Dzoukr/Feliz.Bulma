@@ -5,6 +5,7 @@ storage: none
 
 nuget FSharp.Core
 nuget Feliz
+nuget Fable.DateFunctions
 
 group Build
     source https://api.nuget.org/v3/index.json
@@ -14,7 +15,7 @@ group Build
     nuget Fake.Core.Target
     nuget Fake.IO.FileSystem
     nuget Fake.Core.ReleaseNotes
-    
+
 group Docs
     source https://api.nuget.org/v3/index.json
     storage: none
