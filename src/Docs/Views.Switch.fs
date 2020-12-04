@@ -14,7 +14,7 @@ let overview =
                   [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Switch/"
                     prop.children
                         [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Switch.svg?style=flat" ] ] ] ]
-          Bulma.subtitle.h2
+          Bulma.subtitle.h3
               [ Html.a
                   [ prop.href "https://wikiki.github.io/form/switch/"
                     prop.text "Switch" ]

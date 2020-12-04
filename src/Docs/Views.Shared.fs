@@ -15,7 +15,7 @@ let code (c:string) =
         prop.text c
     ]
 
-let installationView packageName yarnName =
+let installationViewMultiple packageName yarnNames =
     Html.div [
         Bulma.title.h1 (sprintf "%s - Installation" packageName)
         Html.hr []
@@ -30,7 +30,11 @@ let installationView packageName yarnName =
             code (sprintf "Install-Package %s" packageName)
             Html.p "or using Paket"
             code (sprintf "paket add %s" packageName)
-            Html.p "Please don't forget that this library has also dependencies on frontend (css styles), so you need to add it to package.json file using yarn / npm command"
-            code (sprintf "yarn add %s" yarnName)
+            Html.p "Please don't forget that this library has also dependencies on frontend packages, so you need to add it to package.json file using yarn / npm command"
+            yarnNames
+            |> List.map (fun n -> sprintf "yarn add %s" n)
+            |> String.concat "\n" |> code
         ]
     ]
+
+let installationView packageName yarnName = installationViewMultiple packageName [yarnName]

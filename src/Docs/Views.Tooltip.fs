@@ -19,7 +19,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle.h2 [
+        Bulma.subtitle.h3 [
             Html.a [ prop.href "https://wikiki.github.io/elements/tooltip/"; prop.text "Tooltip" ]
             Html.text " extension for Feliz.Bulma"
         ]

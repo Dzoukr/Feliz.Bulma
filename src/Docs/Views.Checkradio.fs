@@ -4,7 +4,6 @@ open Feliz
 open Feliz.Bulma
 open Feliz.Bulma.Checkradio
 open Shared
-open Docs.Domain
 
 let overview =
     Html.div [
@@ -19,7 +18,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle.h2 [
+        Bulma.subtitle.h3 [
             Html.a [ prop.href "https://wikiki.github.io/form/checkradio/"; prop.text "Checkradio" ]
             Html.text " extension for Feliz.Bulma"
         ]

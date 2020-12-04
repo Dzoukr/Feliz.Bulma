@@ -39,6 +39,16 @@ let overview =
         ]
 
     Html.div [
+        Bulma.message [
+            color.isDanger
+            prop.children [
+                Bulma.messageBody [
+                    prop.dangerouslySetInnerHTML
+                        """This component is <strong>deprecated</strong> and won't be maintained any more.
+                         For better calendar experience use the new component <a href="#/datetimepicker">DateTimePicker</a>."""
+                ]
+            ]
+        ]
         Bulma.title.h1 [
             Html.text "Feliz.Bulma.Calendar "
             Html.a [
@@ -50,7 +60,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle.h2 [
+        Bulma.subtitle.h3 [
             Html.a [ prop.href "https://creativebulma.net/product/calendar/demo"; prop.text "Calendar" ]
             Html.text " extension for Feliz.Bulma"
         ]

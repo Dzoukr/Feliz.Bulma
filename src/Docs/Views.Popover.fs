@@ -18,7 +18,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle.h2 [
+        Bulma.subtitle.h3 [
             Html.a [ prop.href "https://github.com/apnsngr/bulma-popover"; prop.text "Popover" ]
             Html.text " extension for Feliz.Bulma"
         ]

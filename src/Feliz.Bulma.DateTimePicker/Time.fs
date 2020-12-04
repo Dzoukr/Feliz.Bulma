@@ -131,7 +131,7 @@ module internal TimePicker =
                 ]
             ]
         ]
-        let value =
+        let txtValue =
             if p.isRange then time |> Option.map (fun (s,t) -> sprintf "%s - %s" (toFormattedTime s) (toFormattedTime t))
             else time |> Option.map fst |> Option.map toFormattedTime
             |> Option.defaultValue ""
@@ -144,7 +144,7 @@ module internal TimePicker =
                     prop.children [
                         Bulma.input.text [
                             prop.readOnly true
-                            prop.valueOrDefault value
+                            prop.valueOrDefault txtValue
                             prop.onClick (fun _ -> setIsDisplayed true)
                         ]
                         Bulma.icon [
@@ -168,8 +168,8 @@ type ITimePickerProperty = interface end
 type timePicker =
     static member inline onTimeSelected (eventHandler: TimeSpan option -> unit) : ITimePickerProperty = unbox ("onTimeSelected", eventHandler)
     static member inline onTimeRangeSelected (eventHandler: (TimeSpan * TimeSpan) option -> unit) : ITimePickerProperty = unbox ("onTimeRangeSelected", eventHandler)
-    static member inline defaultValue (v:TimeSpan option) : ITimePickerProperty = unbox ("defaultValue", v)
-    static member inline defaultRangeValue (v:(TimeSpan * TimeSpan) option) : ITimePickerProperty = unbox ("defaultRangeValue", v)
+    static member inline defaultValue (v:TimeSpan) : ITimePickerProperty = unbox ("defaultValue", v)
+    static member inline defaultRangeValue (v:(TimeSpan * TimeSpan)) : ITimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : ITimePickerProperty = unbox ("isRange", v)
     static member inline displayMode (v:DisplayMode) : ITimePickerProperty = unbox ("displayMode", v)
     static member inline clearLabel (v:string) : ITimePickerProperty = unbox ("clearLabel", v)

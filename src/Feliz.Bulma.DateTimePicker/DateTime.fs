@@ -86,19 +86,21 @@ module internal DatePicker =
     module private DateTimeValue =
         let date (dtv:DateTimeValue) = dtv.Date
         let fromDateTime (d:DateTime) = { Date = Some d.Date; Time = Some d.TimeOfDay }
-        let tryToDateTime (dtv:DateTimeValue) =
-            match dtv.Date, dtv.Time with
-            | Some d, Some t -> Some <| d.Date.Add(t)
+        let tryToDateTime dateOnly (dtv:DateTimeValue) =
+            match dateOnly, dtv.Date, dtv.Time with
+            | false, Some d, Some t -> Some <| d.Date.Add(t)
+            | true, Some d, _ -> Some <| d.Date
             | _ -> None
 
         let applyDate (dtv:DateTimeValue) (d:DateTime) = { dtv with Date = Some d.Date }
         let applyTime (dtv:DateTimeValue) (t:TimeSpan) = { dtv with Time = Some t }
         let withoutDate (dtv:DateTimeValue) = { dtv with Date = None }
-
         let empty = { Date = None; Time = None }
-        let isComplete (dtv:DateTimeValue) =
-            dtv.Date.IsSome && dtv.Time.IsSome
-            || dtv = empty
+        let isComplete dateOnly (dtv:DateTimeValue) =
+            if dateOnly then true
+            else
+                dtv.Date.IsSome && dtv.Time.IsSome
+                || dtv = empty
 
     type private SelectedValue = DateTimeValue * DateTimeValue
 
@@ -117,13 +119,13 @@ module internal DatePicker =
                 else sv
             | _ -> sv
 
-        let isRangeComplete (sv:SelectedValue) =
-            sv |> fst |> DateTimeValue.isComplete
+        let isRangeComplete dateOnly (sv:SelectedValue) =
+            sv |> fst |> DateTimeValue.isComplete dateOnly
             &&
-            sv |> snd |> DateTimeValue.isComplete
+            sv |> snd |> DateTimeValue.isComplete dateOnly
 
-        let getRangeValue (sv:SelectedValue) =
-            match sv |> fst |> DateTimeValue.tryToDateTime, sv |> snd |> DateTimeValue.tryToDateTime with
+        let getRangeValue dateOnly (sv:SelectedValue) =
+            match sv |> fst |> DateTimeValue.tryToDateTime dateOnly, sv |> snd |> DateTimeValue.tryToDateTime dateOnly with
             | Some s, Some e -> Some (s, e)
             | _ -> None
 
@@ -144,11 +146,11 @@ module internal DatePicker =
             |> Option.map (fun x -> x, x)
             |> Option.defaultValue (DateTimeValue.empty, DateTimeValue.empty)
 
-        let isSingleValueComplete (sv:SelectedValue) =
-            sv |> fst |> DateTimeValue.isComplete
+        let isSingleValueComplete dateOnly (sv:SelectedValue) =
+            sv |> fst |> DateTimeValue.isComplete dateOnly
 
-        let getSingleValue (sv:SelectedValue) =
-            sv |> fst |> DateTimeValue.tryToDateTime
+        let getSingleValue dateOnly (sv:SelectedValue) =
+            sv |> fst |> DateTimeValue.tryToDateTime dateOnly
 
         let applyDateSelectionOnSingle (sv:SelectedValue) (d:DateTime) : SelectedValue =
             let f,_ = sv
@@ -188,10 +190,10 @@ module internal DatePicker =
 
         let updateDate (s:SelectedValue) =
             s |> setValue
-            if p.isRange && s |> SelectedValue.isRangeComplete && p.onDateRangeSelected.IsSome then
-                s |> SelectedValue.getRangeValue |> p.onDateRangeSelected.Value
-            if not p.isRange && s |> SelectedValue.isSingleValueComplete && p.onDateSelected.IsSome then
-                s |> SelectedValue.getSingleValue |> p.onDateSelected.Value
+            if p.isRange && s |> SelectedValue.isRangeComplete p.dateOnly && p.onDateRangeSelected.IsSome then
+                s |> SelectedValue.getRangeValue p.dateOnly |> p.onDateRangeSelected.Value
+            if not p.isRange && s |> SelectedValue.isSingleValueComplete p.dateOnly && p.onDateSelected.IsSome then
+                s |> SelectedValue.getSingleValue p.dateOnly |> p.onDateSelected.Value
 
         let onCurrentMonthSelected (d:DateTime) =
             EditMode.Date |> setEditMode
@@ -411,16 +413,20 @@ module internal DatePicker =
                 ]
             ]
         ]
-        let value =
+        let format (d:DateTime) =
+            if p.dateOnly then d.Format("dd. MMMM yyyy", p.locale)
+            else d.Format("dd. MMMM yyyy (HH:mm)", p.locale)
+
+        let txtValue =
             if p.isRange then
-                match (value |> fst |> DateTimeValue.tryToDateTime), (value |> snd |> DateTimeValue.tryToDateTime) with
-                | Some s, Some e -> sprintf "%s - %s" (s.Format("dd. MMMM yyyy", p.locale)) (e.Format("dd. MMMM yyyy", p.locale))
+                match (value |> fst |> DateTimeValue.tryToDateTime p.dateOnly), (value |> snd |> DateTimeValue.tryToDateTime p.dateOnly) with
+                | Some s, Some e -> sprintf "%s - %s" (format s) (format e)
                 | _ -> ""
             else
                 value
                 |> fst
-                |> DateTimeValue.tryToDateTime
-                |> Option.map (fun x -> x.Format("dd. MMMM yyyy", p.locale))
+                |> DateTimeValue.tryToDateTime p.dateOnly
+                |> Option.map format
                 |> Option.defaultValue ""
 
         let input =
@@ -431,7 +437,7 @@ module internal DatePicker =
                     prop.children [
                         Bulma.input.text [
                             prop.readOnly true
-                            prop.valueOrDefault value
+                            prop.valueOrDefault txtValue
                             prop.onClick (fun _ -> setIsDisplayed true)
                         ]
                         Bulma.icon [
@@ -454,8 +460,8 @@ type IDateTimePickerProperty = interface end
 type dateTimePicker =
     static member inline onDateSelected (eventHandler: DateTime option -> unit) : IDateTimePickerProperty = unbox ("onDateSelected", eventHandler)
     static member inline onDateRangeSelected (eventHandler: (DateTime * DateTime) option -> unit) : IDateTimePickerProperty = unbox ("onDateRangeSelected", eventHandler)
-    static member inline defaultValue (v:DateTime option) : IDateTimePickerProperty = unbox ("defaultValue", v)
-    static member inline defaultRangeValue (v:(DateTime * DateTime) option) : IDateTimePickerProperty = unbox ("defaultRangeValue", v)
+    static member inline defaultValue (v:DateTime) : IDateTimePickerProperty = unbox ("defaultValue", v)
+    static member inline defaultRangeValue (v:DateTime * DateTime) : IDateTimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : IDateTimePickerProperty = unbox ("isRange", v)
     static member inline displayMode (v:DisplayMode) : IDateTimePickerProperty = unbox ("displayMode", v)
     static member inline clearLabel (v:string) : IDateTimePickerProperty = unbox ("clearLabel", v)

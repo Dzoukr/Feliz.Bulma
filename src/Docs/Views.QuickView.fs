@@ -36,7 +36,7 @@ let overview model dispatch =
                 ]
             ]
         ]
-        Bulma.subtitle.h2 [
+        Bulma.subtitle.h3 [
             Html.a [ prop.href "https://wikiki.github.io/components/quickview/"; prop.text "QuickView" ]
             Html.text " extension for Feliz.Bulma"
         ]

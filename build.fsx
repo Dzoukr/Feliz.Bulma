@@ -90,6 +90,10 @@ Target.create "PublishPopover" (fun _ -> "src" </> "Feliz.Bulma.Popover" |> publ
 Target.create "PackPageLoader" (fun _ -> "src" </> "Feliz.Bulma.PageLoader" |> createNuget)
 Target.create "PublishPageLoader" (fun _ -> "src" </> "Feliz.Bulma.PageLoader" |> publishNuget)
 
+Target.create "PackDateTimePicker" (fun _ -> "src" </> "Feliz.Bulma.DateTimePicker" |> createNuget)
+Target.create "PublishDateTimePicker" (fun _ -> "src" </> "Feliz.Bulma.DateTimePicker" |> publishNuget)
+
+
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"
     Tools.node "--version" docsSrcPath

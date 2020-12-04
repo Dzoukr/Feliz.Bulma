@@ -49,10 +49,11 @@ module internal Layout =
                         "is-primary"
                         if isDisplayed then "is-active"
                     ]
-                    prop.style [ style.position.absolute ]
+                    match mode with
+                    | DisplayMode.Default -> prop.style [ style.position.absolute ]
+                    | _ -> ()
                     prop.children cont
                 ]
             ]
             prop.ref ref
-            prop.custom("tabIndex", -1)
         ]

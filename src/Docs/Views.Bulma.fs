@@ -18,7 +18,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle.h2 [
+        Bulma.subtitle.h3 [
             Html.text "Bulma UI wrapper for amazing "
             Html.a [ prop.href "https://github.com/Zaid-Ajaj/Feliz"; prop.text "Feliz DSL" ]
         ]
