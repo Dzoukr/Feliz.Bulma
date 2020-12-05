@@ -8,7 +8,8 @@ open Feliz.Bulma.DateTimePicker
 open Feliz.Bulma.Operators
 open Feliz.Bulma
 
-module internal DatePicker =
+[<RequireQualifiedAccess; System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)>]
+module DatePicker =
     type Props =
         abstract onDateSelected: (DateTime option -> unit) option
         abstract onDateRangeSelected: ((DateTime * DateTime) option -> unit) option
@@ -102,64 +103,62 @@ module internal DatePicker =
                 dtv.Date.IsSome && dtv.Time.IsSome
                 || dtv = empty
 
-    type private SelectedValue = DateTimeValue * DateTimeValue
+    type private SelectedValue = { From : DateTimeValue; To : DateTimeValue }
 
     [<RequireQualifiedAccess>]
     module private SelectedValue =
         let fromRangeValue rv : SelectedValue =
             rv
-            |> Option.map (fun (s,e) -> DateTimeValue.fromDateTime s, DateTimeValue.fromDateTime e)
-            |> Option.defaultValue (DateTimeValue.empty, DateTimeValue.empty)
+            |> Option.map (fun (s,e) -> { From = DateTimeValue.fromDateTime s; To = DateTimeValue.fromDateTime e })
+            |> Option.defaultValue ({ From = DateTimeValue.empty; To = DateTimeValue.empty })
 
         let ensureDatesSort (sv:SelectedValue) : SelectedValue =
-            match sv with
+            match sv.From, sv.To with
             | { Date = Some d1 }, { Date = Some d2 } ->
                 if d1 > d2 then
-                    (d2 |> DateTimeValue.applyDate (fst sv)), (d1 |> DateTimeValue.applyDate (snd sv))
+                    { From = d2 |> DateTimeValue.applyDate sv.From; To = d1 |> DateTimeValue.applyDate sv.To }
                 else sv
             | _ -> sv
 
         let isRangeComplete dateOnly (sv:SelectedValue) =
-            sv |> fst |> DateTimeValue.isComplete dateOnly
+            sv.From |> DateTimeValue.isComplete dateOnly
             &&
-            sv |> snd |> DateTimeValue.isComplete dateOnly
+            sv.To |> DateTimeValue.isComplete dateOnly
 
         let getRangeValue dateOnly (sv:SelectedValue) =
-            match sv |> fst |> DateTimeValue.tryToDateTime dateOnly, sv |> snd |> DateTimeValue.tryToDateTime dateOnly with
+            match sv.From |> DateTimeValue.tryToDateTime dateOnly, sv.To |> DateTimeValue.tryToDateTime dateOnly with
             | Some s, Some e -> Some (s, e)
             | _ -> None
 
         let applyDateSelectionOnRange (sv:SelectedValue) (d:DateTime) : SelectedValue =
-            match sv with
-            | { Date = Some _ }, { Date = None } -> (fst sv), (d |> DateTimeValue.applyDate (snd sv))
-            | f, t -> (d |> DateTimeValue.applyDate f), (t |> DateTimeValue.withoutDate)
+            match sv.From, sv.To with
+            | { Date = Some _ }, { Date = None } -> { From = sv.From; To = (d |> DateTimeValue.applyDate sv.To) }
+            | f, t -> { From = d |> DateTimeValue.applyDate f; To = (t |> DateTimeValue.withoutDate) }
             |> ensureDatesSort
 
         let applyTimeSelectionOnRange (sv:SelectedValue) (s,e) : SelectedValue =
-            s |> DateTimeValue.applyTime (sv |> fst)
-            ,
-            e |> DateTimeValue.applyTime (sv |> snd)
+            { From = s |> DateTimeValue.applyTime (sv.From); To = e |> DateTimeValue.applyTime (sv.To) }
+
+        let empty = { From = DateTimeValue.empty; To = DateTimeValue.empty }
 
         let fromSingleValue s : SelectedValue =
             s
             |> Option.map DateTimeValue.fromDateTime
-            |> Option.map (fun x -> x, x)
-            |> Option.defaultValue (DateTimeValue.empty, DateTimeValue.empty)
+            |> Option.map (fun x -> { From = x; To = x})
+            |> Option.defaultValue (empty)
 
         let isSingleValueComplete dateOnly (sv:SelectedValue) =
-            sv |> fst |> DateTimeValue.isComplete dateOnly
+            sv.From |> DateTimeValue.isComplete dateOnly
 
         let getSingleValue dateOnly (sv:SelectedValue) =
-            sv |> fst |> DateTimeValue.tryToDateTime dateOnly
+            sv.From |> DateTimeValue.tryToDateTime dateOnly
 
         let applyDateSelectionOnSingle (sv:SelectedValue) (d:DateTime) : SelectedValue =
-            let f,_ = sv
-            (d |> DateTimeValue.applyDate f), DateTimeValue.empty
+            { From = d |> DateTimeValue.applyDate sv.From; To = DateTimeValue.empty }
 
         let applyTimeSelectionOnSingle (sv:SelectedValue) (s,_) : SelectedValue =
-            s |> DateTimeValue.applyTime (sv |> fst), DateTimeValue.empty
+            { From = s |> DateTimeValue.applyTime (sv.From); To = DateTimeValue.empty }
 
-        let empty = DateTimeValue.empty, DateTimeValue.empty
 
 
     [<ReactComponent>]
@@ -180,7 +179,7 @@ module internal DatePicker =
                 true,ignore
 
         let currentMonth, setCurrentMonth =
-            match value |> fst with
+            match value.From with
             | { Date = Some v } -> React.useState(v.StartOfMonth())
             | _ -> React.useState(DateTime.UtcNow.StartOfMonth())
 
@@ -217,8 +216,8 @@ module internal DatePicker =
             |> updateDate
 
         let timeValue =
-            (value |> fst |> (fun x -> x.Time) |> Option.defaultValue TimeSpan.Zero),
-            (value |> snd |> (fun x -> x.Time) |> Option.defaultValue TimeSpan.Zero)
+            (value.From |> (fun x -> x.Time) |> Option.defaultValue TimeSpan.Zero),
+            (value.To |> (fun x -> x.Time) |> Option.defaultValue TimeSpan.Zero)
 
         let sh,sm,eh,em = timeValue |> TimePicker.toHrsMins
         let updateHoursStart (i:int) = (i,sm,eh,em) |> TimePicker.toTimeSpans |> onTimeSelected
@@ -238,9 +237,9 @@ module internal DatePicker =
                                 if not p.isRange then "is-centered"
                             ]
                             prop.children [
-                                datePickerSelection p.locale <| (value |> fst)
+                                datePickerSelection p.locale value.From
                                 if not p.dateOnly then
-                                    datePickerTimeSelection p.locale <| (value |> fst)
+                                    datePickerTimeSelection p.locale value.From
                             ]
                         ]
                     ]
@@ -248,9 +247,9 @@ module internal DatePicker =
                         Html.divClassed "datetimepicker-selection-details" [
                             Html.divClassed "datetimepicker-selection-to" [ Html.text p.dateToLabel ]
                             Html.divClassed "datetimepicker-selection-end" [
-                                datePickerSelection p.locale <| (value |> snd)
+                                datePickerSelection p.locale value.To
                                 if not p.dateOnly then
-                                    datePickerTimeSelection p.locale <| (value |> snd)
+                                    datePickerTimeSelection p.locale value.To
                             ]
                         ]
                 ]
@@ -306,18 +305,16 @@ module internal DatePicker =
                                     for d in monthRange p.locale currentMonth do
                                         let isCurrentMonth = d.IsInTheSameMonthAs(currentMonth)
                                         let isInRange =
-                                            match (fst value), (snd value) with
+                                            match value.From, value.To with
                                             | { Date = Some s }, { Date = Some e } -> d.IsBetween(s, e)
                                             | _ -> false
                                         let isStartSelected =
-                                            value
-                                            |> fst
+                                            value.From
                                             |> DateTimeValue.date
                                             |> Option.map (fun x -> x.IsInTheSameDayAs(d))
                                             |> Option.defaultValue false
                                         let isEndSelected =
-                                            value
-                                            |> snd
+                                            value.To
                                             |> DateTimeValue.date
                                             |> Option.map (fun x -> x.IsInTheSameDayAs(d))
                                             |> Option.defaultValue false
@@ -419,12 +416,11 @@ module internal DatePicker =
 
         let txtValue =
             if p.isRange then
-                match (value |> fst |> DateTimeValue.tryToDateTime p.dateOnly), (value |> snd |> DateTimeValue.tryToDateTime p.dateOnly) with
+                match (value.From |> DateTimeValue.tryToDateTime p.dateOnly), (value.To |> DateTimeValue.tryToDateTime p.dateOnly) with
                 | Some s, Some e -> sprintf "%s - %s" (format s) (format e)
                 | _ -> ""
             else
-                value
-                |> fst
+                value.From
                 |> DateTimeValue.tryToDateTime p.dateOnly
                 |> Option.map format
                 |> Option.defaultValue ""
