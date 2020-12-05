@@ -6,7 +6,7 @@
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
-        <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
+        <PackageTags>fsharp;fable;bulma;feliz;react;html;calendar;datepicker</PackageTags>
         <Authors>Roman Provazník</Authors>
         <Version>1.0.0</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -26,7 +26,6 @@
     <PropertyGroup>
         <NpmDependencies>
             <NpmPackage Name="bulma-calendar" Version="&gt;= 6.0.7 &lt; 7.0.0" ResolutionStrategy="Max" />
-            <NpmPackage Name="date-fns" Version="&gt;= 2.16.1 &lt; 3.0.0" ResolutionStrategy="Max" />
         </NpmDependencies>
     </PropertyGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
