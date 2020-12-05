@@ -7,7 +7,7 @@ open Feliz.Bulma.Operators
 open Feliz.Bulma
 
 [<RequireQualifiedAccess; System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)>]
-module internal TimePicker =
+module TimePicker =
     type Props =
         abstract onTimeSelected: (TimeSpan option -> unit) option
         abstract onTimeRangeSelected: ((TimeSpan * TimeSpan) option -> unit) option
