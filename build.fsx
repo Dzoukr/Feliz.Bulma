@@ -93,6 +93,9 @@ Target.create "PublishPageLoader" (fun _ -> "src" </> "Feliz.Bulma.PageLoader" |
 Target.create "PackDateTimePicker" (fun _ -> "src" </> "Feliz.Bulma.DateTimePicker" |> createNuget)
 Target.create "PublishDateTimePicker" (fun _ -> "src" </> "Feliz.Bulma.DateTimePicker" |> publishNuget)
 
+Target.create "PackDivider" (fun _ -> "src" </> "Feliz.Bulma.Divider" |> createNuget)
+Target.create "PublishDivider" (fun _ -> "src" </> "Feliz.Bulma.Divider" |> publishNuget)
+
 
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"

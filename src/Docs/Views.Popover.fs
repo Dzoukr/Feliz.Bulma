@@ -13,7 +13,7 @@ let overview =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Popover/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -123,4 +123,4 @@ Popover.popover [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.Popover" "bulma-popover"
+let installation = Shared.installationView "Feliz.Bulma.Popover" "bulma-popover" "bulma-popover/css/bulma-popover.css"

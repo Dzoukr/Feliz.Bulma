@@ -63,6 +63,11 @@ let menuPart model =
             item "Overview" SwitchOverview
             item "Installation" SwitchInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.Divider"
+        Bulma.menuList [
+            item "Overview" DividerOverview
+            item "Installation" DividerInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -86,6 +91,8 @@ let contentPart model dispatch =
     | PopoverInstallation -> Views.Popover.installation
     | PageLoaderOverview -> Views.PageLoader.overview model dispatch
     | PageLoaderInstallation -> Views.PageLoader.installation
+    | DividerOverview -> Views.Divider.overview
+    | DividerInstallation -> Views.Divider.installation
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =

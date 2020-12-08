@@ -55,7 +55,7 @@ let overview =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Calendar/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Calendar.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Calendar.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -132,4 +132,4 @@ type SelectedValue =
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.Calendar" "bulma-calendar"
+let installation = Shared.installationView "Feliz.Bulma.Calendar" "bulma-calendar" "bulma-calendar"

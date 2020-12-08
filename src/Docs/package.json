@@ -39,6 +39,7 @@
         "bulma-quickview": "^2.0.0",
         "bulma-switch": "^2.0.0",
         "bulma-tooltip": "^3.0.2",
+        "@creativebulma/bulma-divider": "^1.1.0",
         "highlight.js": "^10.4.1",
         "react-highlight": "^0.12.0",
         "@fortawesome/fontawesome-free": "^5.15.1"

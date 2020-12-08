@@ -16,7 +16,7 @@ let overview =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.DateTimePicker/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.DateTimePicker.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.DateTimePicker.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -167,4 +167,4 @@ DateTimePicker.timePicker [
         ]
     ]
 
-let installation = Shared.installationViewMultiple "Feliz.Bulma.DateTimePicker" [ "bulma-calendar"; "date-fns" ]
+let installation = Shared.installationViewMultiple "Feliz.Bulma.DateTimePicker" [ "bulma-calendar"; "date-fns" ] "bulma-calendar"

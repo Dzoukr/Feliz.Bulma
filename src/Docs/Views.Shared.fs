@@ -15,7 +15,7 @@ let code (c:string) =
         prop.text c
     ]
 
-let installationViewMultiple packageName yarnNames =
+let installationViewMultiple packageName yarnNames styles =
     Html.div [
         Bulma.title.h1 (sprintf "%s - Installation" packageName)
         Html.hr []
@@ -35,6 +35,11 @@ let installationViewMultiple packageName yarnNames =
             |> List.map (fun n -> sprintf "yarn add %s" n)
             |> String.concat "\n" |> code
         ]
+        Bulma.content [
+            Bulma.title.h4 "CSS styles"
+            Html.p "This component requires additional scss/css styles to be loaded. Please don't forget to add import into your style sheet:"
+            code (sprintf """@import "~%s";""" styles)
+        ]
     ]
 
-let installationView packageName yarnName = installationViewMultiple packageName [yarnName]
+let installationView packageName yarnName styles = installationViewMultiple packageName [yarnName] styles

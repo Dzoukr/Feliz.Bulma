@@ -22,6 +22,8 @@ type Page =
     | PopoverInstallation
     | PageLoaderOverview
     | PageLoaderInstallation
+    | DividerOverview
+    | DividerInstallation
 
 let defaultPage = BulmaOverview
 
@@ -45,6 +47,8 @@ let parseUrl = function
     | [ "popover" ] -> PopoverOverview
     | [ "pageloader"; "installation" ] -> PageLoaderInstallation
     | [ "pageloader" ] -> PageLoaderOverview
+    | [ "divider"; "installation" ] -> DividerInstallation
+    | [ "divider" ] -> DividerOverview
     | _ -> defaultPage
 
 let getHref = function
@@ -67,3 +71,5 @@ let getHref = function
     | PopoverInstallation -> Router.format("popover","installation")
     | PageLoaderOverview -> Router.format("pageloader")
     | PageLoaderInstallation -> Router.format("pageloader","installation")
+    | DividerOverview -> Router.format("divider")
+    |DividerInstallation -> Router.format("divider","installation")

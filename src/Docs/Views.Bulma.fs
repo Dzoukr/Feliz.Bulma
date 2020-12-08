@@ -13,7 +13,7 @@ let overview =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -64,7 +64,7 @@ Bulma.columns [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma" "bulma"
+let installation = Shared.installationView "Feliz.Bulma" "bulma" "bulma"
 
 let apiDescription =
     Html.div [

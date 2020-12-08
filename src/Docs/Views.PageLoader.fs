@@ -15,7 +15,7 @@ let overview (model:Model) dispatch =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.PageLoader/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.PageLoader.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.PageLoader.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -61,4 +61,4 @@ Bulma.button.a [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.PageLoader" "bulma-pageloader"
+let installation = Shared.installationView "Feliz.Bulma.PageLoader" "bulma-pageloader" "bulma-pageloader/dist/css/bulma-pageloader.min.css"

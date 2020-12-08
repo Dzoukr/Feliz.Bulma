@@ -18,6 +18,7 @@
         <Compile Include="Views.Calendar.fs" />
         <Compile Include="Views.DateTimePicker.fs" />
         <Compile Include="Views.Switch.fs" />
+        <Compile Include="Views.Divider.fs" />
         <Compile Include="View.fs" />
         <Compile Include="State.fs" />
         <Compile Include="App.fs" />
@@ -32,6 +33,7 @@
         <ProjectReference Include="..\..\src\Feliz.Bulma.PageLoader\Feliz.Bulma.PageLoader.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Switch\Feliz.Bulma.Switch.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.DateTimePicker\Feliz.Bulma.DateTimePicker.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.Divider\Feliz.Bulma.Divider.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

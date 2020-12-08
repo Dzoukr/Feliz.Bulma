@@ -13,7 +13,7 @@ let overview =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Checkradio/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Checkradio.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Checkradio.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -103,4 +103,4 @@ Bulma.field [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.Checkradio" "bulma-checkradio"
+let installation = Shared.installationView "Feliz.Bulma.Checkradio" "bulma-checkradio" "bulma-checkradio"

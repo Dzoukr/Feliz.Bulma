@@ -14,7 +14,7 @@ let overview =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.Tooltip/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Tooltip.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Tooltip.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -46,4 +46,4 @@ Bulma.button.a [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.Tooltip" "bulma-tooltip"
+let installation = Shared.installationView "Feliz.Bulma.Tooltip" "bulma-tooltip" "bulma-tooltip"

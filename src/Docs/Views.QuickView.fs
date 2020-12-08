@@ -31,7 +31,7 @@ let overview model dispatch =
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma.QuickView/"
                 prop.children [
                     Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.QuickView.svg?style=flat"
+                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.QuickView.svg?style=flat-square"
                     ]
                 ]
             ]
@@ -69,4 +69,4 @@ QuickView.quickview [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.QuickView" "bulma-quickview"
+let installation = Shared.installationView "Feliz.Bulma.QuickView" "bulma-quickview" "bulma-quickview"

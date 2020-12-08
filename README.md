@@ -1,18 +1,19 @@
-# Feliz.Bulma [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma/)
+# Feliz.Bulma [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma/)
 
-Bulma UI (https://bulma.io) wrapper for amazing Feliz DSL (https://github.com/Zaid-Ajaj/Feliz) + Extensions like DateTimePicker, QuickView, Tooltip ...
+Bulma UI (https://bulma.io) wrapper for amazing Feliz DSL (https://github.com/Zaid-Ajaj/Feliz) + Extensions like DateTimePicker, QuickView, Tooltip, Divider ...
 
 ## Extensions
 There are various Feliz.Bulma extensions available:
 
 | Extension  | Version |
 |---|---|
-| Feliz.Bulma.DateTimePicker | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.DateTimePicker.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.DateTimePicker/)  |
-| Feliz.Bulma.QuickView | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.QuickView.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.QuickView/)  |
-| Feliz.Bulma.Tooltip | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Tooltip.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.Tooltip/)  |
-| Feliz.Bulma.Checkradio | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Checkradio.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.Checkradio/)  |
-| Feliz.Bulma.Popover | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.Popover/)  |
-| Feliz.Bulma.PageLoader | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.PageLoader.svg?style=flat)](https://www.nuget.org/packages/Feliz.Bulma.PageLoader/)  |
+| Feliz.Bulma.DateTimePicker | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.DateTimePicker.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.DateTimePicker/)  |
+| Feliz.Bulma.QuickView | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.QuickView.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.QuickView/)  |
+| Feliz.Bulma.Tooltip | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Tooltip.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Tooltip/)  |
+| Feliz.Bulma.Checkradio | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Checkradio.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Checkradio/)  |
+| Feliz.Bulma.Popover | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Popover/)  |
+| Feliz.Bulma.PageLoader | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.PageLoader.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.PageLoader/)  |
+| Feliz.Bulma.Divider | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Divider.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Divider/)  |
 
 
 ## Installation (manual)

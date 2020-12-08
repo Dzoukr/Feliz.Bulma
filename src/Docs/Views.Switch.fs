@@ -13,7 +13,7 @@ let overview =
               Html.a
                   [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Switch/"
                     prop.children
-                        [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Switch.svg?style=flat" ] ] ] ]
+                        [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Switch.svg?style=flat-square" ] ] ] ]
           Bulma.subtitle.h3
               [ Html.a
                   [ prop.href "https://wikiki.github.io/form/switch/"
@@ -120,4 +120,4 @@ Bulma.field [
                             prop.text "Medium outlined info switch" ] ] ] ]
 
 let installation =
-    Shared.installationView "Feliz.Bulma.Switch" "bulma-switch"
+    Shared.installationView "Feliz.Bulma.Switch" "bulma-switch" "bulma-switch"
