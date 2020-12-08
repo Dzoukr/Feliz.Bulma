@@ -124,4 +124,4 @@ Bulma.buttons [
         ]
     ]
 
-let installation = installationView "Feliz.Bulma.Divider" "@creativebulma/bulma-badge" "@creativebulma/bulma-badge"
+let installation = installationView "Feliz.Bulma.Badge" "@creativebulma/bulma-badge" "@creativebulma/bulma-badge"
