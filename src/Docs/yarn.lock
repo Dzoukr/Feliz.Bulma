@@ -939,6 +939,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@creativebulma/bulma-badge@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@creativebulma/bulma-badge/-/bulma-badge-1.0.1.tgz#7f1c2ec04020a4d18db1d960a644a052e61de9da"
+  integrity sha512-cTMgxPdTOsAfPqd9wbrvKNUTvnIt+pNgwwO9Xzu6MRUIFlvGRtIVApaV51f3wt0/uI78BpKv5FPAtEJbmSTZOg==
+
 "@creativebulma/bulma-divider@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@creativebulma/bulma-divider/-/bulma-divider-1.1.0.tgz#fb0c3527efc5b8d7b1ac52cd065e9f8c57b5a8bc"

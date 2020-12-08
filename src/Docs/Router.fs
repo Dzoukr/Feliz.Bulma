@@ -24,6 +24,8 @@ type Page =
     | PageLoaderInstallation
     | DividerOverview
     | DividerInstallation
+    | BadgeOverview
+    | BadgeInstallation
 
 let defaultPage = BulmaOverview
 
@@ -49,6 +51,8 @@ let parseUrl = function
     | [ "pageloader" ] -> PageLoaderOverview
     | [ "divider"; "installation" ] -> DividerInstallation
     | [ "divider" ] -> DividerOverview
+    | [ "badge"; "installation" ] -> BadgeInstallation
+    | [ "badge" ] -> BadgeOverview
     | _ -> defaultPage
 
 let getHref = function
@@ -72,4 +76,6 @@ let getHref = function
     | PageLoaderOverview -> Router.format("pageloader")
     | PageLoaderInstallation -> Router.format("pageloader","installation")
     | DividerOverview -> Router.format("divider")
-    |DividerInstallation -> Router.format("divider","installation")
+    | DividerInstallation -> Router.format("divider","installation")
+    | BadgeOverview -> Router.format("badge")
+    | BadgeInstallation -> Router.format("badge","installation")

@@ -1,6 +1,6 @@
 # Feliz.Bulma [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma/)
 
-Bulma UI (https://bulma.io) wrapper for amazing Feliz DSL (https://github.com/Zaid-Ajaj/Feliz) + Extensions like DateTimePicker, QuickView, Tooltip, Divider ...
+Bulma UI (https://bulma.io) wrapper for amazing Feliz DSL (https://github.com/Zaid-Ajaj/Feliz) + Extensions like DateTimePicker, QuickView, Tooltip, Divider, Badge ...
 
 ## Extensions
 There are various Feliz.Bulma extensions available:
@@ -14,6 +14,7 @@ There are various Feliz.Bulma extensions available:
 | Feliz.Bulma.Popover | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Popover/)  |
 | Feliz.Bulma.PageLoader | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.PageLoader.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.PageLoader/)  |
 | Feliz.Bulma.Divider | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Divider.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Divider/)  |
+| Feliz.Bulma.Badge | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Badge.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Badge/)  |
 
 
 ## Installation (manual)

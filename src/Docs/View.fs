@@ -68,6 +68,11 @@ let menuPart model =
             item "Overview" DividerOverview
             item "Installation" DividerInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.Badge"
+        Bulma.menuList [
+            item "Overview" BadgeOverview
+            item "Installation" BadgeInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -93,6 +98,8 @@ let contentPart model dispatch =
     | PageLoaderInstallation -> Views.PageLoader.installation
     | DividerOverview -> Views.Divider.overview
     | DividerInstallation -> Views.Divider.installation
+    | BadgeOverview -> Views.Badge.overview
+    | BadgeInstallation -> Views.Badge.installation
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =

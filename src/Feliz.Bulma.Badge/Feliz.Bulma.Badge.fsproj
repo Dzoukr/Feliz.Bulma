@@ -1,22 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <PackageId>Feliz.Bulma.Divider</PackageId>
-        <Description>Divider extension for Feliz.Bulma</Description>
+        <PackageId>Feliz.Bulma.Badge</PackageId>
+        <Description>Badge extension for Feliz.Bulma</Description>
         <RepositoryUrl>https://github.com/Dzoukr/Feliz.Bulma</RepositoryUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.Bulma/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
-        <PackageTags>fsharp;fable;bulma;feliz;react;html;divider</PackageTags>
+        <PackageTags>fsharp;fable;bulma;feliz;react;html;badge</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.0.1</Version>
+        <Version>1.0.0</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Fixing package</PackageReleaseNotes>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
-        <Compile Include="Divider.fs" />
+        <Compile Include="Badge.fs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
@@ -24,7 +24,7 @@
     </ItemGroup>
     <PropertyGroup>
         <NpmDependencies>
-            <NpmPackage Name="@creativebulma/bulma-divider" Version="&gt;= 1.1.0 &lt; 2.0.0" ResolutionStrategy="Max" />
+            <NpmPackage Name="@creativebulma/bulma-badge" Version="&gt;= 1.0.1 &lt; 2.0.0" ResolutionStrategy="Max" />
         </NpmDependencies>
     </PropertyGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
