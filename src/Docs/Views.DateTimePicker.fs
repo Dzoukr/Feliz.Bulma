@@ -92,8 +92,7 @@ DateTimePicker.timePicker [
     timePicker.onTimeSelected (fun (v:TimeSpan option) -> JS.console.log(sprintf "onTimeSelected %A" v))
     timePicker.onShow (fun _ -> JS.console.log("onShow"))
     timePicker.onHide (fun _ -> JS.console.log("onHide"))
-            ]
-            """
+]"""
 
             Html.hr []
             Bulma.subtitle.h5 "Date picker (single value with CZ locale and minimum date)"
@@ -109,14 +108,14 @@ DateTimePicker.timePicker [
             ]
             Html.p ""
             code """DateTimePicker.dateTimePicker [
-        dateTimePicker.dateOnly true
-        dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
-        dateTimePicker.isRange false
-        dateTimePicker.clearLabel "Smazat"
-        dateTimePicker.locale DateTime.Locales.Czech
-        dateTimePicker.minDate DateTime.UtcNow
-    ]
-    """
+    dateTimePicker.dateOnly true
+    dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
+    dateTimePicker.isRange false
+    dateTimePicker.clearLabel "Smazat"
+    dateTimePicker.locale DateTime.Locales.Czech
+    dateTimePicker.minDate DateTime.UtcNow
+]
+"""
             Bulma.subtitle.h5 "Date picker (range value)"
             DateTimePicker.dateTimePicker [
                 dateTimePicker.dateOnly true
@@ -180,7 +179,7 @@ DateTimePicker.timePicker [
     dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
     dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
     dateTimePicker.isRange false
-    ]
+]
     """
 
             Html.hr []
