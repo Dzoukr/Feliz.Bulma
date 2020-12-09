@@ -20,6 +20,7 @@ module DatePicker =
         abstract isRange : bool
         abstract displayMode : DisplayMode
         abstract clearLabel : string
+        abstract dateFormat : string option
         abstract locale : ILocale
         abstract dateFromLabel : string
         abstract dateToLabel : string
@@ -423,8 +424,12 @@ module DatePicker =
             ]
         ]
         let format (d:DateTime) =
-            if p.dateOnly then d.Format("dd. MMMM yyyy", p.locale)
-            else d.Format("dd. MMMM yyyy (HH:mm)", p.locale)
+            let formatString =
+                match (p.dateFormat, p.dateOnly) with
+                | (Some x, _) -> x
+                | (None, true) -> "dd. MMMM yyyy"
+                | (None, false) -> "dd. MMMM yyyy (HH:mm)"
+            d.Format(formatString, p.locale)
 
         let txtValue =
             if p.isRange then
@@ -475,6 +480,7 @@ type dateTimePicker =
     static member inline isRange (v:bool) : IDateTimePickerProperty = unbox ("isRange", v)
     static member inline displayMode (v:DisplayMode) : IDateTimePickerProperty = unbox ("displayMode", v)
     static member inline clearLabel (v:string) : IDateTimePickerProperty = unbox ("clearLabel", v)
+    static member inline dateFormat (v:string) : IDateTimePickerProperty = unbox ("dateFormat", v)
     static member inline locale (v:ILocale) : IDateTimePickerProperty = unbox ("locale", v)
     static member inline dateFromLabel (v:string) : IDateTimePickerProperty = unbox ("dateFromLabel", v)
     static member inline dateToLabel (v:string) : IDateTimePickerProperty = unbox ("dateToLabel", v)
