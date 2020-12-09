@@ -13,11 +13,14 @@ module DatePicker =
     type Props =
         abstract onDateSelected: (DateTime option -> unit) option
         abstract onDateRangeSelected: ((DateTime * DateTime) option -> unit) option
+        abstract onShow: (unit -> unit) option
+        abstract onHide: (unit -> unit) option
         abstract defaultValue: DateTime option
         abstract defaultRangeValue: (DateTime * DateTime) option
         abstract isRange : bool
         abstract displayMode : DisplayMode
         abstract clearLabel : string
+        abstract dateFormat : string option
         abstract locale : ILocale
         abstract dateFromLabel : string
         abstract dateToLabel : string
@@ -173,7 +176,17 @@ module DatePicker =
 
         let isDisplayed, setIsDisplayed =
             match p.displayMode with
-            | DisplayMode.Default -> React.useState(false)
+            | DisplayMode.Default ->
+                let displayed, setDisplayed = React.useState(false)
+
+                displayed, (fun v ->
+                    match displayed, v with
+                    | (true, false) ->
+                        p.onHide |> Option.iter (fun handler -> handler ())
+                    | (false, true) ->
+                        p.onShow |> Option.iter (fun handler -> handler ())
+                    | _ -> ()
+                    setDisplayed v)
             | DisplayMode.Inline ->
                 let _,_ = React.useState(false)
                 true,ignore
@@ -411,8 +424,12 @@ module DatePicker =
             ]
         ]
         let format (d:DateTime) =
-            if p.dateOnly then d.Format("dd. MMMM yyyy", p.locale)
-            else d.Format("dd. MMMM yyyy (HH:mm)", p.locale)
+            let formatString =
+                match (p.dateFormat, p.dateOnly) with
+                | (Some x, _) -> x
+                | (None, true) -> "dd. MMMM yyyy"
+                | (None, false) -> "dd. MMMM yyyy (HH:mm)"
+            d.Format(formatString, p.locale)
 
         let txtValue =
             if p.isRange then
@@ -456,11 +473,14 @@ type IDateTimePickerProperty = interface end
 type dateTimePicker =
     static member inline onDateSelected (eventHandler: DateTime option -> unit) : IDateTimePickerProperty = unbox ("onDateSelected", eventHandler)
     static member inline onDateRangeSelected (eventHandler: (DateTime * DateTime) option -> unit) : IDateTimePickerProperty = unbox ("onDateRangeSelected", eventHandler)
+    static member inline onShow (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onShow", eventHandler)
+    static member inline onHide (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onHide", eventHandler)
     static member inline defaultValue (v:DateTime) : IDateTimePickerProperty = unbox ("defaultValue", v)
     static member inline defaultRangeValue (v:DateTime * DateTime) : IDateTimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : IDateTimePickerProperty = unbox ("isRange", v)
     static member inline displayMode (v:DisplayMode) : IDateTimePickerProperty = unbox ("displayMode", v)
     static member inline clearLabel (v:string) : IDateTimePickerProperty = unbox ("clearLabel", v)
+    static member inline dateFormat (v:string) : IDateTimePickerProperty = unbox ("dateFormat", v)
     static member inline locale (v:ILocale) : IDateTimePickerProperty = unbox ("locale", v)
     static member inline dateFromLabel (v:string) : IDateTimePickerProperty = unbox ("dateFromLabel", v)
     static member inline dateToLabel (v:string) : IDateTimePickerProperty = unbox ("dateToLabel", v)

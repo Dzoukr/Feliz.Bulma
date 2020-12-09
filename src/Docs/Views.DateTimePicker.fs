@@ -6,7 +6,15 @@ open Feliz
 open Feliz.Bulma
 open Feliz.Bulma.DateTimePicker
 open Fable.DateFunctions
+
 open Shared
+
+let customFormatNote =
+        Html.p [
+            Html.text "Follow the formatting conventions of "
+            Html.a [ prop.href "https://date-fns.org/"; prop.text "date-fns" ]
+            Html.text " library."
+        ]
 
 let overview =
     Html.div [
@@ -32,6 +40,8 @@ let overview =
             Bulma.subtitle.h5 "Time picker (single value)"
             DateTimePicker.timePicker [
                 timePicker.onTimeSelected (fun (v:TimeSpan option) -> () (* handle here *))
+                timePicker.onShow (fun _ -> JS.console.log("onShow"))
+                timePicker.onHide (fun _ -> JS.console.log("onHide"))
             ]
             Html.p ""
             code """open Feliz.Bulma.DateTimePicker
@@ -70,11 +80,28 @@ DateTimePicker.timePicker [
     timePicker.onTimeRangeSelected (fun (v:(TimeSpan * TimeSpan) option) -> () (* handle here *))
 ]
 """
+
+            Bulma.subtitle.h5 "Time picker events "
+            DateTimePicker.timePicker [
+                timePicker.onTimeSelected (fun (v:TimeSpan option) -> JS.console.log(sprintf "onTimeSelected %A" v))
+                timePicker.onShow (fun _ -> JS.console.log("onShow"))
+                timePicker.onHide (fun _ -> JS.console.log("onHide"))
+            ]
+            Html.p ""
+            code """DateTimePicker.timePicker [
+    timePicker.onTimeSelected (fun (v:TimeSpan option) -> JS.console.log(sprintf "onTimeSelected %A" v))
+    timePicker.onShow (fun _ -> JS.console.log("onShow"))
+    timePicker.onHide (fun _ -> JS.console.log("onHide"))
+            ]
+            """
+
             Html.hr []
             Bulma.subtitle.h5 "Date picker (single value with CZ locale and minimum date)"
             DateTimePicker.dateTimePicker [
                 dateTimePicker.dateOnly true
                 dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
+                dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
+                dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
                 dateTimePicker.isRange false
                 dateTimePicker.clearLabel "Smazat"
                 dateTimePicker.locale DateTime.Locales.Czech
@@ -118,6 +145,45 @@ DateTimePicker.timePicker [
     dateTimePicker.displayMode DisplayMode.Inline
 ]
 """
+
+            Bulma.subtitle.h5 "Date picker (custom date format)"
+            customFormatNote
+            DateTimePicker.dateTimePicker [
+                dateTimePicker.dateOnly true
+                dateTimePicker.dateFormat "dd/MM/yyyy"
+                dateTimePicker.defaultValue DateTime.Today
+                dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
+                dateTimePicker.isRange false
+            ]
+            Html.p ""
+            code """DateTimePicker.dateTimePicker [
+    dateTimePicker.dateOnly true
+    dateTimePicker.dateFormat "dd/MM/yyyy"
+    dateTimePicker.defaultValue DateTime.Today
+    dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
+    dateTimePicker.isRange false
+]
+"""
+
+            Bulma.subtitle.h5 "Date picker events"
+            DateTimePicker.dateTimePicker [
+                dateTimePicker.dateOnly true
+                dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+                dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
+                dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
+                dateTimePicker.isRange false
+            ]
+            Html.p ""
+            code """DateTimePicker.dateTimePicker [
+    dateTimePicker.dateOnly true
+    dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+    dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
+    dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
+    dateTimePicker.isRange false
+    ]
+    """
+
+            Html.hr []
             Bulma.subtitle.h5 "DateTime picker (single value)"
             DateTimePicker.dateTimePicker [
                 dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
@@ -162,6 +228,21 @@ DateTimePicker.timePicker [
     dateTimePicker.dateFromLabel "Check-in"
     dateTimePicker.dateToLabel "Check-out"
     dateTimePicker.defaultRangeValue (DateTime.Now.AddDays(-1.),DateTime.Now.AddDays(1.))
+]
+"""
+
+            Bulma.subtitle.h5 "DateTime picker (custom date format)"
+            customFormatNote
+            DateTimePicker.dateTimePicker [
+                dateTimePicker.dateFormat "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'"
+                dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
+                dateTimePicker.defaultValue DateTime.UtcNow
+            ]
+            Html.p ""
+            code """DateTimePicker.dateTimePicker [
+    dateTimePicker.dateFormat "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'"
+    dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
+    dateTimePicker.defaultValue DateTime.UtcNow
 ]
 """
         ]
