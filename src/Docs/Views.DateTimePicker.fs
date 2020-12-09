@@ -32,6 +32,8 @@ let overview =
             Bulma.subtitle.h5 "Time picker (single value)"
             DateTimePicker.timePicker [
                 timePicker.onTimeSelected (fun (v:TimeSpan option) -> () (* handle here *))
+                timePicker.onShow (fun _ -> JS.console.log("onShow"))
+                timePicker.onHide (fun _ -> JS.console.log("onHide"))
             ]
             Html.p ""
             code """open Feliz.Bulma.DateTimePicker
@@ -75,6 +77,8 @@ DateTimePicker.timePicker [
             DateTimePicker.dateTimePicker [
                 dateTimePicker.dateOnly true
                 dateTimePicker.onDateSelected (fun (d:DateTime option) -> () (* handle here *))
+                dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
+                dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
                 dateTimePicker.isRange false
                 dateTimePicker.clearLabel "Smazat"
                 dateTimePicker.locale DateTime.Locales.Czech
@@ -164,6 +168,39 @@ DateTimePicker.timePicker [
     dateTimePicker.defaultRangeValue (DateTime.Now.AddDays(-1.),DateTime.Now.AddDays(1.))
 ]
 """
+
+            Html.hr []
+            Bulma.subtitle.h5 "Date picker events"
+            DateTimePicker.dateTimePicker [
+                dateTimePicker.dateOnly true
+                dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+                dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
+                dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
+                dateTimePicker.isRange false
+            ]
+            Html.p ""
+            code """DateTimePicker.dateTimePicker [
+    dateTimePicker.dateOnly true
+    dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+    dateTimePicker.onShow (fun _ -> JS.console.log("onShow"))
+    dateTimePicker.onHide (fun _ -> JS.console.log("onHide"))
+    dateTimePicker.isRange false
+    ]
+    """
+
+            Bulma.subtitle.h5 "Time picker events "
+            DateTimePicker.timePicker [
+                timePicker.onTimeSelected (fun (v:TimeSpan option) -> JS.console.log(sprintf "onTimeSelected %A" v))
+                timePicker.onShow (fun _ -> JS.console.log("onShow"))
+                timePicker.onHide (fun _ -> JS.console.log("onHide"))
+            ]
+            Html.p ""
+            code """DateTimePicker.timePicker [
+    timePicker.onTimeSelected (fun (v:TimeSpan option) -> JS.console.log(sprintf "onTimeSelected %A" v))
+    timePicker.onShow (fun _ -> JS.console.log("onShow"))
+    timePicker.onHide (fun _ -> JS.console.log("onHide"))
+            ]
+            """
         ]
     ]
 

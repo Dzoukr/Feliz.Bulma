@@ -11,6 +11,8 @@ module TimePicker =
     type Props =
         abstract onTimeSelected: (TimeSpan option -> unit) option
         abstract onTimeRangeSelected: ((TimeSpan * TimeSpan) option -> unit) option
+        abstract onShow: (unit -> unit) option
+        abstract onHide: (unit -> unit) option
         abstract defaultValue: TimeSpan option
         abstract defaultRangeValue: (TimeSpan * TimeSpan) option
         abstract isRange : bool
@@ -83,7 +85,16 @@ module TimePicker =
         let time, setTime = React.useState(defaultValue)
         let isDisplayed, setIsDisplayed =
             match p.displayMode with
-            | DisplayMode.Default -> React.useState(false)
+            | DisplayMode.Default ->
+                let displayed, setDisplayed = React.useState(false)
+                displayed, (fun v ->
+                    match displayed, v with
+                    | (true, false) ->
+                        p.onHide |> Option.iter (fun handler -> handler ())
+                    | (false, true) ->
+                        p.onShow |> Option.iter (fun handler -> handler ())
+                    | _ -> ()
+                    setDisplayed v)
             | DisplayMode.Inline ->
                 let _,_ = React.useState(false)
                 true,ignore
@@ -168,6 +179,8 @@ type ITimePickerProperty = interface end
 type timePicker =
     static member inline onTimeSelected (eventHandler: TimeSpan option -> unit) : ITimePickerProperty = unbox ("onTimeSelected", eventHandler)
     static member inline onTimeRangeSelected (eventHandler: (TimeSpan * TimeSpan) option -> unit) : ITimePickerProperty = unbox ("onTimeRangeSelected", eventHandler)
+    static member inline onShow (eventHandler: unit -> unit) : ITimePickerProperty = unbox ("onShow", eventHandler)
+    static member inline onHide (eventHandler: unit -> unit) : ITimePickerProperty = unbox ("onHide", eventHandler)
     static member inline defaultValue (v:TimeSpan) : ITimePickerProperty = unbox ("defaultValue", v)
     static member inline defaultRangeValue (v:(TimeSpan * TimeSpan)) : ITimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : ITimePickerProperty = unbox ("isRange", v)
