@@ -27,7 +27,7 @@ let overview =
             Html.p "This library extends Feliz.Bulma by adding Checkradio component"
             code """open Feliz.Bulma.Checkradio
 
-Bulma.field [
+Bulma.field.div [
     Checkradio.checkbox [
         prop.id "mycheck"
         color.isDanger
@@ -53,7 +53,7 @@ Bulma.field [
         Bulma.content [
             code """open Feliz.Bulma.Checkradio
 
-Bulma.field [
+Bulma.field.div [
     Checkradio.radio [ prop.id "myradio1"; prop.name "radio" ]
     Html.label [ prop.htmlFor "myradio1"; prop.text "Option one" ]
     Checkradio.radio [ prop.id "myradio2"; prop.name "radio" ]
@@ -73,7 +73,7 @@ Bulma.field [
             Html.p [ prop.dangerouslySetInnerHTML "All the modifiers mentioned in <a href='https://wikiki.github.io/form/checkradio/'>official documentation</a> will work as expected." ]
             code """open Feliz.Bulma.Checkradio
 
-Bulma.field [
+Bulma.field.div [
     Checkradio.checkbox [
         prop.id "bigcheck"
         color.isSuccess
