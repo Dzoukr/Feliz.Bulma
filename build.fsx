@@ -99,6 +99,9 @@ Target.create "PublishDivider" (fun _ -> "src" </> "Feliz.Bulma.Divider" |> publ
 Target.create "PackBadge" (fun _ -> "src" </> "Feliz.Bulma.Badge" |> createNuget)
 Target.create "PublishBadge" (fun _ -> "src" </> "Feliz.Bulma.Badge" |> publishNuget)
 
+Target.create "PackSlider" (fun _ -> "src" </> "Feliz.Bulma.Slider" |> createNuget)
+Target.create "PublishSlider" (fun _ -> "src" </> "Feliz.Bulma.Slider" |> publishNuget)
+
 
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"

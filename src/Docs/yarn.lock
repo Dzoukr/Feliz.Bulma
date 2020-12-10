@@ -1723,6 +1723,11 @@ bulma-quickview@^2.0.0:
   resolved "https://registry.yarnpkg.com/bulma-quickview/-/bulma-quickview-2.0.0.tgz#ac85d6cc23f98bd4b4be5cef11e9524554d2bbf3"
   integrity sha512-EJq9XYcJ+pG94FIYgw9AI2NoRDRjQX/Iua0H3iIJq4C3D+4sVOCg/Y+I7gd/G0v7fez/qvKX/S+91UZqaTmXSQ==
 
+bulma-slider@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/bulma-slider/-/bulma-slider-2.0.4.tgz#c10359dc9e26c357b6718ca827083b611177e453"
+  integrity sha512-JKuU/vp2si5I2rWiHBKaaYWBRECNY1Ow7yNFjxlHdUnPLowNee02K6QYd/ORGEesFPAHXOt+mKPZTEYFhKmviQ==
+
 bulma-switch@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/bulma-switch/-/bulma-switch-2.0.0.tgz#7a187cd1bb8073e9a542478d936b89315f1ffcd8"

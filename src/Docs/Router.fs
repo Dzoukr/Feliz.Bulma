@@ -26,6 +26,8 @@ type Page =
     | DividerInstallation
     | BadgeOverview
     | BadgeInstallation
+    | SliderOverview
+    | SliderInstallation
 
 let defaultPage = BulmaOverview
 
@@ -53,6 +55,8 @@ let parseUrl = function
     | [ "divider" ] -> DividerOverview
     | [ "badge"; "installation" ] -> BadgeInstallation
     | [ "badge" ] -> BadgeOverview
+    | [ "slider"; "installation" ] -> SliderInstallation
+    | [ "slider" ] -> SliderOverview
     | _ -> defaultPage
 
 let getHref = function
@@ -79,3 +83,5 @@ let getHref = function
     | DividerInstallation -> Router.format("divider","installation")
     | BadgeOverview -> Router.format("badge")
     | BadgeInstallation -> Router.format("badge","installation")
+    | SliderOverview -> Router.format("slider")
+    | SliderInstallation -> Router.format("slider","installation")
