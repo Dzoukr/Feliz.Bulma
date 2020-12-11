@@ -29,6 +29,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Badge", "src\Fe
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Slider", "src\Feliz.Bulma.Slider\Feliz.Bulma.Slider.fsproj", "{DA67E6CE-55D1-457C-A3AA-4A9F959B10DA}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Timeline", "src\Feliz.Bulma.Timeline\Feliz.Bulma.Timeline.fsproj", "{58265CC2-02EE-48B0-930D-F7C0C3A19C6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{DA67E6CE-55D1-457C-A3AA-4A9F959B10DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA67E6CE-55D1-457C-A3AA-4A9F959B10DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA67E6CE-55D1-457C-A3AA-4A9F959B10DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58265CC2-02EE-48B0-930D-F7C0C3A19C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58265CC2-02EE-48B0-930D-F7C0C3A19C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58265CC2-02EE-48B0-930D-F7C0C3A19C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58265CC2-02EE-48B0-930D-F7C0C3A19C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{849219C3-3B17-477A-8BC7-7993709F9008} = {39C8F2F3-FEC5-400E-8E35-558A9B69C059}

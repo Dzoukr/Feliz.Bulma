@@ -20,6 +20,7 @@
         <Compile Include="Views.Switch.fs" />
         <Compile Include="Views.Divider.fs" />
         <Compile Include="Views.Slider.fs" />
+        <Compile Include="Views.Timeline.fs" />
         <Compile Include="Views.Badge.fs" />
         <Compile Include="View.fs" />
         <Compile Include="State.fs" />
@@ -38,6 +39,7 @@
         <ProjectReference Include="..\..\src\Feliz.Bulma.Divider\Feliz.Bulma.Divider.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Badge\Feliz.Bulma.Badge.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Slider\Feliz.Bulma.Slider.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.Timeline\Feliz.Bulma.Timeline.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

@@ -16,6 +16,7 @@ There are various Feliz.Bulma extensions available:
 | Feliz.Bulma.Divider | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Divider.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Divider/)  |
 | Feliz.Bulma.Badge | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Badge.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Badge/)  |
 | Feliz.Bulma.Slider | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Slider.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Slider/)  |
+| Feliz.Bulma.Timeline | [![NuGet](https://img.shields.io/nuget/v/Feliz.Bulma.Timeline.svg?style=flat-square)](https://www.nuget.org/packages/Feliz.Bulma.Timeline/)  |
 
 
 ## Installation (manual)

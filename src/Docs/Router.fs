@@ -28,6 +28,8 @@ type Page =
     | BadgeInstallation
     | SliderOverview
     | SliderInstallation
+    | TimelineOverview
+    | TimelineInstallation
 
 let defaultPage = BulmaOverview
 
@@ -57,6 +59,8 @@ let parseUrl = function
     | [ "badge" ] -> BadgeOverview
     | [ "slider"; "installation" ] -> SliderInstallation
     | [ "slider" ] -> SliderOverview
+    | [ "timeline"; "installation" ] -> TimelineInstallation
+    | [ "timeline" ] -> TimelineOverview
     | _ -> defaultPage
 
 let getHref = function
@@ -85,3 +89,5 @@ let getHref = function
     | BadgeInstallation -> Router.format("badge","installation")
     | SliderOverview -> Router.format("slider")
     | SliderInstallation -> Router.format("slider","installation")
+    | TimelineOverview -> Router.format("timeline")
+    | TimelineInstallation -> Router.format("timeline","installation")

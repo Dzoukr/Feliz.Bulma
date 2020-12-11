@@ -78,6 +78,11 @@ let menuPart model =
             item "Overview" SliderOverview
             item "Installation" SliderInstallation
         ]
+        Bulma.menuLabel "Feliz.Bulma.Timeline"
+        Bulma.menuList [
+            item "Overview" TimelineOverview
+            item "Installation" TimelineInstallation
+        ]
     ]
 
 let contentPart model dispatch =
@@ -107,6 +112,8 @@ let contentPart model dispatch =
     | BadgeInstallation -> Views.Badge.installation
     | SliderOverview -> Views.Slider.overview
     | SliderInstallation -> Views.Slider.installation
+    | TimelineOverview -> Views.Timeline.overview
+    | TimelineInstallation -> Views.Timeline.installation
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =

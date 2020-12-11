@@ -37,7 +37,7 @@ let installationViewMultiple packageName yarnNames styles =
         ]
         Bulma.content [
             Bulma.title.h4 "CSS styles"
-            Html.p "This component requires additional scss/css styles to be loaded. Please don't forget to add import into your style sheet:"
+            Html.p "This component requires additional scss styles to be loaded. Please don't forget to add import into your style sheet:"
             code (sprintf """@import "~%s";""" styles)
         ]
     ]
