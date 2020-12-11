@@ -30,6 +30,8 @@ type Page =
     | SliderInstallation
     | TimelineOverview
     | TimelineInstallation
+    | CarouselOverview
+    | CarouselInstallation
 
 let defaultPage = BulmaOverview
 
@@ -61,6 +63,8 @@ let parseUrl = function
     | [ "slider" ] -> SliderOverview
     | [ "timeline"; "installation" ] -> TimelineInstallation
     | [ "timeline" ] -> TimelineOverview
+    | [ "carousel"; "installation" ] -> CarouselInstallation
+    | [ "carousel" ] -> CarouselOverview
     | _ -> defaultPage
 
 let getHref = function
@@ -91,3 +95,5 @@ let getHref = function
     | SliderInstallation -> Router.format("slider","installation")
     | TimelineOverview -> Router.format("timeline")
     | TimelineInstallation -> Router.format("timeline","installation")
+    | CarouselOverview -> Router.format("carousel")
+    | CarouselInstallation -> Router.format("carousel","installation")

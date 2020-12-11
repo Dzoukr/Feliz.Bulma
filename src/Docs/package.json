@@ -43,6 +43,7 @@
         "@creativebulma/bulma-badge": "^1.0.1",
         "bulma-slider": "^2.0.4",
         "bulma-timeline": "^3.0.4",
+        "bulma-carousel": "^4.0.4",
         "highlight.js": "^10.4.1",
         "react-highlight": "^0.12.0",
         "@fortawesome/fontawesome-free": "^5.15.1"
