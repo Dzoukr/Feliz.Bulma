@@ -29,11 +29,15 @@ module Carousel =
     let Carousel (p:Props) =
         let slidesToShow = 3
         let slidesPadding = 15
+        let ref = React.useElementRef()
 
         let translate, setTranslate = React.useState(0.)
-        let parentWidth, setParentWidth =
-            let getter, setter = React.useState(0.)
-            getter, (if getter > 0. then ignore else setter)
+        let parentWidth, setParentWidth = React.useState(0.)
+
+        React.useEffect (fun _ ->
+            let w = (ref.current.Value.getBoundingClientRect()).width
+            setParentWidth w
+        )
 
 
         let slideWidth = parentWidth / (float slidesToShow) //- (float slidesPadding)
@@ -44,11 +48,7 @@ module Carousel =
         Html.div [
             prop.style [ style.overflow.hidden ]
             prop.className ElementLiterals.slider
-            prop.ref (fun x ->
-                if x |> isNull |> not then
-                    JS.console.log (x.getBoundingClientRect().width)
-                    x.getBoundingClientRect().width |> setParentWidth
-            )
+            prop.ref ref
             prop.children [
                 Html.div [
                     prop.style [
