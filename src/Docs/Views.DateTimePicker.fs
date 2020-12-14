@@ -105,6 +105,7 @@ DateTimePicker.timePicker [
                 dateTimePicker.clearLabel "Smazat"
                 dateTimePicker.locale DateTime.Locales.Czech
                 dateTimePicker.minDate DateTime.UtcNow
+                dateTimePicker.closeOnSelect true
             ]
             Html.p ""
             code """DateTimePicker.dateTimePicker [
