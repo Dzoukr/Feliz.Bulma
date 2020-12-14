@@ -114,6 +114,7 @@ DateTimePicker.timePicker [
     dateTimePicker.clearLabel "Smazat"
     dateTimePicker.locale DateTime.Locales.Czech
     dateTimePicker.minDate DateTime.UtcNow
+    dateTimePicker.closeOnSelect true
 ]
 """
             Bulma.subtitle.h5 "Date picker (range value)"
@@ -121,6 +122,7 @@ DateTimePicker.timePicker [
                 dateTimePicker.dateOnly true
                 dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
                 dateTimePicker.isRange true
+                dateTimePicker.closeOnSelect true
             ]
             Html.p ""
             code """DateTimePicker.dateTimePicker [
@@ -153,6 +155,7 @@ DateTimePicker.timePicker [
                 dateTimePicker.defaultValue DateTime.Today
                 dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
                 dateTimePicker.isRange false
+                dateTimePicker.closeOnSelect true
             ]
             Html.p ""
             code """DateTimePicker.dateTimePicker [
@@ -161,6 +164,7 @@ DateTimePicker.timePicker [
     dateTimePicker.defaultValue DateTime.Today
     dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
     dateTimePicker.isRange false
+    dateTimePicker.closeOnSelect true
 ]
 """
 

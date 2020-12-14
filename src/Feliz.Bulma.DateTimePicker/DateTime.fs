@@ -27,6 +27,7 @@ module DatePicker =
         abstract minDate: DateTime option
         abstract maxDate: DateTime option
         abstract dateOnly : bool
+        abstract closeOnSelect: bool
 
     type private DateTimeValue = { Date : DateTime option; Time : TimeSpan option }
 
@@ -211,11 +212,23 @@ module DatePicker =
             EditMode.Date |> setEditMode
             d |> setCurrentMonth
 
+        let closeOnFilledDate (s:SelectedValue) =
+            match (p.closeOnSelect, p.dateOnly, p.isRange, p.displayMode) with
+            | (true, true, false, DisplayMode.Default) ->
+                setIsDisplayed false
+            | (true, true, true, DisplayMode.Default) ->
+                if s.From.Date.IsSome && s.To.Date.IsSome then
+                    setIsDisplayed false
+            | _ ->
+                ()
+            s
+
         let onDateSelected (d:DateTime) =
             if p.isRange then
                 d |> SelectedValue.applyDateSelectionOnRange value
             else
                 d |> SelectedValue.applyDateSelectionOnSingle value
+            |> closeOnFilledDate
             |> updateDate
 
         let onClear _ =
@@ -487,3 +500,5 @@ type dateTimePicker =
     static member inline minDate (v:DateTime) : IDateTimePickerProperty = unbox ("minDate", v)
     static member inline maxDate (v:DateTime) : IDateTimePickerProperty = unbox ("maxDate", v)
     static member inline dateOnly (v:bool) : IDateTimePickerProperty = unbox ("dateOnly", v)
+    /// Close the picker when the date is selected, only applicable for DatePicker
+    static member inline closeOnSelect (v:bool) : IDateTimePickerProperty = unbox ("closeOnSelect", v)
