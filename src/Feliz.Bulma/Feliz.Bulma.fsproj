@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.5.0</Version>
-        <PackageReleaseNotes>Add hasShadow to navbar and move isFixedTop and isFixedBottom to navbar #55</PackageReleaseNotes>
+        <Version>2.6.0</Version>
+        <PackageReleaseNotes>Introduce responsive helpers #62</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
