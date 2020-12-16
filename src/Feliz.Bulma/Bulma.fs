@@ -478,9 +478,15 @@ type Bulma =
     static member inline panelIcon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``panel-icon`` elms
     static member inline panelIcon elm = ElementBuilders.Span.valueElm ElementLiterals.``panel-icon`` elm
 
-    static member inline tabs props = ElementBuilders.Div.props ElementLiterals.``tabs`` props
-    static member inline tabs (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tabs`` elms
-    static member inline tabs elm = ElementBuilders.Div.valueElm ElementLiterals.``tabs`` elm
+    static member inline tabs props =
+        let children = Html.ul props
+        ElementBuilders.Div.children ElementLiterals.``tabs`` [ children ]
+    static member inline tabs (elms:#seq<ReactElement>) =
+        let children = Html.ul elms
+        ElementBuilders.Div.children ElementLiterals.``tabs`` [ children ]
+    static member inline tabs (elm:ReactElement) =
+        let children = Html.ul [ elm ]
+        ElementBuilders.Div.children ElementLiterals.``tabs`` [ children ]
 
     static member inline tab props = ElementBuilders.Li.props "" props
     static member inline tab (elms:#seq<ReactElement>) = ElementBuilders.Li.children "" elms
