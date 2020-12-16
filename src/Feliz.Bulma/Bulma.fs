@@ -27,6 +27,7 @@ module private ElementLiterals =
     let [<Literal>] ``input`` = "input"
     let [<Literal>] ``textarea`` = "textarea"
     let [<Literal>] ``select`` = "select"
+    let [<Literal>] ``block`` = "block"
     let [<Literal>] ``button`` = "button"
     let [<Literal>] ``checkbox`` = "checkbox"
     let [<Literal>] ``radio`` = "radio"
@@ -269,6 +270,12 @@ type Bulma =
     static member inline file (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``file`` elms
     static member inline file elm = ElementBuilders.Div.valueElm ElementLiterals.``file`` elm
 
+    static member inline block props = ElementBuilders.Div.props ElementLiterals.``block`` props
+    static member inline block (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``block`` elms
+    static member inline block elm = ElementBuilders.Div.valueElm ElementLiterals.``block`` elm
+    static member inline block s = ElementBuilders.Div.valueStr ElementLiterals.``block`` s
+    static member inline block i = ElementBuilders.Div.valueInt ElementLiterals.``block`` i
+
     static member inline box props = ElementBuilders.Div.props ElementLiterals.``box`` props
     static member inline box (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``box`` elms
     static member inline box elm = ElementBuilders.Div.valueElm ElementLiterals.``box`` elm
@@ -483,6 +490,18 @@ type Bulma =
     static member inline help elm = ElementBuilders.P.valueElm ElementLiterals.``help`` elm
     static member inline help s = ElementBuilders.P.valueStr ElementLiterals.``help`` s
     static member inline help i = ElementBuilders.P.valueInt ElementLiterals.``help`` i
+
+    static member inline title props = ElementBuilders.H1.props ElementLiterals.``title`` props
+    static member inline title (elms:#seq<ReactElement>) = ElementBuilders.H1.children ElementLiterals.``title`` elms
+    static member inline title elm = ElementBuilders.H1.valueElm ElementLiterals.``title`` elm
+    static member inline title s = ElementBuilders.H1.valueStr ElementLiterals.``title`` s
+    static member inline title i = ElementBuilders.H1.valueInt ElementLiterals.``title`` i
+
+    static member inline subtitle props = ElementBuilders.H2.props ElementLiterals.``subtitle`` props
+    static member inline subtitle (elms:#seq<ReactElement>) = ElementBuilders.H2.children ElementLiterals.``subtitle`` elms
+    static member inline subtitle elm = ElementBuilders.H2.valueElm ElementLiterals.``subtitle`` elm
+    static member inline subtitle s = ElementBuilders.H2.valueStr ElementLiterals.``subtitle`` s
+    static member inline subtitle i = ElementBuilders.H2.valueInt ElementLiterals.``subtitle`` i
 
 module Bulma =
 
