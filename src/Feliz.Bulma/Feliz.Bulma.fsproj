@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.8.0</Version>
-        <PackageReleaseNotes>Fixing issue with tabs not generating ul element properly</PackageReleaseNotes>
+        <Version>2.8.1</Version>
+        <PackageReleaseNotes>Reverting tabs logic</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
