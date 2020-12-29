@@ -2,32 +2,25 @@
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.PageLoader
 open Shared
-open Docs.Domain
 open Docs.Views
 
-let overview (model:Model) dispatch =
+
+[<ReactComponent>]
+let Description () =
+    let isActive,setActive = React.useState(false)
+    let toggleActive () =
+        async {
+            setActive(true)
+            do! Async.Sleep 3000
+            setActive(false)
+        }
+        |> Async.StartImmediate
+
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.PageLoader "
-            Html.a [
-                prop.href "https://www.nuget.org/packages/Feliz.Bulma.PageLoader/"
-                prop.children [
-                    Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.PageLoader.svg?style=flat-square"
-                    ]
-                ]
-            ]
-        ]
-        Bulma.subtitle.h3 [
-            Html.a [ prop.href "https://wikiki.github.io/elements/pageloader/"; prop.text "Page Loader" ]
-            Html.text " extension for Feliz.Bulma"
-        ]
-        Html.hr []
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Page Loader component"
-            code """open Feliz.Bulma.PageLoader
+            code """open Feliz.Bulma
 
 PageLoader.pageLoader [
     pageLoader.isSuccess
@@ -46,7 +39,7 @@ Bulma.button.a [
             Html.p "Code above will setup Page Loader:"
             PageLoader.pageLoader [
                 pageLoader.isSuccess
-                if model.ShowLoader then pageLoader.isActive
+                if isActive then pageLoader.isActive
                 prop.children [
                     PageLoader.title "I am loading some awesomeness"
                 ]
@@ -54,11 +47,17 @@ Bulma.button.a [
 
             Bulma.button.a [
                 color.isSuccess
-                prop.text "Show page loader for 2 seconds"
-                prop.onClick (fun _ -> ToggleLoader |> dispatch)
+                prop.text "Show page loader for 3 seconds"
+                prop.onClick (fun _ -> toggleActive ())
             ]
 
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.PageLoader" "bulma-pageloader" "bulma-pageloader/dist/css/bulma-pageloader.min.css"
+let view =
+    ComponentView
+        "PageLoader"
+        "Feliz.Bulma.PageLoader"
+        "https://wikiki.github.io/elements/pageloader/"
+        (Description())
+        (installationView "Feliz.Bulma.PageLoader" "bulma-pageloader" "bulma-pageloader/dist/css/bulma-pageloader.min.css")

@@ -1,8 +1,0 @@
-{
-    "private": true,
-    "devDependencies": {
-        "core-js": "^3.4.7",
-        "bulma": "^0.8.0",
-        "bulma-calendar": "^6.0.7"
-    }
-}

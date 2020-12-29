@@ -1,4 +1,4 @@
-module internal Feliz.Bulma.Switch.PropertyBuilders
+module internal Feliz.Bulma.PropertyBuilders
 
 open Feliz
 

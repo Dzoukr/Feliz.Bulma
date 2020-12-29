@@ -7,7 +7,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Router.fs" />
-        <Compile Include="Domain.fs" />
+        <Compile Include="State.fs" />
         <Compile Include="Views.Shared.fs" />
         <Compile Include="Views.Bulma.fs" />
         <Compile Include="Views.QuickView.fs" />
@@ -15,7 +15,6 @@
         <Compile Include="Views.PageLoader.fs" />
         <Compile Include="Views.Popover.fs" />
         <Compile Include="Views.Checkradio.fs" />
-        <Compile Include="Views.Calendar.fs" />
         <Compile Include="Views.DateTimePicker.fs" />
         <Compile Include="Views.Switch.fs" />
         <Compile Include="Views.Divider.fs" />
@@ -23,13 +22,11 @@
         <Compile Include="Views.Timeline.fs" />
         <Compile Include="Views.Badge.fs" />
         <Compile Include="View.fs" />
-        <Compile Include="State.fs" />
         <Compile Include="App.fs" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\src\Feliz.Bulma\Feliz.Bulma.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.QuickView\Feliz.Bulma.QuickView.fsproj" />
-        <ProjectReference Include="..\..\src\Feliz.Bulma.Calendar\Feliz.Bulma.Calendar.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Tooltip\Feliz.Bulma.Tooltip.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Checkradio\Feliz.Bulma.Checkradio.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Popover\Feliz.Bulma.Popover.fsproj" />

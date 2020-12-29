@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.PageLoader
+﻿namespace Feliz.Bulma
 
 open Feliz
 open Feliz.Bulma
@@ -6,7 +6,8 @@ open Feliz.Bulma
 module private ElementLiterals =
     let [<Literal>] ``pageloader`` = "pageloader"
     let [<Literal>] ``title`` = "title"
-    
+
+[<Fable.Core.Erase>]
 type PageLoader =
     static member inline pageLoader props = ElementBuilders.Div.props ElementLiterals.``pageloader`` props
     static member inline pageLoader (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``pageloader`` elms

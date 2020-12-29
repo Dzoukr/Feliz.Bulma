@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.Badge
+﻿namespace Feliz.Bulma
 
 open Feliz
 open Fable.Core

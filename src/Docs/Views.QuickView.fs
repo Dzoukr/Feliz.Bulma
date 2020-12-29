@@ -2,18 +2,18 @@
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.QuickView
 open Shared
-open Docs.Domain
 
-let overview model dispatch =
+[<ReactComponent>]
+let Description () =
+    let isShown,show = React.useState(false)
     let qv =
         QuickView.quickview [
-            if model.ShowQuickView then yield quickview.isActive
-            yield prop.children [
+            if isShown then quickview.isActive
+            prop.children [
                 QuickView.header [
                     Html.div "Header"
-                    Bulma.delete [ prop.onClick (fun _ -> ToggleQuickView |> dispatch) ]
+                    Bulma.delete [ prop.onClick (fun _ -> show(false)) ]
                 ]
                 QuickView.body [
                     QuickView.block "Bulma is great"
@@ -25,25 +25,9 @@ let overview model dispatch =
         ]
 
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.QuickView "
-            Html.a [
-                prop.href "https://www.nuget.org/packages/Feliz.Bulma.QuickView/"
-                prop.children [
-                    Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.QuickView.svg?style=flat-square"
-                    ]
-                ]
-            ]
-        ]
-        Bulma.subtitle.h3 [
-            Html.a [ prop.href "https://wikiki.github.io/components/quickview/"; prop.text "QuickView" ]
-            Html.text " extension for Feliz.Bulma"
-        ]
-        Html.hr []
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding QuickView component"
-            code """open Feliz.Bulma.QuickView
+            code """open Feliz.Bulma
 
 QuickView.quickview [
     if model.ShowQuickView then yield quickview.isActive
@@ -62,11 +46,17 @@ QuickView.quickview [
 ]"""
             Bulma.button.a [
                 color.isInfo
-                prop.text (if model.ShowQuickView then "Hide QuickView" else "Show QuickView")
-                prop.onClick (fun _ -> ToggleQuickView |> dispatch)
+                prop.text (if isShown then "Hide QuickView" else "Show QuickView")
+                prop.onClick (fun _ -> show(not isShown))
             ]
             qv
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.QuickView" "bulma-quickview" "bulma-quickview"
+let view =
+    ComponentView
+        "QuickView"
+        "Feliz.Bulma.QuickView"
+        "https://wikiki.github.io/components/quickview/"
+        (Description())
+        (installationView "Feliz.Bulma.QuickView" "bulma-quickview" "bulma-quickview")

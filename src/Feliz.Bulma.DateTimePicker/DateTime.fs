@@ -1,10 +1,9 @@
-﻿namespace Feliz.Bulma.DateTimePicker
+﻿namespace Feliz.Bulma
 
 open System
 open Fable.Core
 open Fable.DateFunctions
 open Feliz
-open Feliz.Bulma.DateTimePicker
 open Feliz.Bulma.Operators
 open Feliz.Bulma
 

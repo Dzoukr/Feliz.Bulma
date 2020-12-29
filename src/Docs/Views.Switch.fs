@@ -2,27 +2,13 @@ module Docs.Views.Switch
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Switch
 open Shared
-open Docs.Domain
 
-let overview =
+let description =
     Html.div
-        [ Bulma.title.h1
-            [ Html.text "Feliz.Bulma.Switch "
-              Html.a
-                  [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Switch/"
-                    prop.children
-                        [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Switch.svg?style=flat-square" ] ] ] ]
-          Bulma.subtitle.h3
-              [ Html.a
-                  [ prop.href "https://wikiki.github.io/form/switch/"
-                    prop.text "Switch" ]
-                Html.text " extension for Feliz.Bulma" ]
-          Html.hr []
-          Bulma.content
+        [ Bulma.content
               [ Html.p "This library extends Feliz.Bulma by adding a Switch component"
-                code """open Feliz.Bulma.Switch
+                code """open Feliz.Bulma
 
 Bulma.field [
     Switch.checkbox [
@@ -42,7 +28,7 @@ Bulma.field [
                           [ prop.htmlFor "mycheck"
                             prop.text "Check me" ] ] ]
           Bulma.content
-              [ code """open Feliz.Bulma.Switch
+              [ code """open Feliz.Bulma
 
 Bulma.field [
     Switch.checkbox [
@@ -68,7 +54,7 @@ Bulma.field [
                             prop.text "Large round success checkbox" ] ] ]
 
           Bulma.content
-              [ code """open Feliz.Bulma.Switch
+              [ code """open Feliz.Bulma
 
 Bulma.field [
     Switch.checkbox [
@@ -94,7 +80,7 @@ Bulma.field [
                             prop.text "Small thin warning switch" ] ] ]
 
           Bulma.content
-              [ code """open Feliz.Bulma.Switch
+              [ code """open Feliz.Bulma
 
 Bulma.field [
     Switch.checkbox [
@@ -119,5 +105,10 @@ Bulma.field [
                           [ prop.htmlFor "mediumcheck"
                             prop.text "Medium outlined info switch" ] ] ] ]
 
-let installation =
-    Shared.installationView "Feliz.Bulma.Switch" "bulma-switch" "bulma-switch"
+let view =
+    ComponentView
+        "Switch"
+        "Feliz.Bulma.Switch"
+        "https://wikiki.github.io/form/switch/"
+        description
+        (installationView "Feliz.Bulma.PageLoader" "bulma-switch" "bulma-switch")

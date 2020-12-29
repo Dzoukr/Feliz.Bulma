@@ -2,27 +2,15 @@ module Docs.Views.Divider
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Divider
 open Shared
 
-let overview =
+let description =
     Html.div
-        [ Bulma.title.h1
-            [ Html.text "Feliz.Bulma.Divider "
-              Html.a
-                  [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Divider/"
-                    prop.children
-                        [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Divider.svg?style=flat-square" ] ] ] ]
-          Bulma.subtitle.h3
-              [ Html.a
-                  [ prop.href "https://https://bulma-divider.netlify.app/"
-                    prop.text "Divider" ]
-                Html.text " extension for Feliz.Bulma" ]
-          Html.hr []
+        [
           Bulma.content [
 
             Bulma.title.h5 "Basic divider"
-            code """open Feliz.Bulma.Divider
+            code """open Feliz.Bulma
 
 Divider.divider "example"""
 
@@ -113,4 +101,10 @@ Divider.divider [ divider.text "Right"; divider.isRight ]
         ]
     ]
 
-let installation = installationView "Feliz.Bulma.Divider" "@creativebulma/bulma-divider" "@creativebulma/bulma-divider"
+let view =
+    ComponentView
+        "Divider"
+        "Feliz.Bulma.Divider"
+        "https://bulma-divider.netlify.app/"
+        description
+        (installationView "Feliz.Bulma.Divider" "@creativebulma/bulma-divider" "@creativebulma/bulma-divider")

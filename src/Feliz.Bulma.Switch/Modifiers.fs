@@ -1,4 +1,4 @@
-namespace Feliz.Bulma.Switch
+namespace Feliz.Bulma
 
 open Feliz
 

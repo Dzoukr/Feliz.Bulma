@@ -4,7 +4,6 @@ open System
 open Fable.Core
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.DateTimePicker
 open Fable.DateFunctions
 
 open Shared
@@ -16,24 +15,8 @@ let customFormatNote =
             Html.text " library."
         ]
 
-let overview =
+let description =
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.DateTimePicker "
-            Html.a [
-                prop.href "https://www.nuget.org/packages/Feliz.Bulma.DateTimePicker/"
-                prop.children [
-                    Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.DateTimePicker.svg?style=flat-square"
-                    ]
-                ]
-            ]
-        ]
-        Bulma.subtitle.h3 [
-            Html.text "DateTimePicker extension for Feliz.Bulma based on "
-            Html.a [ prop.href "https://creativebulma.net/product/calendar/demo"; prop.text "Bulma Calendar" ]
-        ]
-        Html.hr []
         Bulma.content [
             Html.p """This library extends Feliz.Bulma by adding DateTimePicker component based on Bulma calendar."""
 
@@ -44,7 +27,7 @@ let overview =
                 timePicker.onHide (fun _ -> JS.console.log("onHide"))
             ]
             Html.p ""
-            code """open Feliz.Bulma.DateTimePicker
+            code """open Feliz.Bulma
 
 DateTimePicker.timePicker [
     timePicker.onTimeSelected (fun (v:TimeSpan option) -> () (* handle here *))
@@ -252,4 +235,10 @@ DateTimePicker.timePicker [
         ]
     ]
 
-let installation = Shared.installationViewMultiple "Feliz.Bulma.DateTimePicker" [ "bulma-calendar"; "date-fns" ] "bulma-calendar"
+let view =
+    ComponentView
+        "DateTimePicker"
+        "Feliz.Bulma.DateTimePicker"
+        "https://creativebulma.net/product/calendar/demo"
+        description
+        (installationViewMultiple "Feliz.Bulma.DateTimePicker" [ "bulma-calendar"; "date-fns" ] "bulma-calendar")

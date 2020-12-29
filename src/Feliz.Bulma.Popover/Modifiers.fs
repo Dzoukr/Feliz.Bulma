@@ -1,8 +1,8 @@
-﻿namespace Feliz.Bulma.Popover
+﻿namespace Feliz.Bulma
 
 open Feliz
 
-[<Fable.Core.Erase>]       
+[<Fable.Core.Erase>]
 type popover =
     static member inline trigger = Interop.mkAttr "className" "is-popover-trigger"
     static member inline isActive = Interop.mkAttr "className" "is-popover-active"

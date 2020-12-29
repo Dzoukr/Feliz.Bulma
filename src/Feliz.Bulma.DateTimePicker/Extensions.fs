@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.DateTimePicker
+﻿namespace Feliz.Bulma
 
 open System
 open Feliz

@@ -1,8 +1,8 @@
-﻿namespace Feliz.Bulma.Checkradio
+﻿namespace Feliz.Bulma
 
 open Feliz
 
-[<Fable.Core.Erase>]       
+[<Fable.Core.Erase>]
 type checkradio =
     static member inline isRtl = Interop.mkAttr "className" "is-rtl"
     static member inline isSmall = PropertyBuilders.mkClass "is-small"

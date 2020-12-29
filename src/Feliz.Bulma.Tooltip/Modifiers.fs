@@ -1,8 +1,8 @@
-﻿namespace Feliz.Bulma.Tooltip
+﻿namespace Feliz.Bulma
 
 open Feliz
 
-[<Fable.Core.Erase>]       
+[<Fable.Core.Erase>]
 type tooltip =
     static member inline text (txt:string) = Interop.mkAttr "data-tooltip" txt
     static member inline hasTooltipMultiline = Interop.mkAttr "className" "has-tooltip-multiline"

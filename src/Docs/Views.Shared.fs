@@ -17,8 +17,6 @@ let code (c:string) =
 
 let installationViewMultiple packageName yarnNames styles =
     Html.div [
-        Bulma.title.h1 (sprintf "%s - Installation" packageName)
-        Html.hr []
         Bulma.content [
             Bulma.title.h4 "Using Femto (recommended)"
             Html.p [ prop.dangerouslySetInnerHTML "The easiest way is to use <a href='https://github.com/zaid-ajaj/femto'>Femto CLI</a> which will take care of all dependencies including npm libraries." ]
@@ -43,3 +41,54 @@ let installationViewMultiple packageName yarnNames styles =
     ]
 
 let installationView packageName yarnName styles = installationViewMultiple packageName [yarnName] styles
+
+[<ReactComponent>]
+let ComponentView (name:string) (package:string) (link:string) (des:ReactElement) (inst:ReactElement) =
+    let active,setActive = React.useState(1)
+
+    Html.div [
+        Bulma.title [
+            Html.text $"{package} "
+            Html.a [
+                prop.href $"https://www.nuget.org/packages/{package}/"
+                prop.children [
+                    Html.img [
+                        prop.src $"https://img.shields.io/nuget/v/{package}.svg?style=flat-square"
+                    ]
+                ]
+            ]
+        ]
+        Bulma.subtitle [
+            Html.a [ prop.href link; prop.text name ]
+            Html.text " extension for Feliz.Bulma"
+        ]
+        Bulma.tabs [
+            tabs.isBoxed
+            prop.children [
+                Html.ul [
+                    Bulma.tab [
+                        if active = 1 then tab.isActive
+                        prop.children [
+                            Html.a [
+                                prop.text "Description"
+                                prop.href "#"
+                                prop.onClick (fun e -> e.preventDefault(); 1 |> setActive)
+                            ]
+                        ]
+                    ]
+                    Bulma.tab [
+                        if active = 2 then tab.isActive
+                        prop.children [
+                            Html.a [
+                                prop.text "Installation"
+                                prop.href "#"
+                                prop.onClick (fun e -> e.preventDefault(); 2 |> setActive)
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        //Html.hr []
+        if active = 1 then des else inst
+    ]

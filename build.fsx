@@ -72,9 +72,6 @@ Target.create "PublishBulma" (fun _ -> "src" </> "Feliz.Bulma" |> publishNuget)
 Target.create "PackQuickView" (fun _ -> "src" </> "Feliz.Bulma.QuickView" |> createNuget)
 Target.create "PublishQuickView" (fun _ -> "src" </> "Feliz.Bulma.QuickView" |> publishNuget)
 
-Target.create "PackCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> createNuget)
-Target.create "PublishCalendar" (fun _ -> "src" </> "Feliz.Bulma.Calendar" |> publishNuget)
-
 Target.create "PackTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> createNuget)
 Target.create "PublishTooltip" (fun _ -> "src" </> "Feliz.Bulma.Tooltip" |> publishNuget)
 

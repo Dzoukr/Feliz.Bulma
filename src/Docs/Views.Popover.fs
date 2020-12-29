@@ -2,30 +2,13 @@
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Popover
 open Shared
 
-let overview =
+let description =
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.Popover "
-            Html.a [
-                prop.href "https://www.nuget.org/packages/Feliz.Bulma.Popover/"
-                prop.children [
-                    Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Popover.svg?style=flat-square"
-                    ]
-                ]
-            ]
-        ]
-        Bulma.subtitle.h3 [
-            Html.a [ prop.href "https://github.com/apnsngr/bulma-popover"; prop.text "Popover" ]
-            Html.text " extension for Feliz.Bulma"
-        ]
-        Html.hr []
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Popover component"
-            code """open Feliz.Bulma.Popover
+            code """open Feliz.Bulma
 
 Popover.popover [
     Bulma.button.a [
@@ -54,7 +37,7 @@ Popover.popover [
         ]
         Bulma.content [
             Html.p "Popover content can be positioned."
-            code """open Feliz.Bulma.Popover
+            code """open Feliz.Bulma
 
 Popover.popover [
     popover.isRight
@@ -87,7 +70,7 @@ Popover.popover [
         ]
         Bulma.content [
             Html.p "Popover can be made always active."
-            code """open Feliz.Bulma.Popover
+            code """open Feliz.Bulma
 
 Popover.popover [
     popover.isActive
@@ -123,4 +106,10 @@ Popover.popover [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.Popover" "bulma-popover" "bulma-popover/css/bulma-popover.css"
+let view =
+    ComponentView
+        "Popover"
+        "Feliz.Bulma.Popover"
+        "https://github.com/apnsngr/bulma-popover"
+        description
+        (installationView "Feliz.Bulma.Popover" "bulma-popover" "bulma-popover/css/bulma-popover.css")

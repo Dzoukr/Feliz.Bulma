@@ -2,26 +2,13 @@ module Docs.Views.Badge
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Badge
 open Shared
 
-let overview =
+let description =
     Html.div [
-        Bulma.title.h1
-            [ Html.text "Feliz.Bulma.Badge "
-              Html.a
-                  [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Badge/"
-                    prop.children
-                        [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Badge.svg?style=flat-square" ] ] ] ]
-        Bulma.subtitle.h3
-          [ Html.a
-              [ prop.href "https://https://bulma-badge.netlify.app/"
-                prop.text "Badge" ]
-            Html.text " extension for Feliz.Bulma" ]
-        Html.hr []
         Bulma.content [
             Bulma.title.h5 "Basic badge"
-            code """open Feliz.Bulma.Badge
+            code """open Feliz.Bulma
 
 Bulma.button.button [
     Badge.badge [
@@ -124,4 +111,10 @@ Bulma.buttons [
         ]
     ]
 
-let installation = installationView "Feliz.Bulma.Badge" "@creativebulma/bulma-badge" "@creativebulma/bulma-badge"
+let view =
+    ComponentView
+        "Badge"
+        "Feliz.Bulma.Badge"
+        "https://bulma-badge.netlify.app/"
+        description
+        (installationView "Feliz.Bulma.Badge" "@creativebulma/bulma-badge" "@creativebulma/bulma-badge")

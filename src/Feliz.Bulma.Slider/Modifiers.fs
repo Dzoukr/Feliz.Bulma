@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.Slider
+﻿namespace Feliz.Bulma
 
 open Feliz
 

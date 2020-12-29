@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.Divider
+﻿namespace Feliz.Bulma
 
 open Feliz
 

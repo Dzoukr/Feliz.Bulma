@@ -1,4 +1,4 @@
-﻿namespace Feliz.Bulma.DateTimePicker
+﻿namespace Feliz.Bulma
 
 open Fable.Core
 open Fable.Core.JsInterop

@@ -2,27 +2,13 @@ module Docs.Views.Timeline
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Timeline
 open Shared
 
-let overview =
+let description =
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.Timeline "
-            Html.a
-              [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Timeline/"
-                prop.children
-                    [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Timeline.svg?style=flat-square" ] ] ] ]
-        Bulma.subtitle.h3 [
-            Html.a [
-                prop.href "https://wikiki.github.io/components/timeline/"; prop.text "Timeline"
-            ]
-            Html.text " extension for Feliz.Timeline"
-        ]
-        Html.hr []
         Bulma.content [
             Bulma.title.h5 "Basic timeline"
-            code """open Feliz.Bulma.Timeline
+            code """open Feliz.Bulma
 
 Timeline.timeline [
     Timeline.header [
@@ -256,4 +242,10 @@ Timeline.timeline [
         ]
     ]
 
-let installation = installationView "Feliz.Bulma.Timeline" "bulma-timeline" "bulma-timeline"
+let view =
+    ComponentView
+        "Timeline"
+        "Feliz.Bulma.Timeline"
+        "https://wikiki.github.io/components/timeline/"
+        description
+        (installationView "Feliz.Bulma.Timeline" "bulma-timeline" "bulma-timeline")

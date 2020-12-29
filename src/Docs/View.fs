@@ -1,12 +1,12 @@
 ﻿module Docs.View
 
-open Domain
 open Feliz
 open Feliz.Bulma
 open Docs.Router
 open Feliz.Router
+open Docs.State
 
-let menuPart model =
+let menuPart (model:Model) =
     let item (t:string) p =
         let isActive =
             if model.CurrentPage = p then [ helpers.isActive; color.hasBackgroundPrimary ] else []
@@ -17,103 +17,45 @@ let menuPart model =
         ]
 
     Bulma.menu [
-        Bulma.menuLabel "Feliz.Bulma"
+        Bulma.menuLabel "General"
         Bulma.menuList [
-            item "Overview" BulmaOverview
-            item "Installation" BulmaInstallation
-            item "API description" BulmaAPIDescription
+            item "Overview" Overview
+            item "Installation" Installation
+            item "API description" APIDescription
         ]
-        Bulma.menuLabel "Feliz.Bulma.QuickView"
+        Bulma.menuLabel "Components"
         Bulma.menuList [
-            item "Overview" QuickViewOverview
-            item "Installation" QuickViewInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Calendar"
-        Bulma.menuList [
-            item "Overview" CalendarOverview
-            item "Installation" CalendarInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.DateTimePicker"
-        Bulma.menuList [
-            item "Overview" DateTimePickerOverview
-            item "Installation" DateTimePickerInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Tooltip"
-        Bulma.menuList [
-            item "Overview" TooltipOverview
-            item "Installation" TooltipInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Checkradio"
-        Bulma.menuList [
-            item "Overview" CheckradioOverview
-            item "Installation" CheckradioInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Popover"
-        Bulma.menuList [
-            item "Overview" PopoverOverview
-            item "Installation" PopoverInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.PageLoader"
-        Bulma.menuList [
-            item "Overview" PageLoaderOverview
-            item "Installation" PageLoaderInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Switch"
-        Bulma.menuList [
-            item "Overview" SwitchOverview
-            item "Installation" SwitchInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Divider"
-        Bulma.menuList [
-            item "Overview" DividerOverview
-            item "Installation" DividerInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Badge"
-        Bulma.menuList [
-            item "Overview" BadgeOverview
-            item "Installation" BadgeInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Slider"
-        Bulma.menuList [
-            item "Overview" SliderOverview
-            item "Installation" SliderInstallation
-        ]
-        Bulma.menuLabel "Feliz.Bulma.Timeline"
-        Bulma.menuList [
-            item "Overview" TimelineOverview
-            item "Installation" TimelineInstallation
+            item "QuickView" QuickView
+            item "DateTimePicker" DateTimePicker
+            item "Tooltip" Tooltip
+            item "Checkradio" Checkradio
+            item "Popover" Popover
+            item "PageLoader" PageLoader
+            item "Switch" Switch
+            item "Divider" Divider
+            item "Badge" Badge
+            item "Slider" Slider
+            item "Timeline" Timeline
         ]
     ]
 
-let contentPart model dispatch =
+
+let contentPart model =
     match model.CurrentPage with
-    | BulmaOverview -> Views.Bulma.overview
-    | BulmaInstallation -> Views.Bulma.installation
-    | BulmaAPIDescription -> Views.Bulma.apiDescription
-    | QuickViewOverview -> Views.QuickView.overview model dispatch
-    | QuickViewInstallation -> Views.QuickView.installation
-    | CalendarOverview -> Views.Calendar.overview
-    | CalendarInstallation -> Views.Calendar.installation
-    | DateTimePickerOverview -> Views.DateTimePicker.overview
-    | DateTimePickerInstallation -> Views.DateTimePicker.installation
-    | TooltipOverview -> Views.Tooltip.overview
-    | TooltipInstallation -> Views.Tooltip.installation
-    | CheckradioOverview -> Views.Checkradio.overview
-    | CheckradioInstallation -> Views.Checkradio.installation
-    | SwitchOverview -> Views.Switch.overview
-    | SwitchInstallation -> Views.Switch.installation
-    | PopoverOverview -> Views.Popover.overview
-    | PopoverInstallation -> Views.Popover.installation
-    | PageLoaderOverview -> Views.PageLoader.overview model dispatch
-    | PageLoaderInstallation -> Views.PageLoader.installation
-    | DividerOverview -> Views.Divider.overview
-    | DividerInstallation -> Views.Divider.installation
-    | BadgeOverview -> Views.Badge.overview
-    | BadgeInstallation -> Views.Badge.installation
-    | SliderOverview -> Views.Slider.overview
-    | SliderInstallation -> Views.Slider.installation
-    | TimelineOverview -> Views.Timeline.overview
-    | TimelineInstallation -> Views.Timeline.installation
+    | Overview -> Views.Bulma.overview
+    | Installation -> Views.Bulma.installation
+    | APIDescription -> Views.Bulma.apiDescription
+    | QuickView -> Views.QuickView.view
+    | DateTimePicker -> Views.DateTimePicker.view
+    | Tooltip -> Views.Tooltip.view
+    | Checkradio -> Views.Checkradio.view
+    | Popover -> Views.Popover.view
+    | PageLoader -> Views.PageLoader.view
+    | Switch -> Views.Switch.view
+    | Divider -> Views.Divider.view
+    | Badge -> Views.Badge.view
+    | Slider -> Views.Slider.view
+    | Timeline -> Views.Timeline.view
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
@@ -126,7 +68,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                             tile.is2
                             prop.children (menuPart model)
                         ]
-                        Bulma.tile (contentPart model dispatch)
+                        Bulma.tile (contentPart model)
                     ]
                 ]
             ]

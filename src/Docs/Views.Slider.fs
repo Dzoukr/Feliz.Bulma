@@ -2,27 +2,13 @@ module Docs.Views.Slider
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Slider
 open Shared
 
-let overview =
+let description =
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.Slider "
-            Html.a
-              [ prop.href "https://www.nuget.org/packages/Feliz.Bulma.Slider/"
-                prop.children
-                    [ Html.img [ prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Slider.svg?style=flat-square" ] ] ] ]
-        Bulma.subtitle.h3 [
-            Html.a [
-                prop.href "https://wikiki.github.io/form/slider/"; prop.text "Slider"
-            ]
-            Html.text " extension for Feliz.Bulma"
-        ]
-        Html.hr []
         Bulma.content [
             Bulma.title.h5 "Basic slider"
-            code """open Feliz.Bulma.Slider
+            code """open Feliz.Bulma
 
 Slider.slider [
     slider.isFullWidth
@@ -102,4 +88,10 @@ Slider.slider [ slider.isFullWidth; slider.isLarge ]
         ]
     ]
 
-let installation = installationView "Feliz.Bulma.Slider" "bulma-slider" "bulma-slider"
+let view =
+    ComponentView
+        "Slider"
+        "Feliz.Bulma.Slider"
+        "https://wikiki.github.io/form/slider/"
+        description
+        (installationView "Feliz.Bulma.Slider" "bulma-slider" "bulma-slider")

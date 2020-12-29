@@ -1,4 +1,4 @@
-﻿module internal Feliz.Bulma.Checkradio.PropertyBuilders
+﻿module internal Feliz.Bulma.PropertyBuilders
 
 open Feliz
 

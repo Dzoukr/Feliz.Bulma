@@ -2,30 +2,13 @@
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma.Checkradio
 open Shared
 
-let overview =
+let description =
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.Bulma.Checkradio "
-            Html.a [
-                prop.href "https://www.nuget.org/packages/Feliz.Bulma.Checkradio/"
-                prop.children [
-                    Html.img [
-                        prop.src "https://img.shields.io/nuget/v/Feliz.Bulma.Checkradio.svg?style=flat-square"
-                    ]
-                ]
-            ]
-        ]
-        Bulma.subtitle.h3 [
-            Html.a [ prop.href "https://wikiki.github.io/form/checkradio/"; prop.text "Checkradio" ]
-            Html.text " extension for Feliz.Bulma"
-        ]
-        Html.hr []
         Bulma.content [
             Html.p "This library extends Feliz.Bulma by adding Checkradio component"
-            code """open Feliz.Bulma.Checkradio
+            code """open Feliz.Bulma
 
 Bulma.field.div [
     Checkradio.checkbox [
@@ -51,7 +34,7 @@ Bulma.field.div [
             ]
         ]
         Bulma.content [
-            code """open Feliz.Bulma.Checkradio
+            code """open Feliz.Bulma
 
 Bulma.field.div [
     Checkradio.radio [ prop.id "myradio1"; prop.name "radio" ]
@@ -71,7 +54,7 @@ Bulma.field.div [
         ]
         Bulma.content [
             Html.p [ prop.dangerouslySetInnerHTML "All the modifiers mentioned in <a href='https://wikiki.github.io/form/checkradio/'>official documentation</a> will work as expected." ]
-            code """open Feliz.Bulma.Checkradio
+            code """open Feliz.Bulma
 
 Bulma.field.div [
     Checkradio.checkbox [
@@ -103,4 +86,10 @@ Bulma.field.div [
         ]
     ]
 
-let installation = Shared.installationView "Feliz.Bulma.Checkradio" "bulma-checkradio" "bulma-checkradio"
+let view =
+    ComponentView
+        "Checkradio"
+        "Feliz.Bulma.Checkradio"
+        "https://wikiki.github.io/form/checkradio/"
+        description
+        (installationView "Feliz.Bulma.Checkradio" "bulma-checkradio" "bulma-checkradio")

@@ -7,7 +7,7 @@ open Feliz.Bulma.Operators
 
 let overview =
     Html.div [
-        Bulma.title.h1 [
+        Bulma.title [
             Html.text "Feliz.Bulma "
             Html.a [
                 prop.href "https://www.nuget.org/packages/Feliz.Bulma/"
@@ -18,7 +18,7 @@ let overview =
                 ]
             ]
         ]
-        Bulma.subtitle.h3 [
+        Bulma.subtitle [
             Html.text "Bulma UI wrapper for amazing "
             Html.a [ prop.href "https://github.com/Zaid-Ajaj/Feliz"; prop.text "Feliz DSL" ]
         ]
@@ -68,7 +68,7 @@ let installation = Shared.installationView "Feliz.Bulma" "bulma" "bulma"
 
 let apiDescription =
     Html.div [
-        Bulma.title.h1 "Feliz.Bulma - API"
+        Bulma.title "Feliz.Bulma - API"
         Html.hr []
         Bulma.content [
             Html.p [ prop.dangerouslySetInnerHTML "Feliz.Bulma fully covers <a href='https://bulma.io'>Bulma UI</a> in version 0.8.0." ]
@@ -95,7 +95,7 @@ Bulma.button.a [
         ]
 
         Bulma.content [
-            Bulma.title.h1 "Using Bulma props in Feliz elements"
+            Bulma.title "Using Bulma props in Feliz elements"
             Html.p [ prop.dangerouslySetInnerHTML "Feliz.Bulma contains some helpers that could be handy to combine with <i>classic</i> Feliz API. Unfortunately this is not supported out of the box - <a href='https://github.com/Zaid-Ajaj/Feliz/issues/128'>see this issue.</a>"]
             Html.p [ prop.dangerouslySetInnerHTML "To allow this behavior, there is new <code>Feliz.Bulma.Operators</code> module with <code>++</code> operator" ]
             code """open Feliz.Bulma.Operators
