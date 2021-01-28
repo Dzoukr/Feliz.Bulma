@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.8.1</Version>
-        <PackageReleaseNotes>Reverting tabs logic</PackageReleaseNotes>
+        <Version>2.9.0</Version>
+        <PackageReleaseNotes>Adding missing column responsiveness classes #19</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
