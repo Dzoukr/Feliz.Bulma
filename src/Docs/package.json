@@ -45,6 +45,7 @@
         "bulma-timeline": "^3.0.4",
         "highlight.js": "^10.4.1",
         "react-highlight": "^0.12.0",
-        "@fortawesome/fontawesome-free": "^5.15.1"
+        "@fortawesome/fontawesome-free": "^5.15.1",
+        "@creativebulma/bulma-tagsinput": "^1.0.3"
     }
 }

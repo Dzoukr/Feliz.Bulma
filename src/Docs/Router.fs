@@ -17,6 +17,7 @@ type Page =
     | Badge
     | Slider
     | Timeline
+    | TagsInput
 
 let defaultPage = Overview
 
@@ -35,6 +36,7 @@ let parseUrl = function
     | [ "badge" ] -> Badge
     | [ "slider" ] -> Slider
     | [ "timeline" ] -> Timeline
+    | [ "tagsinput" ] -> TagsInput
     | _ -> defaultPage
 
 let getHref = function
@@ -52,3 +54,4 @@ let getHref = function
     | Badge -> Router.format("badge")
     | Slider -> Router.format("slider")
     | Timeline -> Router.format("timeline")
+    | TagsInput -> Router.format("tagsinput")

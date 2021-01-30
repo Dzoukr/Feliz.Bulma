@@ -18,6 +18,7 @@
         <Compile Include="Views.DateTimePicker.fs" />
         <Compile Include="Views.Switch.fs" />
         <Compile Include="Views.Divider.fs" />
+        <Compile Include="Views.TagsInput.fs" />
         <Compile Include="Views.Slider.fs" />
         <Compile Include="Views.Timeline.fs" />
         <Compile Include="Views.Badge.fs" />
@@ -37,6 +38,7 @@
         <ProjectReference Include="..\..\src\Feliz.Bulma.Badge\Feliz.Bulma.Badge.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Slider\Feliz.Bulma.Slider.fsproj" />
         <ProjectReference Include="..\..\src\Feliz.Bulma.Timeline\Feliz.Bulma.Timeline.fsproj" />
+        <ProjectReference Include="..\..\src\Feliz.Bulma.TagsInput\Feliz.Bulma.TagsInput.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

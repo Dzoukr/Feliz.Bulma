@@ -102,6 +102,9 @@ Target.create "PublishSlider" (fun _ -> "src" </> "Feliz.Bulma.Slider" |> publis
 Target.create "PackTimeline" (fun _ -> "src" </> "Feliz.Bulma.Timeline" |> createNuget)
 Target.create "PublishTimeline" (fun _ -> "src" </> "Feliz.Bulma.Timeline" |> publishNuget)
 
+Target.create "PackTagsInput" (fun _ -> "src" </> "Feliz.Bulma.TagsInput" |> createNuget)
+Target.create "PublishTagsInput" (fun _ -> "src" </> "Feliz.Bulma.TagsInput" |> publishNuget)
+
 
 Target.create "InstallDocs" (fun _ ->
     printfn "Node version:"

@@ -36,6 +36,7 @@ let menuPart (model:Model) =
             item "Badge" Badge
             item "Slider" Slider
             item "Timeline" Timeline
+            item "TagsInput" TagsInput
         ]
     ]
 
@@ -56,6 +57,7 @@ let contentPart model =
     | Badge -> Views.Badge.view
     | Slider -> Views.Slider.view
     | Timeline -> Views.Timeline.view
+    | TagsInput -> Views.TagsInput.view
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
