@@ -111,4 +111,4 @@ let view =
         "Feliz.Bulma.Switch"
         "https://wikiki.github.io/form/switch/"
         description
-        (installationView "Feliz.Bulma.PageLoader" "bulma-switch" "bulma-switch")
+        (installationView "Feliz.Bulma.Switch" "bulma-switch" "bulma-switch")
