@@ -352,9 +352,10 @@ module DatePicker =
                                             prop.classes [
                                                 "datepicker-date"
                                                 if isCurrentMonth then "is-current-month"
-                                                if isStartSelected then "datepicker-range-start"
-                                                if isEndSelected then "datepicker-range-end"
-                                                if isInRange then "datepicker-range"
+                                                if p.isRange then
+                                                    if isStartSelected then "datepicker-range-start"
+                                                    if isEndSelected then "datepicker-range-end"
+                                                    if isInRange then "datepicker-range"
                                                 if isDisabled then "is-disabled"
                                             ]
                                             prop.children [
