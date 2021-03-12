@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.9.0</Version>
-        <PackageReleaseNotes>Adding missing column responsiveness classes #19</PackageReleaseNotes>
+        <Version>2.10.0</Version>
+        <PackageReleaseNotes>Added light and dark versions of the color helpers #68</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
