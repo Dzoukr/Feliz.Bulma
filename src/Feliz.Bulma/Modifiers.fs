@@ -1323,6 +1323,7 @@ type file =
 
 [<Fable.Core.Erase>]
 type input =
+    static member inline isStatic = PropertyBuilders.mkClass ClassLiterals.``is-static``
     static member inline isSmall = PropertyBuilders.mkClass ClassLiterals.``is-small``
     static member inline isMedium = PropertyBuilders.mkClass ClassLiterals.``is-medium``
     static member inline isLarge = PropertyBuilders.mkClass ClassLiterals.``is-large``
