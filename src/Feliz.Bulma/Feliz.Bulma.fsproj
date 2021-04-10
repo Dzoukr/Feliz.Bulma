@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.12.0</Version>
-        <PackageReleaseNotes>Added 2 missing helpers #71</PackageReleaseNotes>
+        <Version>2.13.0</Version>
+        <PackageReleaseNotes>Add missing `is-static` modifier for input #72</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
