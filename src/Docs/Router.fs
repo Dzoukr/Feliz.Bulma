@@ -8,6 +8,7 @@ type Page =
     | APIDescription
     | DocumentationOverview
     | DocumentationButton
+    | DocumentationCard
     | QuickView
     | DateTimePicker
     | Tooltip
@@ -29,6 +30,7 @@ let parseUrl = function
     | [ "api-description" ] -> APIDescription
     | [ "documentation"; "overview" ] -> DocumentationOverview
     | [ "documentation"; "button" ] -> DocumentationButton
+    | [ "documentation"; "card" ] -> DocumentationCard
     | [ "quickview" ] -> QuickView
     | [ "datetimepicker" ] -> DateTimePicker
     | [ "tooltip" ] -> Tooltip
@@ -49,6 +51,7 @@ let getHref = function
     | APIDescription -> Router.format ("api-description")
     | DocumentationOverview -> Router.format ([ "documentation"; "overview" ])
     | DocumentationButton -> Router.format ([ "documentation"; "button" ])
+    | DocumentationCard -> Router.format ([ "documentation"; "card" ])
     | QuickView -> Router.format ("quickview")
     | DateTimePicker -> Router.format ("datetimepicker")
     | Tooltip -> Router.format ("tooltip")

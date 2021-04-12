@@ -1,0 +1,283 @@
+module Docs.Views.Documentation
+
+open Feliz
+open Feliz.Bulma
+open Shared
+
+let overview =
+    Html.div [ 
+        Bulma.title "Feliz.Bulma - Documentation"
+        Html.hr [] 
+        Bulma.subtitle "Buttons"
+   ]
+
+let private sample (sampleButton: IReactProperty list) (sampleCode: string) = Bulma.columns [
+    Bulma.column [ Bulma.button.a sampleButton ]
+    Bulma.column [ code sampleCode ]
+]
+
+let button =
+    Html.div [  Bulma.title "Feliz.Bulma - Documentation"
+                Bulma.subtitle "Buttons"
+                Html.hr [] 
+                Bulma.content [
+                    Bulma.title "Basic"
+                    sample [ prop.text "Button" ] """Bulma.button.button [ prop.text "Button" ]"""
+                 
+                ]
+                Bulma.content [
+                    Bulma.title "Colors"
+                    sample [ color.isWhite; prop.text "White"] """Bulma.button.button [ Bulma.color.isWhite
+          prop.text "White" ]"""
+                    sample [ color.isLight; prop.text "Light"] """Bulma.button.button [ Bulma.color.isLight
+          prop.text "Light" ]"""
+                    sample [ color.isDark; prop.text "Dark"] """Bulma.button.button [ Bulma.color.isDark
+          prop.text "Dark" ]"""
+                    sample [ color.isPrimary; prop.text "Primary"] """Bulma.button.button [ Bulma.color.isPrimary
+          prop.text "Primary" ]"""
+                    sample [ color.isSuccess; prop.text "Success"] """Bulma.button.button [ Bulma.color.isSuccess
+          prop.text "Success" ]"""
+                    sample [ color.isInfo; prop.text "Info"] """Bulma.button.button [ Bulma.color.isInfo
+          prop.text "Info" ]"""
+                    sample [ color.isDanger; prop.text "Danger"] """Bulma.button.button [ Bulma.color.isDanger
+          prop.text "Danger" ]"""
+                    sample [ color.isWarning; prop.text "Warning"] """Bulma.button.button [ Bulma.color.isWarning
+          prop.text "Warning" ]"""
+                    sample [ color.isLink; prop.text "Link"] """Bulma.button.button [ Bulma.color.isLink
+          prop.text "Link" ]"""
+                ]
+                Bulma.content [
+                    Bulma.title "Sizes"
+                    sample [ button.isSmall; prop.text "Small"] """Bulma.button.button [ Bulma.button.isSmall
+          prop.text "Small" ]"""
+                    sample [ prop.text "Normal (Default)" ] """Bulma.button.button [ prop.text "Normal (Default)" ]"""
+                    sample [ button.isMedium; prop.text "Medium"] """Bulma.button.button [ Bulma.button.isMedium
+          prop.text "Medium" ]"""
+                    sample [ button.isLarge; prop.text "Large"] """Bulma.button.button [ Bulma.button.isLarge
+          prop.text "Large" ]"""
+                ]
+                Bulma.content [
+                    Bulma.title "States"
+                    sample [ button.isActive; prop.text "Active"] """Bulma.button.button [ Bulma.button.isActive
+          prop.text "Active" ]"""
+                    sample [ prop.disabled true; prop.text "Disabled"] """Bulma.button.button [ prop.disabled true
+          prop.text "Disabled" ]"""
+                    sample [ button.isFocused; prop.text "Focused"] """Bulma.button.button [ Bulma.button.isFocused
+          prop.text "Focused" ]"""
+                    sample [ button.isHovered; prop.text "Hover"] """Bulma.button.button [ Bulma.button.isHovered
+          prop.text "Hover" ]"""
+                    sample [ prop.text "Normal (Default)" ] """Bulma.button.button [ prop.text "Normal (Default)" ]"""
+                    sample [ button.isLoading ] """Bulma.button.button [ Bulma.button.isLoading ]"""
+                ]
+                Bulma.content [
+                    Bulma.title "Button group with addons"
+                    Bulma.columns [
+                        Bulma.column [
+                            Bulma.field.div [
+                                field.hasAddons
+                                prop.children [
+                                    Bulma.control.p [
+                                        Bulma.button.button [
+                                            Bulma.icon [ Html.i [ prop.className "fas fa-align-left" ] ]
+                                            Html.span [ prop.text "Left" ]
+                                        ]
+                                    ]
+                                    Bulma.control.p [
+                                        Bulma.button.button [
+                                            Bulma.icon [ Html.i [ prop.className "fas fa-align-center" ] ]
+                                        ]
+                                    ]
+                                    Bulma.control.p [
+                                        Bulma.button.button [
+                                            Html.span [ prop.text "Right" ]
+                                            Bulma.icon [ Html.i [ prop.className "fas fa-align-right" ] ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        Bulma.column [ code """Bulma.field.div [
+    Bulma.field.hasAddons
+    prop.children [
+        Bulma.control.p [
+            Bulma.button.button [
+                Bulma.icon [ Html.i [ prop.className "fas fa-align-left" ] ]
+                Html.span [ prop.text "Left" ]
+            ]
+        ]
+        Bulma.control.p [
+            Bulma.button.button [
+                Bulma.icon [ Html.i [ prop.className "fas fa-align-center" ] ]
+            ]
+        ]
+        Bulma.control.p [
+            Bulma.button.button [
+                Html.span [ prop.text "Right" ]
+                Bulma.icon [ Html.i [ prop.className "fas fa-align-right" ] ]
+            ]
+        ]
+    ]
+]"""
+                        ]
+                    ]
+                    Html.p [ 
+                        text.hasTextRight
+                        prop.text "Note: Icon using Font Awesome."
+                    ]             
+                ]
+    ]
+
+let card =
+    Html.div [  Bulma.title "Feliz.Bulma - Documentation"
+                Bulma.subtitle "Card"
+                Html.hr [] 
+                Html.div [
+                    Bulma.title "Basic"
+                    Bulma.columns [
+                        Bulma.column [
+                            Bulma.card [
+                                Bulma.cardImage [
+                                    Bulma.image [
+                                        Bulma.image.is4by3
+                                        prop.children [
+                                            Html.img [ 
+                                                prop.alt "Placeholder image"
+                                                prop.src "https://bulma.io/images/placeholders/1280x960.png"
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                                Bulma.cardContent [
+                                    Bulma.media [
+                                        Bulma.mediaLeft [
+                                            Bulma.cardImage [
+                                                Bulma.image [
+                                                    Bulma.image.is48x48
+                                                    prop.children [
+                                                        Html.img [ 
+                                                            prop.alt "Placeholder image"
+                                                            prop.src "https://bulma.io/images/placeholders/96x96.png"
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                        Bulma.mediaContent [
+                                            Bulma.title.p [
+                                                Bulma.title.is4
+                                                prop.text "Feliz Bulma"
+                                            ]
+                                            Bulma.subtitle.p [
+                                                Bulma.title.is6
+                                                prop.text "@feliz.bulma"
+                                            ]
+                                        ]
+                                    ]
+                                    Bulma.content "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris."
+                                ]
+                            ]
+                        ]
+                        Bulma.column [
+                            code """Bulma.card [
+    Bulma.cardImage [
+        Bulma.image [
+            Bulma.image.is4by3
+            prop.children [
+                Html.img [ 
+                    prop.alt "Placeholder image"
+                    prop.src "https://bulma.io/images/placeholders/1280x960.png"
+                ]
+            ]
+        ]
+    ]
+    Bulma.cardContent [
+        Bulma.media [
+            Bulma.mediaLeft [
+                Bulma.cardImage [
+                    Bulma.image [
+                        Bulma.image.is48x48
+                        prop.children [
+                            Html.img [ 
+                                prop.alt "Placeholder image"
+                                prop.src "https://bulma.io/images/placeholders/96x96.png"
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            Bulma.mediaContent [
+                Bulma.title.p [
+                    Bulma.title.is4
+                    prop.text "Feliz Bulma"
+                ]
+                Bulma.subtitle.p [
+                    Bulma.title.is6
+                    prop.text "@feliz.bulma"
+                ]
+            ]
+        ]
+        Bulma.content "Lorem ipsum dolor sit ... nec iaculis mauris."
+    ]
+]"""
+                        ]
+                    ]
+                ]
+                Html.div [
+                    Bulma.title "Card header"
+                    Bulma.columns [
+                        Bulma.column [
+                            Bulma.card [
+                                Bulma.cardHeader [
+                                    Bulma.cardHeaderTitle.p "Card header"
+                                    Bulma.cardHeaderIcon.span [ Html.i [prop.className "fas fa-angle-down"] ]
+                                ]
+                            ]
+                        ]
+                        Bulma.column [
+                            code """ Bulma.card [
+    Bulma.cardHeader [
+        Bulma.cardHeaderTitle.p "Card header"
+        Bulma.cardHeaderIcon.span [
+            Html.i [prop.className "fas fa-angle-down"]
+        ]
+    ]
+]"""
+                        ]
+                    ]
+                ]
+                Html.div [
+                    Bulma.title "Card footer"
+                    Bulma.columns [
+                        Bulma.column [
+                            Bulma.card [
+                                Bulma.cardFooter [
+                                    Bulma.cardFooterItem.a [
+                                        prop.text "Save"
+                                    ]
+                                    Bulma.cardFooterItem.a [
+                                        prop.text "Edit"
+                                    ]
+                                    Bulma.cardFooterItem.a [
+                                        prop.text "Delete"
+                                    ]
+                                ]
+                            ]
+                        ]
+                        Bulma.column [
+                            code """Bulma.card [
+    Bulma.cardFooter [
+        Bulma.cardFooterItem.a [
+            prop.text "Save"
+        ]
+        Bulma.cardFooterItem.a [
+            prop.text "Edit"
+        ]
+        Bulma.cardFooterItem.a [
+            prop.text "Delete"
+        ]
+    ]
+]"""
+                        ]
+                    ]
+                ]
+    ]
