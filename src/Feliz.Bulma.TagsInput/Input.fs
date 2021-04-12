@@ -30,7 +30,8 @@ module TagsInputComponent =
     type Props =
         abstract onTagsChanged : (string list -> unit) option
         abstract autoCompleteSource: (string -> Async<string list>) option
-        abstract defaultValue: string list
+        abstract defaultValue: (string list) option
+        abstract value: (string list) option
         abstract noResultsLabel: string
         abstract loadingLabel: string
         abstract delimiter: char
@@ -50,9 +51,15 @@ module TagsInputComponent =
     let input (p:Props) =
         let wrapperRef = React.useElementRef()
 
+        let tags,setTags =
+            if p.value |> Option.isSome then
+                p.value.Value, ignore
+            else
+                let v = p.defaultValue |> Option.defaultValue []
+                React.useState(v)
+
         let isDropdownShown,setDropdownShown = React.useState(false)
         let isActive,setIsActive = React.useState(false)
-        let tags,setTags = React.useState(p.defaultValue)
         let inputValue,setInputValue = React.useState("")
         let autoComplete,setAutoComplete = React.useState([])
         let inputLoading,setInputLoading = React.useState(false)
@@ -70,7 +77,6 @@ module TagsInputComponent =
         let changeTags value =
             setTags value
             if p.onTagsChanged.IsSome then p.onTagsChanged.Value value
-
 
         let removeTag (index:int) =
             tags
@@ -168,6 +174,7 @@ type ITagsInputProperty = interface end
 type tagsInput =
     static member inline onTagsChanged (fn:string list -> unit) : ITagsInputProperty = unbox ("onTagsChanged", fn)
     static member inline autoCompleteSource (src:string -> Async<string list>) : ITagsInputProperty = unbox ("autoCompleteSource", src)
+    static member inline value (tags:string list) : ITagsInputProperty = unbox ("value", tags)
     static member inline defaultValue (tags:string list) : ITagsInputProperty = unbox ("defaultValue", tags)
     static member inline noResultsLabel (label:string) : ITagsInputProperty = unbox ("noResultsLabel", label)
     static member inline loadingLabel (label:string) : ITagsInputProperty = unbox ("loadingLabel", label)
