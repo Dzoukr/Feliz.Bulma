@@ -23,6 +23,11 @@ let menuPart (model:Model) =
             item "Installation" Installation
             item "API description" APIDescription
         ]
+        Bulma.menuLabel "Documentation"
+        Bulma.menuList [
+            item "Overview" DocumentationOverview
+            item "Button" DocumentationButton
+        ]
         Bulma.menuLabel "Components"
         Bulma.menuList [
             item "QuickView" QuickView
@@ -46,6 +51,8 @@ let contentPart model =
     | Overview -> Views.Bulma.overview
     | Installation -> Views.Bulma.installation
     | APIDescription -> Views.Bulma.apiDescription
+    | DocumentationOverview -> Views.Documentation.overview
+    | DocumentationButton -> Views.Documentation.button
     | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view
     | Tooltip -> Views.Tooltip.view
