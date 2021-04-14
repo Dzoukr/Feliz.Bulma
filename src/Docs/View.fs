@@ -29,6 +29,7 @@ let menuPart (model:Model) =
             item "Button" DocumentationButton
             item "Card" DocumentationCard
             item "Form" DocumentationForm
+            item "Modal" DocumentationModal
         ]
         Bulma.menuLabel "Components"
         Bulma.menuList [
@@ -57,6 +58,7 @@ let contentPart model =
     | DocumentationButton -> Views.Documentation.button
     | DocumentationCard -> Views.Documentation.card
     | DocumentationForm -> Views.Documentation.form
+    | DocumentationModal -> Views.Documentation.modal
     | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view
     | Tooltip -> Views.Tooltip.view

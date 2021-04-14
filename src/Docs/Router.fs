@@ -10,6 +10,7 @@ type Page =
     | DocumentationButton
     | DocumentationCard
     | DocumentationForm
+    | DocumentationModal
     | QuickView
     | DateTimePicker
     | Tooltip
@@ -33,6 +34,7 @@ let parseUrl = function
     | [ "documentation"; "button" ] -> DocumentationButton
     | [ "documentation"; "card" ] -> DocumentationCard
     | [ "documentation"; "form" ] -> DocumentationForm
+    | [ "documentation"; "modal" ] -> DocumentationModal
     | [ "quickview" ] -> QuickView
     | [ "datetimepicker" ] -> DateTimePicker
     | [ "tooltip" ] -> Tooltip
@@ -55,6 +57,7 @@ let getHref = function
     | DocumentationButton -> Router.format ([ "documentation"; "button" ])
     | DocumentationCard -> Router.format ([ "documentation"; "card" ])
     | DocumentationForm -> Router.format ([ "documentation"; "form" ])
+    | DocumentationModal -> Router.format ([ "documentation"; "modal" ])
     | QuickView -> Router.format ("quickview")
     | DateTimePicker -> Router.format ("datetimepicker")
     | Tooltip -> Router.format ("tooltip")
