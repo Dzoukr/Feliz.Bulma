@@ -10,6 +10,7 @@
         <Compile Include="State.fs" />
         <Compile Include="Views.Shared.fs" />
         <Compile Include="Views.Bulma.fs" />
+        <Compile Include="Views.Documentation.fs" />
         <Compile Include="Views.QuickView.fs" />
         <Compile Include="Views.Tooltip.fs" />
         <Compile Include="Views.PageLoader.fs" />
