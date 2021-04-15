@@ -1249,6 +1249,10 @@ type dropdown =
     static member inline isUp = PropertyBuilders.mkClass ClassLiterals.``is-up``
 
 [<Fable.Core.Erase>]
+type dropdownItem =
+    static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
+
+[<Fable.Core.Erase>]
 type modal =
     static member inline isActive = PropertyBuilders.mkClass ClassLiterals.``is-active``
 

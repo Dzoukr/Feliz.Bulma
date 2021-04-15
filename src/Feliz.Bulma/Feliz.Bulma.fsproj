@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.13.0</Version>
-        <PackageReleaseNotes>Add missing `is-static` modifier for input #72</PackageReleaseNotes>
+        <Version>2.14</Version>
+        <PackageReleaseNotes>Add missing `is-active` modifier for dropdownItem</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
