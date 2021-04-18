@@ -27,45 +27,77 @@ let button =
                 ]
                 Bulma.content [
                     Bulma.title "Colors"
-                    sample [ color.isWhite; prop.text "White"] """Bulma.button.button [ Bulma.color.isWhite
-          prop.text "White" ]"""
-                    sample [ color.isLight; prop.text "Light"] """Bulma.button.button [ Bulma.color.isLight
-          prop.text "Light" ]"""
-                    sample [ color.isDark; prop.text "Dark"] """Bulma.button.button [ Bulma.color.isDark
-          prop.text "Dark" ]"""
-                    sample [ color.isPrimary; prop.text "Primary"] """Bulma.button.button [ Bulma.color.isPrimary
-          prop.text "Primary" ]"""
-                    sample [ color.isSuccess; prop.text "Success"] """Bulma.button.button [ Bulma.color.isSuccess
-          prop.text "Success" ]"""
-                    sample [ color.isInfo; prop.text "Info"] """Bulma.button.button [ Bulma.color.isInfo
-          prop.text "Info" ]"""
-                    sample [ color.isDanger; prop.text "Danger"] """Bulma.button.button [ Bulma.color.isDanger
-          prop.text "Danger" ]"""
-                    sample [ color.isWarning; prop.text "Warning"] """Bulma.button.button [ Bulma.color.isWarning
-          prop.text "Warning" ]"""
-                    sample [ color.isLink; prop.text "Link"] """Bulma.button.button [ Bulma.color.isLink
-          prop.text "Link" ]"""
+                    sample [ color.isWhite; prop.text "White"] """Bulma.button.button [
+    Bulma.color.isWhite
+    prop.text "White"
+]"""
+                    sample [ color.isLight; prop.text "Light"] """Bulma.button.button [
+    Bulma.color.isLight
+    prop.text "Light"
+]"""
+                    sample [ color.isDark; prop.text "Dark"] """Bulma.button.button [
+    Bulma.color.isDark
+    prop.text "Dark"
+]"""
+                    sample [ color.isPrimary; prop.text "Primary"] """Bulma.button.button [
+    Bulma.color.isPrimary
+    prop.text "Primary"
+]"""
+                    sample [ color.isSuccess; prop.text "Success"] """Bulma.button.button [
+    Bulma.color.isSuccess
+    prop.text "Success"
+]"""
+                    sample [ color.isInfo; prop.text "Info"] """Bulma.button.button [
+    Bulma.color.isInfo
+    prop.text "Info"
+]"""
+                    sample [ color.isDanger; prop.text "Danger"] """Bulma.button.button [
+    Bulma.color.isDanger
+    prop.text "Danger"
+]"""
+                    sample [ color.isWarning; prop.text "Warning"] """Bulma.button.button [
+    Bulma.color.isWarning
+    prop.text "Warning"
+]"""
+                    sample [ color.isLink; prop.text "Link"] """Bulma.button.button [
+    Bulma.color.isLink
+    prop.text "Link"
+]"""
                 ]
                 Bulma.content [
                     Bulma.title "Sizes"
-                    sample [ button.isSmall; prop.text "Small"] """Bulma.button.button [ Bulma.button.isSmall
-          prop.text "Small" ]"""
+                    sample [ button.isSmall; prop.text "Small"] """Bulma.button.button [
+    Bulma.button.isSmall
+    prop.text "Small"
+]"""
                     sample [ prop.text "Normal (Default)" ] """Bulma.button.button [ prop.text "Normal (Default)" ]"""
-                    sample [ button.isMedium; prop.text "Medium"] """Bulma.button.button [ Bulma.button.isMedium
-          prop.text "Medium" ]"""
-                    sample [ button.isLarge; prop.text "Large"] """Bulma.button.button [ Bulma.button.isLarge
-          prop.text "Large" ]"""
+                    sample [ button.isMedium; prop.text "Medium"] """Bulma.button.button [
+    Bulma.button.isMedium
+    prop.text "Medium"
+]"""
+                    sample [ button.isLarge; prop.text "Large"] """Bulma.button.button [
+    Bulma.button.isLarge
+    prop.text "Large"
+]"""
                 ]
                 Bulma.content [
                     Bulma.title "States"
-                    sample [ button.isActive; prop.text "Active"] """Bulma.button.button [ Bulma.button.isActive
-          prop.text "Active" ]"""
-                    sample [ prop.disabled true; prop.text "Disabled"] """Bulma.button.button [ prop.disabled true
-          prop.text "Disabled" ]"""
-                    sample [ button.isFocused; prop.text "Focused"] """Bulma.button.button [ Bulma.button.isFocused
-          prop.text "Focused" ]"""
-                    sample [ button.isHovered; prop.text "Hover"] """Bulma.button.button [ Bulma.button.isHovered
-          prop.text "Hover" ]"""
+                    sample [ button.isActive; prop.text "Active"] """Bulma.button.button [
+    Bulma.button.isActive
+    prop.text "Active"
+]"""
+                    sample [ prop.disabled true; prop.text "Disabled"] """Bulma.button.button [
+    prop.disabled true
+    prop.text "Disabled"
+]"""
+                    sample [ button.isFocused; prop.text "Focused"] """Bulma.button.button [
+    Bulma.button.isFocused
+    prop.text "Focused"
+]"""
+                    sample [ button.isHovered; prop.text "Hover"] """Bulma.button.button [
+    Bulma.button.isHovered
+    prop.text "Hover"
+]"""
                     sample [ prop.text "Normal (Default)" ] """Bulma.button.button [ prop.text "Normal (Default)" ]"""
                     sample [ button.isLoading ] """Bulma.button.button [ Bulma.button.isLoading ]"""
                 ]
