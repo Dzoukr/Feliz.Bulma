@@ -4,6 +4,20 @@ open Feliz
 open Feliz.Bulma
 open Shared
 
+type Color =
+    | Primary
+    | Danger
+    | Info
+    | Link
+    | Success
+    | Warning
+    | Black
+    | Dark
+    | Light
+    | White
+
+type navbarColorType = { Type: Color; Name: string; PropertyName: IReactProperty; }
+
 let overview =
     Html.div [ 
         Bulma.title "Feliz.Bulma - Documentation"
@@ -654,6 +668,7 @@ let form =
      ]
 
 open Docs.State
+open Microsoft.FSharp.Reflection
 
 [<ReactComponent>]
 let modalComponent () = 
@@ -714,3 +729,340 @@ Bulma.modal [
     ]
 let modal = 
     modalComponent()
+
+[<ReactComponent>]
+let navbarComponent () =
+    let color, chooseColor = React.useState(Primary)
+    
+    let navbarColor = function
+        | Primary -> { Type = Primary; Name = "Primary"; PropertyName = Bulma.color.isPrimary; }
+        | Danger ->  { Type = Danger; Name = "Danger"; PropertyName = Bulma.color.isDanger; }
+        | Info ->  { Type = Info; Name = "Info"; PropertyName = Bulma.color.isInfo; }
+        | Link ->  { Type = Link; Name = "Link"; PropertyName = Bulma.color.isLink; }
+        | Success ->  { Type = Success; Name = "Success"; PropertyName = Bulma.color.isSuccess; }
+        | Warning ->  { Type = Warning; Name = "Warning"; PropertyName = Bulma.color.isWarning; }
+        | Black ->  { Type = Black; Name = "Black"; PropertyName = Bulma.color.isBlack; }
+        | Dark ->  { Type = Dark; Name = "Dark"; PropertyName = Bulma.color.isDark; }
+        | Light ->  { Type = Light; Name = "Light"; PropertyName = Bulma.color.isLight; }
+        | White ->  { Type = White; Name = "White"; PropertyName = Bulma.color.isWhite; }
+
+    let inline getNavbarColor (color: Color) = 
+        Bulma.button.button [ navbarColor(color).PropertyName; prop.text(navbarColor(color).Name); prop.onClick (fun _ -> chooseColor(color)); ]
+
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Navbar"
+        Html.hr []
+        Bulma.content [
+            Bulma.title "Basic navbar"
+
+            Bulma.navbar [
+                Bulma.navbarBrand.div [
+                    Bulma.navbarItem.a [
+                        Html.img [ prop.src "https://bulma.io/images/bulma-logo.png"; prop.height 28; prop.width 112; ]
+                    ]
+                    Bulma.navbarBurger [
+                        Html.span [ prop.ariaHidden true ]
+                    ]
+                ]
+                Bulma.navbarMenu [
+                    Bulma.navbarStart.div [
+                        Bulma.navbarItem.a [ prop.text "Home" ]
+                        Bulma.navbarItem.a [ prop.text "Documentation" ]
+                        Bulma.navbarItem.div [
+                            Bulma.navbarItem.hasDropdown
+                            Bulma.navbarItem.isHoverable
+                            prop.children [
+                                Bulma.navbarLink.a [ prop.text "More" ]
+                                Bulma.navbarDropdown.div [
+                                    Bulma.navbarItem.a [ prop.text "About" ]
+                                    Bulma.navbarItem.a [ prop.text "Jobs" ]
+                                    Bulma.navbarItem.a [ prop.text "Contact" ]
+                                    Bulma.navbarDivider []
+                                    Bulma.navbarItem.a [ prop.text "Report a issue" ]
+                                ]
+                            ]
+                        ]
+                    ]
+                    Bulma.navbarEnd.div [
+                        Bulma.navbarItem.div [
+                            Bulma.buttons [
+                                Bulma.button.a [
+                                    Bulma.color.isPrimary
+                                    prop.children [
+                                        Html.strong "Sign up"
+                                    ]
+                                ]
+                                Bulma.button.a [ prop.text "Log In" ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            code """Bulma.navbarMenu [
+    Bulma.navbarStart.div [
+        Bulma.navbarItem.a [ prop.text "Home" ]
+        Bulma.navbarItem.a [ prop.text "Documentation" ]
+        Bulma.navbarItem.div [
+            Bulma.navbarItem.hasDropdown
+            Bulma.navbarItem.isHoverable
+            prop.children [
+                Bulma.navbarLink.a [ prop.text "More" ]
+                Bulma.navbarDropdown.div [
+                    Bulma.navbarItem.a [ prop.text "About" ]
+                    Bulma.navbarItem.a [ prop.text "Jobs" ]
+                    Bulma.navbarItem.a [ prop.text "Contact" ]
+                    Bulma.navbarDivider []
+                    Bulma.navbarItem.a [ prop.text "Report a issue" ]
+                ]
+            ]
+        ]
+    ]
+    Bulma.navbarEnd.div [
+        Bulma.navbarItem.div [
+            Bulma.buttons [
+                Bulma.button.a [
+                    Bulma.color.isPrimary
+                    prop.children [
+                        Html.strong "Sign up"
+                    ]
+                ]
+                Bulma.button.a [ prop.text "Log In" ]
+            ]
+        ]
+    ]
+]"""
+            
+            Bulma.title "Colors"
+            Bulma.box [
+                Bulma.subtitle [ prop.text "Choose a color:" ]
+                Bulma.buttons [
+                    getNavbarColor(Primary)
+                    getNavbarColor(Danger)
+                    getNavbarColor(Info)
+                    getNavbarColor(Link)
+                    getNavbarColor(Success)
+                    getNavbarColor(Warning)
+                    getNavbarColor(Black)
+                    getNavbarColor(Dark)
+                    getNavbarColor(Light)
+                    getNavbarColor(White)
+                ]
+                Bulma.subtitle [
+                    Bulma.text.hasTextWeightLight
+                    prop.text "Navbar with links"
+                ]
+                Bulma.navbar [
+                    navbarColor(color).PropertyName
+                    prop.children [
+                        Bulma.navbarBrand.div [
+                            Bulma.navbarItem.a [
+                                Html.img [ prop.src "https://bulma.io/images/bulma-logo-white.png"; prop.height 28; prop.width 112; ]
+                            ]
+                        ]
+                        Bulma.navbarMenu [
+                            Bulma.navbarStart.div [
+                                Bulma.navbarItem.a [ prop.text "Home" ]
+                                Bulma.navbarItem.a [ prop.text "Documentation" ]
+                                Bulma.navbarItem.a [ prop.text "Jobs" ]
+                                Bulma.navbarItem.a [ prop.text "Contact" ]
+                                Bulma.navbarItem.a [ prop.text "About" ]
+                            ]
+                        ]
+                    ]
+                ]
+                code $"""Bulma.navbar [
+    Bulma.color.is{navbarColor(color).Name}
+    prop.children [
+        Bulma.navbarBrand.div [
+            Bulma.navbarItem.a [
+                Html.img [ prop.src "https://bulma.io/images/bulma-logo-white.png"; prop.height 28; prop.width 112; ]
+            ]
+        ]
+        Bulma.navbarMenu [
+            Bulma.navbarStart.div [
+                Bulma.navbarItem.a [ prop.text "Home" ]
+                Bulma.navbarItem.a [ prop.text "Documentation" ]
+                Bulma.navbarItem.a [ prop.text "Jobs" ]
+                Bulma.navbarItem.a [ prop.text "Contact" ]
+                Bulma.navbarItem.a [ prop.text "About" ]
+            ]
+        ]
+    ]
+]"""
+                Bulma.subtitle [
+                    Bulma.text.hasTextWeightLight
+                    prop.text "Navbar with item Start + End"
+                ]
+                Bulma.navbar [
+                    navbarColor(color).PropertyName
+                    prop.children [
+                        Bulma.navbarBrand.div [
+                            Bulma.navbarItem.a [
+                                Html.img [ prop.src "https://bulma.io/images/bulma-logo-white.png"; prop.height 28; prop.width 112; ]
+                            ]
+                        ]
+                        Bulma.navbarMenu [
+                            Bulma.navbarStart.div [
+                                Bulma.navbarItem.a [ prop.text "Home" ]
+                                Bulma.navbarItem.a [ prop.text "Documentation" ]
+                                Bulma.navbarItem.a [ prop.text "Jobs" ]
+                            ]
+                            Bulma.navbarEnd.div [
+                                Bulma.navbarItem.div [
+                                    Bulma.buttons [
+                                        Bulma.button.a [ Html.strong "Sign up" ]
+                                        Bulma.button.a [ prop.text "Log In" ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                code $"""Bulma.navbar [
+    Bulma.color.is{navbarColor(color).Name}
+    prop.children [
+        Bulma.navbarBrand.div [
+            Bulma.navbarItem.a [
+                Html.img [ prop.src "https://bulma.io/images/bulma-logo-white.png"; prop.height 28; prop.width 112; ]
+            ]
+        ]
+        Bulma.navbarMenu [
+            Bulma.navbarStart.div [
+                Bulma.navbarItem.a [ prop.text "Home" ]
+                Bulma.navbarItem.a [ prop.text "Documentation" ]
+                Bulma.navbarItem.a [ prop.text "Jobs" ]
+            ]
+            Bulma.navbarEnd.div [
+                Bulma.navbarItem.div [
+                    Bulma.buttons [
+                        Bulma.button.a [ Html.strong "Sign up" ]
+                        Bulma.button.a [ prop.text "Log In" ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]"""
+                Bulma.subtitle [
+                    Bulma.text.hasTextWeightLight
+                    prop.text "Navbar with search and end item (user)"
+                ]
+                Bulma.navbar [
+                    navbarColor(color).PropertyName
+                    prop.children [
+                        Bulma.navbarBrand.div [
+                            Bulma.navbarItem.a [
+                                Html.img [ prop.src "https://bulma.io/images/bulma-logo-white.png"; prop.height 28; prop.width 112; ]
+                            ]
+                        ]
+                        Bulma.navbarMenu [
+                            Bulma.navbarStart.div [
+                                Bulma.navbarItem.a [ prop.text "Home" ]
+                                Bulma.navbarItem.a [ prop.text "Documentation" ]
+                                Bulma.navbarItem.div [
+                                    Bulma.control.p [
+                                        Bulma.control.hasIconsRight
+                                        prop.children [
+                                            Bulma.input.text [
+                                                prop.required true
+                                                prop.placeholder "Search in navbar"
+                                            ]
+                                            Bulma.icon [
+                                                Bulma.icon.isSmall
+                                                Bulma.icon.isRight
+                                                prop.children [
+                                                    Html.i [ prop.className "fas fa-search" ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                            Bulma.navbarEnd.div [
+                                Bulma.navbarItem.div [
+                                    Bulma.media [
+                                        Bulma.mediaContent [
+                                            Bulma.text.hasTextRight
+                                            prop.children [
+                                                Bulma.title.p [
+                                                    Bulma.text.hasTextWeightBold
+                                                    Bulma.title.is6
+                                                    prop.text "Feliz Bulma"
+                                                ]
+                                                Bulma.subtitle.p [
+                                                    Bulma.title.is6
+                                                    Bulma.text.hasTextWeightLight
+                                                    Bulma.color.hasTextGreyLighter
+                                                    prop.text "@feliz.bulma"
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                code $"""Bulma.navbar [
+    Bulma.color.is{navbarColor(color).Name}
+    prop.children [
+        Bulma.navbarBrand.div [
+            Bulma.navbarItem.a [
+                Html.img [ prop.src "https://bulma.io/images/bulma-logo-white.png"; prop.height 28; prop.width 112; ]
+            ]
+        ]
+        Bulma.navbarMenu [
+            Bulma.navbarStart.div [
+                Bulma.navbarItem.a [ prop.text "Home" ]
+                Bulma.navbarItem.a [ prop.text "Documentation" ]
+                Bulma.navbarItem.div [
+                    Bulma.control.p [
+                        Bulma.control.hasIconsRight
+                        prop.children [
+                            Bulma.input.text [
+                                prop.required true
+                                prop.placeholder "Search in navbar"
+                            ]
+                            Bulma.icon [
+                                Bulma.icon.isSmall
+                                Bulma.icon.isRight
+                                prop.children [
+                                    Html.i [ prop.className "fas fa-search" ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            Bulma.navbarEnd.div [
+                Bulma.navbarItem.div [
+                    Bulma.media [
+                        Bulma.mediaContent [
+                            Bulma.text.hasTextRight
+                            prop.children [
+                                Bulma.title.p [
+                                    Bulma.text.hasTextWeightBold
+                                    Bulma.title.is6
+                                    prop.text "Feliz Bulma"
+                                ]
+                                Bulma.subtitle.p [
+                                    Bulma.title.is6
+                                    Bulma.text.hasTextWeightLight
+                                    Bulma.color.hasTextGreyLighter
+                                    prop.text "@feliz.bulma"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]"""
+            ]
+        ]
+    ]
+
+let navbar =
+    navbarComponent()
