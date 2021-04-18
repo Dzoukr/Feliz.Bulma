@@ -12,6 +12,7 @@ type Page =
     | DocumentationForm
     | DocumentationModal
     | DocumentationNavbar
+    | DocumentationProgressbar
     | QuickView
     | DateTimePicker
     | Tooltip
@@ -37,6 +38,7 @@ let parseUrl = function
     | [ "documentation"; "form" ] -> DocumentationForm
     | [ "documentation"; "modal" ] -> DocumentationModal
     | [ "documentation"; "navbar" ] -> DocumentationNavbar
+    | [ "documentation"; "progressbar" ] -> DocumentationProgressbar
     | [ "quickview" ] -> QuickView
     | [ "datetimepicker" ] -> DateTimePicker
     | [ "tooltip" ] -> Tooltip
@@ -61,6 +63,7 @@ let getHref = function
     | DocumentationForm -> Router.format ([ "documentation"; "form" ])
     | DocumentationModal -> Router.format ([ "documentation"; "modal" ])
     | DocumentationNavbar -> Router.format ([ "documentation"; "navbar" ])
+    | DocumentationProgressbar -> Router.format ([ "documentation"; "progressbar" ])
     | QuickView -> Router.format ("quickview")
     | DateTimePicker -> Router.format ("datetimepicker")
     | Tooltip -> Router.format ("tooltip")

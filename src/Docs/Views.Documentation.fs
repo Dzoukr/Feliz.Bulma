@@ -16,7 +16,23 @@ type Color =
     | Light
     | White
 
-type navbarColorType = { Type: Color; Name: string; PropertyName: IReactProperty; }
+type ColorType = { Type: Color; Name: string; PropertyName: IReactProperty; }
+
+let getColorInfo = function
+        | Primary -> { Type = Primary; Name = "Primary"; PropertyName = Bulma.color.isPrimary; }
+        | Danger ->  { Type = Danger; Name = "Danger"; PropertyName = Bulma.color.isDanger; }
+        | Info ->  { Type = Info; Name = "Info"; PropertyName = Bulma.color.isInfo; }
+        | Link ->  { Type = Link; Name = "Link"; PropertyName = Bulma.color.isLink; }
+        | Success ->  { Type = Success; Name = "Success"; PropertyName = Bulma.color.isSuccess; }
+        | Warning ->  { Type = Warning; Name = "Warning"; PropertyName = Bulma.color.isWarning; }
+        | Black ->  { Type = Black; Name = "Black"; PropertyName = Bulma.color.isBlack; }
+        | Dark ->  { Type = Dark; Name = "Dark"; PropertyName = Bulma.color.isDark; }
+        | Light ->  { Type = Light; Name = "Light"; PropertyName = Bulma.color.isLight; }
+        | White ->  { Type = White; Name = "White"; PropertyName = Bulma.color.isWhite; }
+
+let getColorChooseButton (color: Color) (onClickCallback : Color -> unit) = 
+        Bulma.button.button [ getColorInfo(color).PropertyName; prop.text(getColorInfo(color).Name); prop.onClick (fun _ -> onClickCallback(color)); ]
+
 
 let overview =
     Html.div [ 
@@ -734,20 +750,7 @@ let modal =
 let navbarComponent () =
     let color, chooseColor = React.useState(Primary)
     
-    let navbarColor = function
-        | Primary -> { Type = Primary; Name = "Primary"; PropertyName = Bulma.color.isPrimary; }
-        | Danger ->  { Type = Danger; Name = "Danger"; PropertyName = Bulma.color.isDanger; }
-        | Info ->  { Type = Info; Name = "Info"; PropertyName = Bulma.color.isInfo; }
-        | Link ->  { Type = Link; Name = "Link"; PropertyName = Bulma.color.isLink; }
-        | Success ->  { Type = Success; Name = "Success"; PropertyName = Bulma.color.isSuccess; }
-        | Warning ->  { Type = Warning; Name = "Warning"; PropertyName = Bulma.color.isWarning; }
-        | Black ->  { Type = Black; Name = "Black"; PropertyName = Bulma.color.isBlack; }
-        | Dark ->  { Type = Dark; Name = "Dark"; PropertyName = Bulma.color.isDark; }
-        | Light ->  { Type = Light; Name = "Light"; PropertyName = Bulma.color.isLight; }
-        | White ->  { Type = White; Name = "White"; PropertyName = Bulma.color.isWhite; }
-
-    let inline getNavbarColor (color: Color) = 
-        Bulma.button.button [ navbarColor(color).PropertyName; prop.text(navbarColor(color).Name); prop.onClick (fun _ -> chooseColor(color)); ]
+    let getColorChooseButtonToNavbar (color: Color) = getColorChooseButton color chooseColor
 
     Html.div [
         Bulma.title "Feliz.Bulma - Documentation"
@@ -837,23 +840,23 @@ let navbarComponent () =
             Bulma.box [
                 Bulma.subtitle [ prop.text "Choose a color:" ]
                 Bulma.buttons [
-                    getNavbarColor(Primary)
-                    getNavbarColor(Danger)
-                    getNavbarColor(Info)
-                    getNavbarColor(Link)
-                    getNavbarColor(Success)
-                    getNavbarColor(Warning)
-                    getNavbarColor(Black)
-                    getNavbarColor(Dark)
-                    getNavbarColor(Light)
-                    getNavbarColor(White)
+                    getColorChooseButtonToNavbar Primary
+                    getColorChooseButtonToNavbar Danger
+                    getColorChooseButtonToNavbar Info
+                    getColorChooseButtonToNavbar Link
+                    getColorChooseButtonToNavbar Success
+                    getColorChooseButtonToNavbar Warning
+                    getColorChooseButtonToNavbar Black
+                    getColorChooseButtonToNavbar Dark
+                    getColorChooseButtonToNavbar Light
+                    getColorChooseButtonToNavbar White
                 ]
                 Bulma.subtitle [
                     Bulma.text.hasTextWeightLight
                     prop.text "Navbar with links"
                 ]
                 Bulma.navbar [
-                    navbarColor(color).PropertyName
+                    getColorInfo(color).PropertyName
                     prop.children [
                         Bulma.navbarBrand.div [
                             Bulma.navbarItem.a [
@@ -872,7 +875,7 @@ let navbarComponent () =
                     ]
                 ]
                 code $"""Bulma.navbar [
-    Bulma.color.is{navbarColor(color).Name}
+    Bulma.color.is{getColorInfo(color).Name}
     prop.children [
         Bulma.navbarBrand.div [
             Bulma.navbarItem.a [
@@ -895,7 +898,7 @@ let navbarComponent () =
                     prop.text "Navbar with item Start + End"
                 ]
                 Bulma.navbar [
-                    navbarColor(color).PropertyName
+                    getColorInfo(color).PropertyName
                     prop.children [
                         Bulma.navbarBrand.div [
                             Bulma.navbarItem.a [
@@ -920,7 +923,7 @@ let navbarComponent () =
                     ]
                 ]
                 code $"""Bulma.navbar [
-    Bulma.color.is{navbarColor(color).Name}
+    Bulma.color.is{getColorInfo(color).Name}
     prop.children [
         Bulma.navbarBrand.div [
             Bulma.navbarItem.a [
@@ -949,7 +952,7 @@ let navbarComponent () =
                     prop.text "Navbar with search and end item (user)"
                 ]
                 Bulma.navbar [
-                    navbarColor(color).PropertyName
+                    getColorInfo(color).PropertyName
                     prop.children [
                         Bulma.navbarBrand.div [
                             Bulma.navbarItem.a [
@@ -1005,7 +1008,7 @@ let navbarComponent () =
                     ]
                 ]
                 code $"""Bulma.navbar [
-    Bulma.color.is{navbarColor(color).Name}
+    Bulma.color.is{getColorInfo(color).Name}
     prop.children [
         Bulma.navbarBrand.div [
             Bulma.navbarItem.a [
@@ -1066,3 +1069,133 @@ let navbarComponent () =
 
 let navbar =
     navbarComponent()
+
+[<ReactComponent>]
+let progressbarComponent () =
+    let color, chooseColor = React.useState(Primary)
+    let getColorChooseButtonToProgressBar (color: Color) = getColorChooseButton color chooseColor
+
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Progress Bar"
+        Html.hr []
+        Bulma.content [
+            Bulma.subtitle [ prop.text "Choose a color:" ]
+            Bulma.buttons [
+                getColorChooseButtonToProgressBar Primary
+                getColorChooseButtonToProgressBar Danger
+                getColorChooseButtonToProgressBar Info
+                getColorChooseButtonToProgressBar Link
+                getColorChooseButtonToProgressBar Success
+                getColorChooseButtonToProgressBar Warning
+                getColorChooseButtonToProgressBar Black
+                getColorChooseButtonToProgressBar Dark
+                getColorChooseButtonToProgressBar Light
+                getColorChooseButtonToProgressBar White
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Basic"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.progress [
+                        getColorInfo(color).PropertyName
+                        prop.value 50
+                        prop.max 100
+                    ]
+                ]
+                Bulma.column [ code $"""Bulma.progress [
+    Bulma.color.is{getColorInfo(color).Name}
+    prop.value 50
+    prop.max 100
+]"""
+                ]
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Small"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.progress [
+                        getColorInfo(color).PropertyName
+                        Bulma.progress.isSmall
+                        prop.value 15
+                        prop.max 100
+                    ]
+                ]
+                Bulma.column [ code $"""Bulma.progress [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.progress.isSmall
+    prop.value 15
+    prop.max 100
+]"""
+                ]
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Medium"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.progress [
+                        getColorInfo(color).PropertyName
+                        Bulma.progress.isMedium
+                        prop.value 45
+                        prop.max 100
+                    ]
+                ]
+                Bulma.column [ code $"""Bulma.progress [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.progress.isMedium
+    prop.value 45
+    prop.max 100
+]"""
+                ]
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Large"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.progress [
+                        getColorInfo(color).PropertyName
+                        Bulma.progress.isLarge
+                        prop.value 75
+                        prop.max 100
+                    ]
+                ]
+                Bulma.column [ code $"""Bulma.progress [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.progress.isLarge
+    prop.value 75
+    prop.max 100
+]"""
+                ]
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Indeterminate"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.progress [
+                        getColorInfo(color).PropertyName
+                        prop.max 100
+                    ]
+                ]
+                Bulma.column [ code $"""Bulma.column [
+    Bulma.progress [
+        Bulma.color.is{getColorInfo(color).Name}
+        prop.max 100
+    ]
+]"""
+                ]
+            ]
+        ]
+    ]
+
+let progressbar = 
+    progressbarComponent()

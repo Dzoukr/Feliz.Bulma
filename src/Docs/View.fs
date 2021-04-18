@@ -31,6 +31,7 @@ let menuPart (model:Model) =
             item "Form" DocumentationForm
             item "Modal" DocumentationModal
             item "Navbar" DocumentationNavbar
+            item "ProgressBar" DocumentationProgressbar
         ]
         Bulma.menuLabel "Components"
         Bulma.menuList [
@@ -61,6 +62,7 @@ let contentPart model =
     | DocumentationForm -> Views.Documentation.form
     | DocumentationModal -> Views.Documentation.modal
     | DocumentationNavbar -> Views.Documentation.navbar
+    | DocumentationProgressbar -> Views.Documentation.progressbar
     | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view
     | Tooltip -> Views.Tooltip.view
