@@ -782,7 +782,7 @@ let navbarComponent () =
                                     Bulma.navbarItem.a [ prop.text "Jobs" ]
                                     Bulma.navbarItem.a [ prop.text "Contact" ]
                                     Bulma.navbarDivider []
-                                    Bulma.navbarItem.a [ prop.text "Report a issue" ]
+                                    Bulma.navbarItem.a [ prop.text "Report an issue" ]
                                 ]
                             ]
                         ]
@@ -1199,3 +1199,178 @@ let progressbarComponent () =
 
 let progressbar = 
     progressbarComponent()
+
+[<ReactComponent>]
+let tagComponent () = 
+    let color, chooseColor = React.useState(Primary)
+    let getColorChooseButtonToTag (color: Color) = getColorChooseButton color chooseColor
+
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Tag"
+        Html.hr []
+        Bulma.content [
+            Bulma.subtitle [ prop.text "Choose a color:" ]
+            Bulma.buttons [
+                getColorChooseButtonToTag Primary
+                getColorChooseButtonToTag Danger
+                getColorChooseButtonToTag Info
+                getColorChooseButtonToTag Link
+                getColorChooseButtonToTag Success
+                getColorChooseButtonToTag Warning
+                getColorChooseButtonToTag Black
+                getColorChooseButtonToTag Dark
+                getColorChooseButtonToTag Light
+                getColorChooseButtonToTag White
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Basic"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tag [ getColorInfo(color).PropertyName; prop.text $"Tag basic"; ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tag [
+    Bulma.color.is{getColorInfo(color).Name}
+    prop.text "Tag basic" 
+]"""
+                ]
+            ]
+            Bulma.subtitle [
+                Bulma.text.hasTextWeightLight
+                prop.text "Light"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tag [ getColorInfo(color).PropertyName; Bulma.color.isLight; prop.text "Tag light"; ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tag [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.color.isLight
+    prop.text "Tag light" 
+]"""
+                ]
+            ]
+            Bulma.subtitle [ Bulma.text.hasTextWeightLight; prop.text "Size medium"; ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tag [ getColorInfo(color).PropertyName; Bulma.tag.isMedium; prop.text "Tag medium"; ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tag [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.tag.isMedium
+    prop.text "Tag medium" 
+]"""
+                ]
+            ]
+            Bulma.subtitle [ Bulma.text.hasTextWeightLight; prop.text "Size large"; ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tag [ getColorInfo(color).PropertyName; Bulma.tag.isLarge; prop.text "Tag large"; ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tag [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.tag.isLarge
+    prop.text "Tag large" 
+]"""
+                ]
+            ]
+            Bulma.subtitle [ Bulma.text.hasTextWeightLight; prop.text "Rounded"; ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tag [ getColorInfo(color).PropertyName; Bulma.tag.isRounded; prop.text "Tag rounded"; ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tag [
+    Bulma.color.is{getColorInfo(color).Name}
+    Bulma.tag.isRounded
+    prop.text "Tag rounded" 
+]"""
+                ]
+            ]
+            Bulma.subtitle [ Bulma.text.hasTextWeightLight; prop.text "List of tags"; ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tags [
+                        Bulma.tag [ getColorInfo(color).PropertyName; prop.text "One"; ]
+                        Bulma.tag [ getColorInfo(color).PropertyName; prop.text "Two"; ]
+                        Bulma.tag [ getColorInfo(color).PropertyName; prop.text "Three"; ]
+                    ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.column [
+    Bulma.tags [
+        Bulma.tag [
+            Bulma.color.is{getColorInfo(color).Name}
+            prop.text "One"
+        ]
+        Bulma.tag [
+            Bulma.color.is{getColorInfo(color).Name}
+            prop.text "Two"
+        ]
+        Bulma.tag [
+            Bulma.color.is{getColorInfo(color).Name}
+            prop.text "Three"
+        ]
+    ]
+]"""
+                ]
+            ]
+            Bulma.subtitle [ Bulma.text.hasTextWeightLight; prop.text "Tag addons"; ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tags [
+                        Bulma.tags.hasAddons
+                        prop.children [
+                            Bulma.tag "Package"
+                            Bulma.tag [ getColorInfo(color).PropertyName; prop.text "Feliz.Bulma"; ]
+                        ]
+                    ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tags [
+    Bulma.tags.hasAddons
+    prop.children [
+        Bulma.tag "Package"
+        Bulma.tag [
+            Bulma.color.is{getColorInfo(color).Name}
+            prop.text "Feliz.Bulma"
+        ]
+    ]
+]"""
+                ]
+            ]
+            Bulma.subtitle [ Bulma.text.hasTextWeightLight; prop.text "Tag with delete"; ]
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.tags [
+                        Bulma.tags.hasAddons
+                        prop.children [
+                            Bulma.tag [ getColorInfo(color).PropertyName; prop.text "Feliz.Bulma"]
+                            Bulma.tag [ Bulma.tag.isDelete ]
+                        ]
+                    ]
+                ]
+                Bulma.column [
+                    code $"""Bulma.tags [
+    Bulma.tags.hasAddons
+    prop.children [
+        Bulma.tag [
+            Bulma.color.is{getColorInfo(color).Name}
+            prop.text "Feliz.Bulma"
+        ]
+        Bulma.tag [ Bulma.tag.isDelete ]
+    ]
+]"""
+                ]
+            ]
+        ]
+    ]
+
+let tag = 
+    tagComponent()
