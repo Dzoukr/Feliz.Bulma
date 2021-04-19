@@ -782,7 +782,7 @@ let navbarComponent () =
                                     Bulma.navbarItem.a [ prop.text "Jobs" ]
                                     Bulma.navbarItem.a [ prop.text "Contact" ]
                                     Bulma.navbarDivider []
-                                    Bulma.navbarItem.a [ prop.text "Report a issue" ]
+                                    Bulma.navbarItem.a [ prop.text "Report an issue" ]
                                 ]
                             ]
                         ]
