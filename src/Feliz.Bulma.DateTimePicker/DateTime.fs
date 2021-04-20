@@ -283,6 +283,7 @@ module DatePicker =
                     // navigation
                     Html.divClassed "datepicker-nav" [
                         Html.button [
+                            prop.type' "button"
                             prop.className "datepicker-nav-previous button is-small is-text"
                             prop.children [
                                 Html.i [ prop.className "fas fa-chevron-left" ]
@@ -303,6 +304,7 @@ module DatePicker =
                             ]
                         ]
                         Html.button [
+                            prop.type' "button"
                             prop.className "datepicker-nav-next button is-small is-text"
                             prop.children [
                                 Html.i [ prop.className "fas fa-chevron-right" ]
