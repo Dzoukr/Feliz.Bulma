@@ -1010,7 +1010,7 @@ Bulma.media [
     ]
 
 [<ReactComponent>]
-let modalComponent () = 
+let ModalComponent () = 
     let modalState, toggleState = React.useState(false)
     Html.div [
         Bulma.title "Feliz.Bulma - Documentation"
@@ -1067,10 +1067,10 @@ Bulma.modal [
         ]
     ]
 let modal = 
-    modalComponent()
+    ModalComponent()
 
 [<ReactComponent>]
-let navbarComponent () =
+let NavbarComponent () =
     let color, chooseColor = React.useState(Primary)
     
     let getColorChooseButtonToNavbar (color: Color) = getColorChooseButton color chooseColor
@@ -1391,10 +1391,10 @@ let navbarComponent () =
     ]
 
 let navbar =
-    navbarComponent()
+    NavbarComponent()
 
 [<ReactComponent>]
-let progressbarComponent () =
+let ProgressbarComponent () =
     let color, chooseColor = React.useState(Primary)
     let getColorChooseButtonToProgressBar (color: Color) = getColorChooseButton color chooseColor
 
@@ -1521,10 +1521,10 @@ let progressbarComponent () =
     ]
 
 let progressbar = 
-    progressbarComponent()
+    ProgressbarComponent()
 
 [<ReactComponent>]
-let tagComponent () = 
+let TagComponent () = 
     let color, chooseColor = React.useState(Primary)
     let getColorChooseButtonToTag (color: Color) = getColorChooseButton color chooseColor
 
@@ -1696,4 +1696,4 @@ let tagComponent () =
     ]
 
 let tag = 
-    tagComponent()
+    TagComponent()
