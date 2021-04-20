@@ -683,11 +683,334 @@ let form =
         ]
      ]
 
-open Docs.State
-open Microsoft.FSharp.Reflection
+let mediaObject = 
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Media Object"
+        Html.hr []
+        Bulma.content [
+            Bulma.title "Basic"
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.column.isHalf
+                    prop.children [
+                        Bulma.media [
+                            Bulma.mediaLeft [
+                                Bulma.image [
+                                    Bulma.image.is64x64
+                                    prop.children[
+                                        Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                                    ]
+                                ]
+                            ]
+                            Bulma.mediaContent [
+                                Bulma.content [
+                                    Html.p [
+                                        Html.strong "John Smith"
+                                        Html.small "@johnsmith"
+                                        Html.br []
+                                        Html.span "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut." 
+                                    ]
+                                ]
+                                Bulma.level [
+                                    Bulma.levelLeft [
+                                        Bulma.levelItem [
+                                            Bulma.icon [
+                                                Bulma.icon.isSmall
+                                                prop.children [ Html.i [ prop.className "fas fa-reply" ] ]
+                                            ]
+                                        ]
+                                        Bulma.levelItem [
+                                            Bulma.icon [
+                                                Bulma.icon.isSmall
+                                                prop.children [ Html.i [ prop.className "fas fa-retweet" ] ]
+                                            ]
+                                        ]
+                                        Bulma.levelItem [
+                                            Bulma.icon [
+                                                Bulma.icon.isSmall
+                                                prop.children [ Html.i [ prop.className "fas fa-heart" ] ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                Bulma.column [
+                    Bulma.column.isHalf
+                    prop.children [
+                        code """Bulma.media [
+    Bulma.mediaLeft [
+        Bulma.image [
+            Bulma.image.is64x64
+            prop.children[
+                Html.img [
+                    prop.src "https://bulma.io/images/placeholders/128x128.png"
+                ]
+            ]
+        ]
+    ]
+    Bulma.mediaContent [
+        Bulma.content [
+            Html.p [
+                Html.strong "John Smith"
+                Html.small "@johnsmith"
+                Html.br []
+                Html.span "Lorem ipsum ... vestibulum ut." 
+            ]
+        ]
+        Bulma.level [
+            Bulma.levelLeft [
+                Bulma.levelItem [
+                    Bulma.icon [
+                        Bulma.icon.isSmall
+                        prop.children [
+                            Html.i [ prop.className "fas fa-reply" ]
+                        ]
+                    ]
+                ]
+                Bulma.levelItem [
+                    Bulma.icon [
+                        Bulma.icon.isSmall
+                        prop.children [
+                            Html.i [ prop.className "fas fa-retweet" ]
+                        ]
+                    ]
+                ]
+                Bulma.levelItem [
+                    Bulma.icon [
+                        Bulma.icon.isSmall
+                        prop.children [
+                            Html.i [ prop.className "fas fa-heart" ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]"""
+                    ]
+                ]
+            ]
+        ]
+        Bulma.content [
+            Bulma.title "Nesting"
+            Bulma.subtitle.h5 [
+                prop.text "You can nest media objects up to 3 levels deep."
+            ]
+            Bulma.media [
+                Bulma.mediaLeft [
+                    Bulma.image [
+                        Bulma.image.is64x64
+                        prop.children[
+                            Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                        ]
+                    ]
+                ]
+                Bulma.mediaContent [
+                    Bulma.content [
+                        Html.p [
+                            Html.strong "Barbara Middleton"
+                            Html.br []
+                            Html.span "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut." 
+                            Html.br []
+                            Html.small [
+                                Html.a [ prop.text "Like"]
+                                Html.span " · "
+                                Html.a [ prop.text "Reply" ]
+                                Html.span " · "
+                                Html.span "3hrs ago"
+                            ]
+                        ]
+                    ]
+                    Bulma.media [
+                        Bulma.mediaLeft [
+                            Bulma.image [
+                                Bulma.image.is64x64
+                                prop.children[
+                                    Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                                ]
+                            ]
+                        ]
+                        Bulma.mediaContent [
+                            Bulma.content [
+                                Html.p [
+                                    Html.strong "Sean Brown"
+                                    Html.br []
+                                    Html.span "Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat." 
+                                    Html.br []
+                                    Html.small [
+                                        Html.a [ prop.text "Like"]
+                                        Html.span " · "
+                                        Html.a [ prop.text "Reply" ]
+                                        Html.span " · "
+                                        Html.span "3hrs ago"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                    Bulma.media [
+                        Bulma.mediaLeft [
+                            Bulma.image [
+                                Bulma.image.is64x64
+                                prop.children[
+                                    Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                                ]
+                            ]
+                        ]
+                        Bulma.mediaContent [
+                            Bulma.content [
+                                Html.p [
+                                    Html.strong "Kayli Eunice"
+                                    Html.br []
+                                    Html.span "Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero." 
+                                    Html.br []
+                                    Html.small [
+                                        Html.a [ prop.text "Like"]
+                                        Html.span " · "
+                                        Html.a [ prop.text "Reply" ]
+                                        Html.span " · "
+                                        Html.span "3hrs ago"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            Bulma.media [
+                Bulma.mediaLeft [
+                    Bulma.image [
+                        Bulma.image.is64x64
+                        prop.children[
+                            Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                        ]
+                    ]
+                ]
+                Bulma.mediaContent [
+                    Bulma.field.div [
+                        Bulma.control.p [
+                            Bulma.textarea [ prop.placeholder "Add a comment..."]
+                        ]
+                    ]
+                    Bulma.field.div [
+                        Bulma.control.p [
+                            Bulma.button.button [ prop.text "Post comment" ]
+                        ]
+                    ]
+                ]
+            ]
+            code """Bulma.media [
+    Bulma.mediaLeft [
+        Bulma.image [
+            Bulma.image.is64x64
+            prop.children[
+                Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+            ]
+        ]
+    ]
+    Bulma.mediaContent [
+        Bulma.content [
+            Html.p [
+                Html.strong "Barbara Middleton"
+                Html.br []
+                Html.span "Lorem ipsum dolor sit ... vestibulum ut." 
+                Html.br []
+                Html.small [
+                    Html.a [ prop.text "Like"]
+                    Html.span " · "
+                    Html.a [ prop.text "Reply" ]
+                    Html.span " · "
+                    Html.span "3hrs ago"
+                ]
+            ]
+        ]
+        Bulma.media [
+            Bulma.mediaLeft [
+                Bulma.image [
+                    Bulma.image.is64x64
+                    prop.children[
+                        Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                    ]
+                ]
+            ]
+            Bulma.mediaContent [
+                Bulma.content [
+                    Html.p [
+                        Html.strong "Sean Brown"
+                        Html.br []
+                        Html.span "Donec sollicitudin urna ... leo feugiat." 
+                        Html.br []
+                        Html.small [
+                            Html.a [ prop.text "Like"]
+                            Html.span " · "
+                            Html.a [ prop.text "Reply" ]
+                            Html.span " · "
+                            Html.span "3hrs ago"
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        Bulma.media [
+            Bulma.mediaLeft [
+                Bulma.image [
+                    Bulma.image.is64x64
+                    prop.children[
+                        Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                    ]
+                ]
+            ]
+            Bulma.mediaContent [
+                Bulma.content [
+                    Html.p [
+                        Html.strong "Kayli Eunice"
+                        Html.br []
+                        Html.span "Sed convallis scelerisque ... cursus libero." 
+                        Html.br []
+                        Html.small [
+                            Html.a [ prop.text "Like"]
+                            Html.span " · "
+                            Html.a [ prop.text "Reply" ]
+                            Html.span " · "
+                            Html.span "3hrs ago"
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+Bulma.media [
+    Bulma.mediaLeft [
+        Bulma.image [
+            Bulma.image.is64x64
+            prop.children[
+                Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+            ]
+        ]
+    ]
+    Bulma.mediaContent [
+        Bulma.field.div [
+            Bulma.control.p [
+                Bulma.textarea [ prop.placeholder "Add a comment..."]
+            ]
+        ]
+        Bulma.field.div [
+            Bulma.control.p [
+                Bulma.button.button [ prop.text "Post comment" ]
+            ]
+        ]
+    ]
+]"""
+        ]
+    ]
 
 [<ReactComponent>]
-let modalComponent () = 
+let ModalComponent () = 
     let modalState, toggleState = React.useState(false)
     Html.div [
         Bulma.title "Feliz.Bulma - Documentation"
@@ -744,10 +1067,10 @@ Bulma.modal [
         ]
     ]
 let modal = 
-    modalComponent()
+    ModalComponent()
 
 [<ReactComponent>]
-let navbarComponent () =
+let NavbarComponent () =
     let color, chooseColor = React.useState(Primary)
     
     let getColorChooseButtonToNavbar (color: Color) = getColorChooseButton color chooseColor
@@ -1068,10 +1391,10 @@ let navbarComponent () =
     ]
 
 let navbar =
-    navbarComponent()
+    NavbarComponent()
 
 [<ReactComponent>]
-let progressbarComponent () =
+let ProgressbarComponent () =
     let color, chooseColor = React.useState(Primary)
     let getColorChooseButtonToProgressBar (color: Color) = getColorChooseButton color chooseColor
 
@@ -1198,10 +1521,10 @@ let progressbarComponent () =
     ]
 
 let progressbar = 
-    progressbarComponent()
+    ProgressbarComponent()
 
 [<ReactComponent>]
-let tagComponent () = 
+let TagComponent () = 
     let color, chooseColor = React.useState(Primary)
     let getColorChooseButtonToTag (color: Color) = getColorChooseButton color chooseColor
 
@@ -1373,4 +1696,4 @@ let tagComponent () =
     ]
 
 let tag = 
-    tagComponent()
+    TagComponent()
