@@ -8,10 +8,10 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html;calendar;datepicker</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.0.1</Version>
+        <Version>2.0.2</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Fix single date styling #66</PackageReleaseNotes>
+        <PackageReleaseNotes>Set button type to "button" to prevent form submit #79</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Extensions.fs" />
