@@ -10,6 +10,7 @@ type Page =
     | DocumentationButton
     | DocumentationCard
     | DocumentationForm
+    | DocumentationMediaObject
     | DocumentationModal
     | DocumentationNavbar
     | DocumentationProgressbar
@@ -37,6 +38,7 @@ let parseUrl = function
     | [ "documentation"; "button" ] -> DocumentationButton
     | [ "documentation"; "card" ] -> DocumentationCard
     | [ "documentation"; "form" ] -> DocumentationForm
+    | [ "documentation"; "media-object" ] -> DocumentationMediaObject
     | [ "documentation"; "modal" ] -> DocumentationModal
     | [ "documentation"; "navbar" ] -> DocumentationNavbar
     | [ "documentation"; "progressbar" ] -> DocumentationProgressbar
@@ -64,6 +66,7 @@ let getHref = function
     | DocumentationCard -> Router.format ([ "documentation"; "card" ])
     | DocumentationForm -> Router.format ([ "documentation"; "form" ])
     | DocumentationModal -> Router.format ([ "documentation"; "modal" ])
+    | DocumentationMediaObject -> Router.format ([ "documentation"; "media-object" ])
     | DocumentationNavbar -> Router.format ([ "documentation"; "navbar" ])
     | DocumentationProgressbar -> Router.format ([ "documentation"; "progressbar" ])
     | DocumentationTag -> Router.format ([ "documentation"; "tag" ])

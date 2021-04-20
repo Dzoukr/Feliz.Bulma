@@ -29,6 +29,7 @@ let menuPart (model:Model) =
             item "Button" DocumentationButton
             item "Card" DocumentationCard
             item "Form" DocumentationForm
+            item "Media Object" DocumentationMediaObject
             item "Modal" DocumentationModal
             item "Navbar" DocumentationNavbar
             item "ProgressBar" DocumentationProgressbar
@@ -61,6 +62,7 @@ let contentPart model =
     | DocumentationButton -> Views.Documentation.button
     | DocumentationCard -> Views.Documentation.card
     | DocumentationForm -> Views.Documentation.form
+    | DocumentationMediaObject -> Views.Documentation.mediaObject
     | DocumentationModal -> Views.Documentation.modal
     | DocumentationNavbar -> Views.Documentation.navbar
     | DocumentationProgressbar -> Views.Documentation.progressbar
