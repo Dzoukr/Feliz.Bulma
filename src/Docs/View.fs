@@ -32,6 +32,7 @@ let menuPart (model:Model) =
             item "Media Object" DocumentationMediaObject
             item "Modal" DocumentationModal
             item "Navbar" DocumentationNavbar
+            item "Panel" DocumentationPanel
             item "ProgressBar" DocumentationProgressbar
             item "Tag" DocumentationTag
         ]
@@ -65,6 +66,7 @@ let contentPart model =
     | DocumentationMediaObject -> Views.Documentation.mediaObject
     | DocumentationModal -> Views.Documentation.modal
     | DocumentationNavbar -> Views.Documentation.navbar
+    | DocumentationPanel -> Views.Documentation.panel
     | DocumentationProgressbar -> Views.Documentation.progressbar
     | DocumentationTag -> Views.Documentation.tag
     | QuickView -> Views.QuickView.view

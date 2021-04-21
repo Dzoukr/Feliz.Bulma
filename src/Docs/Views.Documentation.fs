@@ -1393,6 +1393,135 @@ let NavbarComponent () =
 let navbar =
     NavbarComponent()
 
+let panel =
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Panel"
+        Html.hr []
+        Bulma.content [
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.column.isHalf
+                    prop.children [
+                        Bulma.panel [
+                            Bulma.panelHeading [ prop.text "Repositories" ]
+                            Bulma.panelBlock.div [
+                                Bulma.control.div [
+                                    Bulma.control.hasIconsLeft
+                                    prop.children [
+                                        Bulma.input.text [ prop.placeholder "Search" ]
+                                        Bulma.icon [
+                                            Bulma.icon.isLeft
+                                            prop.children [
+                                                Html.i [ prop.className "fas fa-search" ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                            Bulma.panelTabs [
+                                Html.a [
+                                    prop.className "is-active"
+                                    prop.text "All"
+                                ]
+                                Html.a [ prop.text "Public" ]
+                                Html.a [ prop.text "Private" ]
+                                Html.a [ prop.text "Sources" ]
+                                Html.a [ prop.text "Forks" ]
+                            ]
+                            Bulma.panelBlock.div [
+                                prop.className "is-active"
+                                prop.children [
+                                    Bulma.panelIcon [
+                                        Html.i [ prop.className "fas fa-book" ]
+                                    ]
+                                    Html.span "Feliz.Bulma"
+                                ]
+                            ]
+                            Bulma.panelBlock.div [
+                                Bulma.panelIcon [
+                                    Html.i [ prop.className "fas fa-book" ]
+                                ]
+                                Html.span "Feliz"
+                            ]
+                            Bulma.panelBlock.div [
+                                Bulma.panelIcon [
+                                    Html.i [ prop.className "fas fa-book" ]
+                                ]
+                                Html.span "Fable"
+                            ]
+                            Bulma.panelBlock.div [
+                                Bulma.panelIcon [
+                                    Html.i [ prop.className "fas fa-code-branch" ]
+                                ]
+                                Html.span "dzoukr/feliz.bulma"
+                            ]
+                            Bulma.panelBlock.div [
+                                Bulma.button.button [
+                                    Bulma.color.isLink
+                                    Bulma.button.isOutlined
+                                    Bulma.button.isFullWidth
+                                    prop.text "Reset all filters"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                Bulma.column [
+                    Bulma.column.isHalf
+                    prop.children [
+                        code """Bulma.panel [
+    Bulma.panelHeading [ prop.text "Repositories" ]
+    Bulma.panelBlock.div [
+        Bulma.control.div [
+            Bulma.control.hasIconsLeft
+            prop.children [
+                Bulma.input.text [ prop.placeholder "Search" ]
+                Bulma.icon [
+                    Bulma.icon.isLeft
+                    prop.children [ Html.i [ prop.className "fas fa-search" ] ]
+                ]
+            ]
+        ]
+    ]
+    Bulma.panelTabs [
+        Html.a [
+            prop.className "is-active"
+            prop.text "All"
+        ]
+        Html.a [ prop.text "Public" ]
+        Html.a [ prop.text "Private" ]
+        Html.a [ prop.text "Sources" ]
+        Html.a [ prop.text "Forks" ]
+    ]
+    Bulma.panelBlock.div [
+        prop.className "is-active"
+        prop.children [
+            Bulma.panelIcon [
+                Html.i [ prop.className "fas fa-book" ]
+            ]
+            Html.span "Feliz.Bulma"
+        ]
+    ]
+    Bulma.panelBlock.div [
+        Bulma.panelIcon [
+            Html.i [ prop.className "fas fa-book" ]
+        ]
+        Html.span "Feliz"
+    ]
+    Bulma.panelBlock.div [
+        Bulma.panelIcon [
+            Html.i [ prop.className "fas fa-book" ]
+        ]
+        Html.span "Fable"
+    ]
+]"""
+                    ]
+                ]
+            ]
+        ]
+    ]
+
 [<ReactComponent>]
 let ProgressbarComponent () =
     let color, chooseColor = React.useState(Primary)

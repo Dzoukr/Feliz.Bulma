@@ -13,6 +13,7 @@ type Page =
     | DocumentationMediaObject
     | DocumentationModal
     | DocumentationNavbar
+    | DocumentationPanel
     | DocumentationProgressbar
     | DocumentationTag
     | QuickView
@@ -41,6 +42,7 @@ let parseUrl = function
     | [ "documentation"; "media-object" ] -> DocumentationMediaObject
     | [ "documentation"; "modal" ] -> DocumentationModal
     | [ "documentation"; "navbar" ] -> DocumentationNavbar
+    | [ "documentation"; "panel" ] -> DocumentationPanel
     | [ "documentation"; "progressbar" ] -> DocumentationProgressbar
     | [ "documentation"; "tag" ] -> DocumentationTag
     | [ "quickview" ] -> QuickView
@@ -68,6 +70,7 @@ let getHref = function
     | DocumentationModal -> Router.format ([ "documentation"; "modal" ])
     | DocumentationMediaObject -> Router.format ([ "documentation"; "media-object" ])
     | DocumentationNavbar -> Router.format ([ "documentation"; "navbar" ])
+    | DocumentationPanel -> Router.format ([ "documentation"; "panel" ])
     | DocumentationProgressbar -> Router.format ([ "documentation"; "progressbar" ])
     | DocumentationTag -> Router.format ([ "documentation"; "tag" ])
     | QuickView -> Router.format ("quickview")
