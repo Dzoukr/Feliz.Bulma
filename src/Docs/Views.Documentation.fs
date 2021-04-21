@@ -132,6 +132,28 @@ let button =
                     sample [ button.isLoading ] """Bulma.button.button [ Bulma.button.isLoading ]"""
                 ]
                 Bulma.content [
+                    Bulma.title "Styles"
+                    sample [ Bulma.button.isInverted; Bulma.color.isInfo; prop.text "Inverted" ] """Bulma.button.button [
+    Bulma.button.isInverted
+    Bulma.color.isInfo
+    prop.text "Inverted"
+]"""
+                    sample [ Bulma.button.isOutlined; Bulma.color.isPrimary; prop.text "Outlined" ] """Bulma.button.button [
+    Bulma.button.isOutlined
+    Bulma.color.isPrimary
+    prop.text "Outlined"
+]"""
+                    sample [ Bulma.button.isRounded; Bulma.color.isDanger; prop.text "Rounded" ] """Bulma.button.button [
+    Bulma.button.isRounded
+    Bulma.color.isDanger
+    prop.text "Rounded"
+]"""
+                    sample [ Bulma.button.isStatic; prop.text "Static" ] """Bulma.button.button [
+    Bulma.button.isStatic
+    prop.text "Static"
+]"""
+                ]
+                Bulma.content [
                     Bulma.title "Button group with addons"
                     Bulma.columns [
                         Bulma.column [
