@@ -241,6 +241,18 @@ module private ClassLiterals =
     let [<Literal>] ``has-background-grey-lighter`` = "has-background-grey-lighter"
     let [<Literal>] ``has-background-white-ter`` = "has-background-white-ter"
     let [<Literal>] ``has-background-white-bis`` = "has-background-white-bis"
+    let [<Literal>] ``has-background-primary-light`` = "has-background-primary-light"
+    let [<Literal>] ``has-background-link-light`` = "has-background-link-light"
+    let [<Literal>] ``has-background-info-light`` = "has-background-info-light"
+    let [<Literal>] ``has-background-success-light`` = "has-background-success-light"
+    let [<Literal>] ``has-background-warning-light`` = "has-background-warning-light"
+    let [<Literal>] ``has-background-danger-light`` = "has-background-danger-light"
+    let [<Literal>] ``has-background-primary-dark`` = "has-background-primary-dark"
+    let [<Literal>] ``has-background-link-dark`` = "has-background-link-dark"
+    let [<Literal>] ``has-background-info-dark`` = "has-background-info-dark"
+    let [<Literal>] ``has-background-success-dark`` = "has-background-success-dark"
+    let [<Literal>] ``has-background-warning-dark`` = "has-background-warning-dark"
+    let [<Literal>] ``has-background-danger-dark`` = "has-background-danger-dark"
     let [<Literal>] ``is-16x16`` = "is-16x16"
     let [<Literal>] ``is-24x24`` = "is-24x24"
     let [<Literal>] ``is-32x32`` = "is-32x32"
@@ -1134,6 +1146,20 @@ type color =
     static member inline hasBackgroundGreyLighter = PropertyBuilders.mkClass ClassLiterals.``has-background-grey-lighter``
     static member inline hasBackgroundWhiteTer = PropertyBuilders.mkClass ClassLiterals.``has-background-white-ter``
     static member inline hasBackgroundWhiteBis = PropertyBuilders.mkClass ClassLiterals.``has-background-white-bis``
+
+    static member inline hasBackgroundPrimaryLight = PropertyBuilders.mkClass ClassLiterals.``has-background-primary-light``
+    static member inline hasBackgroundLinkLight = PropertyBuilders.mkClass ClassLiterals.``has-background-link-light``
+    static member inline hasBackgroundInfoLight = PropertyBuilders.mkClass ClassLiterals.``has-background-info-light``
+    static member inline hasBackgroundSuccessLight = PropertyBuilders.mkClass ClassLiterals.``has-background-success-light``
+    static member inline hasBackgroundWarningLight = PropertyBuilders.mkClass ClassLiterals.``has-background-warning-light``
+    static member inline hasBackgroundDangerLight = PropertyBuilders.mkClass ClassLiterals.``has-background-danger-light``
+    static member inline hasBackgroundPrimaryDark = PropertyBuilders.mkClass ClassLiterals.``has-background-primary-dark``
+    static member inline hasBackgroundLinkDark = PropertyBuilders.mkClass ClassLiterals.``has-background-link-dark``
+    static member inline hasBackgroundInfoDark = PropertyBuilders.mkClass ClassLiterals.``has-background-info-dark``
+    static member inline hasBackgroundSuccessDark = PropertyBuilders.mkClass ClassLiterals.``has-background-success-dark``
+    static member inline hasBackgroundWarningDark = PropertyBuilders.mkClass ClassLiterals.``has-background-warning-dark``
+    static member inline hasBackgroundDangerDark = PropertyBuilders.mkClass ClassLiterals.``has-background-danger-dark``
+
 
 [<Fable.Core.Erase>]
 type image =

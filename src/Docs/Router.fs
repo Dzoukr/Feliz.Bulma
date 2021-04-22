@@ -1,4 +1,4 @@
-﻿module Docs.Router
+module Docs.Router
 
 open Feliz.Router
 
@@ -16,6 +16,7 @@ type Page =
     | DocumentationPanel
     | DocumentationProgressbar
     | DocumentationTag
+    | DocumentationHelpersColor
     | QuickView
     | DateTimePicker
     | Tooltip
@@ -45,6 +46,7 @@ let parseUrl = function
     | [ "documentation"; "panel" ] -> DocumentationPanel
     | [ "documentation"; "progressbar" ] -> DocumentationProgressbar
     | [ "documentation"; "tag" ] -> DocumentationTag
+    | [ "documentation"; "helpers" ] -> DocumentationHelpersColor
     | [ "quickview" ] -> QuickView
     | [ "datetimepicker" ] -> DateTimePicker
     | [ "tooltip" ] -> Tooltip
@@ -73,6 +75,7 @@ let getHref = function
     | DocumentationPanel -> Router.format ([ "documentation"; "panel" ])
     | DocumentationProgressbar -> Router.format ([ "documentation"; "progressbar" ])
     | DocumentationTag -> Router.format ([ "documentation"; "tag" ])
+    | DocumentationHelpersColor -> Router.format ([ "documentation"; "helpers" ])
     | QuickView -> Router.format ("quickview")
     | DateTimePicker -> Router.format ("datetimepicker")
     | Tooltip -> Router.format ("tooltip")
