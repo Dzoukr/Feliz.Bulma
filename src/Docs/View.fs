@@ -1,4 +1,4 @@
-﻿module Docs.View
+module Docs.View
 
 open Feliz
 open Feliz.Bulma
@@ -35,6 +35,7 @@ let menuPart (model:Model) =
             item "Panel" DocumentationPanel
             item "ProgressBar" DocumentationProgressbar
             item "Tag" DocumentationTag
+            item "Helpers - Color" DocumentationHelpersColor
         ]
         Bulma.menuLabel "Components"
         Bulma.menuList [
@@ -69,6 +70,7 @@ let contentPart model =
     | DocumentationPanel -> Views.Documentation.panel
     | DocumentationProgressbar -> Views.Documentation.progressbar
     | DocumentationTag -> Views.Documentation.tag
+    | DocumentationHelpersColor -> Views.Documentation.helpersColor
     | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view
     | Tooltip -> Views.Tooltip.view

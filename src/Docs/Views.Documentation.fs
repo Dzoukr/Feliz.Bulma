@@ -1848,3 +1848,127 @@ let TagComponent () =
 
 let tag = 
     TagComponent()
+
+[<ReactComponent>]
+let HelpersColorComponent () =
+
+    let row backgroundColor foregroundColor (bulmaClass:string) = 
+        Html.tableRow [
+            Html.td [
+                Html.code bulmaClass ]
+            Html.td [
+                backgroundColor
+                prop.children [
+                    Bulma.text.span [ foregroundColor; prop.text "Hello Bulma" ] ] ] ]
+
+    let table (rows : seq<Fable.React.ReactElement>) =
+        Bulma.table [
+            Bulma.table.isBordered
+            prop.children [
+                Html.thead [
+                    Html.tableRow [
+                        Html.th "Property"
+                        Html.th "Example" ] ]
+                Html.tbody [
+                    prop.children rows ] ] ]
+    
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Helpers"
+        Html.hr []
+
+        Bulma.content [
+            Bulma.title "Example"
+            Bulma.columns [
+                Bulma.column [
+                    Bulma.section [
+                        Bulma.color.hasBackgroundPrimary
+                        Bulma.color.hasTextDanger
+                        prop.text "Very nice colors :)" ] ]
+                Bulma.column [
+                    code """Bulma.section [
+    Bulma.color.hasBackgroundPrimary
+    Bulma.color.hasTextDanger
+    prop.text "Very nice colors :)" ]
+""" ] ] ]
+
+        Bulma.content [
+            Bulma.title "Text color"
+            Html.p [
+                Html.text "You can set any element to one of the "
+                Html.strong "10 colors "
+                Html.text " or"
+                Html.strong " 9 shades of grey"
+                Html.text ":" ]
+            Bulma.content [
+                table [ row Bulma.color.hasBackgroundBlack Bulma.color.hasTextWhite "Bulma.color.hasTextWhite"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextBlack "Bulma.color.hasTextBlack"
+                        row Bulma.color.hasBackgroundGrey Bulma.color.hasTextLight "Bulma.color.hasTextLight"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextDark "Bulma.color.hasTextDark"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextPrimary "Bulma.color.hasTextPrimary"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextLink "Bulma.color.hasTextLink"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextInfo "Bulma.color.hasTextInfo"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextSuccess "Bulma.color.hasTextSuccess"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextWarning "Bulma.color.hasTextWarning"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextDanger "Bulma.color.hasTextDanger" ]
+
+                table [ row Bulma.color.hasBackgroundWhite Bulma.color.hasTextBlackBis "Bulma.color.hasTextBlackBis"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextBlackTer "Bulma.color.hasTextBlackTer"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextGreyDarker "Bulma.color.hasTextGreyDarker"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextGreyDark "Bulma.color.hasTextGreyDark"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextGrey "Bulma.color.hasTextGrey"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextGreyLight "Bulma.color.hasTextGreyLight"
+                        row Bulma.color.hasBackgroundWhite Bulma.color.hasTextGreyLighter "Bulma.color.hasTextGreyLighter"
+                        row Bulma.color.hasBackgroundBlack Bulma.color.hasTextWhiteTer "Bulma.color.hasTextWhiteTer"
+                        row Bulma.color.hasBackgroundBlack Bulma.color.hasTextWhiteBis "Bulma.color.hasTextWhiteBis" ] ] ]
+        Bulma.content [
+            Bulma.title "Background color"
+            Html.p [
+                Html.text "You can set any element to one of the "
+                Html.strong "10 colors "
+                Html.text " or"
+                Html.strong " 9 shades of grey"
+                Html.text ":" ]
+            Bulma.content [
+                table [ row Bulma.color.hasBackgroundWhite Bulma.color.hasTextBlack "Bulma.color.hasBackgroundWhite"
+                        row Bulma.color.hasBackgroundBlack Bulma.color.hasTextWhite "Bulma.color.hasBackgroundBlack"
+                        row Bulma.color.hasBackgroundLight Bulma.color.hasTextBlack "Bulma.color.hasBackgroundLight"
+                        row Bulma.color.hasBackgroundDark  Bulma.color.hasTextWhite "Bulma.color.hasBackgroundDark"
+                        row Bulma.color.hasBackgroundPrimary Bulma.color.hasTextBlack "Bulma.color.hasBackgroundPrimary"
+                        row Bulma.color.hasBackgroundLink Bulma.color.hasTextBlack "Bulma.color.hasBackgroundLink"
+                        row Bulma.color.hasBackgroundInfo Bulma.color.hasTextBlack "Bulma.color.hasBackgroundInfo"
+                        row Bulma.color.hasBackgroundSuccess Bulma.color.hasTextBlack "Bulma.color.hasBackgroundSuccess"
+                        row Bulma.color.hasBackgroundWarning Bulma.color.hasTextBlack "Bulma.color.hasBackgroundWarning"
+                        row Bulma.color.hasBackgroundDanger Bulma.color.hasTextBlack "Bulma.color.hasBackgroundDanger" ]
+
+                table [ row Bulma.color.hasBackgroundBlackBis Bulma.color.hasTextWhite "Bulma.color.hasBackgroundBlackBis"
+                        row Bulma.color.hasBackgroundBlackTer Bulma.color.hasTextWhite "Bulma.color.hasBackgroundBlackTer"
+                        row Bulma.color.hasBackgroundGreyDarker Bulma.color.hasTextWhite "Bulma.color.hasBackgroundGreyDarker"
+                        row Bulma.color.hasBackgroundGreyDark  Bulma.color.hasTextWhite "Bulma.color.hasBackgroundGreyDark"
+                        row Bulma.color.hasBackgroundGrey Bulma.color.hasTextWhite "Bulma.color.hasBackgroundGreyDark"
+                        row Bulma.color.hasBackgroundGreyLight Bulma.color.hasTextWhite "Bulma.color.hasBackgroundGreyLight"
+                        row Bulma.color.hasBackgroundGreyLighter Bulma.color.hasTextWhite "Bulma.color.hasBackgroundGreyLighter"
+                        row Bulma.color.hasBackgroundWhiteTer Bulma.color.hasTextBlack "Bulma.color.hasBackgroundWhiteTer"
+                        row Bulma.color.hasBackgroundWhiteBis Bulma.color.hasTextBlack "Bulma.color.hasBackgroundWhiteBis" ] ] ]
+        Bulma.content [
+            Html.p [
+                Html.text "You can use each color in their "
+                Html.strong "light "
+                Html.text "and "
+                Html.strong "dark versions. " ]
+            Bulma.content [
+                table [ row Bulma.color.hasBackgroundPrimaryLight Bulma.color.hasTextBlack "Bulma.color.hasBackgroundPrimaryLight"
+                        row Bulma.color.hasBackgroundLinkLight Bulma.color.hasTextBlack "Bulma.color.hasBackgroundLinkLight"
+                        row Bulma.color.hasBackgroundInfoLight Bulma.color.hasTextBlack "Bulma.color.hasBackgroundInfoLight"
+                        row Bulma.color.hasBackgroundSuccessLight  Bulma.color.hasTextBlack "Bulma.color.hasBackgroundSuccessLight"
+                        row Bulma.color.hasBackgroundWarningLight Bulma.color.hasTextBlack "Bulma.color.hasBackgroundWarningLight"
+                        row Bulma.color.hasBackgroundDangerLight Bulma.color.hasTextBlack "Bulma.color.hasBackgroundDangerLight"
+                        row Bulma.color.hasBackgroundPrimaryDark Bulma.color.hasTextBlack "Bulma.color.hasBackgroundPrimaryDark"
+                        row Bulma.color.hasBackgroundLinkDark Bulma.color.hasTextBlack "Bulma.color.hasBackgroundLinkDark"
+                        row Bulma.color.hasBackgroundInfoDark Bulma.color.hasTextBlack "Bulma.color.hasBackgroundInfoDark"
+                        row Bulma.color.hasBackgroundSuccessDark Bulma.color.hasTextBlack "Bulma.color.hasBackgroundSuccessDark"
+                        row Bulma.color.hasBackgroundWarningDark Bulma.color.hasTextBlack "Bulma.color.hasBackgroundWarningDark"
+                        row Bulma.color.hasBackgroundDangerDark Bulma.color.hasTextBlack "Bulma.color.hasBackgroundDangerDark" ] ] ] ]
+
+let helpersColor = 
+    HelpersColorComponent()
