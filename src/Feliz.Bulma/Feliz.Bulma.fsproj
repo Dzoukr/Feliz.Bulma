@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.15.0</Version>
-        <PackageReleaseNotes>Light and dark version of background colors #82</PackageReleaseNotes>
+        <Version>2.16.0</Version>
+        <PackageReleaseNotes>Added flex helpers #89</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
