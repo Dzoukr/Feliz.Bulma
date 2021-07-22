@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.16.0</Version>
-        <PackageReleaseNotes>Added flex helpers #89</PackageReleaseNotes>
+        <Version>2.17.0</Version>
+        <PackageReleaseNotes>Lower FSharp.Core requirements #90</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>
