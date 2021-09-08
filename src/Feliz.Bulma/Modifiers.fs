@@ -1403,6 +1403,7 @@ type navbar =
     static member inline hasShadow = PropertyBuilders.mkClass ClassLiterals.``has-shadow``
     static member inline isFixedTop = PropertyBuilders.mkClass ClassLiterals.``is-fixed-top``
     static member inline isFixedBottom = PropertyBuilders.mkClass ClassLiterals.``is-fixed-bottom``
+    static member inline isSpaced = PropertyBuilders.mkClass ClassLiterals.``is-spaced``
 
 [<Fable.Core.Erase>]
 type navbarMenu =
