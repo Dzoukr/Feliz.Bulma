@@ -2,10 +2,12 @@ module Docs.Views.TagsInput
 
 open Feliz
 open Feliz.Bulma
-open Feliz.Bulma
 open Shared
 
-let description =
+[<ReactComponent>]
+let Description() =
+    let myValue,setMyValue = React.useState(["default";"tags"])
+
     [
         Bulma.content [
             Bulma.title.h5 "Basic tag input"
@@ -119,23 +121,46 @@ let description =
             ]
 
         ]
-        Html.p "These"
-        Html.p "paragraphs"
-        Html.p "are"
-        Html.p "here"
-        Html.p "only"
-        Html.p "because"
-        Html.p "we"
-        Html.p "need"
-        Html.p "some"
-        Html.p "space"
-        Html.p "for"
-        Html.p "showing"
-        Html.p "drop"
-        Html.p "down"
-        Html.p ":)"
 
+        Bulma.content [
+            Bulma.title.h5 "Controlled vs Uncontrolled input"
+            Html.p [ prop.dangerouslySetInnerHTML "All previous examples are using uncontrolled approach. If you need to have control over input state, use <i>value</i> instead of <i>defaultValue</i>" ]
+            code """let myValue,setMyValue = React.useState(["default";"tags"])
 
+Bulma.notification [
+    color.isDark
+    prop.children [
+        Html.p $"My tags are: {myValue}"
+        Bulma.button.button [
+            color.isLight
+            prop.text "Clear tags"
+            prop.onClick (fun _ -> [] |> setMyValue)
+        ]
+    ]
+
+]
+TagsInput.input [
+    tagsInput.value myValue
+    tagsInput.onTagsChanged setMyValue
+]
+"""
+            Bulma.notification [
+                color.isDark
+                prop.children [
+                    Html.p $"My tags are: {myValue}"
+                    Bulma.button.button [
+                        color.isLight
+                        prop.text "Clear tags"
+                        prop.onClick (fun _ -> [] |> setMyValue)
+                    ]
+                ]
+
+            ]
+            TagsInput.input [
+                tagsInput.value myValue
+                tagsInput.onTagsChanged setMyValue
+            ]
+        ]
 
     ] |> React.fragment
 
@@ -144,5 +169,5 @@ let view =
         "TagsInput"
         "Feliz.Bulma.TagsInput"
         "https://bulma-tagsinput.netlify.app/"
-        description
+        (Description())
         (installationView "Feliz.Bulma.TagsInput" "@creativebulma/bulma-tagsinput" "@creativebulma/bulma-tagsinput")

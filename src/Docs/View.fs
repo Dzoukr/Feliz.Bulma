@@ -1,4 +1,4 @@
-﻿module Docs.View
+module Docs.View
 
 open Feliz
 open Feliz.Bulma
@@ -23,6 +23,20 @@ let menuPart (model:Model) =
             item "Installation" Installation
             item "API description" APIDescription
         ]
+        Bulma.menuLabel "Documentation"
+        Bulma.menuList [
+            item "Overview" DocumentationOverview
+            item "Button" DocumentationButton
+            item "Card" DocumentationCard
+            item "Form" DocumentationForm
+            item "Media Object" DocumentationMediaObject
+            item "Modal" DocumentationModal
+            item "Navbar" DocumentationNavbar
+            item "Panel" DocumentationPanel
+            item "ProgressBar" DocumentationProgressbar
+            item "Tag" DocumentationTag
+            item "Helpers - Color" DocumentationHelpersColor
+        ]
         Bulma.menuLabel "Components"
         Bulma.menuList [
             item "QuickView" QuickView
@@ -46,6 +60,17 @@ let contentPart model =
     | Overview -> Views.Bulma.overview
     | Installation -> Views.Bulma.installation
     | APIDescription -> Views.Bulma.apiDescription
+    | DocumentationOverview -> Views.Documentation.overview
+    | DocumentationButton -> Views.Documentation.button
+    | DocumentationCard -> Views.Documentation.card
+    | DocumentationForm -> Views.Documentation.form
+    | DocumentationMediaObject -> Views.Documentation.mediaObject
+    | DocumentationModal -> Views.Documentation.modal
+    | DocumentationNavbar -> Views.Documentation.navbar
+    | DocumentationPanel -> Views.Documentation.panel
+    | DocumentationProgressbar -> Views.Documentation.progressbar
+    | DocumentationTag -> Views.Documentation.tag
+    | DocumentationHelpersColor -> Views.Documentation.helpersColor
     | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view
     | Tooltip -> Views.Tooltip.view

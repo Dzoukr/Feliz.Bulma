@@ -8,10 +8,10 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html;timeline</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.0.0</Version>
+        <Version>2.1.0</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Simplify/minisize number of open namespace instructions #63</PackageReleaseNotes>
+        <PackageReleaseNotes>Add support for timeline without headers. #84</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>

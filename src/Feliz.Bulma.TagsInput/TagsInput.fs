@@ -18,7 +18,6 @@ type TagsInput =
     static member inline input (props: ITagsInputProperty list) =
         let safeProps =
             props
-            |> Props.setDefault ("defaultValue", [])
             |> Props.setDefault ("noResultsLabel", "No results found")
             |> Props.setDefault ("loadingLabel", "Loading...")
             |> Props.setDefault ("delimiter", ',')
