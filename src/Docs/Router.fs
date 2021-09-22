@@ -16,6 +16,7 @@ type Page =
     | DocumentationPanel
     | DocumentationProgressbar
     | DocumentationTag
+    | DocumentationTabs
     | DocumentationHelpersColor
     | QuickView
     | DateTimePicker
@@ -46,6 +47,7 @@ let parseUrl = function
     | [ "documentation"; "panel" ] -> DocumentationPanel
     | [ "documentation"; "progressbar" ] -> DocumentationProgressbar
     | [ "documentation"; "tag" ] -> DocumentationTag
+    | [ "documentation"; "tabs" ] -> DocumentationTabs
     | [ "documentation"; "helpers" ] -> DocumentationHelpersColor
     | [ "quickview" ] -> QuickView
     | [ "datetimepicker" ] -> DateTimePicker
@@ -75,6 +77,7 @@ let getHref = function
     | DocumentationPanel -> Router.format ([ "documentation"; "panel" ])
     | DocumentationProgressbar -> Router.format ([ "documentation"; "progressbar" ])
     | DocumentationTag -> Router.format ([ "documentation"; "tag" ])
+    | DocumentationTabs -> Router.format ([ "documentation"; "tabs" ])
     | DocumentationHelpersColor -> Router.format ([ "documentation"; "helpers" ])
     | QuickView -> Router.format ("quickview")
     | DateTimePicker -> Router.format ("datetimepicker")
