@@ -14,3 +14,6 @@ end_of_line = lf
 
 [*.yml]
 indent_size = 2
+[*.fs]
+fsharp_single_argument_web_mode=true
+
