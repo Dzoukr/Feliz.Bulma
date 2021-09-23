@@ -36,6 +36,7 @@ let menuPart (model:Model) =
             item "ProgressBar" DocumentationProgressbar
             item "Tag" DocumentationTag
             item "Tabs" DocumentationTabs
+            item "Breadcrumb" DocumentationBreadcrumb
             item "Helpers - Color" DocumentationHelpersColor
         ]
         Bulma.menuLabel "Components"
@@ -72,6 +73,7 @@ let contentPart model =
     | DocumentationProgressbar -> Views.Documentation.progressbar
     | DocumentationTag -> Views.Documentation.tag
     | DocumentationTabs -> Views.Documentation.tabs
+    | DocumentationBreadcrumb -> Views.Documentation.breadcrumb
     | DocumentationHelpersColor -> Views.Documentation.helpersColor
     | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view

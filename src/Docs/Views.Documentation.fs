@@ -2115,9 +2115,6 @@ let TagComponent () =
 
 [<ReactComponent>]
 let TabsComponent () =
-    let color, chooseColor = React.useState (Primary)
-    let getColorChooseButtonToTag (color: Color) = getColorChooseButton color chooseColor
-
     Html.div [
         Bulma.title "Feliz.Bulma - Documentation"
         Bulma.subtitle "Tabs"
@@ -2251,8 +2248,159 @@ let TabsComponent () =
             ]
     ]
 
+let breadcrumbSample style =
+    Bulma.breadcrumb [
+        style
+        prop.children [
+            Html.ul [
+                prop.children [
+                    Html.li [
+                        Html.a [
+                            Bulma.icon [
+                                icon.isSmall
+                                prop.children [
+                                    Html.i [ prop.className "fas fa-home" ]
+                                ]
+                            ]
+                            Html.span "Home"
+                        ]
+
+                        ]
+                    Html.li [
+
+                        prop.className "is-active"
+                        prop.children [
+                            Html.a [
+                                Bulma.icon [
+                                    icon.isSmall
+                                    prop.children [
+                                        Html.i [
+                                            prop.className "fas fa-level-up-alt"
+                                        ]
+                                    ]
+                                ]
+                                Html.span "NextLvl"
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+
+let breadcrumbCodeSample (prop: string) =
+    code
+        $"""Bulma.breadcrumb [
+        {prop}
+        prop.children [
+            Html.ul [
+                prop.children [
+                    Html.li [
+                        Html.a [
+                            Bulma.icon [
+                                icon.isSmall
+                                prop.children [
+                                    Html.i [ prop.className "fas fa-home" ]
+                                ]
+                            ]
+                            Html.span "Home"
+                        ]
+
+                        ]
+                    Html.li [
+                        Html.a [
+                            Bulma.icon [
+                                icon.isSmall
+                                prop.children [
+                                    Html.i [
+                                        prop.className "fas fa-level-up-alt"
+                                    ]
+                                ]
+                            ]
+                            Html.span "NextLvl"
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    """
+
+[<ReactComponent>]
+let BreadcrumbComponent () =
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Breadcrumb"
+        Html.hr []
+        Bulma.content [
+            Bulma.subtitle [
+                text.hasTextWeightLight
+                prop.text "Large Breadcrumb"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    breadcrumbSample breadcrumb.isLarge
+                ]
+                Bulma.column [
+                    breadcrumbCodeSample "breadcrumb.isLarge"
+                ]
+            ]
+            Bulma.subtitle [
+                text.hasTextWeightLight
+                prop.text "Medium Breadcrumb"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    breadcrumbSample breadcrumb.isMedium
+                ]
+                Bulma.column [
+                    breadcrumbCodeSample "breadcrumb.isMedium"
+                ]
+            ]
+            Bulma.subtitle [
+                text.hasTextWeightLight
+                prop.text "Centered Breadcrumb"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    breadcrumbSample breadcrumb.isCentered
+                ]
+                Bulma.column [
+                    breadcrumbCodeSample "breadcrumb.isCentered"
+                ]
+            ]
+            Bulma.subtitle [
+                text.hasTextWeightLight
+                prop.text "Breadcrumb with Arrow Seperator"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    breadcrumbSample breadcrumb.hasArrowSeparator
+                ]
+                Bulma.column [
+                    breadcrumbCodeSample "breadcrumb.hasArrowSeparator"
+                ]
+            ]
+            Bulma.subtitle [
+                text.hasTextWeightLight
+                prop.text "Breadcrumb with Bullet Seperator"
+            ]
+            Bulma.columns [
+                Bulma.column [
+                    breadcrumbSample breadcrumb.hasBulletSeparator
+                ]
+                Bulma.column [
+                    breadcrumbCodeSample "breadcrumb.hasBulletSeparator"
+                ]
+            ]
+
+
+            ]
+    ]
+
 let tag = TagComponent()
 let tabs = TabsComponent()
+let breadcrumb = BreadcrumbComponent()
 
 [<ReactComponent>]
 let HelpersColorComponent () =
@@ -2273,7 +2421,7 @@ let HelpersColorComponent () =
 
     let table (rows: seq<Fable.React.ReactElement>) =
         Bulma.table [
-            Bulma.table.isBordered
+            table.isBordered
             prop.children [
                 Html.thead [
                     Html.tableRow [
@@ -2295,8 +2443,8 @@ let HelpersColorComponent () =
             Bulma.columns [
                 Bulma.column [
                     Bulma.section [
-                        Bulma.color.hasBackgroundPrimary
-                        Bulma.color.hasTextDanger
+                        color.hasBackgroundPrimary
+                        color.hasTextDanger
                         prop.text "Very nice colors :)"
                     ]
                 ]
