@@ -152,6 +152,28 @@ DateTimePicker.timePicker [
 ]
 """
 
+            Bulma.subtitle.h5 "Date picker (editable)"
+            Html.p [ Html.text "When editing the date that is no range, user can be allowed to input the date manually."  ]
+            DateTimePicker.dateTimePicker [
+                dateTimePicker.dateOnly true
+                dateTimePicker.dateFormat "dd/MM/yyyy"
+                dateTimePicker.defaultValue DateTime.Today
+                dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
+                dateTimePicker.isRange false
+                dateTimePicker.closeOnSelect true
+                dateTimePicker.allowTextInput true
+            ]
+            Html.p ""
+            code """DateTimePicker.dateTimePicker [
+    dateTimePicker.dateOnly true
+    dateTimePicker.dateFormat "dd/MM/yyyy"
+    dateTimePicker.defaultValue DateTime.Today
+    dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
+    dateTimePicker.isRange false
+    dateTimePicker.closeOnSelect true
+]
+"""
+
             Bulma.subtitle.h5 "Date picker events"
             DateTimePicker.dateTimePicker [
                 dateTimePicker.dateOnly true
