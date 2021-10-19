@@ -1,6 +1,8 @@
 ﻿namespace Feliz.Bulma
 
 open System
+open System.Globalization
+open Browser.Types
 open Fable.Core
 open Fable.DateFunctions
 open Feliz
@@ -26,9 +28,24 @@ module DatePicker =
         abstract minDate: DateTime option
         abstract maxDate: DateTime option
         abstract dateOnly : bool
+        abstract allowTextInput : bool
         abstract closeOnSelect: bool
 
     type private DateTimeValue = { Date : DateTime option; Time : TimeSpan option }
+
+
+    [<Literal>]
+    let private defaultDateFormat = "dd. MMMM yyyy"
+
+    [<Literal>]
+    let private defaultDateTimeFormat = "dd. MMMM yyyy"
+
+    type ParseOptsImpl() =
+        interface ParseOpts with
+            member val additionalDigits = 0 with get, set
+
+    [<Import("parse", "date-fns")>]
+    let parseDate (input: string) (format:string) (referenceDate: int) : DateTime = jsNative
 
     let private datePickerSelection (l:ILocale) (d:DateTimeValue) =
         let day = d.Date |> Option.map (fun x -> x.Day) |> Option.map string |> Option.defaultValue "-"
@@ -442,8 +459,8 @@ module DatePicker =
             let formatString =
                 match (p.dateFormat, p.dateOnly) with
                 | (Some x, _) -> x
-                | (None, true) -> "dd. MMMM yyyy"
-                | (None, false) -> "dd. MMMM yyyy (HH:mm)"
+                | (None, true) -> defaultDateFormat
+                | (None, false) -> defaultDateTimeFormat
             d.Format(formatString, p.locale)
 
         let txtValue =
@@ -457,6 +474,25 @@ module DatePicker =
                 |> Option.map format
                 |> Option.defaultValue ""
 
+        let tryParseInputDate inputValue =
+            try
+               let parsedDate =
+                   match p.dateFormat with
+                   | Some y -> parseDate inputValue y 0
+                   | None -> parseDate inputValue defaultDateFormat 0
+
+               if parsedDate.IsValid() then
+                   {value with From = { Date = Some parsedDate ; Time = None }}
+                   |> setValue
+                   parsedDate |> setCurrentMonth
+               else
+                   ()
+            with
+               | exn -> ()
+
+
+        let canUserWrite = p.allowTextInput && not p.isRange && p.dateOnly
+
         let input =
             match p.displayMode with
             | DisplayMode.Default ->
@@ -464,9 +500,12 @@ module DatePicker =
                     control.hasIconsLeft
                     prop.children [
                         Bulma.input.text [
-                            prop.readOnly true
+                            prop.readOnly (not canUserWrite)
                             prop.valueOrDefault txtValue
                             prop.onClick (fun _ -> setIsDisplayed true)
+                            if canUserWrite then
+                                prop.onBlur(fun (evt: FocusEvent) ->
+                                    (evt.target :?> HTMLInputElement).value |> tryParseInputDate)
                         ]
                         Bulma.icon [
                             icon.isLeft
@@ -504,3 +543,4 @@ type dateTimePicker =
     static member inline dateOnly (v:bool) : IDateTimePickerProperty = unbox ("dateOnly", v)
     /// Close the picker when the date is selected, only applicable for DatePicker
     static member inline closeOnSelect (v:bool) : IDateTimePickerProperty = unbox ("closeOnSelect", v)
+    static member inline allowTextInput (v:bool) : IDateTimePickerProperty = unbox ("allowTextInput", v)
