@@ -516,7 +516,9 @@ module DatePicker =
                             prop.onClick (fun _ -> setIsDisplayed true)
                             if canUserWrite then
                                 prop.onBlur(fun (evt: FocusEvent) ->
-                                    (evt.target :?> HTMLInputElement).value |> tryParseInputDate)
+                                    (evt.target :?> HTMLInputElement).value
+                                    |> tryParseInputDate
+                                    )
                                 prop.onTextChange(fun x -> setValueFromInput (Some x))
                             prop.valueOrDefault txtValue
                         ]
