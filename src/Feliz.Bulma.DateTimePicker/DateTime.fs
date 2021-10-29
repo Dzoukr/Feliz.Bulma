@@ -513,6 +513,7 @@ module DatePicker =
                     prop.children [
                         Bulma.input.text [
                             prop.readOnly (not canUserWrite)
+                            prop.valueOrDefault txtValue
                             prop.onClick (fun _ -> setIsDisplayed true)
                             if canUserWrite then
                                 prop.onBlur(fun (evt: FocusEvent) ->
@@ -520,7 +521,6 @@ module DatePicker =
                                     |> tryParseInputDate
                                     )
                                 prop.onTextChange(fun x -> setValueFromInput (Some x))
-                            prop.valueOrDefault txtValue
                         ]
                         Bulma.icon [
                             icon.isLeft
