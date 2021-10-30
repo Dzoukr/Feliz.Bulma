@@ -171,6 +171,7 @@ DateTimePicker.timePicker [
     dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
     dateTimePicker.isRange false
     dateTimePicker.closeOnSelect true
+    dateTimePicker.allowTextInput true
 ]
 """
 

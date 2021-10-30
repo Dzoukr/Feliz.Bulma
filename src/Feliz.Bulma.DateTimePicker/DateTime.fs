@@ -189,7 +189,13 @@ module DatePicker =
             if p.isRange then p.defaultRangeValue |> SelectedValue.fromRangeValue
             else p.defaultValue |> SelectedValue.fromSingleValue
 
-        let value, setValue = React.useState(defaultValue)
+        //if the user wrote something, his input has priority. It is only reset when value is set
+        let valueFromInput, setValueFromInput =
+            React.useState(None)
+
+        let value, setValue =
+            let v, setv = React.useState(defaultValue)
+            (v, fun x -> setValueFromInput None ; setv x)
 
         let isDisplayed, setIsDisplayed =
             match p.displayMode with
@@ -463,16 +469,21 @@ module DatePicker =
                 | (None, false) -> defaultDateTimeFormat
             d.Format(formatString, p.locale)
 
+        let canUserWrite = p.allowTextInput && not p.isRange && p.dateOnly
+
         let txtValue =
-            if p.isRange then
-                match (value.From |> DateTimeValue.tryToDateTime p.dateOnly), (value.To |> DateTimeValue.tryToDateTime p.dateOnly) with
-                | Some s, Some e -> sprintf "%s - %s" (format s) (format e)
-                | _ -> ""
-            else
-                value.From
-                |> DateTimeValue.tryToDateTime p.dateOnly
-                |> Option.map format
-                |> Option.defaultValue ""
+            match valueFromInput with
+            | Some inp -> inp
+            | None ->
+                if p.isRange then
+                    match (value.From |> DateTimeValue.tryToDateTime p.dateOnly), (value.To |> DateTimeValue.tryToDateTime p.dateOnly) with
+                    | Some s, Some e -> sprintf "%s - %s" (format s) (format e)
+                    | _ -> ""
+                else
+                    value.From
+                    |> DateTimeValue.tryToDateTime p.dateOnly
+                    |> Option.map format
+                    |> Option.defaultValue ""
 
         let tryParseInputDate inputValue =
             try
@@ -482,7 +493,9 @@ module DatePicker =
                    | None -> parseDate inputValue defaultDateFormat 0
 
                if parsedDate.IsValid() then
-                   {value with From = { Date = Some parsedDate ; Time = None }}
+                   {value with
+                            From = { Date = Some parsedDate ; Time = None }
+                            To = { Date = None ; Time = None }}
                    |> setValue
                    parsedDate |> setCurrentMonth
                else
@@ -491,7 +504,6 @@ module DatePicker =
                | exn -> ()
 
 
-        let canUserWrite = p.allowTextInput && not p.isRange && p.dateOnly
 
         let input =
             match p.displayMode with
@@ -505,7 +517,10 @@ module DatePicker =
                             prop.onClick (fun _ -> setIsDisplayed true)
                             if canUserWrite then
                                 prop.onBlur(fun (evt: FocusEvent) ->
-                                    (evt.target :?> HTMLInputElement).value |> tryParseInputDate)
+                                    (evt.target :?> HTMLInputElement).value
+                                    |> tryParseInputDate
+                                    )
+                                prop.onTextChange(fun x -> setValueFromInput (Some x))
                         ]
                         Bulma.icon [
                             icon.isLeft
