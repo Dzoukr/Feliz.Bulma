@@ -498,6 +498,7 @@ module DatePicker =
                             To = { Date = None ; Time = None }}
                    |> setValue
                    parsedDate |> setCurrentMonth
+                   parsedDate |> onDateSelected
                else
                    ()
             with
