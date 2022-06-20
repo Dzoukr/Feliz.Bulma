@@ -105,8 +105,10 @@ module DatePicker =
 
     [<RequireQualifiedAccess>]
     module private DateTimeValue =
+        let empty = { Date = None; Time = None }
         let date (dtv:DateTimeValue) = dtv.Date
-        let fromDateTime (d:DateTime) = { Date = Some d.Date; Time = Some d.TimeOfDay }
+        let fromDateTime (d:DateTime) =
+            if d.IsValid() = true then { Date = Some d.Date; Time = Some d.TimeOfDay } else empty
         let tryToDateTime dateOnly (dtv:DateTimeValue) =
             match dateOnly, dtv.Date, dtv.Time with
             | false, Some d, Some t -> Some <| d.Date.Add(t)
@@ -116,7 +118,7 @@ module DatePicker =
         let applyDate (dtv:DateTimeValue) (d:DateTime) = { dtv with Date = Some d.Date }
         let applyTime (dtv:DateTimeValue) (t:TimeSpan) = { dtv with Time = Some t }
         let withoutDate (dtv:DateTimeValue) = { dtv with Date = None }
-        let empty = { Date = None; Time = None }
+
         let isComplete dateOnly (dtv:DateTimeValue) =
             if dateOnly then true
             else
@@ -491,8 +493,7 @@ module DatePicker =
                    match p.dateFormat with
                    | Some y -> parseDate inputValue y 0
                    | None -> parseDate inputValue defaultDateFormat 0
-
-               if parsedDate.IsValid() then
+               if parsedDate.IsValid() && parsedDate.Year > 1000 then
                    {value with
                             From = { Date = Some parsedDate ; Time = None }
                             To = { Date = None ; Time = None }}
@@ -517,11 +518,10 @@ module DatePicker =
                             prop.valueOrDefault txtValue
                             prop.onClick (fun _ -> setIsDisplayed true)
                             if canUserWrite then
-                                prop.onBlur(fun (evt: FocusEvent) ->
-                                    (evt.target :?> HTMLInputElement).value
-                                    |> tryParseInputDate
-                                    )
-                                prop.onTextChange(fun x -> setValueFromInput (Some x))
+                                prop.onTextChange(fun x ->
+                                    x |> tryParseInputDate
+                                    setValueFromInput (Some x)
+                                )
                         ]
                         Bulma.icon [
                             icon.isLeft
