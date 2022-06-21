@@ -8,10 +8,10 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html;calendar;datepicker</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.2.0</Version>
+        <Version>2.2.1</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Fix selecting date written by text #110</PackageReleaseNotes>
+        <PackageReleaseNotes>Bug fix #114</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Extensions.fs" />
