@@ -24,7 +24,7 @@
         "sass-loader": "^10.1.0",
         "selfsigned": "^1.10.8",
         "style-loader": "^2.0.0",
-        "terser": "^5.5.0",
+        "terser": "^5.14.2",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0"
