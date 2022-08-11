@@ -162,6 +162,7 @@ DateTimePicker.timePicker [
                 dateTimePicker.isRange false
                 dateTimePicker.closeOnSelect true
                 dateTimePicker.allowTextInput true
+                dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
             ]
             Html.p ""
             code """DateTimePicker.dateTimePicker [

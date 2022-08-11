@@ -9,13 +9,22 @@ open Feliz
 open Feliz.Bulma.Operators
 open Feliz.Bulma
 
+
 [<RequireQualifiedAccess; System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)>]
 module DatePicker =
+
+    type OnTextChangeEventArgs = {
+        InputText: string
+        IsValid: bool
+        DateTime: DateTime option
+    }
+
     type Props =
         abstract onDateSelected: (DateTime option -> unit) option
         abstract onDateRangeSelected: ((DateTime * DateTime) option -> unit) option
         abstract onShow: (unit -> unit) option
         abstract onHide: (unit -> unit) option
+        abstract onTextChanged: (OnTextChangeEventArgs -> unit) option
         abstract defaultValue: DateTime option
         abstract defaultRangeValue: (DateTime * DateTime) option
         abstract isRange : bool
@@ -392,7 +401,7 @@ module DatePicker =
                                                         if d.IsToday() then "is-today"
                                                         if isStartSelected then "is-active"
                                                     ]
-                                                    prop.text (d.Day)
+                                                    prop.text d.Day
                                                     prop.type'.button
                                                     prop.onClick (fun _ -> d |> onDateSelected)
                                                 ]
@@ -489,18 +498,45 @@ module DatePicker =
 
         let tryParseInputDate inputValue =
             try
+               printfn "1"
                let parsedDate =
                    match p.dateFormat with
                    | Some y -> parseDate inputValue y 0
                    | None -> parseDate inputValue defaultDateFormat 0
+               printfn "p.onTextChanged.IsSome %b" p.onTextChanged.IsSome
                if parsedDate.IsValid() && parsedDate.Year > 1000 then
+                   printfn "2"
                    {value with
                             From = { Date = Some parsedDate ; Time = None }
                             To = { Date = None ; Time = None }}
                    |> setValue
+                   printfn "2 - p.onTextChanged.IsSome %b" p.onTextChanged.IsSome
+                   if p.onTextChanged.IsSome then
+                       printfn "2b"
+                       {
+                            InputText = inputValue
+                            IsValid = true
+                            DateTime = Some parsedDate }
+                       |> p.onTextChanged.Value
+                   else
+                       printfn "2c"
                    parsedDate |> setCurrentMonth
                    parsedDate |> onDateSelected
                else
+                   printfn "3"
+                   if p.onTextChanged.IsSome then
+                       printfn "4"
+                       {
+                            InputText = inputValue
+                            IsValid = false
+                            DateTime = None }
+                       |> p.onTextChanged.Value
+                   else
+                       printfn "5"
+                   {value with
+                        From = { Date = None ; Time = None }
+                        To = { Date = None ; Time = None }}
+                   |> setValue
                    ()
             with
                | exn -> ()
@@ -545,6 +581,8 @@ type dateTimePicker =
     static member inline onDateRangeSelected (eventHandler: (DateTime * DateTime) option -> unit) : IDateTimePickerProperty = unbox ("onDateRangeSelected", eventHandler)
     static member inline onShow (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onShow", eventHandler)
     static member inline onHide (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onHide", eventHandler)
+    /// fired when the input text was changed by the user
+    static member inline onTextChanged (eventHandler: DatePicker.OnTextChangeEventArgs -> unit) : IDateTimePickerProperty = unbox ("onTextChanged", eventHandler)
     static member inline defaultValue (v:DateTime) : IDateTimePickerProperty = unbox ("defaultValue", v)
     static member inline defaultRangeValue (v:DateTime * DateTime) : IDateTimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : IDateTimePickerProperty = unbox ("isRange", v)
