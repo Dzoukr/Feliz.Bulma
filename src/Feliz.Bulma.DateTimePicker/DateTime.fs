@@ -13,7 +13,7 @@ open Feliz.Bulma
 [<RequireQualifiedAccess; System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)>]
 module DatePicker =
 
-    type OnTextChangeEventArgs = {
+    type TextInputEventArgs = {
         InputText: string
         IsValid: bool
         DateTime: DateTime option
@@ -24,7 +24,8 @@ module DatePicker =
         abstract onDateRangeSelected: ((DateTime * DateTime) option -> unit) option
         abstract onShow: (unit -> unit) option
         abstract onHide: (unit -> unit) option
-        abstract onTextChanged: (OnTextChangeEventArgs -> unit) option
+        abstract onTextChanged: (TextInputEventArgs -> unit) option
+        abstract onTextInputBlur: (TextInputEventArgs -> unit) option
         abstract defaultValue: DateTime option
         abstract defaultRangeValue: (DateTime * DateTime) option
         abstract isRange : bool
@@ -498,45 +499,58 @@ module DatePicker =
 
         let tryParseInputDate inputValue =
             try
-               printfn "1"
                let parsedDate =
                    match p.dateFormat with
                    | Some y -> parseDate inputValue y 0
                    | None -> parseDate inputValue defaultDateFormat 0
-               printfn "p.onTextChanged.IsSome %b" p.onTextChanged.IsSome
                if parsedDate.IsValid() && parsedDate.Year > 1000 then
-                   printfn "2"
                    {value with
                             From = { Date = Some parsedDate ; Time = None }
                             To = { Date = None ; Time = None }}
                    |> setValue
-                   printfn "2 - p.onTextChanged.IsSome %b" p.onTextChanged.IsSome
                    if p.onTextChanged.IsSome then
-                       printfn "2b"
                        {
                             InputText = inputValue
                             IsValid = true
                             DateTime = Some parsedDate }
                        |> p.onTextChanged.Value
-                   else
-                       printfn "2c"
                    parsedDate |> setCurrentMonth
                    parsedDate |> onDateSelected
                else
-                   printfn "3"
                    if p.onTextChanged.IsSome then
-                       printfn "4"
                        {
                             InputText = inputValue
                             IsValid = false
                             DateTime = None }
                        |> p.onTextChanged.Value
-                   else
-                       printfn "5"
                    {value with
                         From = { Date = None ; Time = None }
                         To = { Date = None ; Time = None }}
                    |> setValue
+                   ()
+            with
+               | exn -> ()
+
+        let onBlur inputValue =
+            try
+               let parsedDate =
+                   match p.dateFormat with
+                   | Some y -> parseDate inputValue y 0
+                   | None -> parseDate inputValue defaultDateFormat 0
+               if parsedDate.IsValid() && parsedDate.Year > 1000 then
+                   if p.onTextInputBlur.IsSome then
+                       {
+                            InputText = inputValue
+                            IsValid = true
+                            DateTime = Some parsedDate }
+                       |> p.onTextInputBlur.Value
+               else
+                   if p.onTextInputBlur.IsSome then
+                       {
+                            InputText = inputValue
+                            IsValid = false
+                            DateTime = None }
+                       |> p.onTextInputBlur.Value
                    ()
             with
                | exn -> ()
@@ -558,6 +572,8 @@ module DatePicker =
                                     x |> tryParseInputDate
                                     setValueFromInput (Some x)
                                 )
+                                prop.onBlur (fun _ -> onBlur txtValue)
+
                         ]
                         Bulma.icon [
                             icon.isLeft
@@ -582,7 +598,9 @@ type dateTimePicker =
     static member inline onShow (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onShow", eventHandler)
     static member inline onHide (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onHide", eventHandler)
     /// fired when the input text was changed by the user
-    static member inline onTextChanged (eventHandler: DatePicker.OnTextChangeEventArgs -> unit) : IDateTimePickerProperty = unbox ("onTextChanged", eventHandler)
+    static member inline onTextChanged (eventHandler: DatePicker.TextInputEventArgs -> unit) : IDateTimePickerProperty = unbox ("onTextChanged", eventHandler)
+    /// fired when the input text can be edited and the input focus is left
+    static member inline onTextInputBlur (eventHandler: DatePicker.TextInputEventArgs -> unit) : IDateTimePickerProperty = unbox ("onTextInputBlur", eventHandler)
     static member inline defaultValue (v:DateTime) : IDateTimePickerProperty = unbox ("defaultValue", v)
     static member inline defaultRangeValue (v:DateTime * DateTime) : IDateTimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : IDateTimePickerProperty = unbox ("isRange", v)

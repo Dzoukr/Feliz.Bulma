@@ -158,21 +158,24 @@ DateTimePicker.timePicker [
                 dateTimePicker.dateOnly true
                 dateTimePicker.dateFormat "dd/MM/yyyy"
                 dateTimePicker.defaultValue DateTime.Today
-                dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
                 dateTimePicker.isRange false
                 dateTimePicker.closeOnSelect true
                 dateTimePicker.allowTextInput true
                 dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+                dateTimePicker.onTextChanged (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextChanged %A" x))
+                dateTimePicker.onTextInputBlur (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextInputBlur %A" x))
             ]
             Html.p ""
             code """DateTimePicker.dateTimePicker [
     dateTimePicker.dateOnly true
     dateTimePicker.dateFormat "dd/MM/yyyy"
     dateTimePicker.defaultValue DateTime.Today
-    dateTimePicker.onDateRangeSelected (fun (d:(DateTime * DateTime) option) -> () (* handle here *))
     dateTimePicker.isRange false
     dateTimePicker.closeOnSelect true
     dateTimePicker.allowTextInput true
+    dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+    dateTimePicker.onTextChanged (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextChanged %A" x))
+    dateTimePicker.onTextInputBlur (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextInputBlur %A" x))
 ]
 """
 
