@@ -32,6 +32,7 @@ module private ElementLiterals =
     let [<Literal>] ``checkbox`` = "checkbox"
     let [<Literal>] ``radio`` = "radio"
     let [<Literal>] ``icon`` = "icon"
+    let [<Literal>] ``icon-text`` = "icon-text"
     let [<Literal>] ``file`` = "file"
     let [<Literal>] ``file-label`` = "file-label"
     let [<Literal>] ``file-input`` = "file-input"
@@ -265,6 +266,10 @@ type Bulma =
     static member inline icon props = ElementBuilders.Span.props ElementLiterals.``icon`` props
     static member inline icon (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``icon`` elms
     static member inline icon elm = ElementBuilders.Span.valueElm ElementLiterals.``icon`` elm
+
+    static member inline iconText props = ElementBuilders.Span.props ElementLiterals.``icon-text`` props
+    static member inline iconText (elms:#seq<ReactElement>) = ElementBuilders.Span.children ElementLiterals.``icon-text`` elms
+    static member inline iconText elm = ElementBuilders.Span.valueElm ElementLiterals.``icon-text`` elm
 
     static member inline file props = ElementBuilders.Div.props ElementLiterals.``file`` props
     static member inline file (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``file`` elms
