@@ -7,7 +7,7 @@ nuget FSharp.Core ~> 4.7.2
 nuget Feliz
 nuget Fable.Core = 3.1.6
 nuget Fable.DateFunctions
-
+nuget Feliz.CompilerPlugins prerelease
 group Build
     source https://api.nuget.org/v3/index.json
     storage: none

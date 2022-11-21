@@ -5,3 +5,4 @@ group Docs
     Fable.Elmish.React
     Fable.Elmish.HMR
     Feliz.Router
+    Feliz.CompilerPlugins
