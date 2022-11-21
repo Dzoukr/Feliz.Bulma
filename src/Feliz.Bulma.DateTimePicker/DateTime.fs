@@ -1,19 +1,31 @@
 ﻿namespace Feliz.Bulma
 
 open System
+open System.Globalization
+open Browser.Types
 open Fable.Core
 open Fable.DateFunctions
 open Feliz
 open Feliz.Bulma.Operators
 open Feliz.Bulma
 
+
 [<RequireQualifiedAccess; System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)>]
 module DatePicker =
+
+    type TextInputEventArgs = {
+        InputText: string
+        IsValid: bool
+        DateTime: DateTime option
+    }
+
     type Props =
         abstract onDateSelected: (DateTime option -> unit) option
         abstract onDateRangeSelected: ((DateTime * DateTime) option -> unit) option
         abstract onShow: (unit -> unit) option
         abstract onHide: (unit -> unit) option
+        abstract onTextChanged: (TextInputEventArgs -> unit) option
+        abstract onTextInputBlur: (TextInputEventArgs -> unit) option
         abstract defaultValue: DateTime option
         abstract defaultRangeValue: (DateTime * DateTime) option
         abstract isRange : bool
@@ -26,9 +38,24 @@ module DatePicker =
         abstract minDate: DateTime option
         abstract maxDate: DateTime option
         abstract dateOnly : bool
+        abstract allowTextInput : bool
         abstract closeOnSelect: bool
 
     type private DateTimeValue = { Date : DateTime option; Time : TimeSpan option }
+
+
+    [<Literal>]
+    let private defaultDateFormat = "dd. MMMM yyyy"
+
+    [<Literal>]
+    let private defaultDateTimeFormat = "dd. MMMM yyyy"
+
+    type ParseOptsImpl() =
+        interface ParseOpts with
+            member val additionalDigits = 0 with get, set
+
+    [<Import("parse", "date-fns")>]
+    let parseDate (input: string) (format:string) (referenceDate: int) : DateTime = jsNative
 
     let private datePickerSelection (l:ILocale) (d:DateTimeValue) =
         let day = d.Date |> Option.map (fun x -> x.Day) |> Option.map string |> Option.defaultValue "-"
@@ -88,8 +115,10 @@ module DatePicker =
 
     [<RequireQualifiedAccess>]
     module private DateTimeValue =
+        let empty = { Date = None; Time = None }
         let date (dtv:DateTimeValue) = dtv.Date
-        let fromDateTime (d:DateTime) = { Date = Some d.Date; Time = Some d.TimeOfDay }
+        let fromDateTime (d:DateTime) =
+            if d.IsValid() = true then { Date = Some d.Date; Time = Some d.TimeOfDay } else empty
         let tryToDateTime dateOnly (dtv:DateTimeValue) =
             match dateOnly, dtv.Date, dtv.Time with
             | false, Some d, Some t -> Some <| d.Date.Add(t)
@@ -99,7 +128,7 @@ module DatePicker =
         let applyDate (dtv:DateTimeValue) (d:DateTime) = { dtv with Date = Some d.Date }
         let applyTime (dtv:DateTimeValue) (t:TimeSpan) = { dtv with Time = Some t }
         let withoutDate (dtv:DateTimeValue) = { dtv with Date = None }
-        let empty = { Date = None; Time = None }
+
         let isComplete dateOnly (dtv:DateTimeValue) =
             if dateOnly then true
             else
@@ -172,7 +201,13 @@ module DatePicker =
             if p.isRange then p.defaultRangeValue |> SelectedValue.fromRangeValue
             else p.defaultValue |> SelectedValue.fromSingleValue
 
-        let value, setValue = React.useState(defaultValue)
+        //if the user wrote something, his input has priority. It is only reset when value is set
+        let valueFromInput, setValueFromInput =
+            React.useState(None)
+
+        let value, setValue =
+            let v, setv = React.useState(defaultValue)
+            (v, fun x -> setValueFromInput None ; setv x)
 
         let isDisplayed, setIsDisplayed =
             match p.displayMode with
@@ -367,7 +402,7 @@ module DatePicker =
                                                         if d.IsToday() then "is-today"
                                                         if isStartSelected then "is-active"
                                                     ]
-                                                    prop.text (d.Day)
+                                                    prop.text d.Day
                                                     prop.type'.button
                                                     prop.onClick (fun _ -> d |> onDateSelected)
                                                 ]
@@ -442,20 +477,85 @@ module DatePicker =
             let formatString =
                 match (p.dateFormat, p.dateOnly) with
                 | (Some x, _) -> x
-                | (None, true) -> "dd. MMMM yyyy"
-                | (None, false) -> "dd. MMMM yyyy (HH:mm)"
+                | (None, true) -> defaultDateFormat
+                | (None, false) -> defaultDateTimeFormat
             d.Format(formatString, p.locale)
 
+        let canUserWrite = p.allowTextInput && not p.isRange && p.dateOnly
+
         let txtValue =
-            if p.isRange then
-                match (value.From |> DateTimeValue.tryToDateTime p.dateOnly), (value.To |> DateTimeValue.tryToDateTime p.dateOnly) with
-                | Some s, Some e -> sprintf "%s - %s" (format s) (format e)
-                | _ -> ""
-            else
-                value.From
-                |> DateTimeValue.tryToDateTime p.dateOnly
-                |> Option.map format
-                |> Option.defaultValue ""
+            match valueFromInput with
+            | Some inp -> inp
+            | None ->
+                if p.isRange then
+                    match (value.From |> DateTimeValue.tryToDateTime p.dateOnly), (value.To |> DateTimeValue.tryToDateTime p.dateOnly) with
+                    | Some s, Some e -> sprintf "%s - %s" (format s) (format e)
+                    | _ -> ""
+                else
+                    value.From
+                    |> DateTimeValue.tryToDateTime p.dateOnly
+                    |> Option.map format
+                    |> Option.defaultValue ""
+
+        let tryParseInputDate inputValue =
+            try
+               let parsedDate =
+                   match p.dateFormat with
+                   | Some y -> parseDate inputValue y 0
+                   | None -> parseDate inputValue defaultDateFormat 0
+               if parsedDate.IsValid() && parsedDate.Year > 1000 then
+                   {value with
+                            From = { Date = Some parsedDate ; Time = None }
+                            To = { Date = None ; Time = None }}
+                   |> setValue
+                   if p.onTextChanged.IsSome then
+                       {
+                            InputText = inputValue
+                            IsValid = true
+                            DateTime = Some parsedDate }
+                       |> p.onTextChanged.Value
+                   parsedDate |> setCurrentMonth
+                   parsedDate |> onDateSelected
+               else
+                   if p.onTextChanged.IsSome then
+                       {
+                            InputText = inputValue
+                            IsValid = false
+                            DateTime = None }
+                       |> p.onTextChanged.Value
+                   {value with
+                        From = { Date = None ; Time = None }
+                        To = { Date = None ; Time = None }}
+                   |> setValue
+                   ()
+            with
+               | exn -> ()
+
+        let onBlur inputValue =
+            try
+               let parsedDate =
+                   match p.dateFormat with
+                   | Some y -> parseDate inputValue y 0
+                   | None -> parseDate inputValue defaultDateFormat 0
+               if parsedDate.IsValid() && parsedDate.Year > 1000 then
+                   if p.onTextInputBlur.IsSome then
+                       {
+                            InputText = inputValue
+                            IsValid = true
+                            DateTime = Some parsedDate }
+                       |> p.onTextInputBlur.Value
+               else
+                   if p.onTextInputBlur.IsSome then
+                       {
+                            InputText = inputValue
+                            IsValid = false
+                            DateTime = None }
+                       |> p.onTextInputBlur.Value
+                   ()
+            with
+               | exn -> ()
+
+
 
         let input =
             match p.displayMode with
@@ -464,9 +564,16 @@ module DatePicker =
                     control.hasIconsLeft
                     prop.children [
                         Bulma.input.text [
-                            prop.readOnly true
+                            prop.readOnly (not canUserWrite)
                             prop.valueOrDefault txtValue
                             prop.onClick (fun _ -> setIsDisplayed true)
+                            if canUserWrite then
+                                prop.onTextChange(fun x ->
+                                    x |> tryParseInputDate
+                                    setValueFromInput (Some x)
+                                )
+                                prop.onBlur (fun _ -> onBlur txtValue)
+
                         ]
                         Bulma.icon [
                             icon.isLeft
@@ -490,6 +597,10 @@ type dateTimePicker =
     static member inline onDateRangeSelected (eventHandler: (DateTime * DateTime) option -> unit) : IDateTimePickerProperty = unbox ("onDateRangeSelected", eventHandler)
     static member inline onShow (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onShow", eventHandler)
     static member inline onHide (eventHandler: unit -> unit) : IDateTimePickerProperty = unbox ("onHide", eventHandler)
+    /// fired when the input text was changed by the user
+    static member inline onTextChanged (eventHandler: DatePicker.TextInputEventArgs -> unit) : IDateTimePickerProperty = unbox ("onTextChanged", eventHandler)
+    /// fired when the input text can be edited and the input focus is left
+    static member inline onTextInputBlur (eventHandler: DatePicker.TextInputEventArgs -> unit) : IDateTimePickerProperty = unbox ("onTextInputBlur", eventHandler)
     static member inline defaultValue (v:DateTime) : IDateTimePickerProperty = unbox ("defaultValue", v)
     static member inline defaultRangeValue (v:DateTime * DateTime) : IDateTimePickerProperty = unbox ("defaultRangeValue", v)
     static member inline isRange (v:bool) : IDateTimePickerProperty = unbox ("isRange", v)
@@ -504,3 +615,4 @@ type dateTimePicker =
     static member inline dateOnly (v:bool) : IDateTimePickerProperty = unbox ("dateOnly", v)
     /// Close the picker when the date is selected, only applicable for DatePicker
     static member inline closeOnSelect (v:bool) : IDateTimePickerProperty = unbox ("closeOnSelect", v)
+    static member inline allowTextInput (v:bool) : IDateTimePickerProperty = unbox ("allowTextInput", v)

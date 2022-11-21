@@ -152,6 +152,33 @@ DateTimePicker.timePicker [
 ]
 """
 
+            Bulma.subtitle.h5 "Date picker (editable)"
+            Html.p [ Html.text "When editing the date that is no range, user can be allowed to input the date manually."  ]
+            DateTimePicker.dateTimePicker [
+                dateTimePicker.dateOnly true
+                dateTimePicker.dateFormat "dd/MM/yyyy"
+                dateTimePicker.defaultValue DateTime.Today
+                dateTimePicker.isRange false
+                dateTimePicker.closeOnSelect true
+                dateTimePicker.allowTextInput true
+                dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+                dateTimePicker.onTextChanged (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextChanged %A" x))
+                dateTimePicker.onTextInputBlur (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextInputBlur %A" x))
+            ]
+            Html.p ""
+            code """DateTimePicker.dateTimePicker [
+    dateTimePicker.dateOnly true
+    dateTimePicker.dateFormat "dd/MM/yyyy"
+    dateTimePicker.defaultValue DateTime.Today
+    dateTimePicker.isRange false
+    dateTimePicker.closeOnSelect true
+    dateTimePicker.allowTextInput true
+    dateTimePicker.onDateSelected (fun (d:DateTime option) -> JS.console.log(sprintf "onDateSelected %A" d))
+    dateTimePicker.onTextChanged (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextChanged %A" x))
+    dateTimePicker.onTextInputBlur (fun (x:DatePicker.TextInputEventArgs) -> JS.console.log(sprintf "onTextInputBlur %A" x))
+]
+"""
+
             Bulma.subtitle.h5 "Date picker events"
             DateTimePicker.dateTimePicker [
                 dateTimePicker.dateOnly true

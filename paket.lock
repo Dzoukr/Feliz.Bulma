@@ -20,7 +20,7 @@ NUGET
       FSharp.Core (>= 4.5.2) - restriction: >= netstandard2.0
     Fable.Core (3.1.6)
       FSharp.Core (>= 4.7.1) - restriction: >= netstandard2.0
-    Fable.DateFunctions (3.6)
+    Fable.DateFunctions (3.7)
       Fable.Core (>= 3.1.6) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
     Fable.React (7.2) - restriction: >= netstandard2.0
