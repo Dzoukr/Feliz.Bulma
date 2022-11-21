@@ -189,6 +189,7 @@ module private ClassLiterals =
     let [<Literal>] ``is-lowercase`` = "is-lowercase"
     let [<Literal>] ``is-uppercase`` = "is-uppercase"
     let [<Literal>] ``is-italic`` = "is-italic"
+    let [<Literal>] ``is-underlined`` = "is-underlined"
     let [<Literal>] ``has-text-weight-light`` = "has-text-weight-light"
     let [<Literal>] ``has-text-weight-normal`` = "has-text-weight-normal"
     let [<Literal>] ``has-text-weight-medium`` = "has-text-weight-medium"
@@ -1131,7 +1132,8 @@ type text =
     static member inline isCapitalized = PropertyBuilders.mkClass ClassLiterals.``is-capitalized``
     static member inline isLowercase = PropertyBuilders.mkClass ClassLiterals.``is-lowercase``
     static member inline isUppercase = PropertyBuilders.mkClass ClassLiterals.``is-uppercase``
-    static member inline isItalic= PropertyBuilders.mkClass ClassLiterals.``is-italic``
+    static member inline isItalic = PropertyBuilders.mkClass ClassLiterals.``is-italic``
+    static member inline isUnderlined = PropertyBuilders.mkClass ClassLiterals.``is-underlined``
 
     static member inline hasTextWeightLight = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-light``
     static member inline hasTextWeightNormal = PropertyBuilders.mkClass ClassLiterals.``has-text-weight-normal``
@@ -1168,7 +1170,6 @@ type text =
     static member inline hasTextJustifiedDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-desktop``
     static member inline hasTextLeftDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-left-desktop``
     static member inline hasTextRightDesktop = PropertyBuilders.mkClass ClassLiterals.``has-text-right-desktop``
-
 
     static member inline hasTextCenteredDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-centered-desktop-only``
     static member inline hasTextJustifiedDesktopOnly = PropertyBuilders.mkClass ClassLiterals.``has-text-justified-desktop-only``
