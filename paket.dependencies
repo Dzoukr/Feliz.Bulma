@@ -26,3 +26,4 @@ group Docs
     nuget Fable.Elmish.React
     nuget Fable.Elmish.HMR
     nuget Feliz.Router
+    nuget Feliz.CompilerPlugins prerelease
