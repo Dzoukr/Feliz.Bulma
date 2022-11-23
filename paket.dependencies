@@ -3,7 +3,7 @@ version 5.216.0
 source https://api.nuget.org/v3/index.json
 storage: none
 
-nuget FSharp.Core
+nuget FSharp.Core >= 4.7.2
 nuget Feliz
 nuget Fable.Core
 nuget Fable.DateFunctions
