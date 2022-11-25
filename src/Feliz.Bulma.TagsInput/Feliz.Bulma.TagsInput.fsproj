@@ -7,7 +7,7 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html;tags;input</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.1.0</Version>
+        <Version>3.0.0-pre-002</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageReleaseNotes>Support for controlled input #73</PackageReleaseNotes>

@@ -8,19 +8,20 @@ nuget Feliz
 nuget Fable.Core
 nuget Fable.DateFunctions
 nuget Feliz.CompilerPlugins prerelease
+
+
 group Build
     source https://api.nuget.org/v3/index.json
     storage: none
     nuget FSharp.Core
-    nuget Fake.DotNet.Cli
-    nuget Fake.Core.Target
-    nuget Fake.IO.FileSystem
-    nuget Fake.Core.ReleaseNotes
+    nuget Fake.Core.Target = 6.0.0-alpha004
+    nuget Fake.DotNet.Cli = 6.0.0-alpha004
+    nuget Fake.IO.FileSystem = 6.0.0-alpha004
 
 group Docs
     source https://api.nuget.org/v3/index.json
     storage: none
-    nuget FSharp.Core
+    nuget FSharp.Core >= 4.7.2
     nuget Fable.Core
     nuget Fable.Elmish.Debugger
     nuget Fable.Elmish.React

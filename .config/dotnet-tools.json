@@ -8,12 +8,6 @@
         "paket"
       ]
     },
-    "fake-cli": {
-      "version": "6.0.0-alpha003",
-      "commands": [
-        "fake"
-      ]
-    },
     "femto": {
       "version": "0.16.0",
       "commands": [
