@@ -11,7 +11,7 @@
         <Version>3.0.0-pre-002</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageReleaseNotes>Add support for timeline without headers. #84</PackageReleaseNotes>
+        <PackageReleaseNotes>Pre-release version</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>

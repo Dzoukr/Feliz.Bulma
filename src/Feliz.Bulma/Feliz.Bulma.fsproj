@@ -11,7 +11,7 @@
         <PackageTags>fsharp;fable;bulma;feliz;react;html</PackageTags>
         <Authors>Roman Provazník</Authors>
         <Version>3.0.0-pre-002</Version>
-        <PackageReleaseNotes>Add missing Navbar.isSpaced modifier #96</PackageReleaseNotes>
+        <PackageReleaseNotes>Pre-release version</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <NpmDependencies>

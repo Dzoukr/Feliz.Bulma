@@ -92,6 +92,24 @@ Target.create "PublishDocs" (fun _ ->
 
 Target.create "RunDocs" (fun _ -> Tools.dotnet (sprintf "fable watch --outDir %s --run webpack-dev-server" fableBuildPath) docsSrcPath)
 
+Target.create "PublishAll" (fun _ ->
+    [
+        "PublishBulma"
+        "PublishQuickView"
+        "PublishTooltip"
+        "PublishCheckradio"
+        "PublishSwitch"
+        "PublishPopover"
+        "PublishPageLoader"
+        "PublishDateTimePicker"
+        "PublishDivider"
+        "PublishBadge"
+        "PublishSlider"
+        "PublishTimeline"
+        "PublishTagsInput"
+    ]
+    |> List.iter (fun x -> Target.run 1 x [])
+)
 
 let dependencies = [
     "InstallDocs" ==> "RunDocs"
