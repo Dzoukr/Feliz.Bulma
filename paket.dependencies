@@ -8,7 +8,6 @@ nuget Feliz prerelease
 nuget Fable.Core
 nuget Fable.DateFunctions
 nuget Feliz.CompilerPlugins prerelease
-nuget Fable.React.Types
 
 group Build
     source https://api.nuget.org/v3/index.json
