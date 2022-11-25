@@ -26,21 +26,14 @@ NUGET
     Fable.DateFunctions (3.9)
       Fable.Core (>= 3.1.6) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
-    Fable.React (9.1) - restriction: >= netstandard2.0
-      Fable.React.Types (>= 18.1) - restriction: >= netstandard2.0
-      Fable.ReactDom.Types (>= 18.0) - restriction: >= netstandard2.0
-      FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
-    Fable.React.Types (18.1) - restriction: >= netstandard2.0
+    Fable.React.Types (18.1)
       Fable.Browser.Dom (>= 2.4.4) - restriction: >= netstandard2.0
       Fable.Core (>= 3.2.7) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
-    Fable.ReactDom.Types (18.0) - restriction: >= netstandard2.0
-      Fable.React.Types (>= 18.1) - restriction: >= netstandard2.0
-      FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
-    Feliz (1.68)
-      Fable.Core (>= 3.1.5) - restriction: >= netstandard2.0
-      Fable.React (>= 7.4) - restriction: >= netstandard2.0
-      Feliz.CompilerPlugins (>= 1.10) - restriction: >= netstandard2.0
+    Feliz (2.0.0-prerelease-003)
+      Fable.Core (>= 3.2.7) - restriction: >= netstandard2.0
+      Fable.React.Types (>= 18.0) - restriction: >= netstandard2.0
+      Feliz.CompilerPlugins (>= 2.0.0-prerelease-003) - restriction: >= netstandard2.0
       FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
     Feliz.CompilerPlugins (2.0.0-prerelease-003)
       Fable.AST (>= 4.0) - restriction: >= netstandard2.0
