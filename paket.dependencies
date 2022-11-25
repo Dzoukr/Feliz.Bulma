@@ -4,11 +4,11 @@ source https://api.nuget.org/v3/index.json
 storage: none
 
 nuget FSharp.Core >= 4.7.2
-nuget Feliz
+nuget Feliz prerelease
 nuget Fable.Core
 nuget Fable.DateFunctions
 nuget Feliz.CompilerPlugins prerelease
-
+nuget Fable.React.Types
 
 group Build
     source https://api.nuget.org/v3/index.json
