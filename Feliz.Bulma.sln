@@ -31,6 +31,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.Timeline", "src
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.TagsInput", "src\Feliz.Bulma.TagsInput\Feliz.Bulma.TagsInput.fsproj", "{38AE8986-4CFF-40DF-B6B6-89B0A524071A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Build", "Build.fsproj", "{DA6011AF-3E79-41FE-ADAE-F6F753EA8C70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{38AE8986-4CFF-40DF-B6B6-89B0A524071A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38AE8986-4CFF-40DF-B6B6-89B0A524071A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38AE8986-4CFF-40DF-B6B6-89B0A524071A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6011AF-3E79-41FE-ADAE-F6F753EA8C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6011AF-3E79-41FE-ADAE-F6F753EA8C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6011AF-3E79-41FE-ADAE-F6F753EA8C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6011AF-3E79-41FE-ADAE-F6F753EA8C70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{849219C3-3B17-477A-8BC7-7993709F9008} = {39C8F2F3-FEC5-400E-8E35-558A9B69C059}

@@ -8,7 +8,7 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;bulma;feliz;react;html;calendar;datepicker</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.3.0</Version>
+        <Version>3.0.0-pre-002</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageReleaseNotes>Add events onTextChanged and onTextInputBlur #117</PackageReleaseNotes>
