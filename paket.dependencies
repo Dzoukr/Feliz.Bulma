@@ -3,11 +3,10 @@ version 5.216.0
 source https://api.nuget.org/v3/index.json
 storage: none
 
-nuget FSharp.Core >= 4.7.2
-nuget Feliz prerelease
+nuget FSharp.Core >= 4.7.2 lowest_matching: true
+nuget Feliz
 nuget Fable.Core
 nuget Fable.DateFunctions
-nuget Feliz.CompilerPlugins prerelease
 
 group Build
     source https://api.nuget.org/v3/index.json
@@ -26,4 +25,3 @@ group Docs
     nuget Fable.Elmish.React
     nuget Fable.Elmish.HMR
     nuget Feliz.Router
-    nuget Feliz.CompilerPlugins prerelease
