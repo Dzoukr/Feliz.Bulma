@@ -105,7 +105,6 @@ module.exports = {
             new CopyWebpackPlugin({ patterns: [{ from: resolve(CONFIG.assetsDir) }]}),
         ])
         : commonPlugins.concat([
-            new webpack.HotModuleReplacementPlugin(),
             new ReactRefreshWebpackPlugin()
         ]),
     resolve: {
@@ -120,13 +119,10 @@ module.exports = {
     },
     // Configuration for webpack-dev-server
     devServer: {
-        publicPath: '/',
-        contentBase: resolve(CONFIG.assetsDir),
         host: '0.0.0.0',
         port: CONFIG.devServerPort,
         proxy: CONFIG.devServerProxy,
         hot: true,
-        inline: true,
         historyApiFallback: true
     },
     // - fable-loader: transforms F# into JS
@@ -152,7 +148,9 @@ module.exports = {
                     'css-loader',
                     {
                         loader: 'sass-loader',
-                        options: { implementation: require('sass') }
+                        options: {
+                            implementation: require('sass')
+                        }
                     }
                 ],
             },
