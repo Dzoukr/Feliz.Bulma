@@ -12,9 +12,9 @@ group Build
     source https://api.nuget.org/v3/index.json
     storage: none
     nuget FSharp.Core
-    nuget Fake.Core.Target = 6.0.0-alpha004
-    nuget Fake.DotNet.Cli = 6.0.0-alpha004
-    nuget Fake.IO.FileSystem = 6.0.0-alpha004
+    nuget Fake.Core.Target
+    nuget Fake.DotNet.Cli
+    nuget Fake.IO.FileSystem
 
 group Docs
     source https://api.nuget.org/v3/index.json
