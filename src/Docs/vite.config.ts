@@ -6,6 +6,14 @@ export default defineConfig((env) => {
     const isDevelpoment = env.mode === 'development';
 
     return {
+        build: {
+            rollupOptions: {
+                output: {
+                    entryFileNames: "[name].js",
+                    dir: isDevelpoment ? ".fable-build" : "./../../publish/docs",
+                }
+            }
+        },
         css: {
             devSourcemap: isDevelpoment,
             preprocessorOptions: {

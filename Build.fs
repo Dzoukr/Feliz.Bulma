@@ -87,13 +87,18 @@ Target.create "InstallDocs" (fun _ ->
 
 Target.create "PublishDocs" (fun _ ->
     [ docsPublishPath] |> Shell.cleanDirs
-    Environment.setEnvironVar "NODE_OPTIONS" "--openssl-legacy-provider"
-    Tools.dotnet (sprintf "fable --outDir %s --run webpack-cli -p" fableBuildPath) docsSrcPath
+
+    Tools.dotnet ($"fable --outDir %s{fableBuildPath}") docsSrcPath
+    Tools.dotnet ($"npx vite build") docsSrcPath
 )
 
 Target.create "RunDocs" (fun _ ->
-    Environment.setEnvironVar "NODE_OPTIONS" "--openssl-legacy-provider"
-    Tools.dotnet (sprintf "fable watch --outDir %s --run webpack-dev-server" fableBuildPath) docsSrcPath
+    // When running Fable and Vite we need to run them in parallel and Fable in verbose mode
+    // otherwise sometimes the processess hangs up because of the console rewriting
+    runParallel [
+        "fable", createProcess "dotnet" $"fable watch --outDir {fableBuildPath} --verbose" docsSrcPath
+        "vite", createProcess "npx" "vite serve" docsSrcPath
+    ]
 )
 
 Target.create "PublishAll" (fun _ ->
