@@ -42,18 +42,18 @@ let menuPart (model:Model) =
         ]
         Bulma.menuLabel "Components"
         Bulma.menuList [
-            item "QuickView" QuickView
+            // item "QuickView" QuickView
             item "DateTimePicker" DateTimePicker
-            item "Tooltip" Tooltip
-            item "Checkradio" Checkradio
-            item "Popover" Popover
-            item "PageLoader" PageLoader
-            item "Switch" Switch
-            item "Divider" Divider
-            item "Badge" Badge
-            item "Slider" Slider
-            item "Timeline" Timeline
-            item "TagsInput" TagsInput
+            // item "Tooltip" Tooltip
+            // item "Checkradio" Checkradio
+            // item "Popover" Popover
+            // item "PageLoader" PageLoader
+            // item "Switch" Switch
+            // item "Divider" Divider
+            // item "Badge" Badge
+            // item "Slider" Slider
+            // item "Timeline" Timeline
+            // item "TagsInput" TagsInput
         ]
     ]
 
@@ -77,35 +77,45 @@ let contentPart model =
     | DocumentationTabs -> Views.Documentation.tabs
     | DocumentationBreadcrumb -> Views.Documentation.breadcrumb
     | DocumentationHelpersColor -> Views.Documentation.helpersColor
-    | QuickView -> Views.QuickView.view
+    // | QuickView -> Views.QuickView.view
     | DateTimePicker -> Views.DateTimePicker.view
-    | Tooltip -> Views.Tooltip.view
-    | Checkradio -> Views.Checkradio.view
-    | Popover -> Views.Popover.view
-    | PageLoader -> Views.PageLoader.view
-    | Switch -> Views.Switch.view
-    | Divider -> Views.Divider.view
-    | Badge -> Views.Badge.view
-    | Slider -> Views.Slider.view
-    | Timeline -> Views.Timeline.view
-    | TagsInput -> Views.TagsInput.view
+    // | Tooltip -> Views.Tooltip.view
+    // | Checkradio -> Views.Checkradio.view
+    // | Popover -> Views.Popover.view
+    // | PageLoader -> Views.PageLoader.view
+    // | Switch -> Views.Switch.view
+    // | Divider -> Views.Divider.view
+    // | Badge -> Views.Badge.view
+    // | Slider -> Views.Slider.view
+    // | Timeline -> Views.Timeline.view
+    // | TagsInput -> Views.TagsInput.view
 
 let view (model : Model) (dispatch : Msg -> unit) =
     let render =
         Bulma.container [
             Bulma.section [
-                Bulma.tile [
-                    tile.isAncestor
+                Bulma.fixedGrid [
+                    fixedGrid.has6Cols
                     prop.children [
-                        Bulma.tile [
-                            tile.is2
-                            prop.children (menuPart model)
+                        Bulma.grid [
+                            grid.isGap3
+                            prop.children [
+                                Bulma.cell [
+                                    prop.children (menuPart model)
+                                ]
+                                Bulma.cell [
+                                    cell.isColSpan5
+                                    prop.children [
+                                        contentPart model
+                                    ]
+                                ]
+                            ]
                         ]
-                        Bulma.tile (contentPart model)
                     ]
                 ]
             ]
         ]
+
     React.router [
         router.onUrlChanged (parseUrl >> UrlChanged >> dispatch)
         router.children render

@@ -1,19 +1,20 @@
 @charset "utf-8";
 
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
+// @import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+@import "./../node_modules/bulma/bulma.scss";
 
 // Bulma
-@import "~bulma";
-@import '~bulma-quickview';
-@import "~bulma-calendar";
-@import "~bulma-tooltip";
-@import "~bulma-checkradio";
-@import "~bulma-switch";
-@import "~bulma-popover/css/bulma-popover.css";
-@import "~bulma-pageloader/dist/css/bulma-pageloader.min.css";
+// @import '~bulma-quickview';
+@import "./../node_modules/bulma-calendar/src/scss/index.scss";
+// @import "~bulma-tooltip";
+// @import "~bulma-checkradio";
+// @import "~bulma-switch";
+// @import "~bulma-popover/css/bulma-popover.css";
+// @import "~bulma-pageloader/dist/css/bulma-pageloader.min.css";
 @import "github-gist.scss";
-@import "~@creativebulma/bulma-divider";
-@import "~@creativebulma/bulma-badge";
-@import "~bulma-slider";
-@import "~bulma-timeline";
-@import "~@creativebulma/bulma-tagsinput";
+// @import "~@creativebulma/bulma-divider";
+// @import "~@creativebulma/bulma-badge";
+// @import "~bulma-slider";
+// @import "~bulma-timeline";
+// @import "~@creativebulma/bulma-tagsinput";

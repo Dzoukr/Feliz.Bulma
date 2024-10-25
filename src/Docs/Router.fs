@@ -20,18 +20,18 @@ type Page =
     | DocumentationTabs
     | DocumentationBreadcrumb
     | DocumentationHelpersColor
-    | QuickView
+    // | QuickView
     | DateTimePicker
-    | Tooltip
-    | Checkradio
-    | Popover
-    | PageLoader
-    | Switch
-    | Divider
-    | Badge
-    | Slider
-    | Timeline
-    | TagsInput
+    // | Tooltip
+    // | Checkradio
+    // | Popover
+    // | PageLoader
+    // | Switch
+    // | Divider
+    // | Badge
+    // | Slider
+    // | Timeline
+    // | TagsInput
 
 let defaultPage = Overview
 
@@ -53,18 +53,18 @@ let parseUrl = function
     | [ "documentation"; "tabs" ] -> DocumentationTabs
     | [ "documentation"; "breadcrumb" ] -> DocumentationBreadcrumb
     | [ "documentation"; "helpers" ] -> DocumentationHelpersColor
-    | [ "quickview" ] -> QuickView
+    // | [ "quickview" ] -> QuickView
     | [ "datetimepicker" ] -> DateTimePicker
-    | [ "tooltip" ] -> Tooltip
-    | [ "checkradio" ] -> Checkradio
-    | [ "popover" ] -> Popover
-    | [ "pageloader" ] -> PageLoader
-    | [ "switch" ] -> Switch
-    | [ "divider" ] -> Divider
-    | [ "badge" ] -> Badge
-    | [ "slider" ] -> Slider
-    | [ "timeline" ] -> Timeline
-    | [ "tagsinput" ] -> TagsInput
+    // | [ "tooltip" ] -> Tooltip
+    // | [ "checkradio" ] -> Checkradio
+    // | [ "popover" ] -> Popover
+    // | [ "pageloader" ] -> PageLoader
+    // | [ "switch" ] -> Switch
+    // | [ "divider" ] -> Divider
+    // | [ "badge" ] -> Badge
+    // | [ "slider" ] -> Slider
+    // | [ "timeline" ] -> Timeline
+    // | [ "tagsinput" ] -> TagsInput
     | _ -> defaultPage
 
 let getHref = function
@@ -85,15 +85,15 @@ let getHref = function
     | DocumentationTabs -> Router.format ([ "documentation"; "tabs" ])
     | DocumentationBreadcrumb -> Router.format ([ "documentation"; "breadcrumb" ])
     | DocumentationHelpersColor -> Router.format ([ "documentation"; "helpers" ])
-    | QuickView -> Router.format ("quickview")
+    // | QuickView -> Router.format ("quickview")
     | DateTimePicker -> Router.format ("datetimepicker")
-    | Tooltip -> Router.format ("tooltip")
-    | Checkradio -> Router.format ("checkradio")
-    | Popover -> Router.format ("popover")
-    | PageLoader -> Router.format ("pageloader")
-    | Switch -> Router.format ("switch")
-    | Divider -> Router.format ("divider")
-    | Badge -> Router.format ("badge")
-    | Slider -> Router.format ("slider")
-    | Timeline -> Router.format ("timeline")
-    | TagsInput -> Router.format ("tagsinput")
+    // | Tooltip -> Router.format ("tooltip")
+    // | Checkradio -> Router.format ("checkradio")
+    // | Popover -> Router.format ("popover")
+    // | PageLoader -> Router.format ("pageloader")
+    // | Switch -> Router.format ("switch")
+    // | Divider -> Router.format ("divider")
+    // | Badge -> Router.format ("badge")
+    // | Slider -> Router.format ("slider")
+    // | Timeline -> Router.format ("timeline")
+    // | TagsInput -> Router.format ("tagsinput")

@@ -16,7 +16,9 @@ module private ElementLiterals =
     let [<Literal>] ``hero-foot`` = "hero-foot"
     let [<Literal>] ``section`` = "section"
     let [<Literal>] ``footer`` = "footer"
-    let [<Literal>] ``tile`` = "tile"
+    let [<Literal>] grid = "grid"
+    let [<Literal>] cell = "cell"
+    let [<Literal>] ``fixed-grid`` = "fixed-grid"
     let [<Literal>] ``columns`` = "columns"
     let [<Literal>] ``column`` = "column"
     let [<Literal>] ``field`` = "field"
@@ -229,11 +231,19 @@ type Bulma =
     static member inline footer (elms:#seq<ReactElement>) = ElementBuilders.Footer.children ElementLiterals.``footer`` elms
     static member inline footer elm = ElementBuilders.Footer.valueElm ElementLiterals.``footer`` elm
 
-    static member inline tile props = ElementBuilders.Div.props ElementLiterals.``tile`` props
-    static member inline tile (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``tile`` elms
-    static member inline tile elm = ElementBuilders.Div.valueElm ElementLiterals.``tile`` elm
-    static member inline tile s = ElementBuilders.Div.valueStr ElementLiterals.``tile`` s
-    static member inline tile i = ElementBuilders.Div.valueInt ElementLiterals.``tile`` i
+    static member inline grid props = ElementBuilders.Div.props ElementLiterals.grid props
+    static member inline grid (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.grid elms
+    static member inline grid elm = ElementBuilders.Div.valueElm ElementLiterals.grid elm
+
+    static member inline fixedGrid props = ElementBuilders.Div.props ElementLiterals.``fixed-grid`` props
+    static member inline fixedGrid (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``fixed-grid`` elms
+    static member inline fixedGrid elm = ElementBuilders.Div.valueElm ElementLiterals.``fixed-grid`` elm
+
+    static member inline cell props = ElementBuilders.Div.props ElementLiterals.cell props
+    static member inline cell (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.cell elms
+    static member inline cell elm = ElementBuilders.Div.valueElm ElementLiterals.cell elm
+    static member inline cell s = ElementBuilders.Div.valueStr ElementLiterals.cell s
+    static member inline cell i = ElementBuilders.Div.valueInt ElementLiterals.cell i
 
     static member inline columns props = ElementBuilders.Div.props ElementLiterals.``columns`` props
     static member inline columns (elms:#seq<ReactElement>) = ElementBuilders.Div.children ElementLiterals.``columns`` elms
