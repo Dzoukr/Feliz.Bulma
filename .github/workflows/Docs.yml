@@ -14,10 +14,10 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
 
-      - name: Setup .NET 7 SDK
+      - name: Setup .NET 8 SDK
         uses: actions/setup-dotnet@v1.7.2
         with:
-          dotnet-version: 7.0.100
+          dotnet-version: 8.0.100
 
       - name: Install Tools
         run: dotnet tool restore
@@ -26,7 +26,7 @@ jobs:
         run: dotnet fake build -t PublishDocs
 
       - name: Publish Docs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: docs
           path: publish/docs
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download app artifact
-        uses: actions/download-artifact@v2.0.5
+        uses: actions/download-artifact@v4
         with:
           name: docs
           path: docs
