@@ -16,6 +16,7 @@ type Page =
     | DocumentationPanel
     | DocumentationProgressbar
     | DocumentationTag
+    | DocumentationTitle
     | DocumentationTabs
     | DocumentationBreadcrumb
     | DocumentationHelpersColor
@@ -48,6 +49,7 @@ let parseUrl = function
     | [ "documentation"; "panel" ] -> DocumentationPanel
     | [ "documentation"; "progressbar" ] -> DocumentationProgressbar
     | [ "documentation"; "tag" ] -> DocumentationTag
+    | [ "documentation"; "title" ] -> DocumentationTitle
     | [ "documentation"; "tabs" ] -> DocumentationTabs
     | [ "documentation"; "breadcrumb" ] -> DocumentationBreadcrumb
     | [ "documentation"; "helpers" ] -> DocumentationHelpersColor
@@ -79,6 +81,7 @@ let getHref = function
     | DocumentationPanel -> Router.format ([ "documentation"; "panel" ])
     | DocumentationProgressbar -> Router.format ([ "documentation"; "progressbar" ])
     | DocumentationTag -> Router.format ([ "documentation"; "tag" ])
+    | DocumentationTitle -> Router.format ([ "documentation"; "title" ])
     | DocumentationTabs -> Router.format ([ "documentation"; "tabs" ])
     | DocumentationBreadcrumb -> Router.format ([ "documentation"; "breadcrumb" ])
     | DocumentationHelpersColor -> Router.format ([ "documentation"; "helpers" ])

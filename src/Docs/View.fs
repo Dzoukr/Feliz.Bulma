@@ -35,6 +35,7 @@ let menuPart (model:Model) =
             item "Panel" DocumentationPanel
             item "ProgressBar" DocumentationProgressbar
             item "Tag" DocumentationTag
+            item "Title" DocumentationTitle
             item "Tabs" DocumentationTabs
             item "Breadcrumb" DocumentationBreadcrumb
             item "Helpers - Color" DocumentationHelpersColor
@@ -72,6 +73,7 @@ let contentPart model =
     | DocumentationPanel -> Views.Documentation.panel
     | DocumentationProgressbar -> Views.Documentation.progressbar
     | DocumentationTag -> Views.Documentation.tag
+    | DocumentationTitle -> Views.Documentation.title
     | DocumentationTabs -> Views.Documentation.tabs
     | DocumentationBreadcrumb -> Views.Documentation.breadcrumb
     | DocumentationHelpersColor -> Views.Documentation.helpersColor

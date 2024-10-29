@@ -842,7 +842,7 @@ let mediaObject =
                                     Bulma.image.is64x64
                                     prop.children [
                                         Html.img [
-                                            prop.src "https://bulma.io/images/placeholders/128x128.png"
+                                            prop.src "https://picsum.photos/64/64"
                                         ]
                                     ]
                                 ]
@@ -901,7 +901,7 @@ let mediaObject =
             Bulma.image.is64x64
             prop.children[
                 Html.img [
-                    prop.src "https://bulma.io/images/placeholders/128x128.png"
+                    prop.src "https://picsum.photos/64/64"
                 ]
             ]
         ]
@@ -960,7 +960,7 @@ let mediaObject =
                         Bulma.image.is64x64
                         prop.children [
                             Html.img [
-                                prop.src "https://bulma.io/images/placeholders/128x128.png"
+                                prop.src "https://picsum.photos/64/64"
                             ]
                         ]
                     ]
@@ -988,7 +988,7 @@ let mediaObject =
                                 Bulma.image.is64x64
                                 prop.children [
                                     Html.img [
-                                        prop.src "https://bulma.io/images/placeholders/128x128.png"
+                                        prop.src "https://picsum.photos/64/64"
                                     ]
                                 ]
                             ]
@@ -1018,7 +1018,7 @@ let mediaObject =
                                 Bulma.image.is64x64
                                 prop.children [
                                     Html.img [
-                                        prop.src "https://bulma.io/images/placeholders/128x128.png"
+                                        prop.src "https://picsum.photos/64/64"
                                     ]
                                 ]
                             ]
@@ -1050,7 +1050,7 @@ let mediaObject =
                         Bulma.image.is64x64
                         prop.children [
                             Html.img [
-                                prop.src "https://bulma.io/images/placeholders/128x128.png"
+                                prop.src "https://picsum.photos/64/64"
                             ]
                         ]
                     ]
@@ -1078,7 +1078,7 @@ let mediaObject =
         Bulma.image [
             Bulma.image.is64x64
             prop.children[
-                Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                Html.img [ prop.src "https://picsum.photos/64/64" ]
             ]
         ]
     ]
@@ -1103,7 +1103,7 @@ let mediaObject =
                 Bulma.image [
                     Bulma.image.is64x64
                     prop.children[
-                        Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                        Html.img [ prop.src "https://picsum.photos/64/64" ]
                     ]
                 ]
             ]
@@ -1130,7 +1130,7 @@ let mediaObject =
                 Bulma.image [
                     Bulma.image.is64x64
                     prop.children[
-                        Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                        Html.img [ prop.src "https://picsum.photos/64/64" ]
                     ]
                 ]
             ]
@@ -1159,7 +1159,7 @@ Bulma.media [
         Bulma.image [
             Bulma.image.is64x64
             prop.children[
-                Html.img [ prop.src "https://bulma.io/images/placeholders/128x128.png" ]
+                Html.img [ prop.src "https://picsum.photos/64/64" ]
             ]
         ]
     ]
@@ -2588,3 +2588,168 @@ let HelpersColorComponent () =
     ]
 
 let helpersColor = HelpersColorComponent()
+
+[<ReactComponent>]
+let TitleComponent () =
+    Html.div [
+        Bulma.title "Feliz.Bulma - Documentation"
+        Bulma.subtitle "Title"
+        Html.hr []
+        Bulma.content [
+            Bulma.subtitle [
+                prop.text "Sizes"
+            ]
+        ]
+        Bulma.columns [
+            Bulma.column [
+                Bulma.title.h1 [
+                    prop.text "Title 1"
+                ]
+                Bulma.title.h2 [
+                    prop.text "Title 2"
+                ]
+                Bulma.title.h3 [
+                    prop.text "Title 3"
+                ]
+                Bulma.title.h4 [
+                    prop.text "Title 4"
+                ]
+                Bulma.title.h5 [
+                    prop.text "Title 5"
+                ]
+                Bulma.title.h6 [
+                    prop.text "Title 6"
+                ]
+            ]
+            Bulma.column [
+                code """
+Bulma.title.h1 [
+    prop.text "Title 1"
+]
+Bulma.title.h2 [
+    prop.text "Title 2"
+]
+Bulma.title.h3 [
+    prop.text "Title 3"
+]
+Bulma.title.h4 [
+    prop.text "Title 4"
+]
+Bulma.title.h5 [
+    prop.text "Title 5"
+]
+Bulma.title.h6 [
+    prop.text "Title 6"
+]
+                """
+            ]
+        ]
+        Html.hr []
+        Bulma.columns [
+            Bulma.column [
+                Bulma.subtitle.h1 [
+                    prop.text "Subtitle 1"
+                ]
+                Bulma.subtitle.h2 [
+                    prop.text "Subtitle 2"
+                ]
+                Bulma.subtitle.h3 [
+                    prop.text "Subtitle 3"
+                ]
+                Bulma.subtitle.h4 [
+                    prop.text "Subtitle 4"
+                ]
+                Bulma.subtitle.h5 [
+                    prop.text "Subtitle 5"
+                ]
+                Bulma.subtitle.h6 [
+                    prop.text "Subtitle 6"
+                ]
+            ]
+            Bulma.column [
+                code """
+Bulma.subtitle.h1 [
+    prop.text "Subtitle 1"
+]
+Bulma.subtitle.h2 [
+    prop.text "Subtitle 2"
+]
+Bulma.subtitle.h3 [
+    prop.text "Subtitle 3"
+]
+Bulma.subtitle.h4 [
+    prop.text "Subtitle 4"
+]
+Bulma.subtitle.h5 [
+    prop.text "Subtitle 5"
+]
+Bulma.subtitle.h6 [
+    prop.text "Subtitle 6"
+]
+                """
+            ]
+        ]
+        Bulma.content [
+            Bulma.subtitle [
+                prop.text "Using paragraphs"
+            ]
+        ]
+        Bulma.columns [
+            Bulma.column [
+                Bulma.title.p [
+                    title.is1
+                    prop.text "Title 1"
+                ]
+                Bulma.title.p [
+                    title.is2
+                    prop.text "Title 2"
+                ]
+                Bulma.title.p [
+                    title.is3
+                    prop.text "Title 3"
+                ]
+                Bulma.title.p [
+                    title.is4
+                    prop.text "Title 4"
+                ]
+                Bulma.title.p [
+                    title.is5
+                    prop.text "Title 5"
+                ]
+                Bulma.title.p [
+                    title.is6
+                    prop.text "Title 6"
+                ]
+            ]
+            Bulma.column [
+                code """
+Bulma.title.p [
+    title.is1
+    prop.text "Title 1"
+]
+Bulma.title.p [
+    title.is2
+    prop.text "Title 2"
+]
+Bulma.title.p [
+    title.is3
+    prop.text "Title 3"
+]
+Bulma.title.p [
+    title.is4
+    prop.text "Title 4"
+]
+Bulma.title.p [
+    title.is5
+    prop.text "Title 5"
+]
+Bulma.title.p [
+    title.is6
+    prop.text "Title 6"
+]
+                """
+            ]
+        ]
+    ]
+
+let title = TitleComponent()
