@@ -1,5 +1,3 @@
-version 5.216.0
-
 source https://api.nuget.org/v3/index.json
 storage: none
 

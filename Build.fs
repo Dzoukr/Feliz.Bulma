@@ -88,7 +88,7 @@ Target.create "InstallDocs" (fun _ ->
 Target.create "PublishDocs" (fun _ ->
     [ docsPublishPath] |> Shell.cleanDirs
     Environment.setEnvironVar "NODE_OPTIONS" "--openssl-legacy-provider"
-    Tools.dotnet (sprintf "fable --outDir %s --run webpack-cli -p" fableBuildPath) docsSrcPath
+    Tools.dotnet (sprintf "fable --outDir %s --run webpack-cli" fableBuildPath) docsSrcPath
 )
 
 Target.create "RunDocs" (fun _ ->

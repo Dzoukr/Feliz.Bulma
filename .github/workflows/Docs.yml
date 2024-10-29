@@ -23,7 +23,7 @@ jobs:
         run: dotnet tool restore
 
       - name: Build
-        run: dotnet fake build -t PublishDocs
+        run: dotnet run PublishDocs
 
       - name: Publish Docs
         uses: actions/upload-artifact@v4
